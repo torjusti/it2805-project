@@ -1,4 +1,5 @@
 .git
 README.md
-sync
+build
 exclusions.txt
+Documents.zip
