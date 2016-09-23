@@ -1,0 +1,4 @@
+.git
+README.md
+sync
+exclusions.txt

@@ -1,0 +1,2 @@
+#!/bin/bash
+rsync -avzP --exclude-from='exclusions.txt' . torjusti@login.stud.ntnu.no:~/public_html 
