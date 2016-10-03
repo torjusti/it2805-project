@@ -1,5 +1,5 @@
 .git
 README.md
-build
+Makefile
 exclusions.txt
 Documents.zip

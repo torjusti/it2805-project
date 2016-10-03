@@ -1,3 +1,0 @@
-#!/bin/bash
-7z a -r Documents.zip Documents
-rsync -avzP --exclude-from='exclusions.txt' . torjusti@login.stud.ntnu.no:~/public_html
