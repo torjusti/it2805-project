@@ -16,23 +16,25 @@
     <main>
       <section>
         <h3>Administrative detaljer</h3>
+
         <p>Vår klient og kontaktperson er Thorleif Fluer Vikre, eieren av Vikre Handel AS.</p>
       </section>
 
       <section>
         <h3>Hensikt, mål og målgruppe</h3>
+
         <p>Hensikten med denne nettsiden er å selge gabioner. Dermed har vi som mål med nettsiden å gi god informasjon om gabioner slik at kunder blir overbevist om å handle hos oss, og også å stille med trygg og god kontaktinformasjon om hvordan man kan kjøpe gabioner fra oss. Dette betyr at det er en nødvendighet at nettsiden er grafisk tiltalende - brukeren må kunne føle seg trygg, og være komfortabel med å navigere nettsiden vår, slik at vi overtaler de potensielle kundene våre til å kjøpe fra oss.</p>
       </section>
 
       <section>
         <h3>Navigasjonsstruktur</h3>
+
         <p>Vi kommer til å ha en navigasjonsbar på toppen av siden vår, denne navigasjonsbaren kommer alltid til å være synlig og tilgjengelig nesten helt i toppen av nettleseren vår. Navigasjonsbaren kommer til å inneholde linker til de viktigste sidene i prosjektet vårt.</p>
 
         <ul>
           <li>Hjem - startsiden vår</li>
-          <li>Trivia - diverse informasjon om gabioner</li>
+          <li>Bruksområder - eksempler på bruk av gabioner og diverse informasjon om gabioner</li>
           <li>Spesifikasjoner - valg av typer og bestilling</li>
-          <li>Bruksområder - eksempler på bruk av gabioner</li>
           <li>Montering - videoer og tekstguider</li>
           <li>Om oss - kontaktinformasjon</li>
         </ul>
@@ -48,13 +50,13 @@
 
       <section>
         <h3>Innhold</h3>
-		<ul>
-          <li>Hjem:<br/>Denne siden skal fungere som en landingsside for brukeren. Den skal inneholde et slideshow og en smakebit på trivia om gabioner. Under gabion triviaen skal det være en "les mer knapp" som sender brukeren til "trivia" siden.</li>
-          <li>Spesifikasjoner:<br/>Denne siden skal inneholde informasjon om de ulike gabion modellene. Informasjonen skal vises ved hjelp av en liste over de ulike gabion modellene. Dersom brukeren velger en av modellene skal innformasjonen til denne vises. Siden skal også kunne eksportere en "handleliste" tekst til brukerens epost.</li>
-          <li>Eksempler:<br/>I eksempler skal gabioner demonstreres i mange ulike bruksområder. Siden skal bestå av tekst og bilder.</li>
-          <li>Opplæring:<br/>Opplæring skal bestå av innformasjon om hvordan man setter opp gabioner. Informasjonen skal vises ved hjelp av bilder, video og tekst.</li>
-          <li>Om oss:<br/>Denne siden skal hovedsaklig bestå av kontaktinformasjon, men også noe innformasjon om selskapet Vikre Handel.</li>
-		  <li>Trivia:<br/>Inneholder diverse informasjon om gabioner. Siden består av tekst og bilder.</li>
+
+	    	<ul>
+          <li>Hjem: Denne siden skal fungere som en landingsside for brukeren. Den skal inneholde et slideshow og en smakebit på bruksområder-siden. Under skal det være en les-mer-knapp som sender brukeren til bruksområder-siden.</li>
+          <li>Spesifikasjoner: Denne siden skal inneholde informasjon om de ulike gabionmodellene. Informasjonen skal vises ved hjelp av en liste over de ulike gabionmodellene. Dersom brukeren velger en av modellene skal informasjonen til denne modellen vises. Siden skal også kunne eksportere en slags handleliste-tekst til brukerens mail-klient.</li>
+          <li>Bruksområder: Her skal gabioner demonstreres i mange ulike bruksområder. Siden skal bestå av tekst og bilder.</li>
+          <li>Opplæring: Opplæring skal bestå av informasjon om hvordan man setter opp gabioner. Informasjonen skal vises ved hjelp av bilder, video og tekst.</li>
+          <li>Om oss: Denne siden skal hovedsaklig bestå av kontaktinformasjon, men også noe informasjon om selskapet Vikre Handel.</li>
         </ul>
       </section>
 
@@ -66,13 +68,79 @@
         <ul>
           <li>Andreas får ansvaret for å implementere JavaScript-tabs på spesifikasjoner-siden. Man skal kunne klikke på en bestemt type gabioner og så bli vist informasjon om den typen gabioner.</li>
           <li>Johannes får ansvaret for å implementere en karusell på forsiden, som viser forskjellige bilder av gabioner i rotasjon.</li>
-          <li>Balázs får ansvaret for å implementere en knapp i navigasjonsbaren som åpner en drop-down-oversikt over tutorials-undersidene våre.</li>
+          <li>Balázs får ansvaret for å lage en dynamisk tutorial som viser hvordan man monterer gabioner.</li>
           <li>Torjus får ansvaret for å legge til funksjonalitet som gjør at man kan velge gabioner fra gabioner-tabbene. Disse blir da lagret i nettleseren slik at de overlever en side-reload. De skal vises til brukeren under gabioner-tabbene, slik at brukeren får en slags handleliste som for eksempel skal kunne leses opp over telefon. Man skal også kunne generere en email som inneholder en oversikt over de typene gabioner brukeren ønsker å kjøpe, og man skal kunne eksportere mailen som rå tekst hvis man ikke ønsker å sende mailen med én gang.</li>
         </ul>
       </section>
 
       <section>
         <h3>Plan</h3>
+
+        <p>Vi har brukt GitHub under designprosessen, og vi kommer til å fortsette å bruke GitHub utover kodefasen, da dette forenkler samarbeidsprosessen vår. Vi planlegger delegere ansvaret for diverse deler av nettsiden til forskjellige personer, slik at arbeidsmengden blir omtrent den samme på alle personene, men siden vi bruker GitHub kommer vi selvsagt til å følge med på hva de andre på gruppa gjør og kommentere og komme med tilbakemelding og hjelp.</p>
+
+        <p>Det første vi tar sikte på å bli ferdig med er designet vårt. Vi vil implementere en grunnleggende CSS-fil slik at alle de sidene vi arbeider på videre har det samme grunnleggende designet, og alt relatert til footeren og headeren skal styles ferdig fortløpende. Deretter er det ikke så farlig med rekkefølgen de neste sidene blir ferdige i, men vi vil prioritere arbeidet med spesifikasjoner-siden og  montering-siden, da disse vil ha en god del JavaScript-funksjonalitet som vi ønsker å komme tidlig i gang med. Når det kommer til innhold er det Andreas som er vår primære bedriftskontakt. Han er ansvarlig for å få tak i videomateriale, bilder og tekst fra Thorleif. Hvis dette ikke blir gitt til oss i tide, kommer vi til å bruke midlertidig placeholder-tekst.</p>
+
+        <h4>Informasjon som må hentes fra bedriften</h4>
+
+        <ul>
+          <li>Bilder til karusellen på hjemmesiden.</li>
+          <li>Bilder og tekst til monteringssiden.</li>
+          <li>Bilder og tekst til spesifikasjonersiden.</li>
+          <li>Bilder og tekst til bruksområdersiden.</li>
+          <li>Vi må finne ut om Thorlef ønsker en ny logo eller ikke.</li>
+        </ul>
+
+        <h4>Mappestruktur</h4>
+
+        <ul>
+          <li>
+            assets
+            <ul>
+              <li>
+                css
+                <ul>
+                  <li>base.css</li>
+                </ul>
+              </li>
+              <li>
+                js
+                <ul>
+                  <li>specifications.js - inneholder både tabs og mailgenerator</li>
+                  <li>tutorials.js - interaktiv tutorial</li>
+                  <li>homepage.js - karusell</li>
+                </ul>
+              </li>
+              <li>
+                img
+                <ul>
+                  <li>
+                    about
+                    <ul>
+                      <li>thorleif.jpg - allerede skaffet</li>
+                      <li>kjell.jpg - allerede skaffet</li>
+                    </ul>
+                  </li>
+                  <li>carousel - karusellbilder fra firma - Andreas</li>
+                  <li>usage - veiledningsbilder fra firma - Andreas</li>
+                  <li>specs - illustrasjonsbilder fra firma - Andreas</li>
+                  <li>logo.png - allerede skaffet</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li>index.html - Johannes</li>
+          <li>bruk.html - Torjus</li>
+          <li>montering.html - Balázs</li>
+          <li>om.html - Andreas</li>
+        </ul>
+
+        <h4>Deadlines</h4>
+
+        <p>Headeren og footeren og den grunnleggende CSS-fila skal bli ferdig innen den første uka, 16. oktober. Resten av HTML-sidene skal bli ferdig innen uken etter det igjen, 23. oktober. Den tredje uka skal vi gjøre ferdig JavaScript-filene, 30. oktober. Vi skal også bli ferdig med P3 til denne dagen. Deretter har vi til 13. november med å ta igjen det tapte hvis vi blir liggende bak skjema, og resten av tiden fram til fristen skal brukes til å teste nettsiden og til å finpusse P4.</p>
+
+        <h4>Testingsfasen</h4>
+
+        <p>Alle er ansvarlige under testingsfasen.</p>
       </section>
     </main>
   </body>
