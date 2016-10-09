@@ -1,0 +1,99 @@
+/**
+ * Root HTML elements.
+ */
+
+body {
+  font-family: "Open Sans", Arial, sans-serif;
+  font-size: 20px;
+  color: #333;
+  line-height: 1.75;
+}
+
+/**
+ * Main blocks
+ */
+
+main, header {
+  width: 75%;
+  margin: auto;
+  padding: 1em 0;
+}
+
+@media screen and (max-width: 680px) {
+  main, header {
+    width: 95%;
+  }
+}
+
+/**
+ * Section borders
+ */
+
+header, section:not(:last-child) {
+  border-bottom: 1px solid #DDD;
+}
+
+/**
+ * Profile picture floating
+ */
+
+.container {
+  overflow: hidden;
+}
+
+#profile-picture {
+  width: 25%;
+  float: left;
+  margin-bottom: 1.5em;
+}
+
+#profile-description {
+  width: 70%;
+  float: right;
+}
+
+@media screen and (max-width: 680px) {
+  #profile-picture, #profile-description {
+    float: none;
+    width: auto;
+  }
+
+  #profile-picture {
+    max-width: 150px;
+  }
+}
+
+/**
+ * Tables
+ */
+
+table {
+  width: 100%;
+  border-spacing: 0;
+}
+
+table thead {
+  text-align: left;
+}
+
+table td {
+  padding: 5px;
+  border-bottom: 1px solid #CCC;
+  border-left: 1px solid #CCC;
+}
+
+table tr:first-child td {
+  border-top: 1px solid #CCC;
+}
+
+table td:last-child {
+  border-right: 1px solid #CCC;
+}
+
+/**
+ * Mockups
+ */
+
+ .large-mockup {
+   width: 100%;
+ }
