@@ -12,5 +12,6 @@ menuMobile.addEventListener('click', function() {
     navigationBar.style.display = 'none';
   }
 
+  // Legg til en klasse til knappen når menyen er synlig. Til hjelp i CSS:
   menuMobile.classList.toggle('mobile-bar-visisble');
 });
