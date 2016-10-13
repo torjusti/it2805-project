@@ -105,7 +105,26 @@ p{
   justify-content: center;
   max-width: 50%;
 }
-
+.info{
+  border-left: 1px solid #00A651;
+  border-right: 1px solid #00A651;
+  padding: 0 20px;
+  width: 100%
+}
+.sjef{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px
+}
+.sjef div img{
+  border-radius: 50%;
+  width:128px;
+  height: 128px;
+}
+.sjef div a:hover{
+  text-decoration: underline;
+}
 
 
 /*------------------FOOTER------------------*/
