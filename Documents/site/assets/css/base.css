@@ -21,6 +21,7 @@ body{
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-items: center;
   min-height: 100vh;
 }
 
@@ -75,7 +76,9 @@ header nav ul li:hover a{
 }
 
 
-/*------------------SECTION------------------*/
+/*------------------SECTIONS------------------*/
+/*------------------SECTIONS GENERAL------------------*/
+
 section{
   display: flex;
   justify-content: center;
@@ -86,7 +89,22 @@ h2{
   color: white;
   padding: 10px 100px
 }
+h3{
+  color: lightgrey;
+  font-size: 2em;
+  align-self: flex-start;
+}
+p{
+  text-align: justify;
+}
 
+/*------------------ABOUT SECTION------------------*/
+.about{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 50%;
+}
 
 
 
@@ -96,6 +114,7 @@ footer{
   justify-content: center;
   align-items: center;
   min-height: 160px;
+  min-width: 100%;
   background-color: #e7e7e7;
 }
 footer ul{
