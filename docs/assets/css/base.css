@@ -37,7 +37,7 @@ h3,h4,h5{
 
 /*----MAIN ELEMENTS----*/
 html{
-  background-image: url(../img/bg.png);
+  background-image: url('../img/bg.png');
   background-color: #eee
 }
 body{
@@ -146,7 +146,7 @@ header nav ul li:hover a{
   position: absolute;
   min-width: 85%;
   min-height: 100%;
-  background: url('/assets/img/bg.png');
+  background: url('../img/bg.png');
   background-color: #eee;
   transform: skewX(-45deg);
   z-index: -1;
