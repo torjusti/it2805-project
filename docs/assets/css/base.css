@@ -1,21 +1,40 @@
-/*------------------GENERAL------------------*/
+/*------------------------------------------------------------------------
+----------------------------------GENERAL---------------------------------
+------------------------------------------------------------------------*/
 
+/*----RESET----*/
 *{
   margin: 0;
   padding: 0;
-  font-family: 'Open Sans',sans-serif;
+  font-family: 'Open Sans',sans-serif
 }
-a{
-  color: #00A651;
-}
+/*----/RESET----*/
 
+/*----TYPOGRAPHY----*/
+a{color: #00A651}
 p{
-  line-height: 1.5
+  line-height: 1.5;
+  text-align: justify
 }
 li{
   list-style-type: none;
   color: #333
 }
+h2{
+  background-color: #00A651;
+  color: white;
+  padding: 10px 100px
+}
+h3{margin-bottom: 30px}
+h3,h4,h5{
+  color: lightgrey;
+  font-size: 2em;
+  align-self: flex-start
+}
+/*----/TYPOGRAPHY----*/
+
+
+/*----MAIN ELEMENTS----*/
 html{
   background-image: url(../img/bg.png);
   background-color: #fff
@@ -25,43 +44,27 @@ body{
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  min-height: 100vh;
+  min-height: 100vh
 }
-
-/*------------------HEADER------------------*/
-header{
-  min-width: 100%
-}
-header nav{
-  background-color: #00A651;
-}
-#menu-mobile{
-  display: none;
-  margin: 16px 20px;
-  right: 0;
-  position: fixed;
-  flex-direction: column;
-  justify-content: space-around;
-  height: 40px;
-  width: 48px;
-  cursor: pointer;
-}
-
-#menu-mobile span{
-  width: 100%;
-  height: 2px;
-  background: #00A651;
-  border-radius: 2px;
-  transition: .3s ease-in-out
-
-}
-
-header nav ul{
+section{
   display: flex;
+  justify-content: center;
+  align-items: center
 }
+/*----/MAIN ELEMENTS----*/
+
+
+/*------------------------------------------------------------------------
+----------------------------------HEADER----------------------------------
+------------------------------------------------------------------------*/
+
+/*----HEADER NAVIGATION----*/
+header{min-width: 100%}
+header nav{background-color: #00A651}
+header nav ul{display: flex}
 header nav ul li{
   cursor:pointer;
-  transition: .2s ease-in-out;
+  transition: .2s ease-in-out
 }
 header nav ul li:hover{
   background-color: white;
@@ -72,124 +75,114 @@ header nav ul li a{
   text-decoration: none;
   color: white;
   display: block;
-  padding: 20px 30px;
-
+  padding: 20px 30px
 }
 header nav ul li:hover a{
   color: #00A651;
-  font-weight: bolder;
+  font-weight: bolder
 }
+/*----/HEADER NAVIGATION----*/
+
+/*----HAMBURGER MENU----*/
+#menu-mobile{
+  display: none;
+  margin: 16px 20px;
+  right: 0;
+  position: fixed;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 40px;
+  width: 48px;
+  cursor: pointer
+}
+#menu-mobile span{
+  width: 100%;
+  height: 2px;
+  background: #00A651;
+  border-radius: 2px;
+  transition: .3s ease-in-out
+}
+/*----/HAMBURGER MENU----*/
+
+/*------------------------------------------------------------------------
+---------------------------------SUBPAGES---------------------------------
+------------------------------------------------------------------------*/
+
+/*----SPECIFICATIONS SUBPAGE----*/
+#tabs-container {
+  overflow: hidden;
+  width: 600px /* todo: be consistent */
+}
+#tabs {
+  float: left;
+  width: 25%
+}
+.tab {display: block}
+#tab-containers {
+  float: right;
+  width: 75%
+}
+.tab-container {
+  display: none
+}
+/*----/SPECIFICATIONS SUBPAGE----*/
 
 
-/*------------------SECTIONS------------------*/
-/*------------------SECTIONS GENERAL------------------*/
-
-section{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-h2{
-  background-color: #00A651;
-  color: white;
-  padding: 10px 100px
-}
-h3,h4,h5{
-  color: lightgrey;
-  font-size: 2em;
-  align-self: flex-start;
-}
-h3{
-  margin-bottom: 30px
-}
-p{
-  text-align: justify;
-}
-
-/*------------------ABOUT SECTION------------------*/
+/*----ABOUT SUBPAGE----*/
 .about{
   display: flex;
   flex-direction: column;
   justify-content: center;
-  max-width: 50%;
+  max-width: 50%
 }
 .info{
   border-left: 1px solid #00A651;
   border-right: 1px solid #00A651;
-  padding: 10px 40px;
+  padding: 10px 40px
 }
 .sjef{
   display: flex;
   justify-content: space-around;
-  margin-top: 20px;
+  margin-top: 20px
 }
 .sjef div{
   display: flex;
   align-items: center;
-  flex-direction: column;
+  flex-direction: column
 }
 .sjef div img{
   border-radius: 50%;
   width:100px;
-  height: 100px;
+  height: 100px
 }
-.sjef div a:hover{
-  text-decoration: underline;
-}
+.sjef div a:hover{text-decoration: underline}
 .sjef div h4{
   font-size: 1.4em;
-  padding: 10px 0;
+  padding: 10px 0
 }
 .sjef div h5{
   color: #444;
   font-size: 1.2em
 }
-.sjef div a{
-  text-decoration: underline;
-}
+.sjef div a{text-decoration: underline}
+/*----/ABOUT SUBPAGE----*/
 
-/*
- * ----------------------
- * Specifications section
- * ----------------------
- */
+/*------------------------------------------------------------------------
+----------------------------------FOOTER----------------------------------
+------------------------------------------------------------------------*/
 
-#tabs-container {
-  overflow: hidden;
-  width: 600px; /* todo: be consistent */
-}
-
-#tabs {
-  float: left;
-  width: 25%;
-}
-
-.tab {
-  display: block;
-}
-
-#tab-containers {
-  float: right;
-  width: 75%;
-}
-
-.tab-container {
-  display: none;
-}
-
-/*------------------FOOTER------------------*/
 footer{
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 160px;
   min-width: 100%;
-  background-color: #e7e7e7;
+  background-color: #e7e7e7
 }
 footer ul{
   display: flex;
   min-width: 100%;
-  justify-content: space-around;
+  justify-content: space-around
 }
 footer>ul>li::before{
   content: '';
@@ -200,25 +193,23 @@ footer>ul>li::before{
   background-image: url(../img/icons/mail.svg);
   background-size: 18px;
   background-repeat: no-repeat;
-  background-position: center 2px;
+  background-position: center 2px
 }
-footer>ul>li:first-child::before{
-  background-image: url(../img/icons/location.svg)
-}
-footer>ul>li:last-child::before{
-  background-image: url(../img/icons/phone.svg)
-}
+footer>ul>li:first-child::before{background-image: url(../img/icons/location.svg)}
+footer>ul>li:last-child::before{background-image: url(../img/icons/phone.svg)}
 footer ul li ul{
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-around
 }
+footer ul li ul li{font-size: .9em}
 
-footer ul li ul li{
-  font-size: .9em
-}
+/*------------------------------------------------------------------------
+-------------------------------MEDIA QUERIES------------------------------
+------------------------------------------------------------------------*/
 
 @media screen and (max-width:768px) {
+
   #menu-mobile{
     display: flex;
     position: absolute;
@@ -232,13 +223,12 @@ footer ul li ul li{
     display: none; /*  MÅ BYTTES OM TIL display:flex MED JS NÅR #menu-mobile ER TRYKKET.  */
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
-
+    min-height: 100vh
   }
   header nav ul{
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: center
   }
   header nav ul li:hover{
     background-color: transparent;
@@ -255,16 +245,17 @@ footer ul li ul li{
   header nav ul li a:hover{
     text-decoration: underline;
     color: white;
-    font-weight: bolder;
+    font-weight: bolder
   }
 
   h2{
     padding: 10px;
-    text-align: center;
+    text-align: center
   }
   h3{
     margin: 0
   }
+
   .about{
     max-width: 100vw;
     margin: 0;
@@ -275,23 +266,12 @@ footer ul li ul li{
     width: 100%;
     padding: 0
   }
-  .sjef{
-    margin: 0
-  }
-  .sjef div h4{
-    padding: 5px 0
-  }
-  .sjef div a{
-    margin-bottom: 24px
-  }
+  .sjef{margin: 0}
+  .sjef div h4{padding: 5px 0}
+  .sjef div a{margin-bottom: 24px}
 
-  footer{
-    min-height: 60px
-  }
-  footer ul li ul li:first-child{
-    font-size: 1em
-  }
+  footer{min-height: 60px}
+  footer ul li ul li:first-child{font-size: 1em}
+  footer ul li ul li:last-child{display: none}
 
-  footer ul li ul li:last-child{
-    display: none;
 }
