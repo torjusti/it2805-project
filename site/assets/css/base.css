@@ -147,6 +147,36 @@ p{
 .sjef div a{
   text-decoration: underline;
 }
+
+/*
+ * ----------------------
+ * Specifications section
+ * ----------------------
+ */
+
+#tabs-container {
+  overflow: hidden;
+  width: 600px; /* todo: be consistent */
+}
+
+#tabs {
+  float: left;
+  width: 25%;
+}
+
+.tab {
+  display: block;
+}
+
+#tab-containers {
+  float: right;
+  width: 75%;
+}
+
+.tab-container {
+  display: none;
+}
+
 /*------------------FOOTER------------------*/
 footer{
   display: flex;
@@ -264,33 +294,4 @@ footer ul li ul li{
 
   footer ul li ul li:last-child{
     display: none;
-}
-
-/*
- * ----------------------
- * Specifications section
- * ----------------------
- */
-
-#tabs-container {
-  overflow: hidden;
-  width: 600px; /* todo: be consistent */
-}
-
-#tabs {
-  float: left;
-  width: 25%;
-}
-
-.tab {
-  display: block;
-}
-
-#tab-containers {
-  float: right;
-  width: 75%;
-}
-
-.tab-container {
-  display: none;
 }
