@@ -3,6 +3,10 @@ Prosjekt i webteknologi
 
 Dette er IT2805-gruppeprosjektet til Torjus, Balázs, Johannes og Andreas.
 
+Kjøring
+-------
+
+Alt som blir pushet til GitHub blir automatisk lastet opp på `gh-pages`. Dette vil si at en kopi av nettsiden er live [her](https://torjusti.github.io/it2805-project/index.html).
 Byggesystem
 -----------
 
