@@ -7,6 +7,7 @@ Kjøring
 -------
 
 Alt som blir pushet til GitHub blir automatisk lastet opp på `gh-pages`. Dette vil si at en kopi av nettsiden er live [her](https://torjusti.github.io/it2805-project/index.html).
+
 Byggesystem
 -----------
 
