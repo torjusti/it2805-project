@@ -29,11 +29,39 @@
     <h2>Spesifikasjoner</h2>
   </section>
   <div id="tabs-container">
-    <div id="tabs"><span data-tab="1" class="tab">Gabion 1</span><span data-tab="2" class="tab">Gabion 2</span><span data-tab="3" class="tab">Gabion 3</span></div>
+    <div id="tabs"><span data-tab="0" class="tab">Gabion 1</span><span data-tab="1" class="tab">Gabion 2</span><span data-tab="2" class="tab">Gabion 3</span></div>
     <div id="tab-containers">
-      <div data-tab="1" class="tab-container">Gabioner er helt genialt.</div>
-      <div data-tab="2" class="tab-container">Faktisk er gabioner det beste som finnes.</div>
-      <div data-tab="3" class="tab-container">Torjus elsker Michail.</div>
+      <div data-tab="0" class="tab-container">
+        <div class="cart-btn-container">
+          <button class="cart-add">+</button>
+          <input value="0" class="cart-val">
+          <button class="cart-remove">-</button>
+        </div>
+        <p>Gabioner er helt genialt.</p>
+      </div>
+      <div data-tab="1" class="tab-container">
+        <div class="cart-btn-container">
+          <button class="cart-add">+</button>
+          <input value="0" class="cart-val">
+          <button class="cart-remove">-</button>
+        </div>
+        <p>Faktisk er gabioner det beste som finnes.</p>
+      </div>
+      <div data-tab="2" class="tab-container">
+        <div class="cart-btn-container">
+          <button class="cart-add">+</button>
+          <input value="0" class="cart-val">
+          <button class="cart-remove">-</button>
+        </div>
+        <p>Torjus elsker Michail.</p>
+      </div>
+    </div>
+  </div>
+  <div id="cart-container">
+    <textarea id="cart-results" readonly></textarea>
+    <div id="cart-controls">
+      <button id="send-cart-mail">Mail</button>
+      <button id="select-cart-contents">Select</button><span>66661337</span>
     </div>
   </div>
 
@@ -51,5 +79,5 @@
   </footer>
 
   <script type="text/javascript" src="assets/js/global.js" async></script>
-  <script type="text/javascript" src="assets/js/specifications.js" async></script>
+  <script type="text/javascript" src="assets/js/specifications.js"></script>
 </body>

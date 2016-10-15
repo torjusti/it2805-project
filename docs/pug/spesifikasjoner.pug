@@ -13,15 +13,36 @@ body
 
   #tabs-container
     #tabs
-      span.tab(data-tab="1") Gabion 1
-      span.tab(data-tab="2") Gabion 2
-      span.tab(data-tab="3") Gabion 3
+      span.tab(data-tab="0") Gabion 1
+      span.tab(data-tab="1") Gabion 2
+      span.tab(data-tab="2") Gabion 3
     #tab-containers
-      .tab-container(data-tab="1") Gabioner er helt genialt.
-      .tab-container(data-tab="2") Faktisk er gabioner det beste som finnes.
-      .tab-container(data-tab="3") Torjus elsker Michail.
+      .tab-container(data-tab="0")
+        .cart-btn-container
+          button.cart-add +
+          input.cart-val(value="0")
+          button.cart-remove -
+        p Gabioner er helt genialt.
+      .tab-container(data-tab="1")
+        .cart-btn-container
+          button.cart-add +
+          input.cart-val(value="0")
+          button.cart-remove -
+        p Faktisk er gabioner det beste som finnes.
+      .tab-container(data-tab="2")
+        .cart-btn-container
+          button.cart-add +
+          input.cart-val(value="0")
+          button.cart-remove -
+        p Torjus elsker Michail.
+  #cart-container
+    textarea#cart-results(readonly)
+    #cart-controls
+      button#send-cart-mail Mail
+      button#select-cart-contents Select
+      span 66661337
 
   include modules/footer.html
 
   script(type="text/javascript" src="assets/js/global.js" async)
-  script(type="text/javascript" src="assets/js/specifications.js" async)
+  script(type="text/javascript" src="assets/js/specifications.js")
