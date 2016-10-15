@@ -55,6 +55,23 @@ section{
 }
 /*----/MAIN ELEMENTS----*/
 
+/*----ANIMATIONS----*/
+
+@keyframes slideshowIn {
+  0%{opacity: 0}
+  50%{z-index: 1}
+  100%{opacity: 1}
+}
+@keyframes slideshowOut {
+  0%{opacity: 0}
+  50%{z-index: -1}
+  100%{opacity: 1}
+}
+
+
+/*----/ANIMATIONS----*/
+
+
 
 /*------------------------------------------------------------------------
 ----------------------------------HEADER----------------------------------
@@ -124,13 +141,12 @@ header nav ul li:hover a{
 #picture{
   position: absolute;
   z-index: -1;
+  top: 0;
   left:0
 }
 #picture img{
-  position: relative;
-  width: auto;
-  left: -10vw;
-  min-height: 100%;
+  min-width: 70vw;
+  min-height: 100vh;
 }
 #picture .shade{
   position: absolute;
@@ -286,7 +302,7 @@ footer{
   align-items: center;
   min-height: 160px;
   min-width: 100%;
-  background-color: #e7e7e7
+  /*background-color: #e7e7e7*/
 }
 footer ul{
   display: flex;
@@ -312,6 +328,16 @@ footer ul li ul{
   justify-content: space-around
 }
 footer ul li ul li{font-size: .9em}
+
+.home-footer{
+  min-height: 100px;
+  position: absolute;
+  bottom: 0;
+}
+.home-footer{
+  align-self: flex-end;
+  min-width: 75vw
+}
 
 /*------------------------------------------------------------------------
 -------------------------------MEDIA QUERIES------------------------------
