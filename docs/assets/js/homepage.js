@@ -1,14 +1,23 @@
-const startPathImg="assets/img/gabion";
-const endPathImg=".jpg";
+const PathImg="assets/img/gabion/";
 var indexImg=1;
 var numImg=5;
-function slideshowStart(){
+var image = document.getElementById("slideshow");
+function slideshow(){
+
 	if (indexImg<numImg){
 		indexImg++;
-		document.getElementById("slideshow").src=startPathImg+indexImg+endPathImg;
+		image.src=PathImg+indexImg+".jpg";
 	}
 	else if (indexImg>=numImg){
 		indexImg=1;
-		document.getElementById("slideshow").src=startPathImg+indexImg+endPathImg;
+		image.src=PathImg+indexImg+".jpg";
 	}
 }
+
+/* Comment to Torjus.
+The animations can be called by the name of slideshowIn and slideshowOut:
+slideshowIn changes opacity from 0 to 1 and changes z-index to 1 at 50%
+slideshowOut changes opacity from 1 to 0 and changes z-index to -1 at 50%
+The animations can be changed in base.css ----ANIMATIONS---- section.
+REMEMBER: At least two pictures must be downloaded on user's computer when the first change happens.
+*/
