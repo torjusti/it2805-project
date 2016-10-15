@@ -8,7 +8,7 @@
   <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 
 </head>
-<body>  <header>
+<body onload="setInterval(slideshowStart,1500)">  <header>
     <div id="menu-mobile">
       <span></span>
       <span></span>
@@ -28,7 +28,7 @@
   <section class="home">
     <h2>Velkommen til gabionbutikken.no!</h2>
     <div id="picture">
-      <div class="shade"></div><img src="assets/img/gabion.jpg">
+      <div class="shade"></div><img id="slideshow" src="assets/img/gabion2.jpg">
     </div>
     <div id="right-bg"></div>
     <article>
@@ -43,16 +43,17 @@
 
   <footer>
     <ul>
-      <li>Adresse:</li>
-      <li>Epost:</li>
+      <li>Adresse: Lundekroken 21, 3940 Porsgrunn</li>
+      <li>Epost: post@vikre.no</li>
       <li>
         <ul>
-          <li>Telefon:</li>
-          <li>Mobil:</li>
+          <li>Telefon:  35 55 40 06</li>
+          <li>Mobil: 901 16 311</li>
         </ul>
       </li>
     </ul>
   </footer>
 
   <script type="text/javascript" src="assets/js/global.js" async></script>
+  <script type="text/javascript" src="assets/js/homepage.js" async></script>
 </body>
