@@ -8,6 +8,7 @@
   padding: 0;
   font-family: 'Open Sans',sans-serif
 }
+::selection{background: #00A651}
 /*----/RESET----*/
 
 /*----TYPOGRAPHY----*/
@@ -32,6 +33,7 @@ h3,h4,h5{
   font-size: 2em;
   align-self: flex-start
 }
+img{vertical-align: middle}
 /*----/TYPOGRAPHY----*/
 
 
@@ -133,11 +135,14 @@ header nav ul li:hover a{
 #menu-mobile span{
   width: 100%;
   height: 2px;
-  /*background: #00A651;*/
-  background: white;
+  background: #00A651;
   border-radius: 2px;
   transition: .3s ease-in-out
 }
+#menu-mobile span:hover{
+  background: white
+}
+.home-header #menu-mobile span{background: white}
 /*----/HAMBURGER MENU----*/
 
 /*------------------------------------------------------------------------
@@ -240,7 +245,7 @@ article button:focus{
 
 #tabs-container {
   overflow: hidden;
-  width: 600px /* todo: be consistent */
+  max-width: 100vw
 }
 
 #tabs {
@@ -318,7 +323,7 @@ footer{
   min-height: 160px;
   min-width: 100%;
 }
-footer ul{
+#footer-desktop{display: none;
   display: flex;
   min-width: 100%;
   justify-content: space-around
@@ -336,12 +341,12 @@ footer>ul>li::before{
 }
 footer>ul>li:first-child::before{background-image: url(../img/icons/location.svg)}
 footer>ul>li:last-child::before{background-image: url(../img/icons/phone.svg)}
-footer ul li ul{
+#footer-desktop li ul{
   display: flex;
   flex-direction: column;
   justify-content: space-around
 }
-footer ul li ul li{font-size: .9em}
+#footer-desktop li ul li{font-size: .9em}
 
 .home-footer{
   min-height: 100px;
@@ -350,10 +355,19 @@ footer ul li ul li{font-size: .9em}
   min-width: 75vw;
   bottom: 0;
 }
-.home-footer {
 
+#footer-mobile{
+  display: none;
+  justify-content: space-around;
+  align-items: center;
+  min-width: 100vw;
 }
-
+#footer-mobile li a img{
+  padding: 10px
+}
+#footer-mobile li img{filter: invert(1)}
+.home-footer #footer-mobile li img{filter: invert(0)}
+#footer-mobile li:before{display: none}
 /*------------------------------------------------------------------------
 -------------------------------MEDIA QUERIES------------------------------
 ------------------------------------------------------------------------*/
@@ -499,15 +513,21 @@ footer ul li ul li{font-size: .9em}
   .sjef div h4{padding: 5px 0}
   .sjef div a{margin-bottom: 24px}
 
-  footer{min-height: 60px}
-  footer ul li ul li:first-child{font-size: 1em}
-  footer ul li ul li:last-child{display: none}
+  footer{
+    min-height: 48px;
+    background: #00A651;
+    box-shadow: 0 -5px 10px rgba(0,0,0,.2)
+  }
+  #footer-desktop{display: none}
+  #footer-mobile{display: flex}
+
 
   .home-footer{
     position: static;
     align-self: center;
     min-width: 100vw;
     min-height: 60px;
+    background: #eee
   }
-
+ .home-#footer-desktop>li::before{filter:invert(0)}
 }
