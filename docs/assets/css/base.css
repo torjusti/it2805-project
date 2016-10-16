@@ -63,12 +63,27 @@ section{
   100%{opacity: 1}
 }
 @keyframes slideshowOut {
-  0%{opacity: 0}
+  0%{opacity: 1}
   50%{z-index: -1}
+  100%{opacity: 0}
+}
+@keyframes fadeIn {
+  0%{opacity: 0}
+  50%{z-index: 1}
   100%{opacity: 1}
 }
+@keyframes fadeOut {
+  0%{opacity: 1}
+  50%{z-index: -1}
+  100%{opacity: 0}
+}
 
-
+@keyframes slideIn {
+  0%{transform: translateX(100vw)}
+  60%{transform: translateX(-15vw)}
+  80%{transform: translatex(10vw)}
+  100%{transform: translateX(0)}
+}
 /*----/ANIMATIONS----*/
 
 
@@ -302,7 +317,6 @@ footer{
   align-items: center;
   min-height: 160px;
   min-width: 100%;
-  /*background-color: #e7e7e7*/
 }
 footer ul{
   display: flex;
@@ -332,11 +346,12 @@ footer ul li ul li{font-size: .9em}
 .home-footer{
   min-height: 100px;
   position: absolute;
+  align-self: flex-end;
+  min-width: 75vw;
   bottom: 0;
 }
-.home-footer{
-  align-self: flex-end;
-  min-width: 75vw
+.home-footer {
+
 }
 
 /*------------------------------------------------------------------------
@@ -361,16 +376,45 @@ footer ul li ul li{font-size: .9em}
   }
 
   header nav{
+    position: fixed;
     display: none; /*  MÅ BYTTES OM TIL display:flex MED JS NÅR #menu-mobile ER TRYKKET.  */
     justify-content: center;
     align-items: center;
-    min-height: 100vh
+    height: 100vh;
+    width: 100vw;
+    opacity: 0;
+    z-index: 999;
+    animation: fadeIn .3s forwards
   }
   header nav ul{
     flex-direction: column;
     align-items: center;
     justify-content: center
   }
+
+  /*----ANIMATION FOR MENU ITEMS----*/
+
+  header nav ul li:first-child{animation: slideIn .7s forwards}
+  header nav ul li:nth-child(2){
+    transform: translateX(100vw);
+    animation: slideIn .7s forwards .1s
+  }
+  header nav ul li:nth-child(3){
+    transform: translateX(100vw);
+    animation: slideIn .7s forwards .2s
+  }
+  header nav ul li:nth-child(4){
+    transform: translateX(100vw);
+    animation: slideIn .7s forwards .3s
+  }
+  header nav ul li:last-child{
+    transform: translateX(100vw);
+    animation: slideIn .7s forwards .4s
+  }
+
+  /*----/ANIMATION FOR MENU ITEMS----*/
+
+
   header nav ul li:hover{
     background-color: transparent;
     margin: 0;
@@ -399,7 +443,10 @@ footer ul li ul li{font-size: .9em}
     text-align: left;
     padding-left: 20px
   }
-  #picture img{min-height: 80%}
+  #picture img{
+    min-width: 100vw;
+    min-height: 100vh
+  }
   #picture .shade{opacity: .8}
   #right-bg{display: none}
 
@@ -455,5 +502,12 @@ footer ul li ul li{font-size: .9em}
   footer{min-height: 60px}
   footer ul li ul li:first-child{font-size: 1em}
   footer ul li ul li:last-child{display: none}
+
+  .home-footer{
+    position: static;
+    align-self: center;
+    min-width: 100vw;
+    min-height: 60px;
+  }
 
 }
