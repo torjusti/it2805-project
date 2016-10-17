@@ -1,5 +1,38 @@
 // Wait until the DOM has finished loading.
 document.addEventListener('DOMContentLoaded', function() {
+  /**
+   * -----------------
+   * Tab functionality
+   * -----------------
+   */
+
+  // Fetch elements from the DOM.
+  const tabs = document.getElementsByClassName('tab');
+  const tabContainers = document.getElementsByClassName('tab-container');
+
+  // Show the first tab by default.
+  tabContainers[0].style.display = 'block';
+
+  // Loop through all tabs.
+  for (let i = 0; i < tabs.length; i++) {
+   tabs[i].addEventListener('click', function(e) {
+     // Find out the tab code of the clicked tab.
+     let activeTab = e.target.getAttribute('data-tab');
+
+     // Loop through all tabs.
+     for (let j = 0; j < tabContainers.length; j++) {
+       let currentTabContainer = tabContainers[j];
+
+       // If this tab has the same code as the new current tab show it, if not, hide it.
+       if (currentTabContainer.getAttribute('data-tab') === activeTab) {
+         currentTabContainer.style.display = 'block';
+       } else {
+         currentTabContainer.style.display = 'none';
+       }
+     }
+   });
+  }
+
   /* ---------------------------
    * Shopping cart functionality
    * ---------------------------
@@ -14,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function() {
   };
 
   // Fetch elements from the DOM.
-  const cartValues = document.getElementsByClassName('cart-val');
+  const cartValueNodes = document.getElementsByClassName('cart-val');
   const cartResults = document.getElementById('cart-results');
   const cartContainer = document.getElementById('cart-container');
 
@@ -56,6 +89,18 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   /**
+   * Updates the value of an input box.
+   * @param {Node} cartValueNode The input box that will be updated.
+   * @param {number} val The value to add to the value.
+   */
+  function updateCartValueNode(cartValueNode, val) {
+    // Make sure the value does not go below 0.
+    cartValueNode.value = Math.max(parseInt(cartValueNode.value, 10) + val, 0);
+    // Attempt storing the new value locally.
+    setLocalData('cart-value' + getTabKey(cartValueNode), cartValueNode.value);
+  }
+
+  /**
    * Optionally updates the value of an input box and then updates the result field.
    * @param {Node=} cartValueNode The input box that will be updated.
    * @param {number=} val The value to update the input box with.
@@ -63,23 +108,19 @@ document.addEventListener('DOMContentLoaded', function() {
   function updateCart(cartValueNode, val) {
     // Update the input box if both an input box and a value is provided.
     if (cartValueNode && val) {
-      // Make sure the value does not go below 0.
-      cartValueNode.value = Math.max(parseInt(cartValueNode.value, 10) + val, 0);
-
-      // Attempt storing the new value locally.
-      setLocalData('cart' + getTabKey(cartValueNode), cartValueNode.value);
+      updateCartValueNode(cartValueNode, val);
     }
 
     // Store lines of text that will be shown in the textarea.
     let lines = ['Hei. Jeg ønsker gjerne å kjøpe gabioner!'];
 
     // Loop through all the input boxes in all the tabs.
-    for (let i = 0; i < cartValues.length; i++) {
+    for (let i = 0; i < cartValueNodes.length; i++) {
       // Find the value of this input.
-      let cartValue = parseInt(cartValues[i].value, 10);
+      let cartValue = parseInt(cartValueNodes[i].value, 10);
 
       // Map the tab id of the containing tab to a gabion type.
-      let gabionType = gabionTypes[getTabKey(cartValues[i])];
+      let gabionType = gabionTypes[getTabKey(cartValueNodes[i])];
 
       // Do not show the cart value if it is 0.
       if (cartValue > 0) {
@@ -112,22 +153,22 @@ document.addEventListener('DOMContentLoaded', function() {
     var storedValue = getLocalData('cart-value' + tabKey);
 
     if (storedValue) {
-      cartValue.value = storedValue;
+      cartValueNode.value = storedValue;
     }
 
     // Remove all non-integer characters from the input.
-    cartValue.addEventListener('input', function() {
-      cartValue.value = cartValue.value.replace(/\D*/g, '');
+    cartValueNode.addEventListener('input', function() {
+      cartValueNode.value = cartValueNode.value.replace(/\D*/g, '');
     });
 
     // Positive increments.
     curTab.getElementsByClassName('cart-add')[0].addEventListener('click', function() {
-      updateCart(cartValue, 1);
+      updateCart(cartValueNode, 1);
     });
 
     // Negative increemnts.
     curTab.getElementsByClassName('cart-remove')[0].addEventListener('click', function() {
-      updateCart(cartValue, -1);
+      updateCart(cartValueNode, -1);
     });
   }
 
@@ -143,39 +184,17 @@ document.addEventListener('DOMContentLoaded', function() {
     cartResults.select();
   });
 
+  // Clear button functionality.
+  document.getElementById('clear-cart-contents').addEventListener('click', function() {
+    for (let i = 0; i < cartValueNodes.length; i++) {
+      // Remove the current value from itself as the API does not currently allow better.
+      updateCartValueNode(cartValueNodes[i], -parseInt(cartValueNodes[i].value, 10));
+    }
+
+    // Display the changes.
+    updateCart();
+  });
+
   // Initial update to cart display to fetch locally stored data.
   updateCart();
-
-  /**
-   * -----------------
-   * Tab functionality
-   * -----------------
-   */
-
-  // Fetch elements from the DOM.
-  const tabs = document.getElementsByClassName('tab');
-  const tabContainers = document.getElementsByClassName('tab-container');
-
-  // Show the first tab by default.
-  tabContainers[0].style.display = 'block';
-
-  // Loop through all tabs.
-  for (let i = 0; i < tabs.length; i++) {
-   tabs[i].addEventListener('click', function(e) {
-     // Find out the tab code of the clicked tab.
-     let activeTab = e.target.getAttribute('data-tab');
-
-     // Loop through all tabs.
-     for (let j = 0; j < tabContainers.length; j++) {
-       let currentTabContainer = tabContainers[j];
-
-       // If this tab has the same code as the new current tab show it, if not, hide it.
-       if (currentTabContainer.getAttribute('data-tab') === activeTab) {
-         currentTabContainer.style.display = 'block';
-       } else {
-         currentTabContainer.style.display = 'none';
-       }
-     }
-   });
-  }
 });
