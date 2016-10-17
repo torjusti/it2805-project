@@ -22,20 +22,21 @@ document.addEventListener('DOMContentLoaded', function() {
 	}
 
 	function tick() {
+		let nextImg = (curImg + 1) % imageCount;
+
 		let images = container.getElementsByTagName('img');
 
 		for (let i = 0; i < images.length; i++) {
-				images[i].style.display = 'none';
+				images[i].classList.add('slideAnimIn');
 		}
 
-		images[curImg].style.display = 'block';
+		images[curImg].classList.add('slideAnimOut');
 
-		console.log(curImg);
 		// Begin loading the next image.
-		curImg = (curImg + 1) % imageCount;
+		curImg = nextImg;
 		loadImage(curImg);
 
-		setTimeout(tick, 1000);
+		setTimeout(tick, 2000);
 	}
 
 	tick();

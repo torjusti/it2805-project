@@ -531,3 +531,17 @@ footer>ul>li:last-child::before{background-image: url(../img/icons/phone.svg)}
   }
  .home-#footer-desktop>li::before{filter:invert(0)}
 }
+
+/** todo css is messed up*/
+.slideshow {
+  position: absolute;
+  z-index: 0;
+}
+
+.slideAnimIn {
+  animation: fadeIn 1s;
+}
+
+.slideAnimOut {
+  animation: fadeOut 1s;
+}
