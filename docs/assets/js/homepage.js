@@ -1,18 +1,47 @@
-const PathImg="assets/img/gabion/";
-var indexImg=1;
-var numImg=5;
-var image = document.getElementById("slideshow");
-function slideshow(){
+document.addEventListener('DOMContentLoaded', function() {
+	// Slideshow container element.
+	const container = document.getElementById('picture');
 
-	if (indexImg<numImg){
-		indexImg++;
-		image.src=PathImg+indexImg+".jpg";
+	// Number of images in folder.
+	const imageCount = 5;
+
+	// The current image index.
+	let curImg = 0;
+
+	// Store information about images which have already been loaded.
+	let loadedImages = [true];
+
+	function loadImage(index) {
+		if (!loadedImages[index]) {
+			let img = new Image();
+			img.src = `assets/img/gabion/${index}.jpg`;
+			img.className = 'slideshow';
+			container.appendChild(img);
+			loadedImages[index] = true;
+		}
 	}
-	else if (indexImg>=numImg){
-		indexImg=1;
-		image.src=PathImg+indexImg+".jpg";
+
+	function tick() {
+		let images = container.getElementsByTagName('img');
+
+		for (let i = 0; i < images.length; i++) {
+				images[i].style.display = 'none';
+		}
+
+		images[curImg].style.display = 'block';
+
+		console.log(curImg);
+		// Begin loading the next image.
+		curImg = (curImg + 1) % imageCount;
+		loadImage(curImg);
+
+		setTimeout(tick, 1000);
 	}
-}
+
+	tick();
+});
+
+
 
 /* Comment to Torjus.
 The animations can be called by the name of slideshowIn and slideshowOut:

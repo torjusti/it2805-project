@@ -4,7 +4,7 @@ html(lang='no')
 head
   title Velkommen til gabionbutikken.no
   include modules/head.html
-body(onload='setInterval(slideshow,2500)')
+body
 
   header.home-header
     include modules/header.html
@@ -13,7 +13,7 @@ body(onload='setInterval(slideshow,2500)')
     h2 Velkommen til gabionbutikken.no!
     #picture
       .shade
-      img#slideshow(src='assets/img/gabion/1.jpg')
+      img.slideshow(src='assets/img/gabion/0.jpg')
     #right-bg
     article
       h3 Om gabioner
@@ -25,4 +25,4 @@ body(onload='setInterval(slideshow,2500)')
     include modules/footer.html
 
   script(type="text/javascript" src="assets/js/global.js" async)
-  script(type="text/javascript" src="assets/js/homepage.js" async)
+  script(type="text/javascript" src="assets/js/homepage.js")
