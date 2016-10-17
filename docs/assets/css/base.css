@@ -71,12 +71,10 @@ section{
 }
 @keyframes fadeIn {
   0%{opacity: 0}
-  50%{z-index: 1}
   100%{opacity: 1}
 }
 @keyframes fadeOut {
   0%{opacity: 1}
-  50%{z-index: -1}
   100%{opacity: 0}
 }
 
@@ -535,13 +533,22 @@ footer>ul>li:last-child::before{background-image: url(../img/icons/phone.svg)}
 /** todo css is messed up*/
 .slideshow {
   position: absolute;
-  z-index: 0;
+
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    visibility: visile;
+  }
+
+  100% {
+    opacity: 1;
+    visibility: hidden;
+  }
 }
 
 .slideAnimIn {
   animation: fadeIn 1s;
-}
-
-.slideAnimOut {
-  animation: fadeOut 1s;
+  visibility: hidden;
 }

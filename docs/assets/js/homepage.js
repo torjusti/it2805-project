@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
 		if (!loadedImages[index]) {
 			let img = new Image();
 			img.src = `assets/img/gabion/${index}.jpg`;
+			img.style.visibility = 'hidden';
 			img.className = 'slideshow';
 			container.appendChild(img);
 			loadedImages[index] = true;
@@ -27,10 +28,13 @@ document.addEventListener('DOMContentLoaded', function() {
 		let images = container.getElementsByTagName('img');
 
 		for (let i = 0; i < images.length; i++) {
-				images[i].classList.add('slideAnimIn');
+			images[i].style.visibility = 'hidden';
+			images[i].classList.remove('slideAnimIn');
 		}
 
-		images[curImg].classList.add('slideAnimOut');
+		images[curImg].style.visibility = 'visible';
+		images[curImg].style.zIndex = '-9000'
+		images[curImg].classList.add('slideAnimIn');
 
 		// Begin loading the next image.
 		curImg = nextImg;
