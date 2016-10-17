@@ -17,15 +17,24 @@ document.addEventListener('DOMContentLoaded', function() {
   for (let i = 0; i < tabs.length; i++) {
    tabs[i].addEventListener('click', function(e) {
      // Find out the tab code of the clicked tab.
-     let activeTab = e.target.getAttribute('data-tab');
+     let tabKey = e.target.getAttribute('data-tab');
+
+     let activeTabs = document.getElementsByClassName('active-tab');
+
+     for (let j = 0; j < activeTabs.length; j++) {
+       activeTabs[j].classList.remove('active-tab');
+     }
+
+     e.target.classList.add('active-tab');
 
      // Loop through all tabs.
      for (let j = 0; j < tabContainers.length; j++) {
        let currentTabContainer = tabContainers[j];
 
        // If this tab has the same code as the new current tab show it, if not, hide it.
-       if (currentTabContainer.getAttribute('data-tab') === activeTab) {
+       if (currentTabContainer.getAttribute('data-tab') === tabKey) {
          currentTabContainer.style.display = 'block';
+         currentTabContainer.classList.add('active-tab');
        } else {
          currentTabContainer.style.display = 'none';
        }
