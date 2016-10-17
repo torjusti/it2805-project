@@ -1,4 +1,24 @@
 //output:../spesifikasjoner.html
+
+
+mixin article(index)
+    span.tab(data-tab=index)
+      if block
+        block
+      else
+         No content provided
+mixin articleContent(index)
+  .tab-container(data-tab=index)
+    .cart-btn-container
+      button.cart-add +
+      input.cart-val(value="0")
+      button.cart-remove -
+      if block
+        block
+      else
+        p No content provided
+
+
 doctype html
 html(lang='no')
 head
@@ -14,28 +34,15 @@ body
 
   #tabs-container
     #tabs
-      span.tab(data-tab="0") Gabion 1
-      span.tab(data-tab="1") Gabion 2
-      span.tab(data-tab="2") Gabion 3
+      - var n = 0;
+      while n < 8
+        +article(n++)= 'Gabion '+n
+
     #tab-containers
-      .tab-container(data-tab="0")
-        .cart-btn-container
-          button.cart-add +
-          input.cart-val(value="0")
-          button.cart-remove -
-        p Gabioner er helt genialt.
-      .tab-container(data-tab="1")
-        .cart-btn-container
-          button.cart-add +
-          input.cart-val(value="0")
-          button.cart-remove -
-        p Faktisk er gabioner det beste som finnes.
-      .tab-container(data-tab="2")
-        .cart-btn-container
-          button.cart-add +
-          input.cart-val(value="0")
-          button.cart-remove -
-        p Torjus elsker Michail.
+      each val, index in ['Gabioner er helt genialt.', 'Faktisk er gabioner det beste som finnes.', 'Torjus elsker Michail.','Here','is some','text ','about','gabions']
+        +articleContent(index)
+           p= val
+
   #cart-container
     textarea#cart-results(readonly)
     #cart-controls
