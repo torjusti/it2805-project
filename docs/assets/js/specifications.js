@@ -142,7 +142,7 @@ document.addEventListener('DOMContentLoaded', function() {
       // Add all lines to textarea with newlines between them.
       cartResults.value = lines.join('\n');
       // Show the cart container.
-      cartContainer.style.display = 'block';
+      cartContainer.style.display = 'flex';
     } else {
       // Hide cart container.
       cartContainer.style.display = 'none';

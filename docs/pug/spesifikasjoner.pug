@@ -13,10 +13,10 @@ mixin articleContent(index)
       button.cart-add +
       input.cart-val(value="0")
       button.cart-remove -
-      if block
-        block
-      else
-        p No content provided
+    if block
+      block
+    else
+      p No content provided
 
 
 doctype html
@@ -29,7 +29,7 @@ body
   header
     include modules/header.html
 
-  section
+  section.specifications
     h2 Spesifikasjoner
 
   #tabs-container
@@ -43,13 +43,13 @@ body
         +articleContent(index)
            p= val
 
-  #cart-container
-    textarea#cart-results(readonly)
-    #cart-controls
-      button#send-cart-mail Mail
-      button#select-cart-contents Select
-      button#clear-cart-contents Clear
-      span 66661337
+    #cart-container
+      textarea#cart-results(readonly)
+      #cart-controls
+        button#send-cart-mail Mail
+        button#select-cart-contents Select
+        button#clear-cart-contents Clear
+      p Dette er din handlekurv. Trykk på mail, hvis du vil sende ønskelisten din til oss.
 
   footer
     include modules/footer.html
