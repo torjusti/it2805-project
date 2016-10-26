@@ -10,8 +10,10 @@ document.addEventListener('DOMContentLoaded', function() {
   const tabs = document.getElementsByClassName('tab');
   const tabContainers = document.getElementsByClassName('tab-container');
 
-  // Show the first tab by default.
+  // Show the first tab by default. Ensure it has the clicked-tab-styling.
   tabContainers[0].style.display = 'block';
+  tabContainers[0].classList.add('active-tab');
+  tabs[0].classList.add('active-tab');
 
   // Loop through all tabs.
   for (let i = 0; i < tabs.length; i++) {
