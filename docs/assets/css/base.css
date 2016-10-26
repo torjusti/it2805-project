@@ -273,6 +273,7 @@ article button:focus{
 
 #tabs {
   overflow-y: scroll;
+  direction:rtl
 }
 
 .tab {
