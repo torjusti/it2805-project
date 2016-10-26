@@ -27,86 +27,86 @@
   </header>
   <section class="specifications">
     <h2>Spesifikasjoner</h2>
+    <div id="tabs-container">
+      <div id="tabs"><span data-tab='0' class="tab">Gabion 1</span><span data-tab='1' class="tab">Gabion 2</span><span data-tab='2' class="tab">Gabion 3</span><span data-tab='3' class="tab">Gabion 4</span><span data-tab='4' class="tab">Gabion 5</span><span data-tab='5' class="tab">Gabion 6</span><span data-tab='6' class="tab">Gabion 7</span><span data-tab='7' class="tab">Gabion 8</span>
+      </div>
+      <div id="tab-containers">
+        <div data-tab='0' class="tab-container">
+          <div class="cart-btn-container">
+            <button class="cart-add">+</button>
+            <input value="0" class="cart-val"/>
+            <button class="cart-remove">-</button>
+          </div>
+          <p>Gabioner er helt genialt.</p>
+        </div>
+        <div data-tab='1' class="tab-container">
+          <div class="cart-btn-container">
+            <button class="cart-add">+</button>
+            <input value="0" class="cart-val"/>
+            <button class="cart-remove">-</button>
+          </div>
+          <p>Faktisk er gabioner det beste som finnes.</p>
+        </div>
+        <div data-tab='2' class="tab-container">
+          <div class="cart-btn-container">
+            <button class="cart-add">+</button>
+            <input value="0" class="cart-val"/>
+            <button class="cart-remove">-</button>
+          </div>
+          <p>Torjus elsker Michail.</p>
+        </div>
+        <div data-tab='3' class="tab-container">
+          <div class="cart-btn-container">
+            <button class="cart-add">+</button>
+            <input value="0" class="cart-val"/>
+            <button class="cart-remove">-</button>
+          </div>
+          <p>Here</p>
+        </div>
+        <div data-tab='4' class="tab-container">
+          <div class="cart-btn-container">
+            <button class="cart-add">+</button>
+            <input value="0" class="cart-val"/>
+            <button class="cart-remove">-</button>
+          </div>
+          <p>is some</p>
+        </div>
+        <div data-tab='5' class="tab-container">
+          <div class="cart-btn-container">
+            <button class="cart-add">+</button>
+            <input value="0" class="cart-val"/>
+            <button class="cart-remove">-</button>
+          </div>
+          <p>text </p>
+        </div>
+        <div data-tab='6' class="tab-container">
+          <div class="cart-btn-container">
+            <button class="cart-add">+</button>
+            <input value="0" class="cart-val"/>
+            <button class="cart-remove">-</button>
+          </div>
+          <p>about</p>
+        </div>
+        <div data-tab='7' class="tab-container">
+          <div class="cart-btn-container">
+            <button class="cart-add">+</button>
+            <input value="0" class="cart-val"/>
+            <button class="cart-remove">-</button>
+          </div>
+          <p>gabions</p>
+        </div>
+      </div>
+      <div id="cart-container">
+        <textarea id="cart-results" readonly></textarea>
+        <div id="cart-controls">
+          <button id="send-cart-mail">Mail</button>
+          <button id="select-cart-contents">Select</button>
+          <button id="clear-cart-contents">Clear</button>
+        </div>
+        <p>Dette er din handlekurv. Trykk på mail, hvis du vil sende ønskelisten din til oss.</p>
+      </div>
+    </div>
   </section>
-  <div id="tabs-container">
-    <div id="tabs"><span data-tab='0' class="tab">Gabion 1</span><span data-tab='1' class="tab">Gabion 2</span><span data-tab='2' class="tab">Gabion 3</span><span data-tab='3' class="tab">Gabion 4</span><span data-tab='4' class="tab">Gabion 5</span><span data-tab='5' class="tab">Gabion 6</span><span data-tab='6' class="tab">Gabion 7</span><span data-tab='7' class="tab">Gabion 8</span>
-    </div>
-    <div id="tab-containers">
-      <div data-tab='0' class="tab-container">
-        <div class="cart-btn-container">
-          <button class="cart-add">+</button>
-          <input value="0" class="cart-val"/>
-          <button class="cart-remove">-</button>
-        </div>
-        <p>Gabioner er helt genialt.</p>
-      </div>
-      <div data-tab='1' class="tab-container">
-        <div class="cart-btn-container">
-          <button class="cart-add">+</button>
-          <input value="0" class="cart-val"/>
-          <button class="cart-remove">-</button>
-        </div>
-        <p>Faktisk er gabioner det beste som finnes.</p>
-      </div>
-      <div data-tab='2' class="tab-container">
-        <div class="cart-btn-container">
-          <button class="cart-add">+</button>
-          <input value="0" class="cart-val"/>
-          <button class="cart-remove">-</button>
-        </div>
-        <p>Torjus elsker Michail.</p>
-      </div>
-      <div data-tab='3' class="tab-container">
-        <div class="cart-btn-container">
-          <button class="cart-add">+</button>
-          <input value="0" class="cart-val"/>
-          <button class="cart-remove">-</button>
-        </div>
-        <p>Here</p>
-      </div>
-      <div data-tab='4' class="tab-container">
-        <div class="cart-btn-container">
-          <button class="cart-add">+</button>
-          <input value="0" class="cart-val"/>
-          <button class="cart-remove">-</button>
-        </div>
-        <p>is some</p>
-      </div>
-      <div data-tab='5' class="tab-container">
-        <div class="cart-btn-container">
-          <button class="cart-add">+</button>
-          <input value="0" class="cart-val"/>
-          <button class="cart-remove">-</button>
-        </div>
-        <p>text </p>
-      </div>
-      <div data-tab='6' class="tab-container">
-        <div class="cart-btn-container">
-          <button class="cart-add">+</button>
-          <input value="0" class="cart-val"/>
-          <button class="cart-remove">-</button>
-        </div>
-        <p>about</p>
-      </div>
-      <div data-tab='7' class="tab-container">
-        <div class="cart-btn-container">
-          <button class="cart-add">+</button>
-          <input value="0" class="cart-val"/>
-          <button class="cart-remove">-</button>
-        </div>
-        <p>gabions</p>
-      </div>
-    </div>
-    <div id="cart-container">
-      <textarea id="cart-results" readonly></textarea>
-      <div id="cart-controls">
-        <button id="send-cart-mail">Mail</button>
-        <button id="select-cart-contents">Select</button>
-        <button id="clear-cart-contents">Clear</button>
-      </div>
-      <p>Dette er din handlekurv. Trykk på mail, hvis du vil sende ønskelisten din til oss.</p>
-    </div>
-  </div>
   <footer>
 
     <ul id=footer-desktop>
