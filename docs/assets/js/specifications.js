@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
        // If this tab has the same code as the new current tab show it, if not, hide it.
        if (currentTabContainer.getAttribute('data-tab') === tabKey) {
-         currentTabContainer.style.display = 'block';
+         currentTabContainer.style.display = 'flex';
          currentTabContainer.classList.add('active-tab');
        } else {
          currentTabContainer.style.display = 'none';
