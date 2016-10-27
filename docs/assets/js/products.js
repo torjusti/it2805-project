@@ -241,9 +241,13 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   // Select contents button.
-  document.getElementById('select-cart-contents').addEventListener('click', function() {
+  document.getElementById('copy-cart-contents').addEventListener('click', function() {
     // Select textarea contents for easier copying.
     cartResults.select();
+
+    // Will sometimes fail. For example, this does not work in Safari 9, but it fails silently.
+    // We might want to check the result of this and inform the user. Text-copied-toast?
+    document.execCommand('copy');
   });
 
   // Clear button functionality.
