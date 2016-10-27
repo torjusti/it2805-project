@@ -1,4 +1,4 @@
-//output:../spesifikasjoner.html
+//output:../produkter.html
 
 
 mixin article(index)
@@ -20,14 +20,14 @@ mixin articleContent(index)
 doctype html
 html(lang='no')
 head
-  title Spesifikasjoner - Gabionbutikken
+  title Produkter - Gabionbutikken
   include modules/head.html
 body
 
   header
     include modules/header.html
 
-  section.specifications
+  section.products
 
     #tabs-container
       #tabs
@@ -52,4 +52,4 @@ body
     include modules/footer.html
 
   script(type="text/javascript" src="assets/js/global.js" async)
-  script(type="text/javascript" src="assets/js/specifications.js")
+  script(type="text/javascript" src="assets/js/products.js")
