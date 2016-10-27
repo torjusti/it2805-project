@@ -1,7 +1,5 @@
-/* Wait until the DOM has finished loading.*/
+// Wait until the DOM has finished loading.
 document.addEventListener('DOMContentLoaded', function() {
-
-
   /**
    * -----------------
    * Tab functionality
@@ -69,6 +67,10 @@ document.addEventListener('DOMContentLoaded', function() {
         xhr.open("GET", path, true);
         xhr.send();
     }
+
+    // Define gabionTypes here so that we can access them in this scope.
+    let gabionTypes;
+
     loadJSON('assets/data.json',
          function(data) {
            gabionTypes = [];
@@ -92,24 +94,19 @@ document.addEventListener('DOMContentLoaded', function() {
 
              // Map tab keys to the name of a gabion type.
              gabionTypes.push(data.article_item[i].name);
+
+            console.log('updating this shit')
+             // Initial update to cart display to fetch locally stored data.
+             updateCart();
            }
           },
          function(xhr) { console.error(xhr); }
 );
 
-
-
-
-
-
-
   /* ---------------------------
    * Shopping cart functionality
    * ---------------------------
    */
-
-
-
 
   // Fetch elements from the DOM.
   const cartValueNodes = document.getElementsByClassName('cart-val');
@@ -260,7 +257,4 @@ document.addEventListener('DOMContentLoaded', function() {
     // Display the changes.
     updateCart();
   });
-
-  // Initial update to cart display to fetch locally stored data.
-  updateCart();
 });
