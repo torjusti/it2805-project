@@ -1,4 +1,4 @@
-// Wait until the DOM has finished loading.
+/* Wait until the DOM has finished loading.*/
 document.addEventListener('DOMContentLoaded', function() {
   /**
    * -----------------
@@ -95,7 +95,6 @@ document.addEventListener('DOMContentLoaded', function() {
              // Map tab keys to the name of a gabion type.
              gabionTypes.push(data.article_item[i].name);
 
-            console.log('updating this shit')
              // Initial update to cart display to fetch locally stored data.
              updateCart();
            }

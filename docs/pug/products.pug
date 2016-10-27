@@ -10,9 +10,9 @@ mixin article(index)
 mixin articleContent(index)
   .item-container(data-tab=index)
     .cart-btn-container
-      button.cart-add +
+      button.cart-add Legg til i handlekurv
       input.cart-val(value="0", type="text")
-      button.cart-remove -
+      button.cart-remove Fjern fra handlekurv
     if block
       block
 

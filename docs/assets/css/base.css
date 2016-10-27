@@ -11,7 +11,7 @@
 *:focus{
   outline: none
 }
-::selection{background: #00A651}
+::selection{background: #00A651;color: white}
 
 /*----/RESET----*/
 
@@ -31,7 +31,6 @@ h1{
   color: white;
   font-size: 2em;
   padding: 10px 100px;
-  margin: 1em 0;
 }
 h2{
   color: darkgrey;
@@ -41,6 +40,14 @@ h2{
   width: 100%;
   text-align: center;
   padding-left: 2%
+}
+h3{
+  color: darkgrey;
+  padding: 10px
+}
+h4{
+  color: #333;
+  padding-top: 10px
 }
 
 /*----/TYPOGRAPHY----*/
@@ -124,6 +131,13 @@ button:hover{
   70%{transform: translateX(60vw)}
   100%{transform: translateX(0)}
 }
+
+@keyframes slideUp {
+  0%{transform: translateY(100vh)}
+  50%{transform: translateY(80vh)}
+  70%{transform: translateY(60vh)}
+  100%{transform: translateY(0)}
+}
 /*----/ANIMATIONS----*/
 
 
@@ -140,7 +154,7 @@ header nav ul li{
   cursor:pointer;
   transition: .2s ease-in-out
 }
-header nav ul li:hover{
+header nav ul li:hover,.active-menu{
   background-color: white;
   margin-bottom: -3px;
   box-shadow: 0 5px 3px rgba(0,0,0,.1)
@@ -151,10 +165,12 @@ header nav ul li a{
   display: block;
   padding: 20px 30px
 }
-header nav ul li:hover a{
+header nav ul li:hover a, .active-menu a{
   color: #00A651;
   font-weight: bolder
 }
+
+
 /*----/HEADER NAVIGATION----*/
 
 /*----HAMBURGER MENU----*/
@@ -228,7 +244,7 @@ header nav ul li:hover a{
 .home article button{
   align-self: center;
   padding: 10px 40px;
-  margin-top: 30px;
+  margin-top: 30px
 }
 
 /*----/HOME SUBPAGE----*/
@@ -243,17 +259,19 @@ header nav ul li:hover a{
   font-size: .9em;
   padding: 10px;
   color: #00A651;
-  font-style: italic;
+  font-style: italic
 }
 #products-container {
-  max-width: 100vw;
-  min-width: 75vw;
+  min-width: 80vw;
+  max-width: 80vw;
   height: 65vh;
   display: flex;
   box-shadow: 0 0 20px 5px rgba(0,0,0,.1)
 }
 #tabs {
   overflow-y: scroll;
+  min-width: 25vw;
+  max-width: 25vw;
   direction:rtl
 }
 .tab {
@@ -274,24 +292,20 @@ header nav ul li:hover a{
   font-weight: bolder
 }
 #item-containers {
+  overflow: hidden;
   position: relative;
   background: #00A651;
   flex-grow: 1;
   display: flex;
   flex-direction: column;
-  align-items: center;
   color: white
 }
-
 .item-container {
   display: none;
   flex-grow: 1;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column
 }
-
-.size,.weight,.price{font-weight: bolder}
+.size,.weight,.price{font-weight: bolder;padding: 10px}
 .size::before,.weight::before,.price::before,.size::after,.weight::after,.price::after{font-weight: normal}
 .size::before{content: 'Størrelse: '}
 .weight::before{content:'Vekt: '}
@@ -299,99 +313,105 @@ header nav ul li:hover a{
 .size::after{content:' cm'}
 .weight::after{content:' kg'}
 .price::after{content:' NOK'}
-
 #cart-container {
   display: none;
   background: #333;
-  min-width: 100%;
-  min-height: 20%;
+  min-height: 30%;
   flex-direction: column;
+  animation: slideUp .8s forwards, fadeIn 1.2s forwards
 }
 #cart-container textarea{
-  max-width: 100%;
+  flex-grow: 1;
   padding: 20px
+}
+#cart-container p{
+  max-width: 45%;
+  text-align: justify;
+  color: white
 }
 #cart-controls{
   padding: 15px;
   display: flex;
-  max-width: 100%;
   justify-content: space-between;
-  align-items: center;
+  align-items: center
 }
 #cart-controls button{
+  font-size: .9em;
   background: #00A651;
   color:white;
-  padding: 5px 20px;
+  padding: 5px 28px 5px 12px;
   margin: 0 5px
 }
-#cart-container p{
-  max-width: 50%;
-  color: white;
+#cart-controls button:hover{border-radius: 0}
+#cart-controls button::after{
+  content: '';
+  width: 16px;
+  position: absolute;
+  margin: 2px 0 0 4px;
+  height: 16px;
+  background-size: cover;
+  background-image: url(../img/icons/send.svg)
 }
+#cart-controls button:nth-child(2)::after{background-image: url(../img/icons/copy.svg)}
+#cart-controls button:last-child::after{background-image: url(../img/icons/remove.svg)}
+
 .cart-btn-container{
   position: absolute;
   top:0;
   right: 0;
   display: flex;
-  flex-direction: column;
-  margin: 20px;
+  flex-direction: column
 }
 .cart-btn-container input{
   text-align: center;
   border: none;
   font-weight: bolder;
-  font-size: 1.2em;
+  font-size: .8em
 }
 .cart-btn-container input[type="text"]{
-  color: #00A651;
-  min-width: 100%;
-  margin: 5px 0;
+  padding: 5px;
+  min-width: calc(100% + 12.5px);
+  margin: 0 0 0 -23px;
   width: 50px
 }
-
 .cart-btn-container button{
-  background: white;
-  color: #00A651;
+  background: #333;
+  color: white;
+  font-size: .8em;
+  padding: 2px 5px 4px 5px;
+  border: 0;
   border-radius: 0;
-  margin: 5px 0;
+  margin: 0
 }
 .cart-btn-container button::before{
   content: '';
-  background-size: cover;
+  background-size: 16px;
+  background-position: center;
+  background-repeat: no-repeat;
   position: absolute;
-  left: -28px;
+  left: -23px;
+  margin-top: -2px;
   width: 24px;
-  height: 24px
+  height: 24px;
+  background-color: #333
 }
-.cart-btn-container button:first-child::before{
-  background-image: url('../img/icons/add.svg');
-}
-.cart-btn-container button:nth-child(3)::before{
-  background-image: url('../img/icons/remove.svg');
-}
+.cart-btn-container button:first-child::before{background-image: url('../img/icons/add.svg')}
+.cart-btn-container button:nth-child(3)::before{background-image: url('../img/icons/remove.svg')}
 
 /*----/SPECIFICATIONS SUBPAGE----*/
 
 
 /*----ABOUT SUBPAGE----*/
-.about{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  max-width: 50%
-}
+.about{max-width: 50%}
 .info{
   border-left: 1px solid #00A651;
   border-right: 1px solid #00A651;
   padding: 10px 40px
 }
-.info p a{
-  padding-left: .3em
-}
+.info p a{padding-left: .3em}
 .sjef{
   display: flex;
   justify-content: space-around;
-  margin-top: 20px
 }
 .sjef div{
   display: flex;
@@ -403,16 +423,8 @@ header nav ul li:hover a{
   width:100px;
   height: 100px
 }
-.sjef div a:hover{text-decoration: underline}
-.sjef div h4{
-  font-size: 1.4em;
-  padding: 10px 0
-}
-.sjef div h5{
-  color: #444;
-  font-size: 1.2em
-}
-.sjef div a{text-decoration: underline}
+.sjef div a{font-size: .9em}
+
 /*----/ABOUT SUBPAGE----*/
 
 /*------------------------------------------------------------------------
@@ -423,10 +435,11 @@ footer{
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 160px;
-  min-width: 100%;
+  min-height: 60px;
+  padding: 20px 0;
+  min-width: 100%
 }
-#footer-desktop{display: none;
+#footer-desktop{
   display: flex;
   min-width: 100%;
   justify-content: space-around
@@ -456,7 +469,7 @@ footer>ul>li:last-child::before{background-image: url(../img/icons/phone.svg)}
   position: absolute;
   align-self: flex-end;
   min-width: 75vw;
-  bottom: 0;
+  bottom: 0
 }
 
 #footer-mobile{
@@ -475,25 +488,75 @@ footer>ul>li:last-child::before{background-image: url(../img/icons/phone.svg)}
 -------------------------------MEDIA QUERIES------------------------------
 ------------------------------------------------------------------------*/
 @media screen and (max-width:1440px) {
-  article{
-    margin-top: 4%
+
+  h1{
+    font-size: 1.9em;
+    padding: 10px 80px
   }
-  h2{
-    margin-left: 5%
+  p{line-height: 1.6}
+  header nav ul li a{
+    padding: 15px 30px
   }
+  .home h1{margin-top:-5%}
   #right-bg{
-    min-width: 90%
+    min-width: 95%;
+    right: -30%;
   }
-  button{
-    margin-top: 0
+  .size,.weight,.price{padding: 5px 10px 0}
+  #cart-container textarea{padding: 15px}
+  #cart-container p{
+    max-width: 40%;
+    line-height: 1.2
+  }
+  #cart-controls{
+    font-size: .9em;
+    padding: 10px 0
+  }
+  #cart-controls div{margin-right: 10px}
+  .about{max-width: 60%}
+}
+@media screen and (max-width:1350px) {
+  .home p{line-height: 1.4}
+  .tab{
+    padding: 15px 1vw;
+    text-align: left;
   }
 }
-
-@media screen and (max-width:768px) {
-
-  h2{
-    margin: 0
+@media screen and (max-width:1220px) {
+  #tabs{font-size: .9em}
+  #cart-container p{max-width: 35%}
+}
+@media screen and (max-width:1140px) {
+  #cart-container p{padding: 0 0 0 10px}
+  #cart-controls {padding: 5px 0}
+}
+@media screen and (max-width:1100px) {
+  .home p{
+    line-height: 1.3;
+    font-size: .9em
   }
+  #cart-container p{
+    max-width: 100%;
+    padding: 5px
+  }
+  #cart-controls{
+    padding: 0 5px 10px 5px;
+    flex-direction: column;
+    align-items: flex-start
+  }
+}
+@media screen and (max-width:940px) {
+  h1{
+    font-size: 1.3em;
+    margin: 0;
+    padding: 0;
+    width: 100vw
+  }
+  h2{display: none}
+
+  article{max-width: 100vw}
+
+
   #menu-mobile{
     display: flex;
     position: absolute;
@@ -505,7 +568,7 @@ footer>ul>li:last-child::before{background-image: url(../img/icons/phone.svg)}
 
   header nav{
     position: fixed;
-    display: none; /*  MÅ BYTTES OM TIL display:flex MED JS NÅR #menu-mobile ER TRYKKET.  */
+    display: none;
     justify-content: center;
     align-items: center;
     height: 100vh;
@@ -561,9 +624,7 @@ footer>ul>li:last-child::before{background-image: url(../img/icons/phone.svg)}
     font-weight: bolder
   }
 
-  .home{
-    align-items: flex-start;
-  }
+
   .home button{
     border-color: white;
     color:white
@@ -578,49 +639,33 @@ footer>ul>li:last-child::before{background-image: url(../img/icons/phone.svg)}
   }
   #picture .shade{opacity: .8}
   #right-bg{display: none}
-
-  article{
-    margin-top: 0;
-    max-width: 100vw
-  }
-
-  .article-wrap{
-    flex-direction: column;
-  }
-  .article-wrap p{
-    color: white;
+  .home article .article-wrap{flex-direction: column}
+  .home article .article-wrap p{
     max-width: 100%;
-    border:none;
-    padding: 0
-  }
-  .article-wrap p:last-child{
-    display: none
-  }
-  .article-wrap p:first-child::after{
-    content:' til flomsikring.'
-  }
-  section{
-    flex-grow: 1;
-  }
-  section h1{
-    display: none
+    color: white;
   }
 
+
+  .products{
+    margin: 0;
+  }
   .products::after{
     font-size: .7em;
     max-width: 100vw
   }
   #products-container {
-  flex-direction: column;
-  min-width: 100vw;
-  margin: 0;
-  flex-grow: 1;
-  overflow: auto;
+    position: absolute;
+    top: 0;
+    align-self: flex-start;
+    flex-direction: column;
+    min-width: 100vw;
+    height: 80vh
   }
   .item-container{
     flex-grow: 1;
     flex-direction: column-reverse;
-    justify-content: flex-end;
+    align-items: center;
+    justify-content: center;
   }
   .item-container p{
     flex-grow: 1;
@@ -628,25 +673,36 @@ footer>ul>li:last-child::before{background-image: url(../img/icons/phone.svg)}
     padding-top: 3vw
   }
   #tabs{
-    max-height: 40vh
+    min-width: 100vw;
+    max-height: 20vh
   }
   .tab{
     padding: 10px 0;
   }
 
   #cart-container{
-    flex-direction: column-reverse;
+    animation: none;
   }
-
+  #cart-controls{
+    justify-content: center;
+    align-items: center;
+    min-width: 100vw
+  }
+  #cart-controls p{max-width: 90%}
+  #cart-controls div{
+    display: flex;
+    justify-content: center;
+    min-width: 100%
+  }
+  #cart-container button{margin:0;transform: scale(1.2)}
+  #cart-container button:first-child{margin-right: 25px}
+  #cart-container button:nth-child(2){display: none}
   .cart-btn-container{
     flex-direction: row;
     min-width: 100vw;
-    position: static;
-    margin: 10px 0;
   }
-  .cart-btn-container::before{
-    content: 'Handlekurv';
-    margin-left: 10px
+  .cart-btn-container input, .cart-btn-container button{
+    min-height: 48px
   }
   .cart-btn-container input[type="text"]{
     min-width: auto;
@@ -654,13 +710,8 @@ footer>ul>li:last-child::before{background-image: url(../img/icons/phone.svg)}
     margin: 0
   }
   .cart-btn-container button{
-    margin: 0 10px;
-    min-width: 48px
+    padding: 5px;
   }
-  .cart-btn-container button::before{
-    display: none
-  }
-
 
 
 
@@ -680,7 +731,8 @@ footer>ul>li:last-child::before{background-image: url(../img/icons/phone.svg)}
   .sjef div a{margin-bottom: 24px}
 
   footer{
-    min-height: 48px;
+    max-height: 48px;
+    padding: 5px;
     background: #333;
     box-shadow: 0 -5px 10px rgba(0,0,0,.2)
   }
@@ -692,7 +744,8 @@ footer>ul>li:last-child::before{background-image: url(../img/icons/phone.svg)}
     position: static;
     align-self: center;
     min-width: 100vw;
-    min-height: 60px;
+    min-height: 20px;
+    padding: 5px;
     background: #eee
   }
  .home-#footer-desktop>li::before{filter:invert(0)}
