@@ -1,5 +1,7 @@
-// Wait until the DOM has finished loading.
+/* Wait until the DOM has finished loading.*/
 document.addEventListener('DOMContentLoaded', function() {
+
+
   /**
    * -----------------
    * Tab functionality
@@ -44,18 +46,70 @@ document.addEventListener('DOMContentLoaded', function() {
    });
   }
 
+
+  /**
+   * -----------------
+   * Parsing JSON
+   * -----------------
+   */
+   function loadJSON(path, success, error){
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function()
+        {
+            if (xhr.readyState === XMLHttpRequest.DONE) {
+                if (xhr.status === 200) {
+                    if (success)
+                        success(JSON.parse(xhr.responseText));
+                } else {
+                    if (error)
+                        error(xhr);
+                }
+            }
+        };
+        xhr.open("GET", path, true);
+        xhr.send();
+    }
+    loadJSON('assets/data.json',
+         function(data) {
+           gabionTypes = [];
+           for (var i = 0; i < data.article_item.length; i++) {
+             tabs[i].innerText = data.article_item[i].name;
+             var size = document.createElement("div");
+             var weight = document.createElement("div");
+             var price = document.createElement("div");
+             size.className = "size";
+             weight.className = "weight";
+             price.className = "price";
+             var sizeText = document.createTextNode(data.article_item[i].size);
+             var weightText = document.createTextNode(data.article_item[i].weight);
+             var priceText = document.createTextNode(data.article_item[i].price);
+             size.appendChild(sizeText);
+             weight.appendChild(weightText);
+             price.appendChild(priceText);
+             tabContainers[i].appendChild(size);
+             tabContainers[i].appendChild(weight);
+             tabContainers[i].appendChild(price);
+
+             // Map tab keys to the name of a gabion type.
+             gabionTypes.push(data.article_item[i].name);
+           }
+          },
+         function(xhr) { console.error(xhr); }
+);
+
+
+
+
+
+
+
   /* ---------------------------
    * Shopping cart functionality
    * ---------------------------
    */
 
-  // Map tab keys to the name of a gabion type.
-  // Object and not an array purely because of code clarity.
-  const gabionTypes = {
-    0: 'L Gabion',
-    1: 'XL Gabion',
-    2: 'XXL Gabion Super'
-  };
+
+
 
   // Fetch elements from the DOM.
   const cartValueNodes = document.getElementsByClassName('cart-val');
@@ -136,7 +190,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
       // Do not show the cart value if it is 0.
       if (cartValue > 0) {
-        lines.push(`${gabionType}: ${cartValue} gabioner`);
+        lines.push(`${gabionType}: ${cartValue} stk`);
       }
     }
 

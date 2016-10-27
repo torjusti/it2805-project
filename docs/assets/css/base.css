@@ -216,8 +216,9 @@ article{
   flex-direction: column;
 }
 article h3{
-  padding-left: 5%;
-  margin-bottom:0
+  padding-left: 2%;
+  margin-bottom:0;
+  width: 100%
 }
 .article-wrap{
   width: 100%;
@@ -265,10 +266,11 @@ article button:focus{
 #tabs-container {
   overflow: hidden;
   max-width: 100vw;
-  min-width: 60vw;
+  min-width: 70vw;
   height: 60vh;
   background: grey;
   display: flex;
+  box-shadow: 0 0 20px 5px rgba(0,0,0,.1)
 }
 
 #tabs {
@@ -279,23 +281,27 @@ article button:focus{
 .tab {
   display: flex;
   align-items: center;
+  justify-content: center;
   padding: 25px 100px;
   background: grey;
   flex-grow: 1;
   border-top: 1px solid lightgrey;
   cursor: pointer;
   color:white;
-  transition: .1s ease-in-out
+  transition: .2s ease-in-out;
+}
+.tab:first-child{
+  border: none
 }
 .tab:focus{
   background: white
 }
 .tab:hover{
-  background: #00A651
+  background: #333
 }
 .tab.active-tab{
-  background-color: #333;
-  color: white
+  background-color: #00A651;
+  color: white;
 }
 #tab-containers {
   position: relative;
@@ -312,9 +318,14 @@ article button:focus{
   display: none;
   flex-grow: 1;
   justify-content: center;
+  flex-direction: column;
   align-items: center;
   min-width: 100%
 }
+
+.size::after{content:' cm'}
+.weight::after{content:' kg'}
+.price::after{content:' NOK'}
 
 #cart-container {
   display: none;
@@ -337,6 +348,7 @@ article button:focus{
   border-radius: 0
 }
 #cart-container p{
+  text-align: center;
   color: white;
   padding: 10px;
   flex-grow: 1
@@ -366,11 +378,7 @@ article button:focus{
   background: white;
   color: #00A651;
   border-radius: 0;
-  margin: 5px;
-  border-bottom: 4px solid #333
-}
-.cart-btn-container button:active{
-  border-bottom: 1px solid #333
+  margin: 5px 0;
 }
 .cart-btn-container button::before{
   content: '';
@@ -383,7 +391,7 @@ article button:focus{
 .cart-btn-container button:first-child::before{
   background-image: url('../img/icons/add.svg');
 }
-.cart-btn-container button:nth-child(2)::before{
+.cart-btn-container button:nth-child(3)::before{
   background-image: url('../img/icons/remove.svg');
 }
 
@@ -401,6 +409,9 @@ article button:focus{
   border-left: 1px solid #00A651;
   border-right: 1px solid #00A651;
   padding: 10px 40px
+}
+.info p a{
+  padding-left: .3em
 }
 .sjef{
   display: flex;
@@ -490,10 +501,7 @@ footer>ul>li:last-child::before{background-image: url(../img/icons/phone.svg)}
 ------------------------------------------------------------------------*/
 
 @media screen and (max-width:768px) {
-  h2{
-    padding: 10px;
-    text-align: center
-  }
+
   h3{
     margin: 0
   }
@@ -563,16 +571,17 @@ footer>ul>li:last-child::before{background-image: url(../img/icons/phone.svg)}
     color: white;
     font-weight: bolder
   }
+
   .home{
     align-items: flex-start;
   }
-  .home h2{
-    background: none;
-    color: white;
-    font-size: 1.5em;
-    margin: 0;
-    text-align: left;
-    padding-left: 20px
+  .home button{
+    border-color: white;
+    color:white
+  }
+  .home button:hover{
+    background: white;
+    color: #00A651
   }
   #picture img{
     min-width: 100vw;
@@ -585,12 +594,7 @@ footer>ul>li:last-child::before{background-image: url(../img/icons/phone.svg)}
     margin-top: 0;
     max-width: 100vw
   }
-  article h3{
-    width: 100%;
-    color: white;
-    font-size: 1.4em;
-    padding: 1.5%
-  }
+
   .article-wrap{
     flex-direction: column;
   }
@@ -606,6 +610,65 @@ footer>ul>li:last-child::before{background-image: url(../img/icons/phone.svg)}
   .article-wrap p:first-child::after{
     content:' til flomsikring.'
   }
+  section{
+    flex-grow: 1;
+  }
+  section h2{
+    display: none
+  }
+  #tabs-container {
+  flex-direction: column;
+  min-width: 100vw;
+  margin: 0;
+  flex-grow: 1;
+  overflow: auto;
+  }
+  .tab-container{
+    flex-grow: 1;
+    flex-direction: column-reverse;
+    justify-content: flex-end;
+  }
+  .tab-container p{
+    flex-grow: 1;
+    min-width: 90vw;
+    padding-top: 3vw
+  }
+  #tabs{
+    max-height: 40vh
+  }
+  .tab{
+    padding: 10px 0;
+  }
+
+  #cart-container{
+    flex-direction: column-reverse;
+  }
+
+  .cart-btn-container{
+    flex-direction: row;
+    min-width: 100vw;
+    position: static;
+    margin: 10px 0;
+  }
+  .cart-btn-container::before{
+    content: 'Handlekurv';
+    margin-left: 10px
+  }
+  .cart-btn-container input[type="text"]{
+    min-width: auto;
+    flex-grow: 1;
+    margin: 0
+  }
+  .cart-btn-container button{
+    margin: 0 10px;
+    min-width: 48px
+  }
+  .cart-btn-container button::before{
+    display: none
+  }
+
+
+
 
 
   .about{
@@ -624,7 +687,7 @@ footer>ul>li:last-child::before{background-image: url(../img/icons/phone.svg)}
 
   footer{
     min-height: 48px;
-    background: #00A651;
+    background: #333;
     box-shadow: 0 -5px 10px rgba(0,0,0,.2)
   }
   #footer-desktop{display: none}

@@ -11,12 +11,10 @@ mixin articleContent(index)
   .tab-container(data-tab=index)
     .cart-btn-container
       button.cart-add +
-      button.cart-remove -
       input.cart-val(value="0", type="text")
+      button.cart-remove -
     if block
       block
-    else
-      p No content provided
 
 
 doctype html
@@ -30,18 +28,17 @@ body
     include modules/header.html
 
   section.specifications
-    h2 Spesifikasjoner
 
     #tabs-container
       #tabs
         - var n = 0;
-        while n < 10
-          +article(n++)= 'Gabion '+n
+        while n < 11
+          +article(n++)= ''
+
 
       #tab-containers
-        each val, index in ['Gabioner er helt genialt.', 'Faktisk er gabioner det beste som finnes.', 'Torjus elsker Michail.','Here','is some','text ','about','gabions']
+        each val, index in [,'','','','','','','','','','','']
           +articleContent(index)
-             p= val
 
         #cart-container
           textarea#cart-results(readonly)
