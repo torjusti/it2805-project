@@ -8,7 +8,7 @@ mixin article(index)
       else
          No content provided
 mixin articleContent(index)
-  .tab-container(data-tab=index)
+  .item-container(data-tab=index)
     .cart-btn-container
       button.cart-add +
       input.cart-val(value="0", type="text")
@@ -29,24 +29,25 @@ body
 
   section.products
 
-    #tabs-container
+    #products-container
       #tabs
         - var n = 0;
         while n < 11
           +article(n++)= ''
 
 
-      #tab-containers
+      #item-containers
         each val, index in [,'','','','','','','','','','','']
           +articleContent(index)
 
         #cart-container
           textarea#cart-results(readonly)
           #cart-controls
-            button#send-cart-mail Mail
-            button#select-cart-contents Select
-            button#clear-cart-contents Clear
-          p Dette er din handlekurv. Trykk på mail, hvis du vil sende ønskelisten din til oss.
+            p Dette er din handlekurv. Trykk send for å sende en mail til oss, så svarer vi så fort som mulig.
+            div
+              button#send-cart-mail Send
+              button#select-cart-contents Kopier tekst
+              button#clear-cart-contents Tøm handlekurv
 
   footer
     include modules/footer.html

@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Fetch elements from the DOM.
   const tabs = document.getElementsByClassName('tab');
-  const tabContainers = document.getElementsByClassName('tab-container');
+  const tabContainers = document.getElementsByClassName('item-container');
 
   // Show the first tab by default. Ensure it has the clicked-tab-styling.
   tabContainers[0].style.display = 'flex';

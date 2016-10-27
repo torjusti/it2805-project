@@ -18,43 +18,32 @@
 /*----TYPOGRAPHY----*/
 a{color: #00A651}
 p{
-  line-height: 1.5;
-  text-align: justify
+  line-height: 1.8;
+  text-align: justify;
+  padding: 0 2%
 }
 li{
   list-style-type: none;
   color: #333
 }
-h2{
+h1{
   background-color: #00A651;
   color: white;
   font-size: 2em;
   padding: 10px 100px;
   margin: 1em 0;
 }
-h3{margin-bottom: 30px}
-h3,h4,h5{
-  color: lightgrey;
-  font-size: 2em;
-  align-self: flex-start
+h2{
+  color: darkgrey;
+  font-size: 1.6em;
+  text-transform: uppercase;
+  margin: 0;
+  width: 100%;
+  text-align: center;
+  padding-left: 2%
 }
-img{vertical-align: middle}
-button{
-  color:white;
-  border: none;
-  background:#00A651;
-  font-size: 1em;
-  cursor: pointer;
-  border-radius: 5px;
-  font-weight: bolder;
-  transition: .1s ease-out
-}
-button:hover{
-  background-color: white;
-  color: #00A651
-}
-/*----/TYPOGRAPHY----*/
 
+/*----/TYPOGRAPHY----*/
 
 /*----MAIN ELEMENTS----*/
 html{
@@ -72,9 +61,39 @@ section{
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center
+  align-items: center;
+  flex-grow: 1
 }
+article{
+  max-width: 50%;
+  align-self: flex-end;
+  margin: 5% 5% 0;
+  display: flex;
+  flex-direction: column
+}
+.article-wrap{display: flex}
 /*----/MAIN ELEMENTS----*/
+
+/*----OTHER ELEMENTS----*/
+img{vertical-align: middle}
+button{
+  background:transparent;
+  text-align: center;
+  color:#00A651;
+  font-size: 1em;
+  cursor: pointer;
+  border: 1px solid #00A651;
+  border-radius: 5px;
+  font-weight: bolder;
+  transition: .2s ease-out
+}
+button:hover{
+  color: white;
+  background: #00A651
+}
+/*----/OTHER ELEMENTS----*/
+
+
 
 /*----ANIMATIONS----*/
 
@@ -101,8 +120,8 @@ section{
 
 @keyframes slideIn {
   0%{transform: translateX(100vw)}
-  60%{transform: translateX(-15vw)}
-  80%{transform: translatex(10vw)}
+  50%{transform: translateX(80vw)}
+  70%{transform: translateX(60vw)}
   100%{transform: translateX(0)}
 }
 /*----/ANIMATIONS----*/
@@ -158,9 +177,7 @@ header nav ul li:hover a{
   border-radius: 2px;
   transition: .3s ease-in-out
 }
-#menu-mobile span:hover{
-  background: white
-}
+#menu-mobile span:hover{background: white}
 .home-header #menu-mobile span{background: white}
 /*----/HAMBURGER MENU----*/
 
@@ -172,11 +189,8 @@ header nav ul li:hover a{
 .home{
   position: relative;
   overflow: hidden;
-  flex-grow: 1
 }
-.home h2{
-  margin: 2% -20% 0 0
-}
+.home h1{margin: 2% -20% 0 0}
 #picture{
   position: absolute;
   z-index: -1;
@@ -205,56 +219,16 @@ header nav ul li:hover a{
   background-color: #eee;
   transform: skewX(-45deg);
   z-index: -1;
-  right: -25%
+  right: -25%;
+  box-shadow: -5px -5px 10px 10px rgba(0,0,0,.1)
 }
-
-article{
-  max-width: 50%;
-  align-self: flex-end;
-  margin: 8% 5% 0;
-  display: flex;
-  flex-direction: column;
-}
-article h3{
-  padding-left: 2%;
-  margin-bottom:0;
-  width: 100%
-}
-.article-wrap{
-  width: 100%;
-  display: flex;
-}
-.article-wrap p{
-  line-height: 1.8;
-  padding: 2%;
-  max-width: 46%;
-}
-
-.article-wrap p:first-child{
-  border-right: 1px solid #00A651
-}
-
-
-article button{
-  background: transparent;
-  border: 1px solid #00A651;
-  color: #00A651;
-  font-size: 1.2em;
-  max-width: 200px;
-  border-radius: 4px;
-  padding: 10px 40px;
-  margin-top: 40px;
+.home article h2{text-align: left}
+.home article .article-wrap p{max-width: 46%}
+.home article .article-wrap p:first-child{border-right: 1px solid #00A651}
+.home article button{
   align-self: center;
-  cursor: pointer;
-  transition: .2s ease-in-out
-}
-article button:hover{
-  color: white;
-  background-color: #00A651
-}
-
-article button:focus{
-  outline: none
+  padding: 10px 40px;
+  margin-top: 30px;
 }
 
 /*----/HOME SUBPAGE----*/
@@ -262,9 +236,7 @@ article button:focus{
 
 
 /*----SPECIFICATIONS SUBPAGE----*/
-.products{
-  margin-top: 4em
-}
+.products{margin-top: 2em}
 .products::after{
   content: '*Selges i sett med 2 stk stolper, 2 stk galvaniserte nett, 20 stk avstands stenger for å holde gabionen sammen når den fylles, 16 skruer, muttere og 32 festeklips.**Selges i sett med 2 stk stolper, 2 stk galvaniserte nett, 24 avstands stenger for å holde gabionen sammen når den fylles, 20 skruer, muttere, og 40 festeklips.';
   max-width: calc(70vw - 20px);
@@ -273,67 +245,57 @@ article button:focus{
   color: #00A651;
   font-style: italic;
 }
-
-#tabs-container {
-  overflow: hidden;
+#products-container {
   max-width: 100vw;
   min-width: 75vw;
   height: 65vh;
-  background: grey;
   display: flex;
   box-shadow: 0 0 20px 5px rgba(0,0,0,.1)
 }
-
 #tabs {
   overflow-y: scroll;
   direction:rtl
 }
-
 .tab {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 25px 100px;
+  padding: 25px 2vw;
   background: grey;
-  flex-grow: 1;
   border-top: 1px solid lightgrey;
   cursor: pointer;
   color:white;
-  transition: .2s ease-in-out;
+  transition: .2s ease-in-out
 }
-.tab:first-child{
-  border: none
-}
-.tab:focus{
-  background: white
-}
-.tab:hover{
-  background: #333
-}
+.tab:first-child{border: none}
+.tab:hover{background: #333}
 .tab.active-tab{
   background-color: #00A651;
-  color: white;
+  font-weight: bolder
 }
-#tab-containers {
+#item-containers {
   position: relative;
   background: #00A651;
   flex-grow: 1;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   align-items: center;
   color: white
 }
 
-.tab-container {
+.item-container {
   display: none;
   flex-grow: 1;
-  justify-content: center;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
-  min-width: 100%
 }
 
+.size,.weight,.price{font-weight: bolder}
+.size::before,.weight::before,.price::before,.size::after,.weight::after,.price::after{font-weight: normal}
+.size::before{content: 'Størrelse: '}
+.weight::before{content:'Vekt: '}
+.price::before{content:'Pris: '}
 .size::after{content:' cm'}
 .weight::after{content:' kg'}
 .price::after{content:' NOK'}
@@ -346,23 +308,25 @@ article button:focus{
   flex-direction: column;
 }
 #cart-container textarea{
-  min-width: 100%;
-  padding: 20px;
+  max-width: 100%;
+  padding: 20px
 }
 #cart-controls{
+  padding: 15px;
   display: flex;
-  justify-content: space-around;
+  max-width: 100%;
+  justify-content: space-between;
+  align-items: center;
 }
 #cart-controls button{
-  flex-grow: 1;
-  margin: 0;
-  border-radius: 0
+  background: #00A651;
+  color:white;
+  padding: 5px 20px;
+  margin: 0 5px
 }
 #cart-container p{
-  text-align: center;
+  max-width: 50%;
   color: white;
-  padding: 10px;
-  flex-grow: 1
 }
 .cart-btn-container{
   position: absolute;
@@ -510,10 +474,24 @@ footer>ul>li:last-child::before{background-image: url(../img/icons/phone.svg)}
 /*------------------------------------------------------------------------
 -------------------------------MEDIA QUERIES------------------------------
 ------------------------------------------------------------------------*/
+@media screen and (max-width:1440px) {
+  article{
+    margin-top: 4%
+  }
+  h2{
+    margin-left: 5%
+  }
+  #right-bg{
+    min-width: 90%
+  }
+  button{
+    margin-top: 0
+  }
+}
 
 @media screen and (max-width:768px) {
 
-  h3{
+  h2{
     margin: 0
   }
   #menu-mobile{
@@ -624,22 +602,27 @@ footer>ul>li:last-child::before{background-image: url(../img/icons/phone.svg)}
   section{
     flex-grow: 1;
   }
-  section h2{
+  section h1{
     display: none
   }
-  #tabs-container {
+
+  .products::after{
+    font-size: .7em;
+    max-width: 100vw
+  }
+  #products-container {
   flex-direction: column;
   min-width: 100vw;
   margin: 0;
   flex-grow: 1;
   overflow: auto;
   }
-  .tab-container{
+  .item-container{
     flex-grow: 1;
     flex-direction: column-reverse;
     justify-content: flex-end;
   }
-  .tab-container p{
+  .item-container p{
     flex-grow: 1;
     min-width: 90vw;
     padding-top: 3vw
