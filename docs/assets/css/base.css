@@ -747,3 +747,24 @@ footer>ul>li:last-child::before{background-image: url(../img/icons/phone.svg)}
   }
  .home-#footer-desktop>li::before{filter:invert(0)}
 }
+
+/**
+ * Toast menu
+ */
+
+ #toast {
+   position: fixed;
+   top: 0;
+   margin: auto;
+   background: #CCC;
+   padding: 5px 10px;
+   border-radius: 0 0 3px 3px;
+ }
+
+ .toast-in {
+   display: inline-block;
+ }
+
+.toast-out {
+  display: none;
+}

@@ -1,3 +1,26 @@
+function toast(message, timeout) {
+  let toastElement = document.createElement('span');
+
+  let previousToastElement = document.getElementById('toast');
+
+  if (previousToastElement) {
+    document.body.removeChild(previousToastElement);
+  }
+
+  toastElement.innerHTML = message;
+
+  toastElement.classList.add('toast-in');
+
+  toastElement.setAttribute('id', 'toast');
+
+  document.body.insertBefore(toastElement, document.body.firstChild);
+
+  setTimeout(function() {
+    toastElement.classList.remove('toast-in');
+    toastElement.classList.add('toast-out');
+  }, timeout || 5000);
+}
+
 /* Wait until the DOM has finished loading.*/
 document.addEventListener('DOMContentLoaded', function() {
   /**
@@ -241,9 +264,16 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   // Select contents button.
-  document.getElementById('select-cart-contents').addEventListener('click', function() {
+  document.getElementById('copy-cart-contents').addEventListener('click', function() {
     // Select textarea contents for easier copying.
     cartResults.select();
+
+    // Try copying using execCommand and inform the user about the result.
+    if (document.execCommand('copy')) {
+      toast('Tekst kopiert');
+    } else {
+      toast('Kopiering mislykket')
+    }
   });
 
   // Clear button functionality.
