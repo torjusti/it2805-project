@@ -14,6 +14,8 @@ function slideshow(){
 	}
 }
 
+setInterval(slideshow,2500)
+
 /* Comment to Torjus.
 The animations can be called by the name of slideshowIn and slideshowOut:
 slideshowIn changes opacity from 0 to 1 and changes z-index to 1 at 50%
