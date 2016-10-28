@@ -133,9 +133,8 @@ button:hover{
 }
 
 @keyframes slideUp {
-  0%{transform: translateY(100vh)}
-  50%{transform: translateY(80vh)}
-  70%{transform: translateY(60vh)}
+  0%{transform: translateY(50vh)}
+  70%{transform: translateY(30vh)}
   100%{transform: translateY(0)}
 }
 /*----/ANIMATIONS----*/
@@ -432,18 +431,22 @@ header nav ul li:hover a, .active-menu a{
 ------------------------------------------------------------------------*/
 
 footer{
+  background: #444;
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 60px;
   padding: 20px 0;
-  min-width: 100%
+  min-width: 100%;
 }
 #footer-desktop{
   display: flex;
   min-width: 100%;
-  justify-content: space-around
+  justify-content: space-around;
+
 }
+footer ul{align-items: center;}
+footer ul li{color:white}
 footer>ul>li::before{
   content: '';
   margin-left: -18px;
@@ -460,16 +463,11 @@ footer>ul>li:last-child::before{background-image: url(../img/icons/phone.svg)}
 #footer-desktop li ul{
   display: flex;
   flex-direction: column;
-  justify-content: space-around
+  justify-content: space-around;
 }
-#footer-desktop li ul li{font-size: .9em}
-
-.home-footer{
-  min-height: 100px;
-  position: absolute;
-  align-self: flex-end;
-  min-width: 75vw;
-  bottom: 0
+#footer-desktop li ul li{
+  font-size: .9em;
+  color: white
 }
 
 #footer-mobile{
@@ -482,7 +480,6 @@ footer>ul>li:last-child::before{background-image: url(../img/icons/phone.svg)}
   padding: 10px
 }
 #footer-mobile li img{filter: invert(1)}
-.home-footer #footer-mobile li img{filter: invert(0)}
 #footer-mobile li:before{display: none}
 /*------------------------------------------------------------------------
 -------------------------------MEDIA QUERIES------------------------------
