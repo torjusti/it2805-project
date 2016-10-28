@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
         size.className = "size";
         weight.className = "weight";
         price.className = "price";
-        var sizeText = document.createTextNode(gabionData.article_item[i].size);
+        var sizeText = document.createTextNode(gabionData.article_item[i].size.join(' x '));
         var weightText = document.createTextNode(gabionData.article_item[i].weight);
         var priceText = document.createTextNode(gabionData.article_item[i].price);
         size.appendChild(sizeText);
@@ -145,8 +145,10 @@ document.addEventListener('DOMContentLoaded', function() {
         // Store lines of text that will be shown in the textarea.
         let lines = ['Hei. Jeg ønsker gjerne å kjøpe gabioner!'];
 
-        // Store the sum of all the gabion prices.
+        // Store some global sums.
         let totalPrice = 0;
+        let totalSize = 0;
+        let totalWeight = 0;
 
         // Loop through all the input boxes in all the tabs.
         for (let i = 0; i < cartValueNodes.length; i++) {
@@ -158,23 +160,31 @@ document.addEventListener('DOMContentLoaded', function() {
             // Map the tab id to a couple data pieces.
             let curGabionData = gabionData.article_item[getTabKey(cartValueNodes[i])];
             let type = curGabionData.name;
-            let size = curGabionData.size;
+            let size = curGabionData.size.join(' x ');
             let weight = curGabionData.weight;
             let price = curGabionData.price;
             let priceSum = price * cartValue;
+            let sizeSum = curGabionData.size.reduce((a, b) => a + b, 0) * cartValue;
+            let weightSum = weight * cartValue;
 
-            // Add price to the total sum.
-            totalPrice += price;
+            // Add sums to the total sum.
+            totalPrice += priceSum;
+            totalSize += sizeSum;
+            totalWeight += weightSum;
 
             // Add this line.
-            lines.push(`${type} (${size}, ${weight} kg): ${cartValue} stykker til ${price} kr - totalt ${priceSum} kroner.`);
+            lines.push(`${type} (${size}, ${weight} kg): ${cartValue} stykker til ${price} kr - totalt ${weightSum} kg over ${sizeSum} m^3 til ${priceSum} kroner.`);
           }
         }
 
         // Show the container if we have more than 1 line.
         if (lines.length > 1) {
           // Add the total price.
-          lines.push(`Total pris: ${totalPrice} kroner.`)
+          lines.push(`Total pris: ${totalPrice} kroner.`);
+          // Add the total weight.
+          lines.push(`Total vekt: ${totalWeight} kg.`);
+          // Add the total volume.
+          lines.push(`Totalt volum: ${totalSize} m^2`);
           // Add all lines to textarea with newlines between them.
           cartResults.value = lines.join('\n');
           // Show the cart container.
