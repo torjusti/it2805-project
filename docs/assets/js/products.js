@@ -270,9 +270,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Try copying using execCommand and inform the user about the result.
     if (document.execCommand('copy')) {
-      toast('Text copied');
+      toast('Tekst kopiert');
     } else {
-      toast('Copying failed')
+      toast('Kopiering mislykket')
     }
   });
 
