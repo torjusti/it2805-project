@@ -66,6 +66,15 @@ document.addEventListener('DOMContentLoaded', function() {
      }
    });
   }
+  const chooseProduct = document.getElementById('choose-product')
+  const productsTab = document.getElementById('tabs')
+  chooseProduct.addEventListener('click', function(e) {
+    if (productsTab.style.display == 'none' || productsTab.style.display == '' ) {
+      productsTab.style.display ='flex'}
+    else {
+      productsTab.style.display ='none'
+    }
+  })
 
 
   /**
