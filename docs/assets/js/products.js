@@ -1,4 +1,4 @@
-// Wait until the DOM has finished loading.
+/* Wait until the DOM has finished loading.*/
 document.addEventListener('DOMContentLoaded', function() {
   ajax({
     path: 'assets/data.json',
@@ -36,7 +36,8 @@ document.addEventListener('DOMContentLoaded', function() {
        * Tab functionality
        * -----------------
        */
-
+       const chooseProduct = document.getElementById('choose-product');
+       const productsTab = document.getElementById('tabs');
       // Show the first tab by default. Ensure it has the clicked-tab-styling.
       tabContainers[0].style.display = 'flex';
       tabContainers[0].classList.add('active-tab');
@@ -63,10 +64,10 @@ document.addEventListener('DOMContentLoaded', function() {
          // Loop through all tabs.
          for (let j = 0; j < tabContainers.length; j++) {
            let currentTabContainer = tabContainers[j];
-
            // If this tab has the same code as the new current tab show it, if not, hide it.
            if (currentTabContainer.getAttribute('data-tab') === tabKey) {
              currentTabContainer.style.display = 'flex';
+             productsTab.className = 'tabs-out';
              currentTabContainer.classList.add('active-tab');
            } else {
              currentTabContainer.style.display = 'none';
@@ -75,16 +76,14 @@ document.addEventListener('DOMContentLoaded', function() {
        });
       }
 
-      const chooseProduct = document.getElementById('choose-product');
-      const productsTab = document.getElementById('tabs');
+
 
       chooseProduct.addEventListener('click', function(e) {
-        if (productsTab.classList.contains('product-tab-open')) {
-          productsTab.classList.remove('product-tab-open');
-          productsTab.classList.add('product-tab-closed');
+
+        if (productsTab.style.display === 'none' || !productsTab.style.display) {
+          productsTab.className = 'tabs-in';
         } else {
-          productsTab.classList.remove('product-tab-closed');
-          productsTab.classList.add('product-tab-open');
+          productsTab.className = 'tabs-out';
         }
       });
 
@@ -271,6 +270,7 @@ document.addEventListener('DOMContentLoaded', function() {
         for (let i = 0; i < cartValueNodes.length; i++) {
           // Remove the current value from itself as the API does not currently allow better.
           updateCartValueNode(cartValueNodes[i], -parseInt(cartValueNodes[i].value, 10));
+          toast('Handlekurven er nå tom.');
         }
 
         // Display the changes.

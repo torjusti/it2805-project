@@ -28,7 +28,7 @@ function toast(message, timeout) {
   setTimeout(function() {
     toastElement.classList.remove('toast-in');
     toastElement.classList.add('toast-out');
-  }, timeout || 5000);
+  }, timeout || 2500);
 }
 
 /**
@@ -71,12 +71,11 @@ function ajax(options, path, success, error) {
     // den finnes i CSS. En enkel løsning er dermed å bare sjekke om vi har en tom streng.
     if (navigationBar.style.display === 'none' || !navigationBar.style.display) {
       navigationBar.style.display = 'flex';
+      navigationBar.style.animation = 'slideInTop .3s forwards';
     } else {
       navigationBar.style.display = 'none';
     }
 
-    // Legg til en klasse til knappen når menyen er synlig. Til hjelp i CSS:
-    menuMobile.classList.toggle('mobile-bar-visisble');
   });
 
   /**
