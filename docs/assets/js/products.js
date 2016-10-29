@@ -1,83 +1,5 @@
 // Wait until the DOM has finished loading.
 document.addEventListener('DOMContentLoaded', function() {
-<<<<<<< HEAD
-  /**
-   * -----------------
-   * Tab functionality
-   * -----------------
-   */
-
-  // Fetch elements from the DOM.
-  const tabs = document.getElementsByClassName('tab');
-  const tabContainers = document.getElementsByClassName('item-container');
-
-  // Show the first tab by default. Ensure it has the clicked-tab-styling.
-  tabContainers[0].style.display = 'flex';
-  tabContainers[0].classList.add('active-tab');
-  tabs[0].classList.add('active-tab');
-
-  // Loop through all tabs.
-  for (let i = 0; i < tabs.length; i++) {
-   tabs[i].addEventListener('click', function(e) {
-     // Find out the tab code of the clicked tab.
-     let tabKey = e.target.getAttribute('data-tab');
-
-     let activeTabs = document.getElementsByClassName('active-tab');
-
-     for (let j = 0; j < activeTabs.length; j++) {
-       activeTabs[j].classList.remove('active-tab');
-     }
-
-     e.target.classList.add('active-tab');
-
-     // Loop through all tabs.
-     for (let j = 0; j < tabContainers.length; j++) {
-       let currentTabContainer = tabContainers[j];
-
-       // If this tab has the same code as the new current tab show it, if not, hide it.
-       if (currentTabContainer.getAttribute('data-tab') === tabKey) {
-         currentTabContainer.style.display = 'flex';
-         currentTabContainer.classList.add('active-tab');
-       } else {
-         currentTabContainer.style.display = 'none';
-       }
-     }
-   });
-  }
-  const chooseProduct = document.getElementById('choose-product')
-  const productsTab = document.getElementById('tabs')
-  chooseProduct.addEventListener('click', function(e) {
-    if (productsTab.style.display == 'none' || productsTab.style.display == '' ) {
-      productsTab.style.display ='flex'}
-    else {
-      productsTab.style.display ='none'
-    }
-  })
-
-
-  /**
-   * -----------------
-   * Parsing JSON
-   * -----------------
-   */
-   function loadJSON(path, success, error){
-        var xhr = new XMLHttpRequest();
-        xhr.onreadystatechange = function()
-        {
-            if (xhr.readyState === XMLHttpRequest.DONE) {
-                if (xhr.status === 200) {
-                    if (success)
-                        success(JSON.parse(xhr.responseText));
-                } else {
-                    if (error)
-                        error(xhr);
-                }
-            }
-        };
-        xhr.open("GET", path, true);
-        xhr.send();
-    }
-=======
   ajax({
     path: 'assets/data.json',
 
@@ -108,7 +30,6 @@ document.addEventListener('DOMContentLoaded', function() {
         tabContainers[i].appendChild(weight);
         tabContainers[i].appendChild(price);
       }
->>>>>>> 6f331bf08e9be5de5a7185f484d348023e9c3e76
 
       /**
        * -----------------
@@ -124,6 +45,10 @@ document.addEventListener('DOMContentLoaded', function() {
       // Loop through all tabs.
       for (let i = 0; i < tabs.length; i++) {
        tabs[i].addEventListener('click', function(e) {
+         // Class handling for mobile phones only.
+         productsTab.classList.remove('product-tab-open');
+         productsTab.classList.add('product-tab-closed');
+
          // Find out the tab code of the clicked tab.
          let tabKey = e.target.getAttribute('data-tab');
 
@@ -149,6 +74,20 @@ document.addEventListener('DOMContentLoaded', function() {
          }
        });
       }
+
+      const chooseProduct = document.getElementById('choose-product');
+      const productsTab = document.getElementById('tabs');
+
+      chooseProduct.addEventListener('click', function(e) {
+        if (productsTab.classList.contains('product-tab-open')) {
+          productsTab.classList.remove('product-tab-open');
+          productsTab.classList.add('product-tab-closed');
+        } else {
+          productsTab.classList.remove('product-tab-closed');
+          productsTab.classList.add('product-tab-open');
+        }
+      });
+
 
       /* ---------------------------
        * Shopping cart functionality
