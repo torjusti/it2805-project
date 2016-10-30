@@ -745,8 +745,7 @@ footer>ul>li:last-child::before{background-image: url(../img/icons/phone.svg)}
   }
   .item-name{
     display: block;
-    padding: 20px 10px 10px;
-    font-size: 1.2em;
+    padding: 5px 10px 5px;
     font-weight: bolder;
   }
 
@@ -763,7 +762,8 @@ footer>ul>li:last-child::before{background-image: url(../img/icons/phone.svg)}
     position: static;
     justify-content: space-around;
     min-width: 100vw;
-    margin: 0
+    margin: 0;
+    box-shadow: 0 0 5px black
   }
   .cart-btn-container button{
     border-radius: 0 !important;
