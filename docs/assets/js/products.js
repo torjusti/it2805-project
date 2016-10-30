@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
       let gabionData = JSON.parse(responseText);
 
       // Fetch elements from the DOM.
-      const tabs = document.getElementsByClassName('tab');
+      const tabs = document.getElementsByClassName('item-tab');
       const tabContainers = document.getElementsByClassName('item-container');
 
       // Render data.
@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function() {
        * -----------------
        */
        const chooseProduct = document.getElementById('choose-product');
-       const productsTab = document.getElementById('tabs');
+       const productsTab = document.getElementById('item-tabs');
       // Show the first tab by default. Ensure it has the clicked-tab-styling.
       tabContainers[0].style.display = 'flex';
       tabContainers[0].classList.add('active-tab');
@@ -95,9 +95,9 @@ document.addEventListener('DOMContentLoaded', function() {
        */
 
       // Fetch elements from the DOM.
-      const cartValueNodes = document.getElementsByClassName('cart-val');
+      const cartValueNodes = document.getElementById('cart-val');
       const cartResults = document.getElementById('cart-results');
-      const cartContainer = document.getElementById('cart-container');
+      const cartContainer = document.getElementById('shopping-cart');
 
       /**
        * Only the tab container stores the tab number. This method
@@ -221,7 +221,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Current tab key.
         let tabKey = getTabKey(curTab);
         // Current cart value node.
-        let cartValueNode = curTab.getElementsByClassName('cart-val')[0];
+        let cartValueNode = curTab.getElementById('cart-val');
 
         // Attempt to fetch a locally stored value and display it.
         var storedValue = getLocalData('cart-value' + tabKey);
@@ -236,13 +236,13 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 
         // Positive increments.
-        curTab.getElementsByClassName('cart-add')[0].addEventListener('click', function() {
+        curTab.getElementsById('cart-add').addEventListener('click', function() {
           updateCart(cartValueNode, 1);
           toast('Du la til et element i handlekurven.');
         });
 
         // Negative increemnts.
-        curTab.getElementsByClassName('cart-remove')[0].addEventListener('click', function() {
+        curTab.getElementsById('cart-remove').addEventListener('click', function() {
           updateCart(cartValueNode, -1);
           toast('Du fjernet et element fra handlekurven.');
         });

@@ -186,28 +186,36 @@ button:hover{
 
 /*----HEADER NAVIGATION----*/
 header{min-width: 100%}
-header nav{background-color: #00A651}
-header nav ul{display: flex}
-header nav ul li{
-  cursor:pointer;
-  transition: .2s ease-in-out;
-}
-header nav ul li:hover,.active-menu{
-  background-color: #333;
-  margin-bottom: -3px;
-  box-shadow: 0 5px 3px rgba(0,0,0,.1)
-}
-header nav ul li a{
-  text-decoration: none;
-  color: white;
-  display: flex;
-  padding: 20px 30px
-}
-header nav ul li:hover a, .active-menu a{
-  color: white;
-  font-weight: bolder;
-}
-#choose-product{display: none}
+
+  nav{background-color: #00A651}
+
+    nav ul{display: flex}
+
+      nav ul li{
+        cursor:pointer;
+        transition: .2s ease-in-out;
+      }
+
+      nav ul li:hover,.active-menu{
+        background-color: #333;
+        margin-bottom: -3px;
+        box-shadow: 0 5px 3px rgba(0,0,0,.1)
+      }
+
+      nav ul li a{
+        text-decoration: none;
+        color: white;
+        display: flex;
+        padding: 20px 30px
+      }
+
+      nav ul li:hover a, .active-menu a{
+        color: white;
+        font-weight: bolder;
+      }
+
+  #choose-product{display: none}
+
 /*----/HEADER NAVIGATION----*/
 
 /*----HAMBURGER MENU----*/
@@ -225,17 +233,17 @@ header nav ul li:hover a, .active-menu a{
   padding: 5px;
   border-radius: 5px
 }
-#menu-mobile span{
-  width: 100%;
-  height: 2px;
-  background: #00A651;
-  border-radius: 2px;
-  transition: .3s ease-in-out
-}
+
+  #menu-mobile span{
+    width: 100%;
+    height: 2px;
+    background: #00A651;
+    border-radius: 2px;
+    transition: .3s ease-in-out
+  }
+
 .home-header #menu-mobile span{background: white}
 /*----/HAMBURGER MENU----*/
-.nav-visible{display: none !important}
-
 
 
 /*------------------------------------------------------------------------
@@ -247,179 +255,198 @@ header nav ul li:hover a, .active-menu a{
   position: relative;
   overflow: hidden;
 }
-.home h1{margin: 0 -25% 0 0}
-#picture{
-  position: absolute;
-  z-index: -1;
-  top: 0;
-  right:0
-}
-#picture img{
-  min-width: 70vw;
-  min-height: 100vh;
-}
-#picture .shade{
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-color: #00A651;
-  opacity: .4;
-  z-index: 1;
-  top: 0;
-  left:0
-}
-#left-bg{
-  position: absolute;
-  min-width: 85%;
-  min-height: 100%;
-  background: url('../img/bg.png');
-  background-color: #eee;
-  transform: skewX(-45deg);
-  z-index: -1;
-  left: -25%;
-  box-shadow: -5px -5px 10px 10px rgba(0,0,0,.1)
-}
-.home article{margin-top: 2%}
-.home article h2{text-align: left}
-.home article .article-wrap p{max-width: 46%}
-.home article .article-wrap p:first-child{border-right: 1px solid #00A651}
-.home article button{
-  align-self: center;
-  padding: 10px 40px;
-  margin-top: 30px;
-  border: 1px solid #00A651
-}
+
+  .home h1{margin: 0 -25% 0 0}
+  .home article{margin-top: 2%}
+  .home article h2{text-align: left}
+  .home article .article-wrap p{max-width: 46%}
+  .home article .article-wrap p:first-child{border-right: 1px solid #00A651}
+
+  .home article button{
+    align-self: center;
+    padding: 10px 40px;
+    margin-top: 30px;
+    border: 1px solid #00A651
+  }
+
+  #picture{
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    right:0
+  }
+
+    #picture img{
+      min-width: 70vw;
+      min-height: 100vh;
+    }
+
+    #picture .shade{
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: #00A651;
+      opacity: .4;
+      z-index: 1;
+      top: 0;
+      left:0
+    }
+
+  #left-bg{
+    position: absolute;
+    min-width: 85%;
+    min-height: 100%;
+    background: url('../img/bg.png');
+    background-color: #eee;
+    transform: skewX(-45deg);
+    z-index: -1;
+    left: -25%;
+    box-shadow: -5px -5px 10px 10px rgba(0,0,0,.1)
+  }
 
 /*----/HOME SUBPAGE----*/
 
 
 
 /*----SPECIFICATIONS SUBPAGE----*/
-.products{margin-top: 2em}
-.products::after{
-  content: '*Selges i sett med 2 stk stolper, 2 stk galvaniserte nett, 20 stk avstands stenger for å holde gabionen sammen når den fylles, 16 skruer, muttere og 32 festeklips.**Selges i sett med 2 stk stolper, 2 stk galvaniserte nett, 24 avstands stenger for å holde gabionen sammen når den fylles, 20 skruer, muttere, og 40 festeklips.';
-  max-width: calc(70vw - 20px);
-  font-size: .9em;
-  padding: 10px;
-  color: #00A651;
-  font-style: italic
-}
-#products-container {
+.products{
+  position: relative;
   min-width: 80vw;
   max-width: 80vw;
   height: 65vh;
-  display: flex;
-  box-shadow: 0 0 20px 5px rgba(0,0,0,.1)
-}
-#tabs {
-  overflow-y: scroll;
-  min-width: 25vw;
-  max-width: 25vw;
-  direction:rtl;
-  box-shadow: 5px 0 5px rgba(0,0,0,.3);
-  z-index: 1
-}
-.tab {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 25px 2vw;
-  background: grey;
-  border-top: 1px solid lightgrey;
-  cursor: pointer;
-  color:white;
-  transition: .2s ease-in-out
-}
-.tab:first-child{border: none}
-.tab:hover{background: #00A651}
-.tab.active-tab{
-  background-color: #333;
-  font-weight: bolder
-}
-#item-containers {
-  overflow: hidden;
-  position: relative;
+  flex-direction: row;
+  align-items: stretch;
+  flex-grow: 0;
+  box-shadow: 0 0 20px 5px rgba(0,0,0,.1);
   background: #00A651;
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-  color: white
+  margin-top: 2em
 }
-.item-container {
-  display: none;
-  flex-grow: 1;
-  flex-direction: column;
-}
-.item-name{display: none}
-.item-size::before,.item-weight::before,.item-price::before,.item-size::after,.item-weight::after,.item-price::after{font-item-weight: normal}
-.item-size::before{content: 'Størrelse: '}
-.item-weight::before{content:'Vekt: '}
-.item-price::before{content:'Pris: '}
-.item-size::after{content:' cm'}
-.item-weight::after{content:' kg'}
-.item-price::after{content:' NOK'}
-#cart-container {
-  display: none;
-  background: #333;
-  flex-direction: column;
-  animation: slideUp .3s forwards
-}
-#cart-container textarea{
-  max-height: 20vh;
-  overflow-y: scroll;
-  flex-grow: 1;
-  padding: 20px
-}
-#cart-container p{
-  max-width: 45%;
-  text-align: justify;
-  color: white
-}
-#cart-controls{
-  padding: 15px;
-  display: flex;
-  justify-content: space-around;
-  align-items: center
-}
-#cart-controls button{
-  background: #00A651;
-  color:white;
-}
-#cart-controls button:first-child::after{  background-image: url('../img/icons/send.svg')}
-#cart-controls button:nth-child(2)::after{background-image: url('../img/icons/copy.svg')}
-#cart-controls button:last-child::after{background-image: url('../img/icons/remove.svg')}
+  .products::after{
+    display: none;
+    content: '*Selges i sett med 2 stk stolper, 2 stk galvaniserte nett, 20 stk avstands stenger for å holde gabionen sammen når den fylles, 16 skruer, muttere og 32 festeklips.**Selges i sett med 2 stk stolper, 2 stk galvaniserte nett, 24 avstands stenger for å holde gabionen sammen når den fylles, 20 skruer, muttere, og 40 festeklips.';
+    max-width: calc(70vw - 20px);
+    font-size: .9em;
+    padding: 10px;
+    color: #00A651;
+    font-style: italic
+  }
 
-.cart-btn-container{
+  #item-tabs {
+    overflow-y: scroll;
+    height: 100%;
+    min-width: 25vw;
+    max-width: 25vw;
+    direction:rtl;
+    box-shadow: 5px 0 5px rgba(0,0,0,.3);
+    z-index: 1
+  }
+
+    .item-tab {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 25px 2vw;
+      background: grey;
+      border-top: 1px solid lightgrey;
+      cursor: pointer;
+      color:white;
+      transition: .2s ease-in-out
+    }
+
+    .item-tab:first-child{border: none}
+    .item-tab:hover{background: #00A651}
+
+    .item-tab.active-tab{
+      background-color: #333;
+      font-weight: bolder
+    }
+
+  #item-containers {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+    .item-container {
+      position: relative;
+      flex-grow: 1;
+      display: none
+    }
+
+      .item-data{padding: 30px}
+
+        .item-name{display: none}
+        .item-size::before{content: 'Størrelse: '}
+        .item-weight::before{content:'Vekt: '}
+        .item-price::before{content:'Pris: '}
+        .item-size::after{content:' cm'}
+        .item-weight::after{content:' kg'}
+        .item-price::after{content:' kr'}
+
+    #shopping-cart {
+      display: flex;
+      background: #333;
+      flex-direction: column;
+      animation: slideUp .3s forwards;
+
+    }
+    #shopping-cart textarea{
+      max-height: 20vh;
+      overflow-y: scroll;
+      flex-grow: 1;
+      padding: 20px
+    }
+    #shopping-cart p{
+      max-width: 45%;
+      text-align: justify;
+      color: white
+    }
+    #cart-controls{
+      padding: 15px;
+      display: flex;
+      justify-content: space-around;
+      align-items: center
+    }
+    #cart-controls button{
+      background: #00A651;
+      color:white;
+    }
+    #cart-controls button:first-child::after{  background-image: url('../img/icons/send.svg')}
+    #cart-controls button:nth-child(2)::after{background-image: url('../img/icons/copy.svg')}
+    #cart-controls button:last-child::after{background-image: url('../img/icons/remove.svg')}
+
+#cart-changer{
   margin: 10px;
   justify-content: flex-end;
   display: flex;
   position: absolute;
   right: 0
 }
-.cart-btn-container input{
+#cart-changer input{
   text-align: center;
   border: none;
   font-weight: bolder;
 }
-.cart-btn-container input[type="text"]{
+#cart-changer input[type="text"]{
   max-width: 40px
 }
-.cart-btn-container button{
+#cart-changer button{
   border-radius: 0;
   margin: 0;
   background: #333;
   color: white;
 }
-.cart-btn-container button:first-child{
+#cart-changer button:first-child{
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px
 }
-.cart-btn-container button:last-child{
+#cart-changer button:last-child{
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px
 }
-.cart-btn-container button:first-child::after{background-image: url('../img/icons/add.svg')}
-.cart-btn-container button:nth-child(3)::after{background-image: url('../img/icons/remove.svg')}
+#cart-changer button:first-child::after{background-image: url('../img/icons/add.svg')}
+#cart-changer button:nth-child(3)::after{background-image: url('../img/icons/remove.svg')}
 
 /*----/SPECIFICATIONS SUBPAGE----*/
 
@@ -529,17 +556,17 @@ footer>ul>li:last-child::before{background-image: url(../img/icons/phone.svg)}
     min-width: 95%;
     left: -30%;
   }
-  #tabs{
+  #item-tabs{
     min-width: 30vw;
     max-width: 30vw;
   }
-  .tab{
+  .item-tab{
     padding: 20px 1vw;
     text-align: left;
   }
   .item-size,.item-weight,.item-price{padding: 5px 10px 0}
-  #cart-container textarea{padding: 15px}
-  #cart-container p{
+  #shopping-cart textarea{padding: 15px}
+  #shopping-cart p{
     max-width: 40%;
     line-height: 1.2
   }
@@ -560,11 +587,11 @@ footer>ul>li:last-child::before{background-image: url(../img/icons/phone.svg)}
     padding: 2px 0 0
   }
   #products-container {min-width: 100vw}
-  #tabs{font-size: .9em}
-  #cart-container p{max-width: 35%}
+  #item-tabs{font-size: .9em}
+  #shopping-cart p{max-width: 35%}
 }
 @media screen and (max-width:1140px) {
-  #cart-container p{padding: 0 0 0 10px}
+  #shopping-cart p{padding: 0 0 0 10px}
   #cart-controls {padding: 5px 0}
 }
 @media screen and (max-width:1100px) {
@@ -573,7 +600,7 @@ footer>ul>li:last-child::before{background-image: url(../img/icons/phone.svg)}
     font-size: .9em
   }
   .products::after{display: none}
-  #cart-container p{
+  #shopping-cart p{
     max-width: 100%;
     padding: 5px
   }
@@ -602,11 +629,11 @@ footer>ul>li:last-child::before{background-image: url(../img/icons/phone.svg)}
     margin: 0
   }
   #menu-mobile{display: flex}
-  .tabs-in{
+  .item-tabs-in{
     display: flex !important;
     animation:slideInLeft .3s forwards
   }
-  .tabs-out{
+  .item-tabs-out{
     display: flex !important;
     animation: slideOutLeft .3s forwards}
 
@@ -722,16 +749,15 @@ footer>ul>li:last-child::before{background-image: url(../img/icons/phone.svg)}
     flex-grow: 1;
     box-shadow: none;
   }
-  #tabs{
+  #item-tabs{
     position: fixed;
     top: 0;
     display: none;
     flex-direction: column;
     min-width: 100vw;
-    min-height: calc(100vh - 60px);
     z-index: 1000
   }
-  .tab{
+  .item-tab{
     padding: 0;
     margin: 0;
     flex-grow:1
@@ -741,6 +767,8 @@ footer>ul>li:last-child::before{background-image: url(../img/icons/phone.svg)}
     color: black !important;
   }
   .item-container{
+    overflow-y: scroll;
+    height: 30vh;
     justify-content: flex-end;
   }
   .item-name{
@@ -751,13 +779,11 @@ footer>ul>li:last-child::before{background-image: url(../img/icons/phone.svg)}
 
 
   .item-data{
-    top: 0;
-    position: absolute;
     display: flex;
     flex-direction: column;
     min-width: 100%
   }
-  .cart-btn-container{
+  #cart-changer{
     order: 1;
     position: static;
     justify-content: space-around;
@@ -765,18 +791,18 @@ footer>ul>li:last-child::before{background-image: url(../img/icons/phone.svg)}
     margin: 0;
     box-shadow: 0 0 5px black
   }
-  .cart-btn-container button{
+  #cart-changer button{
     border-radius: 0 !important;
     flex-grow: 1
   }
-  .cart-btn-container input[type="text"]{
+  #cart-changer input[type="text"]{
     max-width: 25vw;
   }
-  #cart-container{
+  #shopping-cart{
     animation-duration: .3s
   }
   #cart-controls{
-    padding: 0 0 20px;
+    padding: 0 0 5px;
     justify-content: center;
     align-items: center;
     min-width: 100vw;

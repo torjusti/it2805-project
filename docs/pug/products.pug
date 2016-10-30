@@ -1,23 +1,6 @@
 //output:../produkter.html
 
 
-mixin article(index)
-    span.tab(data-tab=index)
-      if block
-        block
-      else
-         No content provided
-mixin articleContent(index)
-  .item-container(data-tab=index)
-    .item-data
-      if block
-        block
-    .cart-btn-container
-      button.cart-add Legg til i handlekurv
-      input.cart-val(value="0", type="text")
-      button.cart-remove Fjern fra handlekurv
-
-
 doctype html
 html(lang='no')
 head
@@ -28,20 +11,27 @@ body
   header
     include modules/header.html
     button#choose-product Velg fra produkter
+
   section.products
 
-    #products-container
-      #tabs
+      #item-tabs
         - var n = 0;
         while n < 11
-          +article(n++)= ''
-
-
+          span.item-tab(data-tab=n++)
+            if block
+              ''
       #item-containers
-        each val, index in [,'','','','','','','','','','']
-          +articleContent(index)
-
-        #cart-container
+        - var n = 0;
+        while n < 11
+          .item-container(data-tab=n++)
+            .item-data
+              if block
+                ''
+        #cart-changer
+          button#cart-add Legg til i handlekurv
+          input#cart-val(value="0", type="text")
+          button#cart-remove Fjern fra handlekurv
+        #shopping-cart
           textarea#cart-results(readonly)
           #cart-controls
             p Dette er din handlekurv. Trykk send for å sende en mail til oss, så svarer vi så fort som mulig.
