@@ -26,9 +26,9 @@ document.addEventListener('DOMContentLoaded', function() {
         size.appendChild(sizeText);
         weight.appendChild(weightText);
         price.appendChild(priceText);
-        tabContainers[i].appendChild(size);
-        tabContainers[i].appendChild(weight);
-        tabContainers[i].appendChild(price);
+        tabContainers[i].childNodes[1].appendChild(size);
+        tabContainers[i].childNodes[1].appendChild(weight);
+        tabContainers[i].childNodes[1].appendChild(price);
       }
 
       /**
@@ -46,10 +46,6 @@ document.addEventListener('DOMContentLoaded', function() {
       // Loop through all tabs.
       for (let i = 0; i < tabs.length; i++) {
        tabs[i].addEventListener('click', function(e) {
-         // Class handling for mobile phones only.
-         productsTab.classList.remove('product-tab-open');
-         productsTab.classList.add('product-tab-closed');
-
          // Find out the tab code of the clicked tab.
          let tabKey = e.target.getAttribute('data-tab');
 
@@ -206,8 +202,7 @@ document.addEventListener('DOMContentLoaded', function() {
           cartResults.value = lines.join('\n');
           // Show the cart container.
           cartContainer.style.display = 'flex';
-          // Grow textarea to size of contents.
-          cartResults.style.height = cartResults.scrollHeight + 'px';
+
         } else {
           // Hide cart container.
           cartContainer.style.display = 'none';

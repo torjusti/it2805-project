@@ -9,12 +9,13 @@ mixin article(index)
          No content provided
 mixin articleContent(index)
   .item-container(data-tab=index)
+    .item-data
+      if block
+        block
     .cart-btn-container
       button.cart-add Legg til i handlekurv
       input.cart-val(value="0", type="text")
       button.cart-remove Fjern fra handlekurv
-    if block
-      block
 
 
 doctype html

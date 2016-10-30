@@ -213,7 +213,7 @@ header nav ul li:hover a, .active-menu a{
 /*----HAMBURGER MENU----*/
 #menu-mobile{
   display: none;
-  margin: 16px 20px;
+  margin: 8px 20px;
   right: 0;
   position: fixed;
   flex-direction: column;
@@ -613,7 +613,7 @@ footer>ul>li:last-child::before{background-image: url(../img/icons/phone.svg)}
   header nav{
     position: fixed;
     display: none;
-    height: 100vh;
+    height: calc(100vh - 48px);
     width: 100vw;
     z-index: 999;
   }
@@ -666,7 +666,7 @@ footer>ul>li:last-child::before{background-image: url(../img/icons/phone.svg)}
   header nav ul li:last-child a::before{background-image: url('../img/icons/us.svg')}
 
   #choose-product{
-    margin: 30px 20px;
+    margin: 16px 20px;
     display: block;
     background: #00A651;
     color: white;
@@ -720,27 +720,49 @@ footer>ul>li:last-child::before{background-image: url(../img/icons/phone.svg)}
 
   #products-container{
     flex-grow: 1;
-    box-shadow: none
+    box-shadow: none;
   }
   #tabs{
     position: fixed;
     top: 0;
     display: none;
     flex-direction: column;
-    overflow-y: scroll;
     min-width: 100vw;
-    min-height: 100vh;
+    min-height: calc(100vh - 60px);
     z-index: 1000
   }
   .tab{
-    padding: 10px;
+    padding: 0;
     margin: 0;
-    flex-grow: 1;
+    flex-grow:1
   }
-  #item-containers{box-shadow: 0 0 10px rgba(0,0,0,.5)}
+  #item-containers{
+    background: none;
+    color: black !important;
+  }
+  .item-container{
+    justify-content: flex-end;
+  }
+  .item-data{
+    top: 0;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    min-width: 100%
+  }
   .cart-btn-container{
     order: 1;
     position: static;
+    justify-content: space-around;
+    min-width: 100vw;
+    margin: 0
+  }
+  .cart-btn-container button{
+    border-radius: 0 !important;
+    flex-grow: 1
+  }
+  .cart-btn-container input[type="text"]{
+    max-width: 25vw;
   }
   #cart-container{
     animation-duration: .3s
@@ -751,7 +773,6 @@ footer>ul>li:last-child::before{background-image: url(../img/icons/phone.svg)}
     align-items: center;
     min-width: 100vw;
     max-width: 100vw;
-    border-bottom: 1px solid black
   }
   #cart-controls p{max-width: 90%}
   #cart-controls div{
@@ -759,6 +780,10 @@ footer>ul>li:last-child::before{background-image: url(../img/icons/phone.svg)}
     justify-content: center;
     margin: 0;
     min-width: 100%
+  }
+  #cart-results{
+    min-height: 20vh;
+    max-height: 30vh
   }
   #cart-controls button{
     margin: 5px;
@@ -787,6 +812,9 @@ footer>ul>li:last-child::before{background-image: url(../img/icons/phone.svg)}
   .sjef div a{margin-bottom: 24px}
 
   footer{
+    position: relative;
+    z-index: 1000;
+    border-top: 1px solid black;
     max-height: 48px;
     padding: 0px;
   }
