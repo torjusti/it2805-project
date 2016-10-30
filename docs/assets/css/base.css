@@ -350,14 +350,14 @@ header nav ul li:hover a, .active-menu a{
   flex-grow: 1;
   flex-direction: column;
 }
-.size,.weight,.price{font-weight: bolder;padding: 10px}
-.size::before,.weight::before,.price::before,.size::after,.weight::after,.price::after{font-weight: normal}
-.size::before{content: 'Størrelse: '}
-.weight::before{content:'Vekt: '}
-.price::before{content:'Pris: '}
-.size::after{content:' cm'}
-.weight::after{content:' kg'}
-.price::after{content:' NOK'}
+.item-name{display: none}
+.item-size::before,.item-weight::before,.item-price::before,.item-size::after,.item-weight::after,.item-price::after{font-item-weight: normal}
+.item-size::before{content: 'Størrelse: '}
+.item-weight::before{content:'Vekt: '}
+.item-price::before{content:'Pris: '}
+.item-size::after{content:' cm'}
+.item-weight::after{content:' kg'}
+.item-price::after{content:' NOK'}
 #cart-container {
   display: none;
   background: #333;
@@ -537,7 +537,7 @@ footer>ul>li:last-child::before{background-image: url(../img/icons/phone.svg)}
     padding: 20px 1vw;
     text-align: left;
   }
-  .size,.weight,.price{padding: 5px 10px 0}
+  .item-size,.item-weight,.item-price{padding: 5px 10px 0}
   #cart-container textarea{padding: 15px}
   #cart-container p{
     max-width: 40%;
@@ -743,6 +743,14 @@ footer>ul>li:last-child::before{background-image: url(../img/icons/phone.svg)}
   .item-container{
     justify-content: flex-end;
   }
+  .item-name{
+    display: block;
+    padding: 20px 10px 10px;
+    font-size: 1.2em;
+    font-weight: bolder;
+  }
+
+
   .item-data{
     top: 0;
     position: absolute;

@@ -14,18 +14,23 @@ document.addEventListener('DOMContentLoaded', function() {
       // Render data.
       for (var i = 0; i < gabionData.article_item.length; i++) {
         tabs[i].innerText = gabionData.article_item[i].name;
+        var name = document.createElement("div");
         var size = document.createElement("div");
         var weight = document.createElement("div");
         var price = document.createElement("div");
-        size.className = "size";
-        weight.className = "weight";
-        price.className = "price";
+        name.className = "item-name"
+        size.className = "item-size";
+        weight.className = "item-weight";
+        price.className = "item-price";
+        var nameText = document.createTextNode(gabionData.article_item[i].name);
         var sizeText = document.createTextNode(gabionData.article_item[i].size.join(' x '));
         var weightText = document.createTextNode(gabionData.article_item[i].weight);
         var priceText = document.createTextNode(gabionData.article_item[i].price);
+        name.appendChild(nameText);
         size.appendChild(sizeText);
         weight.appendChild(weightText);
         price.appendChild(priceText);
+        tabContainers[i].childNodes[1].appendChild(name);
         tabContainers[i].childNodes[1].appendChild(size);
         tabContainers[i].childNodes[1].appendChild(weight);
         tabContainers[i].childNodes[1].appendChild(price);
@@ -233,11 +238,13 @@ document.addEventListener('DOMContentLoaded', function() {
         // Positive increments.
         curTab.getElementsByClassName('cart-add')[0].addEventListener('click', function() {
           updateCart(cartValueNode, 1);
+          toast('Du la til et element i handlekurven.');
         });
 
         // Negative increemnts.
         curTab.getElementsByClassName('cart-remove')[0].addEventListener('click', function() {
           updateCart(cartValueNode, -1);
+          toast('Du fjernet et element fra handlekurven.');
         });
       }
 
@@ -265,7 +272,7 @@ document.addEventListener('DOMContentLoaded', function() {
         for (let i = 0; i < cartValueNodes.length; i++) {
           // Remove the current value from itself as the API does not currently allow better.
           updateCartValueNode(cartValueNodes[i], -parseInt(cartValueNodes[i].value, 10));
-          toast('Handlekurven er nå tom.');
+          toast('Handlekurven din er nå tom.');
         }
 
         // Display the changes.
