@@ -6,7 +6,8 @@
 *{
   margin: 0;
   padding: 0;
-  font-family: 'Open Sans',sans-serif
+  font-family: 'Open Sans',sans-serif;
+  border: none
 }
 *:focus{
   outline: none
@@ -159,9 +160,6 @@ button:hover{
   }
 }
 
-
-
-
 @keyframes slideUp {
   0%{
     transform: translateY(20vh);
@@ -185,6 +183,7 @@ button:hover{
 ------------------------------------------------------------------------*/
 
 /*----HEADER NAVIGATION----*/
+
 header{min-width: 100%}
 
   nav{background-color: #00A651}
@@ -219,6 +218,7 @@ header{min-width: 100%}
 /*----/HEADER NAVIGATION----*/
 
 /*----HAMBURGER MENU----*/
+
 #menu-mobile{
   display: none;
   margin: 8px 20px;
@@ -243,6 +243,7 @@ header{min-width: 100%}
   }
 
 .home-header #menu-mobile span{background: white}
+
 /*----/HAMBURGER MENU----*/
 
 
@@ -251,6 +252,7 @@ header{min-width: 100%}
 ------------------------------------------------------------------------*/
 
 /*----HOME SUBPAGE----*/
+
 .home{
   position: relative;
   overflow: hidden;
@@ -309,6 +311,7 @@ header{min-width: 100%}
 
 
 /*----SPECIFICATIONS SUBPAGE----*/
+
 .products{
   position: relative;
   min-width: 80vw;
@@ -317,18 +320,20 @@ header{min-width: 100%}
   flex-direction: row;
   align-items: stretch;
   flex-grow: 0;
-  box-shadow: 0 0 20px 5px rgba(0,0,0,.1);
+  box-shadow: 0 0 20px 5px rgba(0,0,0,.3);
   background: #00A651;
-  margin-top: 2em
+  margin-top: -2em
 }
+
   .products::after{
-    display: none;
+    position: absolute;
+    display: flex;
     content: '*Selges i sett med 2 stk stolper, 2 stk galvaniserte nett, 20 stk avstands stenger for å holde gabionen sammen når den fylles, 16 skruer, muttere og 32 festeklips.**Selges i sett med 2 stk stolper, 2 stk galvaniserte nett, 24 avstands stenger for å holde gabionen sammen når den fylles, 20 skruer, muttere, og 40 festeklips.';
-    max-width: calc(70vw - 20px);
-    font-size: .9em;
+    font-size: .7em;
     padding: 10px;
     color: #00A651;
-    font-style: italic
+    font-style: italic;
+    bottom:-4em
   }
 
   #item-tabs {
@@ -387,95 +392,126 @@ header{min-width: 100%}
         .item-price::after{content:' kr'}
 
     #shopping-cart {
-      display: flex;
-      background: #333;
+      position: relative;
+      z-index: 2;
+      display: flex !important;
       flex-direction: column;
-      animation: slideUp .3s forwards;
 
     }
-    #shopping-cart textarea{
-      max-height: 20vh;
-      overflow-y: scroll;
-      flex-grow: 1;
-      padding: 20px
-    }
-    #shopping-cart p{
-      max-width: 45%;
-      text-align: justify;
-      color: white
-    }
-    #cart-controls{
-      padding: 15px;
-      display: flex;
-      justify-content: space-around;
-      align-items: center
-    }
-    #cart-controls button{
-      background: #00A651;
-      color:white;
-    }
-    #cart-controls button:first-child::after{  background-image: url('../img/icons/send.svg')}
-    #cart-controls button:nth-child(2)::after{background-image: url('../img/icons/copy.svg')}
-    #cart-controls button:last-child::after{background-image: url('../img/icons/remove.svg')}
 
-#cart-changer{
-  margin: 10px;
-  justify-content: flex-end;
-  display: flex;
-  position: absolute;
-  right: 0
-}
-#cart-changer input{
-  text-align: center;
-  border: none;
-  font-weight: bolder;
-}
-#cart-changer input[type="text"]{
-  max-width: 40px
-}
-#cart-changer button{
-  border-radius: 0;
-  margin: 0;
-  background: #333;
-  color: white;
-}
-#cart-changer button:first-child{
-  border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px
-}
-#cart-changer button:last-child{
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px
-}
-#cart-changer button:first-child::after{background-image: url('../img/icons/add.svg')}
-#cart-changer button:nth-child(3)::after{background-image: url('../img/icons/remove.svg')}
+      #cart-changer{
+        margin: 10px;
+        display: flex;
+        justify-content: center;
+      }
+
+        #cart-changer input{
+          text-align: center;
+          border: none;
+          font-weight: bolder;
+        }
+
+          #cart-changer input[type="text"]{
+            max-width: 40px
+          }
+
+          #cart-changer button{
+            border-radius: 0;
+            margin: 0;
+            background: #333;
+            color: white;
+          }
+
+            #cart-changer button:first-child{
+              border-top-left-radius: 5px;
+              border-bottom-left-radius: 5px
+            }
+
+            #cart-changer button:last-child{
+              border-top-right-radius: 5px;
+              border-bottom-right-radius: 5px
+            }
+
+              #cart-changer button:first-child::after{background-image: url('../img/icons/add.svg')}
+              #cart-changer button:nth-child(3)::after{background-image: url('../img/icons/remove.svg')}
+
+      #cart-controls{
+        display: flex;
+        flex-direction: column;
+        background: #333;
+        animation: slideUp .3s forwards;
+        padding: 10px;
+      }
+
+        #cart-controls textarea{
+          margin: 10px;
+          max-height: 20vh;
+          overflow-y: scroll;
+          padding: 20px;
+          box-shadow: inset 0 0 10px rgba(0,0,0,.8)
+        }
+
+        #cart-controls>div{
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          margin-bottom: 5px
+        }
+
+          #cart-controls div p{
+            line-height: 1.2;
+            font-size: .9em;
+            padding: 0;
+            color: white;
+            margin-left:10px
+          }
+
+          #cart-controls>div>div{
+            white-space: nowrap;
+            margin: 0 10px 5px 5px
+          }
+
+            #cart-controls button{
+              background: #00A651;
+              color:white;
+            }
+
+                #cart-controls button:first-child::after{  background-image: url('../img/icons/send.svg')}
+                #cart-controls button:nth-child(2)::after{background-image: url('../img/icons/copy.svg')}
+                #cart-controls button:last-child::after{background-image: url('../img/icons/remove.svg')}
 
 /*----/SPECIFICATIONS SUBPAGE----*/
 
 
 /*----ABOUT SUBPAGE----*/
+
 .about{max-width: 50%}
-.info{
-  border-left: 1px solid #00A651;
-  border-right: 1px solid #00A651;
-  padding: 10px 40px
-}
-.info p a{padding-left: .3em}
-.sjef{
-  display: flex;
-  justify-content: space-around;
-}
-.sjef div{
-  display: flex;
-  align-items: center;
-  flex-direction: column
-}
-.sjef div img{
-  border-radius: 50%;
-  width:100px;
-  height: 100px
-}
-.sjef div a{font-size: .9em}
+  .info{
+    border-left: 1px solid #00A651;
+    border-right: 1px solid #00A651;
+    padding: 10px 40px
+  }
+
+    .sjef{
+      display: flex;
+      justify-content: space-around;
+    }
+
+      .sjef div{
+        display: flex;
+        align-items: center;
+        flex-direction: column
+      }
+
+        .sjef div img{
+          border-radius: 50%;
+          width:100px;
+          height: 100px
+        }
+
+          .sjef div a{font-size: .9em}
+
+    .info p a{padding-left: .3em}
 
 /*----/ABOUT SUBPAGE----*/
 
@@ -539,17 +575,17 @@ footer>ul>li:last-child::before{background-image: url(../img/icons/phone.svg)}
   padding: 10px
 }
 #footer-mobile li:before{display: none}
+
 /*------------------------------------------------------------------------
 -------------------------------MEDIA QUERIES------------------------------
 ------------------------------------------------------------------------*/
-@media screen and (max-width:1480px) {
+@media screen and (max-width:1580px) {
 
   h1{
     font-size: 1.9em;
     padding: 10px 80px
   }
   p{line-height: 1.6}
-  #products-container {min-width: 90vw}
   header nav ul li a{
     padding: 15px 30px
   }
@@ -564,53 +600,36 @@ footer>ul>li:last-child::before{background-image: url(../img/icons/phone.svg)}
   }
   .item-tab{
     padding: 20px 1vw;
-    text-align: left;
   }
-  .item-size,.item-weight,.item-price{padding: 5px 10px 0}
   #shopping-cart textarea{padding: 15px}
-  #shopping-cart p{
-    max-width: 40%;
-    line-height: 1.2
-  }
-  #cart-controls{
-    font-size: .9em;
-    padding: 10px 0
-  }
-  #cart-controls div{margin-right: 10px}
+
+
   .about{max-width: 60%}
 }
+
+@media screen and (max-width:1460px) {
+  .products{max-width: 90vw}
+}
+
+
+
 @media screen and (max-width:1350px) {
   .products{margin: 0}
   .home p{line-height: 1.4}
 }
 @media screen and (max-width:1220px) {
-  .products::after{
-    max-width: 100%;
-    padding: 2px 0 0
-  }
-  #products-container {min-width: 100vw}
+
   #item-tabs{font-size: .9em}
-  #shopping-cart p{max-width: 35%}
 }
-@media screen and (max-width:1140px) {
-  #shopping-cart p{padding: 0 0 0 10px}
-  #cart-controls {padding: 5px 0}
-}
+
 @media screen and (max-width:1100px) {
   .home p{
     line-height: 1.3;
     font-size: .9em
   }
   .products::after{display: none}
-  #shopping-cart p{
-    max-width: 100%;
-    padding: 5px
-  }
-  #cart-controls{
-    padding: 0 5px 10px 5px;
-    flex-direction: column;
-    align-items: flex-start
-  }
+
+
 }
 @media screen and (max-width:970px) {
 
@@ -747,9 +766,11 @@ footer>ul>li:last-child::before{background-image: url(../img/icons/phone.svg)}
     background-color: white
   }
 
-  #products-container{
-    flex-grow: 1;
-    box-shadow: none;
+  .products{
+    max-width: 100vw;
+    background: none;
+    height: calc(100vh - 122px);
+    box-shadow: none
   }
   #item-tabs{
     position: fixed;
@@ -757,7 +778,8 @@ footer>ul>li:last-child::before{background-image: url(../img/icons/phone.svg)}
     display: none;
     flex-direction: column;
     min-width: 100vw;
-    z-index: 1000
+    height: 100vh;
+    z-index: 1001
   }
   .item-tab{
     padding: 0;
@@ -765,28 +787,17 @@ footer>ul>li:last-child::before{background-image: url(../img/icons/phone.svg)}
     flex-grow:1
   }
   #item-containers{
-    background: none;
     color: black !important;
   }
-  .item-container{
-    overflow-y: scroll;
-    height: 30vh;
-    justify-content: flex-end;
-  }
+
   .item-name{
     display: block;
-    padding: 5px 10px 5px;
     font-weight: bolder;
   }
 
 
-  .item-data{
-    display: flex;
-    flex-direction: column;
-    min-width: 100%
-  }
+
   #cart-changer{
-    order: 1;
     position: static;
     justify-content: space-around;
     min-width: 100vw;
@@ -801,6 +812,7 @@ footer>ul>li:last-child::before{background-image: url(../img/icons/phone.svg)}
     max-width: 25vw;
   }
   #shopping-cart{
+    order: 1;
     animation-duration: .3s
   }
   #cart-controls{
