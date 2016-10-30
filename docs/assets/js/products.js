@@ -221,7 +221,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Current tab key.
         let tabKey = getTabKey(curTab);
         // Current cart value node.
-        let cartValueNode = curTab.getElementById('cart-val');
+        let cartValueNode = document.getElementById('cart-val');
 
         // Attempt to fetch a locally stored value and display it.
         var storedValue = getLocalData('cart-value' + tabKey);
@@ -236,15 +236,15 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 
         // Positive increments.
-        curTab.getElementsById('cart-add').addEventListener('click', function() {
-          updateCart(cartValueNode, 1);
+        document.getElementById('cart-add').addEventListener('click', function() {
           toast('Du la til et element i handlekurven.');
+          updateCart(cartValueNode, 1);
         });
 
         // Negative increemnts.
-        curTab.getElementsById('cart-remove').addEventListener('click', function() {
-          updateCart(cartValueNode, -1);
+        document.getElementById('cart-remove').addEventListener('click', function() {
           toast('Du fjernet et element fra handlekurven.');
+          updateCart(cartValueNode, -1);
         });
       }
 
@@ -271,8 +271,8 @@ document.addEventListener('DOMContentLoaded', function() {
       document.getElementById('clear-cart-contents').addEventListener('click', function() {
         for (let i = 0; i < cartValueNodes.length; i++) {
           // Remove the current value from itself as the API does not currently allow better.
-          updateCartValueNode(cartValueNodes[i], -parseInt(cartValueNodes[i].value, 10));
           toast('Handlekurven din er nå tom.');
+          updateCartValueNode(cartValueNodes[i], -parseInt(cartValueNodes[i].value, 10));
         }
 
         // Display the changes.
