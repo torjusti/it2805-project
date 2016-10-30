@@ -83,8 +83,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
         if (productsTab.style.display === 'none' || !productsTab.style.display) {
           productsTab.className = 'tabs-in';
-        } else {
-          productsTab.className = 'tabs-out';
         }
       });
 
