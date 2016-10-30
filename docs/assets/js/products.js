@@ -97,6 +97,11 @@ document.addEventListener('DOMContentLoaded', function() {
       const cartResults = document.getElementById('cart-results');
       const cartContainer = document.getElementById('shopping-cart');
 
+      cartResults.addEventListener('click', function(e) {
+        cartResults.classList.toggle('full-screen')
+      })
+
+
       /**
        * Only the tab container stores the tab number. This method
        * exists because we often want to find the tab number from

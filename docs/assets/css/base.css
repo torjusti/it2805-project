@@ -721,13 +721,10 @@ footer>ul>li:last-child::before{background-image: url(../img/icons/phone.svg)}
   #choose-product::after{background-image: url('../img/icons/products.svg')}
 
   .home h1{
-    margin: 0;
-    font-size: 1em;
-    align-self: center;
-    padding: 32px 0 0
+    display: none
   }
   .home article h2{
-    text-align: center
+    padding-left: 20px
   }
   #picture img{
     min-width: 100vw;
@@ -798,6 +795,14 @@ footer>ul>li:last-child::before{background-image: url(../img/icons/phone.svg)}
         padding-top: 15px;
         background: #00A651;
         padding-bottom: 15px;
+      }
+
+      .full-screen{
+        position: fixed;
+        top: -66vh;
+        margin: 0 !important;
+        width: 89vw;
+        min-height: 80vh !important
       }
 
 
