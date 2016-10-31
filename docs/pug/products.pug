@@ -13,18 +13,9 @@ body
   section.products
 
       #item-tabs
-        - var n = 0;
-        while n < 11
-          span.item-tab(data-tab=n++)
-            if block
-              ''
+
       #item-containers
-        - var n = 0;
-        while n < 11
-          .item-container(data-tab=n++)
-            .item-data
-              if block
-                ''
+
         #shopping-cart
           #cart-changer
             button#cart-add Legg til i handlekurv
