@@ -7,28 +7,77 @@ document.addEventListener('DOMContentLoaded', function() {
       // Parse JSON data.
       let gabionData = JSON.parse(responseText);
 
-      // Fetch elements from the DOM.
-      const tabs = document.getElementsByClassName('tab');
-      const tabContainers = document.getElementsByClassName('item-container');
+      let itemTabs = document.getElementById('item-tabs');
+      let itemContainers = document.getElementById('item-containers');
+      let shoppingCart = document.getElementById('shopping-cart');
 
       // Render data.
-      for (var i = 0; i < gabionData.article_item.length; i++) {
-        tabs[i].innerText = gabionData.article_item[i].name;
-        var size = document.createElement("div");
-        var weight = document.createElement("div");
-        var price = document.createElement("div");
-        size.className = "size";
-        weight.className = "weight";
-        price.className = "price";
-        var sizeText = document.createTextNode(gabionData.article_item[i].size.join(' x '));
-        var weightText = document.createTextNode(gabionData.article_item[i].weight);
-        var priceText = document.createTextNode(gabionData.article_item[i].price);
-        size.appendChild(sizeText);
-        weight.appendChild(weightText);
-        price.appendChild(priceText);
-        tabContainers[i].appendChild(size);
-        tabContainers[i].appendChild(weight);
-        tabContainers[i].appendChild(price);
+      for (var i = 0; i < gabionData.products.length; i++) {
+        let tabButton = document.createElement('span');
+        tabButton.setAttribute('data-tab', i);
+        tabButton.className = 'item-tab';
+        tabButton.innerHTML = gabionData.products[i].name;
+        itemTabs.appendChild (tabButton);
+
+        let name = document.createElement('div');
+        let size = document.createElement('div');
+        let weight = document.createElement('div');
+        let price = document.createElement('div');
+
+        name.className = 'item-name'
+        size.className = 'item-size';
+        weight.className = 'item-weight';
+        price.className = 'item-price';
+
+        name.innerHTML = gabionData.products[i].name;
+        size.innerHTML = gabionData.products[i].size.join(' x ');
+        weight.innerHTML = gabionData.products[i].weight;
+        price.innerHTML = gabionData.products[i].price;
+
+        let itemData = document.createElement('div');
+        itemData.className = 'item-data';
+
+        itemData.appendChild(name);
+        itemData.appendChild(size);
+        itemData.appendChild(weight);
+        itemData.appendChild(price);
+
+        let cartControls = document.createElement('div');
+        cartControls.className = 'cart-controls';
+
+        let cartAddButton = document.createElement('button');
+        cartAddButton.className = 'cart-add';
+        cartAddButton.innerHTML = 'Legg til i handlekurv';
+        cartControls.appendChild(cartAddButton);
+
+        let cartValInput = document.createElement('input');
+        cartValInput.className = 'cart-val';
+        cartValInput.type = 'text';
+
+        // Attempt to fetch a locally stored cart input value and display it.
+        var storedValue = getLocalData('cart-value' + i);
+
+        if (storedValue) {
+          cartValInput.value = storedValue;
+        } else {
+          cartValInput.value = 0; // 0 as default value.
+        }
+
+        cartControls.appendChild(cartValInput);
+
+        let cartRemoveButton = document.createElement('button');
+        cartRemoveButton.className = 'cart-remove';
+        cartRemoveButton.innerHTML = 'Fjern fra handlekurven';
+        cartControls.appendChild(cartRemoveButton);
+
+        let tabContainer = document.createElement('div');
+
+        tabContainer.className = 'item-container';
+        tabContainer.setAttribute('data-tab', i);
+
+        tabContainer.appendChild(cartControls);
+        tabContainer.appendChild(itemData);
+        itemContainers.appendChild(tabContainer);
       }
 
       /**
@@ -37,10 +86,17 @@ document.addEventListener('DOMContentLoaded', function() {
        * -----------------
        */
 
+      // Fetch elements from the DOM.
+      const tabs = document.getElementsByClassName('item-tab');
+      const tabContainers = document.getElementsByClassName('item-container');
+
       // Show the first tab by default. Ensure it has the clicked-tab-styling.
       tabContainers[0].style.display = 'flex';
       tabContainers[0].classList.add('active-tab');
       tabs[0].classList.add('active-tab');
+
+      const chooseProduct = document.getElementById('choose-product');
+      const productsTab = document.getElementById('item-tabs');
 
       // Loop through all tabs.
       for (let i = 0; i < tabs.length; i++) {
@@ -70,34 +126,31 @@ document.addEventListener('DOMContentLoaded', function() {
              currentTabContainer.classList.add('active-tab');
            } else {
              currentTabContainer.style.display = 'none';
+             currentTabContainer.classList.remove('active-tab');
            }
          }
        });
       }
-
-      const chooseProduct = document.getElementById('choose-product');
-      const productsTab = document.getElementById('tabs');
-
-      chooseProduct.addEventListener('click', function(e) {
-        if (productsTab.classList.contains('product-tab-open')) {
-          productsTab.classList.remove('product-tab-open');
-          productsTab.classList.add('product-tab-closed');
-        } else {
-          productsTab.classList.remove('product-tab-closed');
-          productsTab.classList.add('product-tab-open');
-        }
-      });
-
 
       /* ---------------------------
        * Shopping cart functionality
        * ---------------------------
        */
 
+      // Some extra logic for the mobile menu.
+      chooseProduct.addEventListener('click', function(e) {
+       if (productsTab.classList.contains('product-tab-open')) {
+         productsTab.classList.remove('product-tab-open');
+         productsTab.classList.add('product-tab-closed');
+       } else {
+         productsTab.classList.remove('product-tab-closed');
+         productsTab.classList.add('product-tab-open');
+       }
+      });
+
       // Fetch elements from the DOM.
       const cartValueNodes = document.getElementsByClassName('cart-val');
       const cartResults = document.getElementById('cart-results');
-      const cartContainer = document.getElementById('cart-container');
 
       /**
        * Only the tab container stores the tab number. This method
@@ -176,7 +229,7 @@ document.addEventListener('DOMContentLoaded', function() {
           // Do not show the cart value if it is 0.
           if (cartValue > 0) {
             // Map the tab id to a couple data pieces.
-            let curGabionData = gabionData.article_item[getTabKey(cartValueNodes[i])];
+            let curGabionData = gabionData.products[getTabKey(cartValueNodes[i])];
             let type = curGabionData.name;
             let size = curGabionData.size.join(' x ');
             let weight = curGabionData.weight;
@@ -195,8 +248,10 @@ document.addEventListener('DOMContentLoaded', function() {
           }
         }
 
+        console.log(lines.length);
         // Show the container if we have more than 1 line.
         if (lines.length > 1) {
+          console.log('how the hell')
           // Add the total price.
           lines.push(`Total pris: ${totalPrice} kroner.`);
           // Add the total weight.
@@ -205,13 +260,13 @@ document.addEventListener('DOMContentLoaded', function() {
           lines.push(`Totalt volum: ${totalSize} m^2`);
           // Add all lines to textarea with newlines between them.
           cartResults.value = lines.join('\n');
-          // Show the cart container.
-          cartContainer.style.display = 'flex';
+          // Show the textarea.
+          cartResults.style.display = 'flex';
           // Grow textarea to size of contents.
           cartResults.style.height = cartResults.scrollHeight + 'px';
         } else {
-          // Hide cart container.
-          cartContainer.style.display = 'none';
+          // Hide textarea.
+          cartResults.style.display = 'none';
         }
       }
 
@@ -223,13 +278,6 @@ document.addEventListener('DOMContentLoaded', function() {
         let tabKey = getTabKey(curTab);
         // Current cart value node.
         let cartValueNode = curTab.getElementsByClassName('cart-val')[0];
-
-        // Attempt to fetch a locally stored value and display it.
-        var storedValue = getLocalData('cart-value' + tabKey);
-
-        if (storedValue) {
-          cartValueNode.value = storedValue;
-        }
 
         cartValueNode.addEventListener('input', function() {
           // Remove all non-integer characters from the input.

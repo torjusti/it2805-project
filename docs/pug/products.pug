@@ -11,24 +11,19 @@ body
     button#choose-product Velg fra produkter
 
   section.products
-
       #item-tabs
 
       #item-containers
 
-        #shopping-cart
-          #cart-changer
-            button#cart-add Legg til i handlekurv
-            input#cart-val(value="0", type="text")
-            button#cart-remove Fjern fra handlekurv
-          #cart-controls
-            textarea#cart-results(readonly)
+      #shopping-cart
+        textarea#cart-results(readonly)
+        #cart-controls
+          div
+            p Dette er din handlekurv. Trykk send for å sende en mail til oss, så svarer vi så fort som mulig.
             div
-              p Dette er din handlekurv. Trykk send for å sende en mail til oss, så svarer vi så fort som mulig.
-              div
-                button#send-cart-mail Send
-                button#copy-cart-contents Kopier tekst
-                button#clear-cart-contents Tøm handlekurv
+              button#send-cart-mail Send
+              button#copy-cart-contents Kopier tekst
+              button#clear-cart-contents Tøm handlekurv
 
   footer
     include modules/footer.html
