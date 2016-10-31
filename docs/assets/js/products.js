@@ -9,76 +9,58 @@ document.addEventListener('DOMContentLoaded', function() {
 
       let itemTabs = document.getElementById('item-tabs');
       let itemContainers = document.getElementById('item-containers');
-      let shoppingCart = document.getElementById('shopping-cart');
 
       // Render data.
-      for (var i = 0; i < gabionData.products.length; i++) {
-        let tabButton = document.createElement('span');
-        tabButton.setAttribute('data-tab', i);
-        tabButton.className = 'item-tab';
-        tabButton.innerHTML = gabionData.products[i].name;
-        itemTabs.appendChild (tabButton);
+      gabionData.products.forEach(function(product, i) {
+        itemTabs.appendChild(createElem({
+          'nodeType': 'span',
+          'data-tab': i,
+          'className': 'item-tab',
+          'innerHTML': product.name
+        }));
 
-        let name = document.createElement('div');
-        let size = document.createElement('div');
-        let weight = document.createElement('div');
-        let price = document.createElement('div');
+        let itemData = createElem({
+          'className': 'item-name'
+        });
 
-        name.className = 'item-name'
-        size.className = 'item-size';
-        weight.className = 'item-weight';
-        price.className = 'item-price';
+        ['name', 'size', 'weight', 'price'].forEach(function(type) {
+          itemData.appendChild(createElem({
+            'className': `item-${type}`,
+            'innerHTML': product[type]
+          }));
+        });
 
-        name.innerHTML = gabionData.products[i].name;
-        size.innerHTML = gabionData.products[i].size.join(' x ');
-        weight.innerHTML = gabionData.products[i].weight;
-        price.innerHTML = gabionData.products[i].price;
+        let cartControls = createElem({
+          'className': 'cart-controls',
 
-        let itemData = document.createElement('div');
-        itemData.className = 'item-data';
+          children: [
+            createElem({
+            'nodeType': 'button',
+            'className': 'cart-add',
+            'innerHTML': 'Legg til i handlekurv'
+            }),
 
-        itemData.appendChild(name);
-        itemData.appendChild(size);
-        itemData.appendChild(weight);
-        itemData.appendChild(price);
+            createElem({
+              'nodeType': 'input',
+              'className': 'cart-val',
+              'type': 'text',
+              'value': getLocalData('cart-value' + i) || 0 // Use stored value if it exists
+            }),
 
-        let cartControls = document.createElement('div');
-        cartControls.className = 'cart-controls';
+            createElem({
+              'nodeType': 'button',
+              'className': 'cart-remove',
+              'innerHTML': 'Fjern fra handlekurven'
+            })
+          ]
+        });
 
-        let cartAddButton = document.createElement('button');
-        cartAddButton.className = 'cart-add';
-        cartAddButton.innerHTML = 'Legg til i handlekurv';
-        cartControls.appendChild(cartAddButton);
-
-        let cartValInput = document.createElement('input');
-        cartValInput.className = 'cart-val';
-        cartValInput.type = 'text';
-
-        // Attempt to fetch a locally stored cart input value and display it.
-        var storedValue = getLocalData('cart-value' + i);
-
-        if (storedValue) {
-          cartValInput.value = storedValue;
-        } else {
-          cartValInput.value = 0; // 0 as default value.
-        }
-
-        cartControls.appendChild(cartValInput);
-
-        let cartRemoveButton = document.createElement('button');
-        cartRemoveButton.className = 'cart-remove';
-        cartRemoveButton.innerHTML = 'Fjern fra handlekurven';
-        cartControls.appendChild(cartRemoveButton);
-
-        let tabContainer = document.createElement('div');
-
-        tabContainer.className = 'item-container';
-        tabContainer.setAttribute('data-tab', i);
-
-        tabContainer.appendChild(cartControls);
-        tabContainer.appendChild(itemData);
-        itemContainers.appendChild(tabContainer);
-      }
+        itemContainers.appendChild(createElem({
+          'className': 'item-container',
+          'data-tab': i,
+          'children': [cartControls, itemData]
+        }));
+      });
 
       /**
        * -----------------
@@ -248,10 +230,8 @@ document.addEventListener('DOMContentLoaded', function() {
           }
         }
 
-        console.log(lines.length);
         // Show the container if we have more than 1 line.
         if (lines.length > 1) {
-          console.log('how the hell')
           // Add the total price.
           lines.push(`Total pris: ${totalPrice} kroner.`);
           // Add the total weight.

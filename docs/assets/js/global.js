@@ -55,6 +55,42 @@ function ajax(options, path, success, error) {
 }
 
 /**
+ * Helper function for creating an element and setting properties.
+ */
+function createElem(obj) {
+  let elem = document.createElement(obj.nodeType || 'div'); // div as default type.
+
+  // Special attributes such as className and innerHTML which are not
+  // attributes, but rather DOM properties. There might be more of
+  // these, but these are the ones we are using.
+  const DOM_PROPERTIES = ['className', 'innerHTML'];
+
+  // These should not be set using setAtribute but are not DOM properties.
+  const BLACKLIST = DOM_PROPERTIES.concat(['nodeType', 'children']);
+
+  DOM_PROPERTIES.forEach(function(attribute) {
+    if (obj[attribute]) {
+      elem[attribute] = obj[attribute];
+    }
+  });
+
+  // Handle the rest of the attributes using setAttribute.
+  for (let key in obj) {
+    if (BLACKLIST.indexOf(key) < 0) { // Only set if not in blacklist.
+      elem.setAttribute(key, obj[key]);
+    }
+  }
+
+  if (obj.children) {
+    obj.children.forEach(function(child) {
+      elem.appendChild(child);
+    });
+  }
+
+  return elem;
+}
+
+/**
  * --------------------------------------------
  * Functionality that needs to run on all pages
  * --------------------------------------------
