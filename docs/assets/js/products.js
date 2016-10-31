@@ -1,4 +1,4 @@
-/* Wait until the DOM has finished loading.*/
+// Wait until the DOM has finished loading.
 document.addEventListener('DOMContentLoaded', function() {
   ajax({
     path: 'assets/data.json',
@@ -7,50 +7,86 @@ document.addEventListener('DOMContentLoaded', function() {
       // Parse JSON data.
       let gabionData = JSON.parse(responseText);
 
-      // Fetch elements from the DOM.
-      const tabs = document.getElementsByClassName('item-tab');
-      const tabContainers = document.getElementsByClassName('item-container');
+      let itemTabs = document.getElementById('item-tabs');
+      let itemContainers = document.getElementById('item-containers');
 
       // Render data.
-      for (var i = 0; i < gabionData.article_item.length; i++) {
-        tabs[i].innerText = gabionData.article_item[i].name;
-        var name = document.createElement("div");
-        var size = document.createElement("div");
-        var weight = document.createElement("div");
-        var price = document.createElement("div");
-        name.className = "item-name"
-        size.className = "item-size";
-        weight.className = "item-weight";
-        price.className = "item-price";
-        var nameText = document.createTextNode(gabionData.article_item[i].name);
-        var sizeText = document.createTextNode(gabionData.article_item[i].size.join(' x '));
-        var weightText = document.createTextNode(gabionData.article_item[i].weight);
-        var priceText = document.createTextNode(gabionData.article_item[i].price);
-        name.appendChild(nameText);
-        size.appendChild(sizeText);
-        weight.appendChild(weightText);
-        price.appendChild(priceText);
-        tabContainers[i].childNodes[1].appendChild(name);
-        tabContainers[i].childNodes[1].appendChild(size);
-        tabContainers[i].childNodes[1].appendChild(weight);
-        tabContainers[i].childNodes[1].appendChild(price);
-      }
+      gabionData.products.forEach(function(product, i) {
+        itemTabs.appendChild(createElem({
+          'nodeType': 'span',
+          'data-tab': i,
+          'className': 'item-tab',
+          'innerHTML': product.name
+        }));
+
+        let itemData = createElem({
+          'className': 'item-name'
+        });
+
+        ['name', 'size', 'weight', 'price'].forEach(function(type) {
+          itemData.appendChild(createElem({
+            'className': `item-${type}`,
+            'innerHTML': product[type]
+          }));
+        });
+
+        let cartControls = createElem({
+          'className': 'cart-controls',
+
+          children: [
+            createElem({
+            'nodeType': 'button',
+            'className': 'cart-add',
+            'innerHTML': 'Legg til i handlekurv'
+            }),
+
+            createElem({
+              'nodeType': 'input',
+              'className': 'cart-val',
+              'type': 'text',
+              'value': getLocalData('cart-value' + i) || 0 // Use stored value if it exists
+            }),
+
+            createElem({
+              'nodeType': 'button',
+              'className': 'cart-remove',
+              'innerHTML': 'Fjern fra handlekurven'
+            })
+          ]
+        });
+
+        itemContainers.appendChild(createElem({
+          'className': 'item-container',
+          'data-tab': i,
+          'children': [cartControls, itemData]
+        }));
+      });
 
       /**
        * -----------------
        * Tab functionality
        * -----------------
        */
-       const chooseProduct = document.getElementById('choose-product');
-       const productsTab = document.getElementById('item-tabs');
+
+      // Fetch elements from the DOM.
+      const tabs = document.getElementsByClassName('item-tab');
+      const tabContainers = document.getElementsByClassName('item-container');
+
       // Show the first tab by default. Ensure it has the clicked-tab-styling.
       tabContainers[0].style.display = 'flex';
       tabContainers[0].classList.add('active-tab');
       tabs[0].classList.add('active-tab');
 
+      const chooseProduct = document.getElementById('choose-product');
+      const productsTab = document.getElementById('item-tabs');
+
       // Loop through all tabs.
       for (let i = 0; i < tabs.length; i++) {
        tabs[i].addEventListener('click', function(e) {
+         // Class handling for mobile phones only.
+         productsTab.classList.remove('product-tab-open');
+         productsTab.classList.add('product-tab-closed');
+
          // Find out the tab code of the clicked tab.
          let tabKey = e.target.getAttribute('data-tab');
 
@@ -65,42 +101,38 @@ document.addEventListener('DOMContentLoaded', function() {
          // Loop through all tabs.
          for (let j = 0; j < tabContainers.length; j++) {
            let currentTabContainer = tabContainers[j];
+
            // If this tab has the same code as the new current tab show it, if not, hide it.
            if (currentTabContainer.getAttribute('data-tab') === tabKey) {
              currentTabContainer.style.display = 'flex';
-             productsTab.className = 'tabs-out';
              currentTabContainer.classList.add('active-tab');
            } else {
              currentTabContainer.style.display = 'none';
+             currentTabContainer.classList.remove('active-tab');
            }
          }
        });
       }
-
-
-
-      chooseProduct.addEventListener('click', function(e) {
-
-        if (productsTab.style.display === 'none' || !productsTab.style.display) {
-          productsTab.className = 'tabs-in';
-        }
-      });
-
 
       /* ---------------------------
        * Shopping cart functionality
        * ---------------------------
        */
 
+      // Some extra logic for the mobile menu.
+      chooseProduct.addEventListener('click', function(e) {
+       if (productsTab.classList.contains('product-tab-open')) {
+         productsTab.classList.remove('product-tab-open');
+         productsTab.classList.add('product-tab-closed');
+       } else {
+         productsTab.classList.remove('product-tab-closed');
+         productsTab.classList.add('product-tab-open');
+       }
+      });
+
       // Fetch elements from the DOM.
-      const cartValueNodes = document.getElementById('cart-val');
+      const cartValueNodes = document.getElementsByClassName('cart-val');
       const cartResults = document.getElementById('cart-results');
-      const cartContainer = document.getElementById('shopping-cart');
-
-      cartResults.addEventListener('click', function(e) {
-        cartResults.classList.toggle('full-screen')
-      })
-
 
       /**
        * Only the tab container stores the tab number. This method
@@ -179,7 +211,7 @@ document.addEventListener('DOMContentLoaded', function() {
           // Do not show the cart value if it is 0.
           if (cartValue > 0) {
             // Map the tab id to a couple data pieces.
-            let curGabionData = gabionData.article_item[getTabKey(cartValueNodes[i])];
+            let curGabionData = gabionData.products[getTabKey(cartValueNodes[i])];
             let type = curGabionData.name;
             let size = curGabionData.size.join(' x ');
             let weight = curGabionData.weight;
@@ -208,12 +240,13 @@ document.addEventListener('DOMContentLoaded', function() {
           lines.push(`Totalt volum: ${totalSize} m^2`);
           // Add all lines to textarea with newlines between them.
           cartResults.value = lines.join('\n');
-          // Show the cart container.
-          cartContainer.style.display = 'flex';
-
+          // Show the textarea.
+          cartResults.style.display = 'flex';
+          // Grow textarea to size of contents.
+          cartResults.style.height = cartResults.scrollHeight + 'px';
         } else {
-          // Hide cart container.
-          cartContainer.style.display = 'none';
+          // Hide textarea.
+          cartResults.style.display = 'none';
         }
       }
 
@@ -224,14 +257,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Current tab key.
         let tabKey = getTabKey(curTab);
         // Current cart value node.
-        let cartValueNode = document.getElementById('cart-val');
-
-        // Attempt to fetch a locally stored value and display it.
-        var storedValue = getLocalData('cart-value' + tabKey);
-
-        if (storedValue) {
-          cartValueNode.value = storedValue;
-        }
+        let cartValueNode = curTab.getElementsByClassName('cart-val')[0];
 
         cartValueNode.addEventListener('input', function() {
           // Remove all non-integer characters from the input.
@@ -239,14 +265,12 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 
         // Positive increments.
-        document.getElementById('cart-add').addEventListener('click', function() {
-          toast('Du la til et element i handlekurven.');
+        curTab.getElementsByClassName('cart-add')[0].addEventListener('click', function() {
           updateCart(cartValueNode, 1);
         });
 
         // Negative increemnts.
-        document.getElementById('cart-remove').addEventListener('click', function() {
-          toast('Du fjernet et element fra handlekurven.');
+        curTab.getElementsByClassName('cart-remove')[0].addEventListener('click', function() {
           updateCart(cartValueNode, -1);
         });
       }
@@ -274,7 +298,6 @@ document.addEventListener('DOMContentLoaded', function() {
       document.getElementById('clear-cart-contents').addEventListener('click', function() {
         for (let i = 0; i < cartValueNodes.length; i++) {
           // Remove the current value from itself as the API does not currently allow better.
-          toast('Handlekurven din er nå tom.');
           updateCartValueNode(cartValueNodes[i], -parseInt(cartValueNodes[i].value, 10));
         }
 
