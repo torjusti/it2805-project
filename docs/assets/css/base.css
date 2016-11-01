@@ -432,10 +432,12 @@ header{min-width: 100%}
               #cart-control button:last-child::after{background-image: url('../img/icons/remove.svg')}
 
       .cart-controls{
+        position: relative;
         align-self: flex-end;
         margin: 30px;
         display: flex;
         justify-content: center;
+        z-index: 1
       }
 
         .cart-controls input{
