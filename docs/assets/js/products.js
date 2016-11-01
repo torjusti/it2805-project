@@ -262,12 +262,14 @@ document.addEventListener('DOMContentLoaded', function() {
         curTab.getElementsByClassName('cart-add')[0].addEventListener('click', function() {
           toast('Du la til et element i handlekurven din.');
           updateCart(cartValueNode, 1);
+          toast('Gabion lagt til i handlekurv');
         });
 
         // Negative increemnts.
         curTab.getElementsByClassName('cart-remove')[0].addEventListener('click', function() {
           toast('Du fjernet et element fra handlekurven din.');
           updateCart(cartValueNode, -1);
+          toast('Gabion fjernet fra handlekurv');
         });
       }
 
@@ -300,6 +302,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Display the changes.
         updateCart();
+
+        toast('Handlevogn slettet')
       });
 
       // Initial cart update.
