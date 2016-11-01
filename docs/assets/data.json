@@ -46,13 +46,15 @@
       "name": "*Gabion - gjerde/støyskjerm m/2 stolper",
       "size": [200, 30, 225],
       "weight": 75,
-      "price": 1990
+      "price": 1990,
+      "extra": "*Selges i sett med 2 stk stolper, 2 stk galvaniserte nett, 20 stk avstands stenger for å holde gabionen sammen når den fylles, 16 skruer, muttere og 32 festeklips."
     },
     {
-      "name": "**Gabion - gjerde/støyskjerm m/2 stolper",
+      "name": "*Gabion - gjerde/støyskjerm m/2 stolper",
       "size": [200, 30, 200],
       "weight": 72,
-      "price": 1890
+      "price": 1890,
+      "extra": "*Selges i sett med 2 stk stolper, 2 stk galvaniserte nett, 24 avstands stenger for å holde gabionen sammen når den fylles, 20 skruer, muttere, og 40 festeklips."
     },
     {
       "name": "Rund gabion 70 diameter",
