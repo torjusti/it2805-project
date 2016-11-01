@@ -472,6 +472,159 @@ header{min-width: 100%}
 
 /*----/SPECIFICATIONS SUBPAGE----*/
 
+/*----TRIVIA SUBPAGE----*/
+
+#footer_trivia{
+  position: fixed;
+  bottom: 0%;
+}
+#trivia_h2{
+  background-color: transparent;
+  color: #00A651;
+  position: absolute;
+  top: 7%;
+  font-size: 40px;
+}
+.trivia1{
+  width: 30%;
+  position: absolute;
+  right:52%;
+  top:18%;
+  border-left: 1px solid #00A651;
+  border-right: 1px solid #00A651;
+  padding: 10px 20px
+}
+.trivia2{
+  width: 30%;
+  position: absolute;
+  left: 52%;
+  top:18%;
+  border-left: 1px solid #00A651;
+  border-right: 1px solid #00A651;
+  padding: 10px 20px
+}
+.trivia3{
+  width: 30%;
+  position: absolute;
+  right: 52%;
+  top:118%;
+  border-left: 1px solid #00A651;
+  border-right: 1px solid #00A651;
+  padding: 10px 20px
+}
+.trivia4{
+  width: 30%;
+  position: absolute;
+  left:52%;
+  top:118%;
+  border-left: 1px solid #00A651;
+  border-right: 1px solid #00A651;
+  padding: 10px 20px
+}
+.trivia5{
+  width: 30%;
+  position: absolute;
+  right: 52%;
+  top:225%;
+  border-left: 1px solid #00A651;
+  border-right: 1px solid #00A651;
+  padding: 10px 20px
+}
+.trivia6{
+  width: 30%;
+  position: absolute;
+  left: 52%;
+  top:225%;
+  border-left: 1px solid #00A651;
+  border-right: 1px solid #00A651;
+  padding: 10px 20px
+}
+.list_trivia {
+padding-left: 1em;
+text-indent: -.7em;
+}
+.list_trivia:before {
+content: "■ ";
+color: #00A651;
+}
+#bilde1{
+  position: absolute;
+  width: 70%;
+  height: 70%;
+  top: 45%;
+}
+#bilde2{
+  position: absolute;
+  width: 70%;
+  height: 70%;
+  top: 153%;
+}
+#bilde3{
+  position: absolute;
+  width: 70%;
+  height: 70%;
+  top: 263%;
+}
+
+@media screen and (max-width:1200px) {
+  #bilde1{
+    height: 50%;
+    top: 60%;
+  }
+}
+@media screen and (max-width:775px) {
+  #bilde1{
+    height: 45%;
+    top: 70%;
+  }
+}
+@media screen and (max-width:650px) {
+  #bilde1{
+    height: 35%;
+    top: 75%;
+  }
+}
+
+@media screen and (max-width:1200px) {
+  #bilde2{
+    height: 50%;
+    top: 170%;
+  }
+}
+@media screen and (max-width:825px) {
+  #bilde2{
+    height: 45%;
+    top: 180%;
+  }
+}
+@media screen and (max-width:650px) {
+  #bilde2{
+    height: 35%;
+    top: 185%;
+  }
+}
+
+@media screen and (max-width:1200px) {
+  #bilde3{
+    height: 50%;
+    top: 280%;
+  }
+}
+@media screen and (max-width:775px) {
+  #bilde3{
+    height: 45%;
+    top: 290%;
+  }
+}
+@media screen and (max-width:650px) {
+  #bilde3{
+    height: 35%;
+    top: 295%;
+  }
+}
+
+/*----/TRIVIA SUBPAGE----*/
+
 /*----MONTERING SUBPAGE----*/
 #montering1,#montering2,#montering3,#montering4,#montering5,#montering6,#stepCount{
   display:none;
