@@ -1,4 +1,4 @@
-// Wait until the DOM has finished loading.
+/* Wait until the DOM has finished loading. */
 document.addEventListener('DOMContentLoaded', function() {
   ajax({
     path: 'assets/data.json',
@@ -20,13 +20,13 @@ document.addEventListener('DOMContentLoaded', function() {
         }));
 
         let itemData = createElem({
-          'className': 'item-name'
+          'className': 'item-data'
         });
 
-        ['name', 'size', 'weight', 'price'].forEach(function(type) {
+        ['name', 'size', 'weight', 'price', 'extra'].forEach(function(type) {
           itemData.appendChild(createElem({
             'className': `item-${type}`,
-            'innerHTML': product[type]
+            'innerHTML': (type != 'size') ? product[type] : product[type].join(' x ') // A little function to join sizes with an x.
           }));
         });
 
@@ -71,22 +71,20 @@ document.addEventListener('DOMContentLoaded', function() {
       // Fetch elements from the DOM.
       const tabs = document.getElementsByClassName('item-tab');
       const tabContainers = document.getElementsByClassName('item-container');
+      const chooseProduct = document.getElementById('choose-product');
+      const productsTab = document.getElementById('item-tabs');
 
       // Show the first tab by default. Ensure it has the clicked-tab-styling.
       tabContainers[0].style.display = 'flex';
       tabContainers[0].classList.add('active-tab');
       tabs[0].classList.add('active-tab');
 
-      const chooseProduct = document.getElementById('choose-product');
-      const productsTab = document.getElementById('item-tabs');
 
       // Loop through all tabs.
       for (let i = 0; i < tabs.length; i++) {
        tabs[i].addEventListener('click', function(e) {
          // Class handling for mobile phones only.
-         productsTab.classList.remove('product-tab-open');
-         productsTab.classList.add('product-tab-closed');
-
+         productsTab.className = "tabs-out"
          // Find out the tab code of the clicked tab.
          let tabKey = e.target.getAttribute('data-tab');
 
@@ -119,14 +117,11 @@ document.addEventListener('DOMContentLoaded', function() {
        * ---------------------------
        */
 
+
       // Some extra logic for the mobile menu.
       chooseProduct.addEventListener('click', function(e) {
-       if (productsTab.classList.contains('product-tab-open')) {
-         productsTab.classList.remove('product-tab-open');
-         productsTab.classList.add('product-tab-closed');
-       } else {
-         productsTab.classList.remove('product-tab-closed');
-         productsTab.classList.add('product-tab-open');
+       if (productsTab.className != "tabs-in") {
+         productsTab.className = "tabs-in"
        }
       });
 
@@ -240,13 +235,12 @@ document.addEventListener('DOMContentLoaded', function() {
           lines.push(`Totalt volum: ${totalSize} m^2`);
           // Add all lines to textarea with newlines between them.
           cartResults.value = lines.join('\n');
-          // Show the textarea.
-          cartResults.style.display = 'flex';
-          // Grow textarea to size of contents.
-          cartResults.style.height = cartResults.scrollHeight + 'px';
+          // Show the shopping cart.
+          document.getElementById('shopping-cart').style.display = 'flex';
+
         } else {
-          // Hide textarea.
-          cartResults.style.display = 'none';
+          // Hide shopping cart.
+          document.getElementById('shopping-cart').style.display = 'none';
         }
       }
 
@@ -266,11 +260,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Positive increments.
         curTab.getElementsByClassName('cart-add')[0].addEventListener('click', function() {
+          toast('Du la til et element i handlekurven din.');
           updateCart(cartValueNode, 1);
         });
 
         // Negative increemnts.
         curTab.getElementsByClassName('cart-remove')[0].addEventListener('click', function() {
+          toast('Du fjernet et element fra handlekurven din.');
           updateCart(cartValueNode, -1);
         });
       }
@@ -299,6 +295,7 @@ document.addEventListener('DOMContentLoaded', function() {
         for (let i = 0; i < cartValueNodes.length; i++) {
           // Remove the current value from itself as the API does not currently allow better.
           updateCartValueNode(cartValueNodes[i], -parseInt(cartValueNodes[i].value, 10));
+          toast('Handlekurven din er nå tom.');
         }
 
         // Display the changes.
