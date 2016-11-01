@@ -434,7 +434,6 @@ header{min-width: 100%}
       .cart-controls{
         position: relative;
         align-self: flex-end;
-        margin: 30px;
         display: flex;
         justify-content: center;
         z-index: 1
@@ -775,6 +774,7 @@ footer>ul>li:last-child::before{background-image: url(../img/icons/phone.svg)}
       width: 100vw;
       height: calc(100vh - 62px);
       position: fixed;
+      z-index: 1000
     }
     #item-containers{flex-grow: 1}
     #item-containers,#shopping-cart{
@@ -837,8 +837,21 @@ footer>ul>li:last-child::before{background-image: url(../img/icons/phone.svg)}
   .home-footer{box-shadow: none}
 }
 
-@media screen and (max-width:500px) {
-  #copy-cart-contents{display: none}
+@media screen and (max-width:720px) {
+  #cart-control{padding: 0}
+  #cart-control div{
+    margin-left: -1px;
+    padding: 0;
+    display: flex;
+    min-width: 100%;
+  }
+  #cart-control div button{
+    width: 33.333%;
+    margin: 0;
+    padding: 20px 0;
+    border-radius: 0 !important;
+    border-left: 1px solid black
+  }
 }
 
 

@@ -260,16 +260,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Positive increments.
         curTab.getElementsByClassName('cart-add')[0].addEventListener('click', function() {
-          toast('Du la til et element i handlekurven din.');
           updateCart(cartValueNode, 1);
-          toast('Gabion lagt til i handlekurv');
+          toast('Gabion lagt til i handlekurv.');
         });
 
         // Negative increemnts.
         curTab.getElementsByClassName('cart-remove')[0].addEventListener('click', function() {
-          toast('Du fjernet et element fra handlekurven din.');
           updateCart(cartValueNode, -1);
-          toast('Gabion fjernet fra handlekurv');
+          toast('Gabion fjernet fra handlekurv.');
         });
       }
 
@@ -297,13 +295,12 @@ document.addEventListener('DOMContentLoaded', function() {
         for (let i = 0; i < cartValueNodes.length; i++) {
           // Remove the current value from itself as the API does not currently allow better.
           updateCartValueNode(cartValueNodes[i], -parseInt(cartValueNodes[i].value, 10));
-          toast('Handlekurven din er nå tom.');
         }
 
         // Display the changes.
         updateCart();
-
-        toast('Handlevogn slettet')
+        
+        toast('Handlekurven din er nå tom.');
       });
 
       // Initial cart update.
