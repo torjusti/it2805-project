@@ -552,6 +552,10 @@ footer>ul>li:last-child::before{background-image: url(../img/icons/phone.svg)}
   font-size: .9em;
   color: white
 }
+#footer-desktop li:first-child ul li:first-child:before,#footer-desktop li:first-child ul li:first-child:before{content:'Addresse: '}
+#footer-desktop li:nth-child(2) ul li:before{content:'Epost: '}
+#footer-desktop li:last-child ul li:first-child:before{content:'Telefon: '}
+#footer-desktop li:last-child ul li:last-child:before{content:'Mobil: '}
 
 #footer-mobile{
   display: none;
