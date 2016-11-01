@@ -12,7 +12,7 @@
 *:focus{
   outline: none
 }
-::selection{background: #00A651;color: white}
+/*::selection{background: #00A651;color: white}*/
 
 /*----/RESET----*/
 
@@ -313,34 +313,24 @@ header{min-width: 100%}
 /*----SPECIFICATIONS SUBPAGE----*/
 
 .products{
+  display: block;
   position: relative;
-  min-width: 80vw;
-  max-width: 80vw;
+  width: 80vw;
   height: 65vh;
-  flex-direction: row;
-  align-items: stretch;
-  flex-grow: 0;
+  max-height: 65vh;
   box-shadow: 0 0 20px 5px rgba(0,0,0,.3);
   background: #00A651;
-  margin-top: -2em
+  margin-top: -2em;
+  overflow: hidden
 }
-
-  .products::after{
-    position: absolute;
-    display: flex;
-    content: '*Selges i sett med 2 stk stolper, 2 stk galvaniserte nett, 20 stk avstands stenger for å holde gabionen sammen når den fylles, 16 skruer, muttere og 32 festeklips.**Selges i sett med 2 stk stolper, 2 stk galvaniserte nett, 24 avstands stenger for å holde gabionen sammen når den fylles, 20 skruer, muttere, og 40 festeklips.';
-    font-size: .7em;
-    padding: 10px;
-    color: #00A651;
-    font-style: italic;
-    bottom:-4em
+  .products h2 {
+    display: none
   }
-
   #item-tabs {
-    overflow-y: scroll;
+    position: relative;
     height: 100%;
-    min-width: 25vw;
-    max-width: 25vw;
+    float: left;
+    overflow-y: scroll;
     direction:rtl;
     box-shadow: 5px 0 5px rgba(0,0,0,.3);
     z-index: 1
@@ -350,9 +340,10 @@ header{min-width: 100%}
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 25px 2vw;
+      padding: 25px;
       background: grey;
       border-top: 1px solid lightgrey;
+      box-sizing: border-box;
       cursor: pointer;
       color:white;
       transition: .2s ease-in-out
@@ -366,24 +357,30 @@ header{min-width: 100%}
       font-weight: bolder
     }
 
+  #item-tabs{width: 30%}
+  #item-containers,#shopping-cart{width: 70%}
+  #item-containers{height: 60%}
+  #shopping-cart{height: 40%}
+
   #item-containers {
-    color: white;
+    position: relative;
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    overflow: hidden
+    float: right;
+    color: white;
   }
 
     .item-container {
-      position: relative;
-      min-width: 55vw;
+      flex-direction: column;
       flex-grow: 1;
-      display: none
+      display: none;
     }
 
-      .item-data{padding: 30px}
+      .item-data{
+        position: absolute;
+        padding: 30px}
 
         .item-name{display: none}
+        .item-extra{font-size: .7em}
         .item-size::before{content: 'Størrelse: '}
         .item-weight::before{content:'Vekt: '}
         .item-price::before{content:'Pris: '}
@@ -392,93 +389,85 @@ header{min-width: 100%}
         .item-price::after{content:' kr'}
 
     #shopping-cart {
-      position: relative;
-      z-index: 2;
-      display: flex !important;
+      float: right;
       flex-direction: column;
-
+      display: none;
+      animation: slideUp .3s forwards;
+      box-shadow: 0 0 10px rgba(0,0,0,.3)
     }
 
-      #cart-changer{
-        margin: 10px;
+      #cart-results{
+        overflow-y: scroll;
+        padding: 20px;
+        min-height: 10vh;
+        box-shadow: inset 0 0 20px rgba(0,0,0,.3)
+      }
+
+      #cart-control{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background: #333;
+        padding: 30px 0
+      }
+
+        #cart-control p{
+          line-height: 1;
+          padding: 20px;
+          color: white
+        }
+
+        #cart-control>div{
+          padding-right: 20px;
+          white-space: nowrap
+        }
+
+          #cart-control button{
+            background: #00A651;
+            color:white
+          }
+
+              #cart-control button:first-child::after{  background-image: url('../img/icons/send.svg')}
+              #cart-control button:nth-child(2)::after{background-image: url('../img/icons/copy.svg')}
+              #cart-control button:last-child::after{background-image: url('../img/icons/remove.svg')}
+
+      .cart-controls{
+        align-self: flex-end;
+        margin: 30px;
         display: flex;
         justify-content: center;
       }
 
-        #cart-changer input{
+        .cart-controls input{
           text-align: center;
           border: none;
           font-weight: bolder;
         }
 
-          #cart-changer input[type="text"]{
+          .cart-controls input[type="text"]{
             max-width: 40px
           }
 
-          #cart-changer button{
+          .cart-controls button{
             border-radius: 0;
             margin: 0;
             background: #333;
             color: white;
           }
 
-            #cart-changer button:first-child{
+            .cart-controls button:first-child{
               border-top-left-radius: 5px;
               border-bottom-left-radius: 5px
             }
 
-            #cart-changer button:last-child{
+            .cart-controls button:last-child{
               border-top-right-radius: 5px;
               border-bottom-right-radius: 5px
             }
 
-              #cart-changer button:first-child::after{background-image: url('../img/icons/add.svg')}
-              #cart-changer button:nth-child(3)::after{background-image: url('../img/icons/remove.svg')}
+              .cart-controls button:first-child::after{background-image: url('../img/icons/add.svg')}
+              .cart-controls button:nth-child(3)::after{background-image: url('../img/icons/remove.svg')}
 
-      #cart-controls{
-        display: flex;
-        flex-direction: column;
-        background: #333;
-        animation: slideUp .3s forwards;
-        padding: 10px;
-      }
-
-        #cart-controls textarea{
-          margin: 10px;
-          max-height: 20vh;
-          overflow-y: scroll;
-          padding: 20px;
-          box-shadow: inset 0 0 10px rgba(0,0,0,.8)
-        }
-
-        #cart-controls>div{
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          margin-bottom: 5px
-        }
-
-          #cart-controls div p{
-            line-height: 1.2;
-            font-size: .9em;
-            padding: 0;
-            color: white;
-            margin-left:10px
-          }
-
-          #cart-controls>div>div{
-            white-space: nowrap;
-            margin: 0 10px 5px 5px
-          }
-
-            #cart-controls button{
-              background: #00A651;
-              color:white;
-            }
-
-                #cart-controls button:first-child::after{  background-image: url('../img/icons/send.svg')}
-                #cart-controls button:nth-child(2)::after{background-image: url('../img/icons/copy.svg')}
-                #cart-controls button:last-child::after{background-image: url('../img/icons/remove.svg')}
 
 /*----/SPECIFICATIONS SUBPAGE----*/
 
@@ -579,44 +568,54 @@ footer>ul>li:last-child::before{background-image: url(../img/icons/phone.svg)}
 /*------------------------------------------------------------------------
 -------------------------------MEDIA QUERIES------------------------------
 ------------------------------------------------------------------------*/
-@media screen and (max-width:1580px) {
+@media screen and (max-width:1556px) {
 
   h1{
     font-size: 1.9em;
     padding: 10px 80px
   }
+
   p{line-height: 1.6}
+
   header nav ul li a{
     padding: 15px 30px
   }
+
   .home h1{margin-top:-5%}
+
   #left-bg{
     min-width: 95%;
     left: -30%;
   }
-  #item-tabs{
-    min-width: 30vw;
-    max-width: 30vw;
-  }
+
+  .products{width: 85vw}
 
   .about{max-width: 60%}
 }
 
-@media screen and (max-width:1460px) {
-  .products{max-width: 90vw}
+@media screen and (max-width:1478px) {
+  .products{width: 90vw}
 }
-
-
 
 @media screen and (max-width:1350px) {
   .products{margin: 0}
+
+  #item-tabs{width: 35%}
+  #item-containers,#shopping-cart{width: 65%}
+
   .home p{line-height: 1.4}
 }
 @media screen and (max-width:1220px) {
   #item-tabs{font-size: .9em}
-
-  #cart-controls>div{flex-direction: column}
-  #cart-controls>div>div{margin: 10px 0 0}
+  #cart-control{
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px 10px 20px 10px
+  }
+  #cart-control p{
+    padding: 10px;
+    font-size: .9em
+  }
 }
 
 @media screen and (max-width:1100px) {
@@ -624,8 +623,6 @@ footer>ul>li:last-child::before{background-image: url(../img/icons/phone.svg)}
     line-height: 1.3;
     font-size: .9em
   }
-  .products::after{display: none}
-
 
 }
 @media screen and (max-width:970px) {
@@ -760,52 +757,49 @@ footer>ul>li:last-child::before{background-image: url(../img/icons/phone.svg)}
     color: #00A651;
     background-color: white
   }
-
-
   .products{
+    display: flex;
+    min-width: 100vw;
+    justify-content: space-between;
+    max-height: none;
     flex-grow: 1;
-    max-width: 100vw;
     background: none;
     box-shadow: none
   }
-
     #item-tabs{
-      position: fixed;
       display: none;
       flex-direction: column;
-      min-width: 100vw;
-      height: calc(100vh - 61px);
       top: 0;
-      z-index: 1000
+      width: 100vw;
+      height: calc(100vh - 62px);
+      position: fixed;
     }
-    .item-data{color:black}
-    #shopping-cart{
-      min-width: 100vw}
-      #cart-changer{
-        box-shadow: 0 0 10px rgba(0,0,0,.3);
-        align-self: center;
-        margin:0;
-      }
-      #cart-changer input[type="text"]{
-        max-width: none
-      }
-      #cart-changer button{
-        border-radius: 0 !important;
-        flex-grow: 1;
-        padding-top: 15px;
-        background: #00A651;
-        padding-bottom: 15px;
-      }
-
-      .full-screen{
-        position: fixed;
-        top: -66vh;
-        margin: 0 !important;
-        width: 89vw;
-        min-height: 80vh !important
-      }
-
-
+    #item-containers{flex-grow: 1}
+    #item-containers,#shopping-cart{
+      width: 100%;
+      float: none;
+      height: auto;
+    }
+    .item-container{
+      flex-direction: column-reverse;
+      justify-content: space-between;
+    }
+    .item-data{
+      position: static;
+      color:black
+    }
+    .item-name{display: block}
+    .cart-controls{
+      margin: 0;
+      width: 100vw
+    }
+    .cart-controls input[type="text"]{min-width: 20vw}
+    .cart-controls button{
+      padding-top:20px;
+      padding-bottom: 20px;
+      flex-grow: 1;
+      border-radius: 0 !important
+    }
 
 
   .about{
@@ -842,16 +836,8 @@ footer>ul>li:last-child::before{background-image: url(../img/icons/phone.svg)}
 }
 
 @media screen and (max-width:500px) {
-  #choose-product{transform: scale(1.1)}
-  #cart-controls{padding: 0}
-  #cart-controls textarea{margin:0}
-  #cart-controls div p{margin: 10px 10px 0 10px}
-  #cart-changer input[type="text"]{max-width: 20vw}
-  #cart-changer button{padding-top: 5px;padding-bottom: 5px}
-  #cart-controls>div>div>button:nth-child(2){display: none}
-  #cart-controls>div>div>button{margin: 10px;transform: scale(1.1)}
+  #copy-cart-contents{display: none}
 }
-
 
 
 /**
