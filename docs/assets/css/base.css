@@ -473,7 +473,7 @@ header{min-width: 100%}
 /*----/SPECIFICATIONS SUBPAGE----*/
 
 /*----MONTERING SUBPAGE----*/
-#montering1,#montering2,#montering3,#montering4,#montering5,#montering6,#stepCount{
+.monteringCont,#stepCount{
   display:none;
 }
 /*----MONTERING SUBPAGE----*/
