@@ -608,7 +608,7 @@ header{min-width: 100%}
 /*----/TRIVIA SUBPAGE----*/
 
 /*----MONTERING SUBPAGE----*/
-.monteringCont,#stepCount{
+#montering1,#montering2,#montering3,#montering4,#montering5,#montering6,#stepCount{
   display:none;
 }
 /*----MONTERING SUBPAGE----*/
