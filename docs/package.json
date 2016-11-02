@@ -1,0 +1,11 @@
+{
+  "name": "it2805-project",
+  "version": "1.0.0",
+  "description": "IT2805 group project",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-imagemin": "^3.1.0",
+    "imagemin-mozjpeg": "^6.0.0",
+    "imagemin-pngquant": "^5.0.0"
+  }
+}
