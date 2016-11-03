@@ -10,20 +10,21 @@ html(lang='no')
       include modules/header.html
       button#choose-product Velg fra produkter
 
-    section.products
+    section#products
         h2 produkter
         #item-tabs
 
-        #item-containers
-
-        #shopping-cart
-          textarea#cart-results(readonly)
-          #cart-control
-            p Dette er din handlekurv. Trykk send for å sende en mail til oss, så svarer vi så fort som mulig.
-            div
-              button#send-cart-mail Send
-              button#copy-cart-contents Kopier tekst
-              button#clear-cart-contents Tøm handlekurv
+        div#noname
+          #item-containers
+          #shopping-cart
+            textarea#cart-results(readonly)
+            span#toggle-cart Skjul handlekurven
+            #cart-control
+              p Dette er din handlekurv. Trykk send for å sende en mail til oss, så svarer vi så fort som mulig.
+              div
+                button#send-cart-mail Send
+                button#copy-cart-contents Kopier tekst
+                button#clear-cart-contents Tøm handlekurv
 
     footer
       include modules/footer.html

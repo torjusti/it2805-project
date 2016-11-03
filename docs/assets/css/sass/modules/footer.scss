@@ -1,0 +1,90 @@
+footer {
+  background: #444;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 60px;
+  padding: 20px 0;
+  min-width: 100%;
+}
+
+.home-footer {
+  box-shadow: -10px 0 10px 5px rgba(0, 0, 0, 0.5);
+}
+
+#footer-desktop {
+  display: flex;
+  min-width: 100%;
+  justify-content: space-around;
+}
+
+footer {
+  ul {
+    align-items: center;
+    li {
+      color: white;
+    }
+  }
+  > ul > li {
+    &::before {
+      content: '';
+      margin-left: -18px;
+      position: absolute;
+      width: 18px;
+      height: 24px;
+      background-image: url(../img/icons/mail.svg);
+      background-size: 18px;
+      background-repeat: no-repeat;
+      background-position: center 2px;
+    }
+    &:first-child::before {
+      background-image: url(../img/icons/location.svg);
+    }
+    &:last-child::before {
+      background-image: url(../img/icons/phone.svg);
+    }
+  }
+}
+
+#footer-desktop li {
+  ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    li {
+      font-size: .9em;
+      color: white;
+    }
+  }
+  &:first-child ul li:first-child:before {
+    content: 'Addresse: ';
+  }
+  &:nth-child(2) ul li:before {
+    content: 'Epost: ';
+  }
+  &:last-child ul li {
+    &:first-child:before {
+      content: 'Telefon: ';
+    }
+    &:last-child:before {
+      content: 'Mobil: ';
+    }
+  }
+}
+
+#footer-mobile {
+  display: none;
+  justify-content: space-around;
+  align-items: center;
+  min-width: 100vw;
+  li {
+    a img {
+      width: 24px;
+      height: 24px;
+      padding: 10px;
+    }
+    &:before {
+      display: none;
+    }
+  }
+}

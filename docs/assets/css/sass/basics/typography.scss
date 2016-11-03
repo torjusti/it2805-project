@@ -1,0 +1,45 @@
+/*----TYPOGRAPHY----*/
+
+a {
+  color: #00A651;
+}
+
+p {
+  line-height: 2;
+  text-align: justify;
+  padding: 0 2%;
+}
+
+li {
+  list-style-type: none;
+  color: #333;
+}
+
+h1 {
+  background-color: #00A651;
+  color: white;
+  font-size: 2em;
+  padding: 10px 100px;
+}
+
+h2 {
+  color: darkgrey;
+  font-size: 1.6em;
+  text-transform: uppercase;
+  margin: 0;
+  width: 100%;
+  text-align: center;
+  padding-left: 2%;
+}
+
+h3 {
+  color: darkgrey;
+  padding: 10px;
+}
+
+h4 {
+  color: #333;
+  padding-top: 10px;
+}
+
+/*----/TYPOGRAPHY----*/

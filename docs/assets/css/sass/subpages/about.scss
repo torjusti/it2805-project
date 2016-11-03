@@ -1,0 +1,35 @@
+/*----ABOUT SUBPAGE----*/
+
+.about {
+  max-width: 50%;
+}
+
+.info {
+  border-left: 1px solid #00A651;
+  border-right: 1px solid #00A651;
+  padding: 10px 40px;
+}
+
+.sjef {
+  display: flex;
+  justify-content: space-around;
+  div {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    img {
+      border-radius: 50%;
+      width: 100px;
+      height: 100px;
+    }
+    a {
+      font-size: .9em;
+    }
+  }
+}
+
+.info p a {
+  padding-left: .3em;
+}
+
+/*----/ABOUT SUBPAGE----*/

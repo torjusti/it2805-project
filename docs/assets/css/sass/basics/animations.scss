@@ -1,0 +1,95 @@
+/*----ANIMATIONS----*/
+
+@keyframes slideInTop {
+  0% {
+    transform: translateY(-100vh);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+
+@keyframes slideOutTop {
+  0% {
+    transform: translateY(0vh);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(-100vh);
+    opacity: 0;
+    display: none;
+  }
+}
+
+
+@keyframes slideInLeft {
+  0% {
+    transform: translateX(-100vw);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+
+@keyframes slideInRight {
+  0% {
+    transform: translateX(100vw);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+
+@keyframes slideOutLeft {
+  0% {
+    transform: translateX(0vh);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateX(-100vw);
+    opacity: 0;
+  }
+}
+
+
+@keyframes slideUp {
+  0% {
+    transform: translateY(20vh);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0vh);
+    opacity: 1;
+  }
+}
+
+
+@keyframes scrollDown {
+  from {
+    margin-top: 10px;
+    opacity: 1;
+  }
+
+  to {
+    margin-top: 36px;
+    opacity: 0;
+  }
+}
+
+
+/*----/ANIMATIONS----*/

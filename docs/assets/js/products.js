@@ -20,14 +20,33 @@ document.addEventListener('DOMContentLoaded', function() {
         }));
 
         let itemData = createElem({
-          'className': 'item-data'
-        });
+          'className': 'item-data',
+          children: [
+            createElem({
+              'className': 'item-name',
+              'innerHTML': product.name
+            }),
 
-        ['name', 'size', 'weight', 'price', 'extra'].forEach(function(type) {
-          itemData.appendChild(createElem({
-            'className': `item-${type}`,
-            'innerHTML': (type != 'size') ? product[type] : product[type].join(' x ') // A little function to join sizes with an x.
-          }));
+            createElem({
+              'className': 'item-size',
+              'innerHTML': 'Størrelse: ' + product.size.join(' x ') + 'cm'
+            }),
+
+            createElem({
+              'className': 'item-weight',
+              'innerHTML': 'Vekt: ' + product.weight + 'kg'
+            }),
+
+            createElem({
+              'className': 'item-price',
+              'innerHTML': 'Pris: ' + product.price + 'kr'
+            }),
+
+            createElem({
+              'className': 'item-extra',
+              'innerHTML': product.extra
+            })
+          ]
         });
 
         let cartControls = createElem({
@@ -37,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function() {
             createElem({
             'nodeType': 'button',
             'className': 'cart-add',
-            'innerHTML': 'Legg til i handlekurv'
+            'innerHTML': '+'
             }),
 
             createElem({
@@ -50,7 +69,7 @@ document.addEventListener('DOMContentLoaded', function() {
             createElem({
               'nodeType': 'button',
               'className': 'cart-remove',
-              'innerHTML': 'Fjern fra handlekurven'
+              'innerHTML': '-'
             })
           ]
         });
@@ -73,6 +92,7 @@ document.addEventListener('DOMContentLoaded', function() {
       const tabContainers = document.getElementsByClassName('item-container');
       const chooseProduct = document.getElementById('choose-product');
       const productsTab = document.getElementById('item-tabs');
+
 
       // Show the first tab by default. Ensure it has the clicked-tab-styling.
       tabContainers[0].style.display = 'flex';
@@ -116,6 +136,24 @@ document.addEventListener('DOMContentLoaded', function() {
        * Shopping cart functionality
        * ---------------------------
        */
+
+       const toggleCart = document.getElementById('toggle-cart');
+
+       toggleCart.addEventListener('click', function(){
+         if (cartResults.style.display == 'block' || cartResults.style.display == '') {
+           cartResults.style.display = 'none';
+           document.getElementById('cart-control').style.display = 'none';
+           toggleCart.innerText = 'Vis handlekurven';
+           document.styleSheets[0].addRule('#toggle-cart:after','background-image: url("../img/icons/up.svg") !important');
+         } else {
+           cartResults.style.display = 'block';
+           document.getElementById('cart-control').style.display = 'flex';
+           toggleCart.innerText = 'Skjul handlekurven';
+           document.styleSheets[0].addRule('#toggle-cart:after','background-image: url("../img/icons/down.svg") !important');
+
+
+         }
+       });
 
 
       // Some extra logic for the mobile menu.
@@ -299,7 +337,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Display the changes.
         updateCart();
-        
+
         toast('Handlekurven din er nå tom.');
       });
 
