@@ -1,7 +1,7 @@
 /*Variabler*/
 const buttonValue=["Neste","Neste","Neste","Neste","OBS!","Start på nytt"];
-let montBtn=document.getElementById("montering-btn");
-let mont=document.getElementsByClassName("montering");
+let montBtn=document.getElementById("assembly-btn-next");
+let mont=document.getElementsByClassName("assembly");
 let montIndex=-1;
 /*Funksjonen for montering tutorialen*/
 function tutorial(){
