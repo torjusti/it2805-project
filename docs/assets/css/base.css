@@ -619,11 +619,10 @@ header{min-width: 100%}
 /*----/TRIVIA SUBPAGE----*/
 
 /*----MONTERING SUBPAGE----*/
-
-#montering h2{
-  padding: 0
+#assembly-section h2{
+  padding: 0;
 }
-.montering{
+.assembly{
   display:none;
   flex-direction: column;
   align-items: flex-start;
@@ -635,16 +634,29 @@ header{min-width: 100%}
   border-radius: 10px;
   animation: slideInRight 1s forwards
 }
-#montering-btn{
+#assembly-btn-next, #assembly-btn-back{
   color: white;
   background: #00A651
 }
-#montering-btn:after{
+#assembly-btn-next:after{
   content: '';
   background-image: url("../img/icons/next.svg");
   background-size: cover;
   height: 16px;
   width: 16px;
+}
+#assembly-btn-back:after{
+  content: '';
+  background-image: url("../img/icons/left.svg");
+  background-size: cover;
+  height: 16px;
+  width: 16px;
+}
+#assembly-controls>ul{
+  display: flex;
+}
+#assembly-controls{
+  display: flex;
 }
 /*----MONTERING SUBPAGE----*/
 /*----ABOUT SUBPAGE----*/
