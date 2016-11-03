@@ -549,7 +549,7 @@ header{min-width: 100%}
 }
 #trivia h2:before{
   content: '';
-  background-image: url("../img-orig/icons/info.svg");
+  background-image: url("../img/icons/info.svg");
   background-size: cover;
   position: absolute;
   margin-top: 24px;
@@ -560,7 +560,7 @@ header{min-width: 100%}
 #trivia span{color:white}
 #trivia span:after{
   content: '';
-  background-image: url("../img-orig/icons/down.svg");
+  background-image: url("../img/icons/down.svg");
   background-size: cover;
   position: absolute;
   height: 36px;
@@ -641,7 +641,7 @@ header{min-width: 100%}
 }
 #montering-btn:after{
   content: '';
-  background-image: url("../img-orig/icons/next.svg");
+  background-image: url("../img/icons/next.svg");
   background-size: cover;
   height: 16px;
   width: 16px;
