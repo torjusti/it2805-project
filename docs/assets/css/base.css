@@ -164,6 +164,17 @@ button:hover{
   }
 }
 
+@keyframes slideInRight {
+  0%{
+    transform: translateX(100vw);
+    opacity: 0
+  }
+  100%{
+    transform: translateX(0);
+    opacity: 1
+  }
+}
+
 @keyframes slideOutLeft {
   0%{
     transform: translateX(0vh);
@@ -608,8 +619,32 @@ header{min-width: 100%}
 /*----/TRIVIA SUBPAGE----*/
 
 /*----MONTERING SUBPAGE----*/
-.monteringCont,#stepCount{
+
+#montering h2{
+  padding: 0
+}
+.montering{
   display:none;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 70%;
+  background: #00A651;
+  color: white;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 10px;
+  animation: slideInRight 1s forwards
+}
+#montering-btn{
+  color: white;
+  background: #00A651
+}
+#montering-btn:after{
+  content: '';
+  background-image: url("../img-orig/icons/next.svg");
+  background-size: cover;
+  height: 16px;
+  width: 16px;
 }
 /*----MONTERING SUBPAGE----*/
 /*----ABOUT SUBPAGE----*/
