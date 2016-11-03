@@ -108,6 +108,7 @@ button::after{
   height: 16px;
   background-size: cover;
 }
+
 button:hover{
   color: white;
   background: #00A651
@@ -339,16 +340,16 @@ header{min-width: 100%}
 
 /*----SPECIFICATIONS SUBPAGE----*/
 
-.products{
+.products {
   display: block;
   position: relative;
   width: 80vw;
   height: 65vh;
   max-height: 65vh;
-  box-shadow: 0 0 20px 5px rgba(0,0,0,.3);
-  background: #00A651;
+  background: #F9F9F9;
   margin-top: -2em;
-  overflow: hidden
+  overflow: hidden;
+  border: 1px solid lightgrey;
 }
   .products h2 {
     display: none
@@ -368,20 +369,22 @@ header{min-width: 100%}
       align-items: center;
       justify-content: center;
       padding: 25px;
-      background: grey;
+      background: #F9F9F9;
       border-top: 1px solid lightgrey;
       box-sizing: border-box;
       cursor: pointer;
-      color:white;
       transition: .2s ease-in-out
     }
 
     .item-tab:first-child{border: none}
-    .item-tab:hover{background: #00A651}
+
+    .item-tab:hover {
+      background: #E9E9E9;
+    }
 
     .item-tab.active-tab{
-      background-color: #333;
-      font-weight: bolder
+      background-color: #E9E9E9;
+      font-weight: bolder;
     }
 
   #item-tabs{width: 30%}
@@ -393,7 +396,6 @@ header{min-width: 100%}
     position: relative;
     display: flex;
     float: right;
-    color: white;
   }
 
     .item-container {
@@ -405,15 +407,6 @@ header{min-width: 100%}
       .item-data{
         position: absolute;
         padding: 30px}
-
-        .item-name{display: none}
-        .item-extra{font-size: .7em}
-        .item-size::before{content: 'Størrelse: '}
-        .item-weight::before{content:'Vekt: '}
-        .item-price::before{content:'Pris: '}
-        .item-size::after{content:' cm'}
-        .item-weight::after{content:' kg'}
-        .item-price::after{content:' kr'}
 
     #shopping-cart {
       float: right;
@@ -458,44 +451,33 @@ header{min-width: 100%}
               #cart-control button:nth-child(2)::after{background-image: url('../img/icons/copy.svg')}
               #cart-control button:last-child::after{background-image: url('../img/icons/remove.svg')}
 
-      .cart-controls{
-        position: relative;
-        align-self: flex-end;
-        display: flex;
-        justify-content: center;
-        z-index: 1
-      }
+.cart-controls {
+  position: relative;
+  align-self: flex-end;
+  display: flex;
+  justify-content: center;
+  z-index: 1;
+}
 
-        .cart-controls input{
-          text-align: center;
-          border: none;
-          font-weight: bolder;
-        }
+.cart-add, .cart-remove {
+  color: #FFF;
+  border-radius: 0;
+  padding: 5px 15px;
+}
 
-          .cart-controls input[type="text"]{
-            max-width: 40px
-          }
+.cart-add {
+  background: #306CCC;
+}
 
-          .cart-controls button{
-            border-radius: 0;
-            margin: 0;
-            background: #333;
-            color: white;
-          }
+.cart-remove {
+  background: #C60126;
+}
 
-            .cart-controls button:first-child{
-              border-top-left-radius: 5px;
-              border-bottom-left-radius: 5px
-            }
-
-            .cart-controls button:last-child{
-              border-top-right-radius: 5px;
-              border-bottom-right-radius: 5px
-            }
-
-              .cart-controls button:first-child::after{background-image: url('../img/icons/add.svg')}
-              .cart-controls button:nth-child(3)::after{background-image: url('../img/icons/remove.svg')}
-
+.cart-val {
+  background: #FFF;
+  width: 50px;
+  text-align: center;
+}
 
 /*----/SPECIFICATIONS SUBPAGE----*/
 
