@@ -1,0 +1,32 @@
+/*----MONTERING SUBPAGE----*/
+
+#montering h2 {
+  padding: 0;
+}
+
+.montering {
+  display: none;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 70%;
+  background: #00A651;
+  color: white;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 10px;
+  animation: slideInRight 1s forwards;
+}
+
+#montering-btn {
+  color: white;
+  background: #00A651;
+  &:after {
+    content: '';
+    background-image: url("../img/icons/next.svg");
+    background-size: cover;
+    height: 16px;
+    width: 16px;
+  }
+}
+
+/*----MONTERING SUBPAGE----*/
