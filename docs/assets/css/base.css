@@ -947,7 +947,7 @@ footer>ul>li:last-child::before{background-image: url(../img/icons/phone.svg)}
     position: fixed;
     display: flex;
     flex-direction: column;
-    top: 50%;
+    top: 30%;
     transform: translateY(-50%);
     right: 0;
     width: 48px;
@@ -967,9 +967,9 @@ footer>ul>li:last-child::before{background-image: url(../img/icons/phone.svg)}
     width: 100%;
     bottom:61px;
     justify-content: flex-end;
-    height: calc(100vh - 61px);
+    height: calc(100vh - 123px);
     position: fixed;
-    z-index: 1000
+    border: none
   }
   #shopping-cart span{
     height: 32px;
@@ -979,6 +979,7 @@ footer>ul>li:last-child::before{background-image: url(../img/icons/phone.svg)}
     flex-direction: column;
   }
   #cart-results{
+    border-top: 1px solid #444;
     flex-grow: 1
   }
   #cart-control div{
