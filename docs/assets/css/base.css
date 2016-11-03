@@ -394,13 +394,11 @@ header{min-width: 100%}
       border-top: 1px solid #888;
     }
     #shopping-cart span{
-      position: absolute;
       display: none;
       align-items: center;
       justify-content: center;
       width: 100%;
-      height: 16px;
-      background: #333;
+      background: #444;
       cursor: pointer;
       font-size: .6em;
       color: white
@@ -967,19 +965,21 @@ footer>ul>li:last-child::before{background-image: url(../img/icons/phone.svg)}
   }
   #shopping-cart{
     width: 100%;
-    bottom: 61px;
+    bottom:61px;
+    justify-content: flex-end;
+    height: calc(100vh - 61px);
     position: fixed;
-    z-index: 1
+    z-index: 1000
   }
   #shopping-cart span{
-    top:-16px;
+    height: 32px;
     display: flex;
 }
   #cart-control{
     flex-direction: column;
   }
   #cart-results{
-    min-height: 55vh
+    flex-grow: 1
   }
   #cart-control div{
     width: 100%;

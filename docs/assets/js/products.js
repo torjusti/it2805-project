@@ -142,10 +142,12 @@ document.addEventListener('DOMContentLoaded', function() {
        toggleCart.addEventListener('click', function(){
          if (cartResults.style.display == 'block' || cartResults.style.display == '') {
            cartResults.style.display = 'none';
+           document.getElementById('cart-control').style.display = 'none';
            toggleCart.innerText = 'Vis handlekurven';
            document.styleSheets[0].addRule('#toggle-cart:after','background-image: url("../img/icons/up.svg") !important');
          } else {
            cartResults.style.display = 'block';
+           document.getElementById('cart-control').style.display = 'flex';
            toggleCart.innerText = 'Skjul handlekurven';
            document.styleSheets[0].addRule('#toggle-cart:after','background-image: url("../img/icons/down.svg") !important');
 
