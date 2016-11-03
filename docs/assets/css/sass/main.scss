@@ -1,10 +1,11 @@
-//compileNested: ../base.css
+//compileCompressed: ../base.css
 
+@import "basics/animations";
+@import "basics/elements";
 @import "basics/reset";
 @import "basics/typography";
-@import "basics/elements";
-@import "basics/animations";
 
+@import "modules/footer";
 @import "modules/navigation";
 
 @import "subpages/home";
@@ -12,7 +13,5 @@
 @import "subpages/trivia";
 @import "subpages/montering";
 @import "subpages/about";
-
-@import "modules/footer";
 
 @import "basics/mediaqueries";
