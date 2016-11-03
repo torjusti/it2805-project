@@ -439,19 +439,24 @@ header{min-width: 100%}
       }
 
         #cart-control p{
+          color: white;
           line-height: 1;
           padding: 20px;
-          color: white
         }
 
         #cart-control>div{
           padding-right: 20px;
-          white-space: nowrap
+          white-space: nowrap;
         }
 
-          #cart-control button{
+          #cart-control div button{
             background: #00A651;
-            color:white
+            color:white;
+            box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+          }
+
+          #cart-control div button:last-child{
+            background: #a60002
           }
 
               #cart-control button:first-child::after{  background-image: url('../img/icons/send.svg')}
@@ -773,11 +778,17 @@ footer>ul>li:last-child::before{background-image: url(../img/icons/phone.svg)}
 }
 
 @media screen and (max-width:1478px) {
-  .products{width: 90vw}
+  .products{
+    margin: 0;
+    width: 100vw;
+    max-height: none;
+  }
+  #item-tabs{
+    max-height: 0
+  }
 }
 
 @media screen and (max-width:1350px) {
-  .products{margin: 0}
 
   #item-tabs{width: 35%}
   #item-containers,#shopping-cart{width: 65%}
