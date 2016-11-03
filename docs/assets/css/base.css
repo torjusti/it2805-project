@@ -991,10 +991,13 @@ footer>ul>li:last-child::before{background-image: url(../img/icons/phone.svg)}
     padding-top: 20px;
     padding-bottom: 20px;
     box-shadow: none;
-    border-right: 1px solid black;
     border-radius: 0;
     width: 50%;
     margin: 0
+  }
+  #cart-control div button:first-child{
+    box-sizing: border-box;
+    border-right: 1px solid black;
   }
   #cart-control div button:nth-child(2){display: none}
 
@@ -1041,6 +1044,10 @@ footer>ul>li:last-child::before{background-image: url(../img/icons/phone.svg)}
   .home-footer{box-shadow: none}
 }
 @media screen and (max-width:960px) and (orientation:landscape){
+  #shopping-cart{
+    bottom:45px;
+    height: calc(100vh - 100px)
+  }
   .cart-controls{
     flex-direction: row;
     top: 0;
@@ -1055,6 +1062,9 @@ footer>ul>li:last-child::before{background-image: url(../img/icons/phone.svg)}
   }
   #cart-control div button{
     padding: 5px
+  }
+  footer{
+    min-height: 36px
   }
 }
 @media screen and (max-width: 390px) {
