@@ -93,6 +93,7 @@ document.addEventListener('DOMContentLoaded', function() {
       const chooseProduct = document.getElementById('choose-product');
       const productsTab = document.getElementById('item-tabs');
 
+
       // Show the first tab by default. Ensure it has the clicked-tab-styling.
       tabContainers[0].style.display = 'flex';
       tabContainers[0].classList.add('active-tab');
@@ -135,6 +136,22 @@ document.addEventListener('DOMContentLoaded', function() {
        * Shopping cart functionality
        * ---------------------------
        */
+
+       const toggleCart = document.getElementById('toggle-cart');
+
+       toggleCart.addEventListener('click', function(){
+         if (cartResults.style.display == 'block' || cartResults.style.display == '') {
+           cartResults.style.display = 'none';
+           toggleCart.innerText = 'Vis handlekurven';
+           document.styleSheets[0].addRule('#toggle-cart:after','background-image: url("../img/icons/up.svg") !important');
+         } else {
+           cartResults.style.display = 'block';
+           toggleCart.innerText = 'Skjul handlekurven';
+           document.styleSheets[0].addRule('#toggle-cart:after','background-image: url("../img/icons/down.svg") !important');
+
+
+         }
+       });
 
 
       // Some extra logic for the mobile menu.

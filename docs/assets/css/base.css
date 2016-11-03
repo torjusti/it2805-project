@@ -419,7 +419,7 @@ header{min-width: 100%}
         padding: 30px;
         height: 15vh;
         background: #ddd;
-        resize: vertical;
+        display: block
       }
 
       #cart-control{
@@ -969,6 +969,7 @@ footer>ul>li:last-child::before{background-image: url(../img/icons/phone.svg)}
     width: 100%;
     bottom: 61px;
     position: fixed;
+    z-index: 1
   }
   #shopping-cart span{
     top:-16px;
