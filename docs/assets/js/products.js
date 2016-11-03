@@ -20,14 +20,33 @@ document.addEventListener('DOMContentLoaded', function() {
         }));
 
         let itemData = createElem({
-          'className': 'item-data'
-        });
+          'className': 'item-data',
+          children: [
+            createElem({
+              'className': 'item-name',
+              'innerHTML': product.name
+            }),
 
-        ['name', 'size', 'weight', 'price', 'extra'].forEach(function(type) {
-          itemData.appendChild(createElem({
-            'className': `item-${type}`,
-            'innerHTML': (type != 'size') ? product[type] : product[type].join(' x ') // A little function to join sizes with an x.
-          }));
+            createElem({
+              'className': 'item-size',
+              'innerHTML': 'Størrelse: ' + product.size.join(' x ') + 'cm'
+            }),
+
+            createElem({
+              'className': 'item-weight',
+              'innerHTML': 'Vekt: ' + product.weight + 'kg'
+            }),
+
+            createElem({
+              'className': 'item-price',
+              'innerHTML': 'Pris: ' + product.price + 'kr'
+            }),
+
+            createElem({
+              'className': 'item-extra',
+              'innerHTML': product.extra
+            })
+          ]
         });
 
         let cartControls = createElem({
@@ -37,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function() {
             createElem({
             'nodeType': 'button',
             'className': 'cart-add',
-            'innerHTML': 'Legg til i handlekurv'
+            'innerHTML': '+'
             }),
 
             createElem({
@@ -50,7 +69,7 @@ document.addEventListener('DOMContentLoaded', function() {
             createElem({
               'nodeType': 'button',
               'className': 'cart-remove',
-              'innerHTML': 'Fjern fra handlekurven'
+              'innerHTML': '-'
             })
           ]
         });
@@ -299,7 +318,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Display the changes.
         updateCart();
-        
+
         toast('Handlekurven din er nå tom.');
       });
 
