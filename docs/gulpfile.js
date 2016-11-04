@@ -3,6 +3,7 @@ const imagemin = require('gulp-imagemin');
 const imageminPngquant = require('imagemin-pngquant');
 const imageminMozjpeg = require('imagemin-mozjpeg');
 const sass = require('gulp-sass');
+const pug = require('gulp-pug');
 
 gulp.task('minify', () =>
   gulp.src('assets/img-orig/**')
@@ -16,7 +17,14 @@ gulp.task('sass', () =>
     .pipe(gulp.dest('assets/css/'))
 );
 
+gulp.task('pug', () =>
+  gulp.src('pug/*.pug')
+    .pipe(pug({ pretty: true }))
+    .pipe(gulp.dest('.'))
+);
+
 gulp.task('watch', function () {
   gulp.watch('assets/css/**/*.scss', ['sass']);
   gulp.watch('assets/img/**', ['minify']);
+  gulp.watch('pug/**/*.pug', ['pug']);
 });
