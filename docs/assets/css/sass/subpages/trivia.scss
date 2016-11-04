@@ -35,6 +35,7 @@
   background-size: cover;
   z-index: -1;
   position: absolute;
+  transition: height 999999s;
   &:first-of-type{
     &:after {
       content: '';
@@ -43,9 +44,8 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: #00A651;
+      background: $accent-color-1;
       opacity: .5;
-      transition: 0.3s;
     }
   }
 }
@@ -90,7 +90,7 @@
   text-indent: -.7em;
   &:before {
     content: "■ ";
-    color: #00A651;
+    color: $accent-color-1;
   }
 }
 

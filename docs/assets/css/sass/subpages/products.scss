@@ -1,6 +1,7 @@
+
 /*----PRODUCTS SUBPAGE----*/
 
-#products {
+#products section {
   width: 80%;
   flex-grow: 0;
   height: 65vh;
@@ -67,7 +68,7 @@
     align-items: center;
     justify-content: center;
     width: 100%;
-    background: #444;
+    background: $accent-color-3;
     cursor: pointer;
     font-size: .6em;
     color: white;
@@ -94,7 +95,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: #333;
+  background: $accent-color-2;
   p {
     color: white;
     line-height: 1;
@@ -105,7 +106,7 @@
     white-space: nowrap;
   }
   div button {
-    background: #00A651;
+    background: $accent-color-1;
     color: white;
     box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
     &:last-child {
@@ -143,7 +144,7 @@
 .cart-add {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
-  background: #00A651;
+  background: $accent-color-1;
 }
 
 .cart-remove {

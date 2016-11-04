@@ -61,7 +61,7 @@
 /*----MAIN ELEMENTS----*/
 html {
   background-image: url("../img/bg.png");
-  background-color: #eee; }
+  background-color: #EEE; }
 
 body {
   display: flex;
@@ -78,14 +78,8 @@ section {
   flex-grow: 1; }
 
 article {
-  max-width: 50%;
-  margin: 5% 5% 0;
-  align-self: flex-start;
   display: flex;
   flex-direction: column; }
-
-.article-wrap {
-  display: flex; }
 
 /*----/MAIN ELEMENTS----*/
 /*----OTHER ELEMENTS----*/
@@ -126,7 +120,10 @@ button {
   left: 0; }
 
 /*----/OTHER ELEMENTS----*/
-/*::selection{background: #00A651;color: white}*/
+::selection {
+  background: #00A651;
+  color: white; }
+
 * {
   margin: 0;
   padding: 0;
@@ -159,8 +156,7 @@ h2 {
   text-transform: uppercase;
   margin: 0;
   width: 100%;
-  text-align: center;
-  padding-left: 2%; }
+  text-align: center; }
 
 h3 {
   color: darkgrey;
@@ -218,16 +214,16 @@ footer > ul > li:last-child::before {
     font-size: .9em;
     color: white; }
 
-#footer-desktop li:first-child ul li:first-child:before {
+#footer-desktop li > :first-child ul li:first-child:before {
   content: 'Addresse: '; }
 
 #footer-desktop li:nth-child(2) ul li:before {
   content: 'Epost: '; }
 
-#footer-desktop li:last-child ul li:first-child:before {
+#footer-desktop li > :last-child ul li:first-child:before {
   content: 'Telefon: '; }
 
-#footer-desktop li:last-child ul li:last-child:before {
+#footer-desktop li > :last-child ul li:last-child:before {
   content: 'Mobil: '; }
 
 #footer-mobile {
@@ -307,21 +303,27 @@ nav ul li:hover a {
 
 /*----/HAMBURGER MENU----*/
 /*----HOME SUBPAGE----*/
-.home {
+#home {
   position: relative;
   overflow: hidden; }
-  .home h1 {
-    margin: 0 -25% 0 0; }
-  .home article {
-    margin-top: 2%; }
-    .home article h2 {
+  #home h1 {
+    margin: -5% -25% 5% 0; }
+  #home article {
+    align-self: flex-start;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-width: 50%;
+    margin-left: 3%; }
+    #home article h2 {
+      margin-left: 2%;
       text-align: left; }
-    .home article .article-wrap p {
-      max-width: 46%; }
-      .home article .article-wrap p:first-child {
+    #home article p {
+      max-width: 50%;
+      box-sizing: border-box; }
+      #home article p:first-of-type {
         border-right: 1px solid #00A651; }
-    .home article button {
-      align-self: center;
+    #home article button {
       padding: 10px 40px;
       margin-top: 30px;
       border: 1px solid #00A651; }
@@ -344,11 +346,11 @@ nav ul li:hover a {
   transform: skewX(-45deg);
   z-index: -1;
   left: -25%;
-  box-shadow: -5px -5px 10px 10px rgba(0, 0, 0, 0.1); }
+  box-shadow: -5px -5px 10px 10px rgba(0, 0, 0, 0.5); }
 
 /*----/HOME SUBPAGE----*/
 /*----PRODUCTS SUBPAGE----*/
-#products {
+#products section {
   width: 80%;
   flex-grow: 0;
   height: 65vh;
@@ -357,7 +359,7 @@ nav ul li:hover a {
   background: #F9F9F9;
   border: 1px solid lightgrey;
   overflow: hidden; }
-  #products h2 {
+  #products section h2 {
     display: none; }
 
 #item-tabs {
@@ -512,7 +514,8 @@ nav ul li:hover a {
   height: 100vh;
   background-size: cover;
   z-index: -1;
-  position: absolute; }
+  position: absolute;
+  transition: height 999999s; }
   .parallax-bg:first-of-type:after {
     content: '';
     position: absolute;
@@ -521,8 +524,7 @@ nav ul li:hover a {
     width: 100%;
     height: 100%;
     background: #00A651;
-    opacity: .5;
-    transition: 0.3s; }
+    opacity: .5; }
 
 #trivia h2 {
   font-size: 3em;
@@ -661,7 +663,7 @@ nav ul li:hover a {
     line-height: 1.6; }
   header nav ul li a {
     padding: 15px 30px; }
-  .home h1 {
+  #home h1 {
     margin-top: -5%; }
   #left-bg {
     min-width: 95%;
@@ -672,7 +674,7 @@ nav ul li:hover a {
     max-width: 60%; } }
 
 @media screen and (max-width: 1350px) {
-  .home p {
+  #home p {
     line-height: 1.4; } }
 
 @media screen and (max-width: 1200px), (max-height: 900px) {
@@ -684,7 +686,7 @@ nav ul li:hover a {
     margin: 50px; } }
 
 @media screen and (max-width: 1100px) {
-  .home p {
+  #home p {
     line-height: 1.3;
     font-size: 0.9em; } }
 
@@ -698,9 +700,6 @@ nav ul li:hover a {
     font-size: 1.3em;
     padding: 6px 0 0;
     color: white; }
-  article {
-    max-width: 100vw;
-    margin: 0; }
   #menu-mobile {
     display: flex; }
   .tabs-in {
@@ -775,10 +774,25 @@ nav ul li:hover a {
     transform: scale(1.1); }
     #choose-product::after {
       background-image: url("../img/icons/products.svg"); }
-  .home h1 {
+  #home h1 {
     display: none; }
-  .home article h2 {
-    padding-left: 20px; }
+  #home article {
+    max-width: 100%;
+    margin: 0;
+    padding: 20px; }
+    #home article p {
+      color: white;
+      padding: 0;
+      max-width: none;
+      line-height: 1.4;
+      text-align: justify;
+      font-size: 1em; }
+    #home article button {
+      color: white;
+      border-color: white; }
+      #home article button:hover {
+        color: #00A651;
+        background-color: white; }
   #picture img {
     min-width: 100vw;
     min-height: 100vh; }
@@ -786,26 +800,6 @@ nav ul li:hover a {
     opacity: .8; }
   #left-bg {
     display: none; }
-  .home article .article-wrap {
-    padding: 20px;
-    display: flex;
-    flex-direction: column; }
-    .home article .article-wrap p {
-      color: white;
-      padding: 0;
-      max-width: none;
-      line-height: 1.4;
-      text-align: justify;
-      font-size: 1em; }
-      .home article .article-wrap p:first-child {
-        border: none; }
-  .home article button {
-    margin: -10px 0 10px;
-    color: white;
-    border-color: white; }
-    .home article button:hover {
-      color: #00A651;
-      background-color: white; }
   #products {
     overflow-y: scroll;
     position: relative;

@@ -1,8 +1,9 @@
+
 /*----MAIN ELEMENTS----*/
 
 html {
   background-image: url('../img/bg.png');
-  background-color: #eee;
+  background-color: #EEE;
 }
 
 body {
@@ -22,15 +23,8 @@ section {
 }
 
 article {
-  max-width: 50%;
-  margin: 5% 5% 0;
-  align-self: flex-start;
   display: flex;
   flex-direction: column;
-}
-
-.article-wrap {
-  display: flex;
 }
 
 /*----/MAIN ELEMENTS----*/
@@ -44,7 +38,7 @@ img {
 button {
   background: transparent;
   text-align: center;
-  color: #00A651;
+  color: $accent-color-1;
   cursor: pointer;
   border: none;
   border-radius: 5px;
@@ -63,7 +57,7 @@ button {
   }
   &:hover {
     color: white;
-    background: #00A651;
+    background: $accent-color-1;
   }
 }
 
@@ -71,7 +65,7 @@ button {
   position: absolute;
   width: 100%;
   height: 100%;
-  background-color: #00A651;
+  background-color: $accent-color-1;
   opacity: .2;
   z-index: 1;
   top: 0;

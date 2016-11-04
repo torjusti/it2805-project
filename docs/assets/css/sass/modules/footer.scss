@@ -1,5 +1,5 @@
 footer {
-  background: #444;
+  background: $accent-color-3;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -56,13 +56,13 @@ footer {
       color: white;
     }
   }
-  &:first-child ul li:first-child:before {
+  >:first-child ul li:first-child:before {
     content: 'Addresse: ';
   }
   &:nth-child(2) ul li:before {
     content: 'Epost: ';
   }
-  &:last-child ul li {
+  >:last-child ul li {
     &:first-child:before {
       content: 'Telefon: ';
     }

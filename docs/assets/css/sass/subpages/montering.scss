@@ -9,7 +9,7 @@
   flex-direction: column;
   align-items: flex-start;
   max-width: 70%;
-  background: #00A651;
+  background: $accent-color-1;
   color: white;
   padding: 20px;
   margin: 20px;
@@ -19,7 +19,7 @@
 
 #montering-btn {
   color: white;
-  background: #00A651;
+  background: $accent-color-1;
   &:after {
     content: '';
     background-image: url("../img/icons/next.svg");
