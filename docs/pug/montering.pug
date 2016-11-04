@@ -9,33 +9,34 @@ html(lang='no')
     header
       include modules/header.html
 
-    section
+    main#assembly
       h2 Montering
-      button#montering-btn Start
-      .montering
+      #assembly-intro
+        p Dette er en guide for hvordan man skal sette opp gabioner. Guiden kommer til å gå igjennom alle stegene av prosessen ved hjelp av tekst, bilder og video. Klikk på "start" for å begynne.
+      .assembly-content
         h3 Steg 1:
         p Gabioner leveres til anlegget i sammenlagt stand (flatpakket) på palle. Alle vertikale fuger er ferdige fra fabrikken, som øker kvaliteten og effektiviserer monteringen. Avhengig av konfigureringen av gabionene, forbindes base- og lokkpanelene med én horisontal spiral. Tilbehøret (stagsurringer og fugepinner)
         img(src='assets/img/montering/1.jpg', alt='Montering steg 1')
-      .montering
+      .assembly-content
         h3 Steg 2:
         p Ta en gabion fra en pall og klipp av sikringsbåndet. Løft tilbehøret og dra ut gabionen til den når full lengde. Fest bunnen med spiralene og bøy endene 90° innover. Nå løsner ikke spiralene når du rører ved og vrir på gabionen. Dette forbygger også skarpe kanter og forhindrer skader. Dette kan utføres med standard flat-tang. Vend deretter på gabionen.
         img(src='assets/img/montering/2.jpg', alt='Montering steg 2')
-      .montering
+      .assembly-content
         h3 Steg 3:
         p For større lengder bør gabionene kobles sammen slik at de danner en struktur i rekkefølge. Forhåndsfabrikkerte fugepinner leveres for hver gabion. Ta ganske enkelt tak i de to spiralene og trykk dem inn i hverandre. Plasser fugepinnen i seksjonen og trykk den nedover. Du må påse at hodet på pinnen plasseres innover. Dette må gjøres av sikkerhetsgrunner og forhindrer vandalisme. Tilkoblingen må gjøres på begge sider.
         img(src='assets/img/montering/3.jpg', alt='Montering steg 3')
-      .montering
+      .assembly-content
         h3 Steg 4:
         p For å unngå kraftig deformering som følge av påfylling av gabionene, er stagsurringer inkluderte i hver gabion. Avhengig av gabionens høyde plasseres disse i 1/3 + 2/3 eller 1/2 høyde. Nå kan du begynne å fylle den første delen av gabionen. Stagsurringer plasseres fire tråder fra sidene og rundt sveisingen. Ellers kan sveisingen briste, eller surringen kan bevege på seg. Gjenta dette prinsippet til gabionene er helt fylte.
         img(src='assets/img/montering/4.jpg', alt='Montering steg 4')
-        #fyllingDemo
+        div
           p Slik fylles gabionene med fyll materialet
           img(src='assets/img/montering/fylling.png', alt='Fylling av gabioner')
-      .montering
+      .assembly-content
         h3 Steg 5:
         p Når gabionen er fylt opp, kan lokket stenges. Bruk de medfølgende spiralene og fest lokket på hver kant, inklusive mellom-veggspanelet. Endene skal vris innover av sikkerhetshensyn. Når man plasserer gabioner oppå hverandre, må de horisontale tilkoblingene utføres. Dette skjer vanligvis ved hjelp av klemmer eller surretråd.
         img(src='assets/img/montering/5.jpg', alt='Montering steg 5')
-      .montering
+      .assembly-content
         h3 OBS!
         ul
           li Sett sammen de tomme gabionene på forhånd. Strekk eller trykk sammen gabionene for å oppnå ønsket lengde. De bevegelige spiralene gjør at de kan tilpasses perfekt. Kurver kan også lages ved bruk av de bevegelige delene.
@@ -44,10 +45,20 @@ html(lang='no')
           li Hvis gabionhøyden er mer enn 1 m, bør en ekstra rekke med stagsurringer brukes.
           li For øvrig oppfordrer vi av sikkerhetshensyn til bruk av vernebriller, -hansker og -sko.
           li Produksjonen kan maksimeres ved at man bruker lange lengder på gabionene, da dette krever at det lages færre tilkoblinger og forenkler monteringen.
-        #obsPictures
+        div
           img(src='assets/img/montering/obs1.jpg', alt='Montering OBS')
           img(src='assets/img/montering/obs2.jpg', alt='Montering OBS')
           img(src='assets/img/montering/obs3.jpg', alt='Montering OBS')
+      #assembly-controls
+        button#assembly-btn-back Tilbake
+        ul#prog-bar
+          li.prog-bar-element ■
+          li.prog-bar-element ■
+          li.prog-bar-element ■
+          li.prog-bar-element ■
+          li.prog-bar-element ■
+          li.prog-bar-element ■
+        button#assembly-btn-next Start
 
     footer
       include modules/footer.html

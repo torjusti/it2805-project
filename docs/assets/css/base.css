@@ -599,10 +599,20 @@ nav ul li:hover a {
 
 /*----/TRIVIA SUBPAGE----*/
 /*----MONTERING SUBPAGE----*/
-#montering h2 {
+#assembly h2 {
   padding: 0; }
 
-.montering {
+#assembly-controls, #assembly-controls > ul {
+  display: flex;
+  flex-direction: row; }
+
+#assembly-controls > ul li {
+  margin: 0px 20px 0px 20px; }
+
+#assembly-controls > ul, #assembly-btn-back {
+  display: none; }
+
+.assembly-content {
   display: none;
   flex-direction: column;
   align-items: flex-start;
@@ -614,15 +624,28 @@ nav ul li:hover a {
   border-radius: 10px;
   animation: slideInRight 1s forwards; }
 
-#montering-btn {
+#assembly-btn-back {
   color: white;
   background: #00A651; }
-  #montering-btn:after {
+  #assembly-btn-back:after {
+    content: '';
+    background-image: url("../img/icons/left.svg");
+    background-size: cover;
+    height: 16px;
+    width: 16px; }
+
+#assembly-btn-next {
+  color: white;
+  background: #00A651; }
+  #assembly-btn-next:after {
     content: '';
     background-image: url("../img/icons/next.svg");
     background-size: cover;
     height: 16px;
     width: 16px; }
+
+.prog-bar-element {
+  color: red; }
 
 /*----MONTERING SUBPAGE----*/
 /*----ABOUT SUBPAGE----*/
@@ -668,7 +691,7 @@ nav ul li:hover a {
   #left-bg {
     min-width: 95%;
     left: -30%; }
-  #products {
+  #products section {
     width: 90vw; }
   .about {
     max-width: 60%; } }
@@ -678,7 +701,7 @@ nav ul li:hover a {
     line-height: 1.4; } }
 
 @media screen and (max-width: 1200px), (max-height: 900px) {
-  #products {
+  #products section {
     width: 100vw;
     flex-grow: 1;
     border: 0; }
@@ -800,7 +823,7 @@ nav ul li:hover a {
     opacity: .8; }
   #left-bg {
     display: none; }
-  #products {
+  #products section {
     overflow-y: scroll;
     position: relative;
     display: block;
