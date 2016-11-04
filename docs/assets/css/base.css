@@ -70,7 +70,7 @@ body {
   align-items: center;
   min-height: 100vh; }
 
-section {
+main {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -304,7 +304,6 @@ nav ul li:hover a {
 /*----/HAMBURGER MENU----*/
 /*----HOME SUBPAGE----*/
 #home {
-  position: relative;
   overflow: hidden; }
   #home h1 {
     margin: -5% -25% 5% 0; }
@@ -350,7 +349,7 @@ nav ul li:hover a {
 
 /*----/HOME SUBPAGE----*/
 /*----PRODUCTS SUBPAGE----*/
-#products section {
+#products main {
   width: 80%;
   flex-grow: 0;
   height: 65vh;
@@ -359,7 +358,7 @@ nav ul li:hover a {
   background: #F9F9F9;
   border: 1px solid lightgrey;
   overflow: hidden; }
-  #products section h2 {
+  #products main h2 {
     display: none; }
 
 #item-tabs {
@@ -485,10 +484,7 @@ nav ul li:hover a {
 
 /*----/PRODUCTS SUBPAGE----*/
 /*----TRIVIA SUBPAGE----*/
-.trivia-header {
-  position: fixed; }
-
-#trivia {
+#trivia main {
   position: absolute;
   top: 0;
   min-height: 100vh;
@@ -552,8 +548,6 @@ nav ul li:hover a {
     left: 50%;
     transform: translateX(-50%);
     animation: scrollDown 2s infinite; }
-  #trivia span:nth-child(2):after {
-    transform: translateX(-50%) scale(0.6); }
 
 .trivia li {
   font-size: 1.2em;
@@ -626,27 +620,29 @@ nav ul li:hover a {
 
 /*----MONTERING SUBPAGE----*/
 /*----ABOUT SUBPAGE----*/
-.about {
-  max-width: 50%; }
-
-.info {
+#about main {
+  flex-grow: 0;
+  max-width: 50%;
+  align-items: stretch;
   border-left: 1px solid #00A651;
   border-right: 1px solid #00A651;
   padding: 10px 40px; }
 
+#sjef {
+  display: flex;
+  flex-grow: 1;
+  justify-content: space-around; }
+
 .sjef {
   display: flex;
-  justify-content: space-around; }
-  .sjef div {
-    display: flex;
-    align-items: center;
-    flex-direction: column; }
-    .sjef div img {
-      border-radius: 50%;
-      width: 100px;
-      height: 100px; }
-    .sjef div a {
-      font-size: .9em; }
+  align-items: center;
+  flex-direction: column; }
+  .sjef img {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px; }
+  .sjef a {
+    font-size: .9em; }
 
 .info p a {
   padding-left: .3em; }
@@ -668,7 +664,7 @@ nav ul li:hover a {
   #left-bg {
     min-width: 95%;
     left: -30%; }
-  #products {
+  #products main {
     width: 90vw; }
   .about {
     max-width: 60%; } }
@@ -678,7 +674,11 @@ nav ul li:hover a {
     line-height: 1.4; } }
 
 @media screen and (max-width: 1200px), (max-height: 900px) {
-  #products {
+  #home h1 {
+    font-size: 1.3em;
+    margin-top: 0;
+    margin-left: 10%; }
+  #products main {
     width: 100vw;
     flex-grow: 1;
     border: 0; }
@@ -686,9 +686,19 @@ nav ul li:hover a {
     margin: 50px; } }
 
 @media screen and (max-width: 1100px) {
-  #home p {
-    line-height: 1.3;
-    font-size: 0.9em; } }
+  #home main {
+    flex-grow: 0;
+    margin-top: -10%; }
+  #home article {
+    flex-direction: column;
+    max-width: 40%; }
+    #home article p {
+      text-align: justify;
+      max-width: none;
+      border: none !important;
+      font-size: 0.9em; }
+    #home article button {
+      align-self: center; } }
 
 @media screen and (max-width: 960px) {
   h1 {
@@ -774,25 +784,45 @@ nav ul li:hover a {
     transform: scale(1.1); }
     #choose-product::after {
       background-image: url("../img/icons/products.svg"); }
-  #home h1 {
-    display: none; }
-  #home article {
-    max-width: 100%;
-    margin: 0;
-    padding: 20px; }
-    #home article p {
-      color: white;
-      padding: 0;
-      max-width: none;
-      line-height: 1.4;
-      text-align: justify;
-      font-size: 1em; }
-    #home article button {
-      color: white;
-      border-color: white; }
-      #home article button:hover {
-        color: #00A651;
-        background-color: white; }
+  #home {
+    overflow-y: scroll; }
+    #home img {
+      height: 200vh; }
+    #home #menu-mobile span {
+      background: white; }
+    #home img {
+      float: left; }
+    #home h1 {
+      display: flex;
+      align-items: center;
+      max-width: 100vw;
+      margin: 0;
+      padding: 0 10%;
+      text-align: center;
+      font-size: 2em;
+      min-height: 100vh; }
+    #home main {
+      margin: 0;
+      background: rgba(0, 166, 81, 0.8); }
+    #home article {
+      max-width: 100vw;
+      min-height: calc(100vh - 61px);
+      margin: 0;
+      padding: 0 10%; }
+      #home article p {
+        flex-direction: column;
+        max-width: none;
+        color: white;
+        padding: 0;
+        line-height: 1.4;
+        text-align: justify;
+        font-size: 1em; }
+      #home article button {
+        color: white;
+        border-color: white; }
+        #home article button:hover {
+          color: #00A651;
+          background-color: white; }
   #picture img {
     min-width: 100vw;
     min-height: 100vh; }
@@ -800,7 +830,7 @@ nav ul li:hover a {
     opacity: .8; }
   #left-bg {
     display: none; }
-  #products {
+  #products main {
     overflow-y: scroll;
     position: relative;
     display: block;
@@ -916,6 +946,11 @@ nav ul li:hover a {
     box-shadow: none; } }
 
 @media screen and (max-width: 960px) and (orientation: landscape) {
+  #home article {
+    margin-bottom: -4%;
+    min-height: 100vh; }
+    #home article button {
+      margin-top: 10px; }
   #shopping-cart {
     bottom: 45px;
     height: calc(100vh - 100px); }

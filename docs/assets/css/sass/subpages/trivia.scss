@@ -1,11 +1,7 @@
 
 /*----TRIVIA SUBPAGE----*/
 
-.trivia-header {
-  position: fixed;
-}
-
-#trivia {
+#trivia main{
   position: absolute;
   top: 0;
   min-height: 100vh;
@@ -78,9 +74,6 @@
       left: 50%;
       transform: translateX(-50%);
       animation: scrollDown 2s infinite;
-    }
-    &:nth-child(2):after {
-      transform: translateX(-50%) scale(0.6);
     }
   }
 }

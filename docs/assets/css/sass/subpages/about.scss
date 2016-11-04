@@ -1,30 +1,33 @@
+
 /*----ABOUT SUBPAGE----*/
 
-.about {
+#about main {
+  flex-grow: 0;
   max-width: 50%;
-}
-
-.info {
+  align-items: stretch;
   border-left: 1px solid $accent-color-1;
   border-right: 1px solid $accent-color-1;
   padding: 10px 40px;
 }
 
+
+#sjef {
+  display: flex;
+  flex-grow: 1;
+  justify-content: space-around;
+}
+
 .sjef {
   display: flex;
-  justify-content: space-around;
-  div {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    img {
-      border-radius: 50%;
-      width: 100px;
-      height: 100px;
-    }
-    a {
-      font-size: .9em;
-    }
+  align-items: center;
+  flex-direction: column;
+  img {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+  }
+  a {
+    font-size: .9em;
   }
 }
 
