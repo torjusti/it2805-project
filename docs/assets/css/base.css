@@ -453,36 +453,47 @@ nav ul li:hover a {
 }
 
 /*----/HOME SUBPAGE----*/
-/*----PRODUCTS SUBPAGE----*/
+/**
+ * Products subpage
+ */
 #products main {
-  width: 80%;
-  flex-grow: 0;
-  height: 65vh;
+  flex-grow: 1;
+  border: 0;
   flex-direction: row;
   align-items: stretch;
-  background: #F9F9F9;
-  border: 1px solid lightgrey;
-  overflow: hidden;
+  height: 65vh;
+  width: 100%;
+  overflow-y: scroll;
+  position: relative;
 }
 
-#products main h2 {
-  display: none;
+@media screen and (min-width: 960px) {
+  #products main {
+    background: #F9F9F9;
+    position: static;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  #products main {
+    width: 80%;
+    flex-grow: 0;
+    height: 65vh;
+    border: 1px solid lightgrey;
+  }
 }
 
 #item-tabs {
   display: flex;
   flex-direction: column;
   overflow-y: scroll;
-  direction: rtl;
   box-shadow: 5px 0 5px rgba(0, 0, 0, 0.3);
-  z-index: 1;
   min-width: 30%;
 }
 
 .item-tab {
   text-align: center;
   padding: 25px;
-  background: #F9F9F9;
   border-top: 1px solid lightgrey;
   box-sizing: border-box;
   cursor: pointer;
@@ -546,7 +557,6 @@ nav ul li:hover a {
   padding: 30px;
   height: 15vh;
   background: #ddd;
-  display: block;
 }
 
 #cart-control {
@@ -623,7 +633,6 @@ nav ul li:hover a {
   text-align: center;
 }
 
-/*----/PRODUCTS SUBPAGE----*/
 /*----TRIVIA SUBPAGE----*/
 #trivia main {
   position: absolute;
@@ -886,9 +895,6 @@ nav ul li:hover a {
     min-width: 95%;
     left: -30%;
   }
-  #products main {
-    width: 90vw;
-  }
   .about {
     max-width: 60%;
   }
@@ -899,11 +905,6 @@ nav ul li:hover a {
     font-size: 1.3em;
     margin-top: 0;
     margin-left: 10%;
-  }
-  #products main {
-    width: 100vw;
-    flex-grow: 1;
-    border: 0;
   }
 }
 
@@ -1095,12 +1096,6 @@ nav ul li:hover a {
   }
   #left-bg {
     display: none;
-  }
-  #products main {
-    overflow-y: scroll;
-    position: relative;
-    display: block;
-    background: none;
   }
   #item-tabs {
     display: none;

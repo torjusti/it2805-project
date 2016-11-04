@@ -19,25 +19,16 @@
     min-width: 95%;
     left: -30%;
   }
-  #products main {
-    width: 90vw;
-  }
   .about {
     max-width: 60%;
   }
 }
-
 
 @media screen and (max-width: 1200px), (max-height: 900px) {
   #home h1{
     font-size: 1.3em;
     margin-top: 0;
     margin-left: 10%
-  }
-  #products main {
-    width: 100vw;
-    flex-grow: 1;
-    border: 0;
   }
 }
 
@@ -239,12 +230,6 @@
   }
   #left-bg {
     display: none;
-  }
-  #products main {
-    overflow-y: scroll;
-    position: relative;
-    display: block;
-    background: none;
   }
   #item-tabs {
     display: none;
