@@ -55,7 +55,6 @@
 .item-container {
   display: none;
   padding: 30px;
-  position: relative;
 }
 
 #shopping-cart {
@@ -127,12 +126,8 @@
 }
 
 .cart-controls {
-  position: absolute;
-  top: 0;
-  right: 0;
-  display: flex;
-  margin: 30px;
-  justify-content: center;
+  order: 1;
+  margin-left: auto;
 }
 
 .cart-add, .cart-remove {

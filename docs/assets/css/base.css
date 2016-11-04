@@ -512,7 +512,6 @@ nav ul li:hover a {
 .item-container {
   display: none;
   padding: 30px;
-  position: relative;
 }
 
 #shopping-cart {
@@ -591,12 +590,8 @@ nav ul li:hover a {
 }
 
 .cart-controls {
-  position: absolute;
-  top: 0;
-  right: 0;
-  display: flex;
-  margin: 30px;
-  justify-content: center;
+  order: 1;
+  margin-left: auto;
 }
 
 .cart-add, .cart-remove {
@@ -909,9 +904,6 @@ nav ul li:hover a {
     width: 100vw;
     flex-grow: 1;
     border: 0;
-  }
-  .cart-controls {
-    margin: 50px;
   }
 }
 
