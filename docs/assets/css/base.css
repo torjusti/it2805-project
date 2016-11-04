@@ -155,7 +155,6 @@ h1 {
   padding: 10px 100px; }
 
 h2 {
-  color: darkgrey;
   font-size: 1.6em;
   text-transform: uppercase;
   margin: 0;
@@ -514,7 +513,7 @@ nav ul li:hover a {
   background-size: cover;
   z-index: -1;
   position: absolute; }
-  .parallax-bg:after {
+  .parallax-bg:first-of-type:after {
     content: '';
     position: absolute;
     top: 0;
@@ -524,8 +523,6 @@ nav ul li:hover a {
     background: #00A651;
     opacity: .5;
     transition: 0.3s; }
-  .parallax-bg:hover:after {
-    opacity: 0; }
 
 #trivia h2 {
   font-size: 3em;

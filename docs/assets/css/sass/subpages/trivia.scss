@@ -1,3 +1,4 @@
+
 /*----TRIVIA SUBPAGE----*/
 
 .trivia-header {
@@ -34,19 +35,18 @@
   background-size: cover;
   z-index: -1;
   position: absolute;
-  &:after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: #00A651;
-    opacity: .5;
-    transition: 0.3s;
-  }
-  &:hover:after {
-    opacity: 0;
+  &:first-of-type{
+    &:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #00A651;
+      opacity: .5;
+      transition: 0.3s;
+    }
   }
 }
 
