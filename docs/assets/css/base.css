@@ -86,7 +86,7 @@ article {
 img {
   vertical-align: middle; }
 
-button {
+button, #home article a {
   background: transparent;
   text-align: center;
   color: #00A651;
@@ -98,14 +98,14 @@ button {
   font-size: .9em;
   padding: 5px 28px 5px 12px;
   margin: 0 5px; }
-  button::after {
+  button::after, #home article a::after {
     content: '';
     width: 16px;
     position: absolute;
     margin: 2px 0 0 4px;
     height: 16px;
     background-size: cover; }
-  button:hover {
+  button:hover, #home article a:hover {
     color: white;
     background: #00A651; }
 
@@ -134,12 +134,14 @@ button {
 
 /*----TYPOGRAPHY----*/
 a {
+  font-size: 1.98vh;
   color: #00A651; }
 
 p {
   line-height: 2;
   text-align: justify;
-  padding: 0 2%; }
+  padding: 0 2%;
+  font-size: 1.8vh; }
 
 li {
   list-style-type: none;
@@ -148,11 +150,11 @@ li {
 h1 {
   background-color: #00A651;
   color: white;
-  font-size: 2em;
+  font-size: 3.24vh;
   padding: 10px 100px; }
 
 h2 {
-  font-size: 1.6em;
+  font-size: 2.34vh;
   text-transform: uppercase;
   margin: 0;
   width: 100%;
@@ -183,6 +185,9 @@ footer {
   display: flex;
   min-width: 100%;
   justify-content: space-around; }
+
+footer a {
+  font-size: 1.62vh; }
 
 footer ul {
   align-items: center; }
@@ -322,7 +327,8 @@ nav ul li:hover a {
       box-sizing: border-box; }
       #home article p:first-of-type {
         border-right: 1px solid #00A651; }
-    #home article button {
+    #home article a {
+      text-decoration: none;
       padding: 10px 40px;
       margin-top: 30px;
       border: 1px solid #00A651; }
@@ -438,17 +444,17 @@ nav ul li:hover a {
   #cart-control > div {
     padding-right: 20px;
     white-space: nowrap; }
-  #cart-control div button {
+  #cart-control div button, #cart-control div #home article a, #home article #cart-control div a {
     background: #00A651;
     color: white;
     box-shadow: 0 0 3px rgba(0, 0, 0, 0.5); }
-    #cart-control div button:last-child {
+    #cart-control div button:last-child, #cart-control div #home article a:last-child, #home article #cart-control div a:last-child {
       background: #a60002; }
-  #cart-control button:first-child::after {
+  #cart-control button:first-child::after, #cart-control #home article a:first-child::after, #home article #cart-control a:first-child::after {
     background-image: url("../img/icons/send.svg"); }
-  #cart-control button:nth-child(2)::after {
+  #cart-control button:nth-child(2)::after, #cart-control #home article a:nth-child(2)::after, #home article #cart-control a:nth-child(2)::after {
     background-image: url("../img/icons/copy.svg"); }
-  #cart-control button:last-child::after {
+  #cart-control button:last-child::after, #cart-control #home article a:last-child::after, #home article #cart-control a:last-child::after {
     background-image: url("../img/icons/remove.svg"); }
 
 .cart-controls {
@@ -522,32 +528,37 @@ nav ul li:hover a {
     background: #00A651;
     opacity: .5; }
 
-#trivia h2 {
-  font-size: 3em;
-  color: white; }
-  #trivia h2:before {
-    content: '';
-    background-image: url("../img/icons/info.svg");
-    background-size: cover;
-    position: absolute;
-    margin-top: 24px;
-    margin-left: -30px;
-    height: 24px;
-    width: 24px; }
-
-#trivia span {
-  color: white; }
-  #trivia span:after {
-    content: '';
-    background-image: url("../img/icons/down.svg");
-    background-size: cover;
-    position: absolute;
-    height: 36px;
-    width: 36px;
-    margin-top: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    animation: scrollDown 2s infinite; }
+#trivia {
+  overflow-x: hidden; }
+  #trivia h2 {
+    font-size: 3em;
+    color: white; }
+    #trivia h2:before {
+      content: '';
+      background-image: url("../img/icons/info.svg");
+      background-size: cover;
+      position: absolute;
+      margin-top: 24px;
+      margin-left: -30px;
+      height: 24px;
+      width: 24px; }
+  #trivia main span {
+    color: white; }
+    #trivia main span:after, #trivia main span:before {
+      content: '';
+      background-image: url("../img/icons/down.svg");
+      background-size: cover;
+      position: absolute;
+      height: 36px;
+      width: 36px;
+      left: 50%;
+      transform: translateX(-50%);
+      animation: scrollDown 2s infinite; }
+    #trivia main span:before {
+      width: 16px;
+      height: 16px;
+      animation-delay: .1s;
+      margin-top: 10px; }
 
 .trivia li {
   font-size: 1.2em;
@@ -564,7 +575,6 @@ nav ul li:hover a {
 #parallax-5 {
   position: fixed;
   top: 0;
-  background-image: url("../img/gabion/1.jpg");
   display: none;
   background-image: url("../img/gabion/3.jpg"); }
 
@@ -692,10 +702,6 @@ nav ul li:hover a {
   .about {
     max-width: 60%; } }
 
-@media screen and (max-width: 1350px) {
-  #home p {
-    line-height: 1.4; } }
-
 @media screen and (max-width: 1200px), (max-height: 900px) {
   #home h1 {
     font-size: 1.3em;
@@ -720,7 +726,7 @@ nav ul li:hover a {
       max-width: none;
       border: none !important;
       font-size: 0.9em; }
-    #home article button {
+    #home article a {
       align-self: center; } }
 
 @media screen and (max-width: 960px) {
@@ -767,7 +773,9 @@ nav ul li:hover a {
     flex-grow: 1;
     min-width: 100%;
     min-height: 100%;
-    padding: 0; }
+    padding: 0;
+    font-size: 3.24vh;
+    text-transform: uppercase; }
   header nav ul li:first-child {
     border-left: none;
     border-top: none;
@@ -839,11 +847,11 @@ nav ul li:hover a {
         padding: 0;
         line-height: 1.4;
         text-align: justify;
-        font-size: 1em; }
-      #home article button {
+        font-size: 2.5vh; }
+      #home article a {
         color: white;
         border-color: white; }
-        #home article button:hover {
+        #home article a:hover {
           color: #00A651;
           background-color: white; }
   #picture img {
@@ -891,7 +899,7 @@ nav ul li:hover a {
     .cart-controls input {
       height: 48px;
       padding: 0; }
-    .cart-controls button {
+    .cart-controls button, .cart-controls #home article a, #home article .cart-controls a {
       height: 48px;
       background: #333;
       border-radius: 0; }
@@ -914,17 +922,17 @@ nav ul li:hover a {
     width: 100%;
     display: flex;
     padding: 0; }
-    #cart-control div button {
+    #cart-control div button, #cart-control div #home article a, #home article #cart-control div a {
       padding-top: 20px;
       padding-bottom: 20px;
       box-shadow: none;
       border-radius: 0;
       width: 50%;
       margin: 0; }
-      #cart-control div button:first-child {
+      #cart-control div button:first-child, #cart-control div #home article a:first-child, #home article #cart-control div a:first-child {
         box-sizing: border-box;
         border-right: 1px solid black; }
-      #cart-control div button:nth-child(2) {
+      #cart-control div button:nth-child(2), #cart-control div #home article a:nth-child(2), #home article #cart-control div a:nth-child(2) {
         display: none; }
   .parallax-bg:after {
     opacity: 0; }
@@ -969,11 +977,19 @@ nav ul li:hover a {
     box-shadow: none; } }
 
 @media screen and (max-width: 960px) and (orientation: landscape) {
+  header nav {
+    height: calc(100vh - 36px); }
+    header nav ul li a {
+      font-size: 5.4vh; }
   #home article {
     margin-bottom: -4%;
-    min-height: 100vh; }
-    #home article button {
+    min-height: 100vh;
+    padding: 0 5%; }
+    #home article button, #home article a {
       margin-top: 10px; }
+    #home article p {
+      font-size: 3.78vh;
+      display: inline; }
   #shopping-cart {
     bottom: 45px;
     height: calc(100vh - 100px); }
@@ -982,9 +998,9 @@ nav ul li:hover a {
     top: 0;
     transform: translateX(-50%);
     left: 50%; }
-    .cart-controls button {
+    .cart-controls button, .cart-controls #home article a, #home article .cart-controls a {
       padding: 0 20px; }
-  #cart-control p, #cart-control div button {
+  #cart-control p, #cart-control div button, #cart-control div #home article a, #home article #cart-control div a {
     padding: 5px; }
   footer {
     min-height: 36px; } }

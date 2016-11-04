@@ -47,6 +47,7 @@
 }
 
 #trivia {
+  overflow-x: hidden;
   h2 {
     font-size: 3em;
     color: white;
@@ -61,19 +62,26 @@
       width: 24px;
     }
   }
-  span {
-    color: white;
-    &:after {
-      content: '';
-      background-image: url("../img/icons/down.svg");
-      background-size: cover;
-      position: absolute;
-      height: 36px;
-      width: 36px;
-      margin-top: 10px;
-      left: 50%;
-      transform: translateX(-50%);
-      animation: scrollDown 2s infinite;
+  main{
+    span {
+      color: white;
+      &:after, &:before {
+        content: '';
+        background-image: url("../img/icons/down.svg");
+        background-size: cover;
+        position: absolute;
+        height: 36px;
+        width: 36px;
+        left: 50%;
+        transform: translateX(-50%);
+        animation: scrollDown 2s infinite;
+      }
+      &:before{
+        width: 16px;
+        height: 16px;
+        animation-delay: .1s;
+        margin-top: 10px;
+      }
     }
   }
 }
@@ -96,7 +104,6 @@
 #parallax-5 {
   position: fixed;
   top: 0;
-  background-image: url("../img/gabion/1.jpg");
   display: none;
   background-image: url("../img/gabion/3.jpg");
 }

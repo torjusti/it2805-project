@@ -19,6 +19,9 @@ footer {
 }
 
 footer {
+  a{
+    font-size: $base-font-size*.9
+  }
   ul {
     align-items: center;
     li {

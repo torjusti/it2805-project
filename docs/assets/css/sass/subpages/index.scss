@@ -24,7 +24,9 @@
         border-right: 1px solid $accent-color-1;
       }
     }
-    button {
+    a {
+      @extend button;
+      text-decoration: none;
       padding: 10px 40px;
       margin-top: 30px;
       border: 1px solid $accent-color-1;
