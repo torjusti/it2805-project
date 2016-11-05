@@ -789,8 +789,8 @@ nav ul li:hover a {
   margin: 0px 20px 0px 20px;
 }
 
-#assembly-controls > ul, #assembly-btn-back {
-  display: none;
+#prog-bar, #assembly-btn-next, #assembly-btn-back {
+  display: flex;
 }
 
 .assembly-content {
@@ -833,7 +833,11 @@ nav ul li:hover a {
 }
 
 .prog-bar-element {
-  color: red;
+  color: #999;
+}
+
+.prog-bar-element-active {
+  color: #00A651;
 }
 
 /*----MONTERING SUBPAGE----*/
