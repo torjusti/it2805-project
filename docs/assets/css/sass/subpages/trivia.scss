@@ -16,7 +16,7 @@
   flex-direction: column;
   width: 100vw;
   min-height: 50vh;
-  background: white;
+  background: $light-color;
   box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
 }
 
@@ -50,7 +50,7 @@
   overflow-x: hidden;
   h2 {
     font-size: 3em;
-    color: white;
+    color: $light-color;
     &:before {
       content: '';
       background-image: url("../img/icons/info.svg");
@@ -64,7 +64,7 @@
   }
   main{
     span {
-      color: white;
+      color: $light-color;
       &:after, &:before {
         content: '';
         background-image: url("../img/icons/down.svg");

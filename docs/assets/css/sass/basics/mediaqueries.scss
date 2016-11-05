@@ -2,13 +2,7 @@
 -------------------------------MEDIA QUERIES------------------------------
 ------------------------------------------------------------------------*/
 @media screen and (max-width: 1556px) {
-  h1 {
-    font-size: 1.9em;
-    padding: 10px 80px;
-  }
-  p {
-    line-height: 1.6;
-  }
+
   header nav ul li a {
     padding: 15px 30px;
   }
@@ -18,9 +12,6 @@
   #left-bg {
     min-width: 95%;
     left: -30%;
-  }
-  .about {
-    max-width: 60%;
   }
 }
 
@@ -55,17 +46,7 @@
 }
 
 @media screen and (max-width: 960px) {
-  h1 {
-    font-size: 1.5em;
-    background: none;
-    padding: 0;
-    margin: 0;
-  }
-  h2 {
-    font-size: 1.3em;
-    padding: 6px 0 0;
-    color: white;
-  }
+
   #menu-mobile {
     display: flex;
   }
@@ -93,14 +74,14 @@
           border-left: 1px solid $accent-color-2;
         }
         &:hover {
-          box-shadow: inset 0 0 10px black;
+          box-shadow: inset 0 0 10px $dark-color;
           margin: 0;
         }
       }
     }
   }
   .active-menu {
-    box-shadow: inset 0 0 10px black;
+    box-shadow: inset 0 0 10px $dark-color;
     margin: 0;
   }
   header nav ul li {
@@ -160,7 +141,7 @@
     margin: 16px 20px;
     display: block;
     background: $accent-color-1;
-    color: white;
+    color: $light-color;
     transform: scale(1.1);
     &::after {
       background-image: url('../img/icons/products.svg');
@@ -174,7 +155,7 @@
     }
     #menu-mobile{
       span{
-        background: white
+        background: $light-color
       }
     }
     img{
@@ -202,18 +183,18 @@
       p {
         flex-direction: column;
         max-width: none;
-        color: white;
+        color: $light-color;
         padding: 0;
         line-height: 1.4;
         text-align: justify;
         font-size: 2.5vh;
       }
       a {
-        color: white;
-        border-color: white;
+        color: $light-color;
+        border-color: $light-color;
         &:hover {
           color: $accent-color-1;
-          background-color: white;
+          background-color: $light-color;
         }
       }
     }
@@ -307,7 +288,7 @@
       margin: 0;
       &:first-child {
         box-sizing: border-box;
-        border-right: 1px solid black;
+        border-right: 1px solid $dark-color;
       }
       &:nth-child(2) {
         display: none;
@@ -335,32 +316,11 @@
       margin: 24px;
     }
   }
-  .info {
-    border: none;
-    width: 100%;
-    padding: 0;
-    p {
-      line-height: 1.4;
-    }
-  }
-  .sjef {
-    margin: 0;
-    div {
-      h3 {
-        font-size: .8em;
-      }
-      h4 {
-        padding: 0;
-      }
-      a {
-        margin-bottom: 24px;
-      }
-    }
-  }
+
   footer {
     position: relative;
     z-index: 1000;
-    border-top: 1px solid black;
+    border-top: 1px solid $dark-color;
     max-height: 48px;
     padding: 0px;
   }
@@ -439,10 +399,10 @@
   top: 0;
   margin: auto;
   background: $accent-color-2;
-  color: white;
+  color: $light-color;
   padding: 5px 10px;
   border-radius: 0 0 5px 5px;
-  box-shadow: 0 0 5px black;
+  box-shadow: 0 0 5px $dark-color;
   animation: slideInTop .4s forwards;
   z-index: 1000;
 }

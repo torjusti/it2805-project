@@ -1,3 +1,4 @@
+
 /*----ANIMATIONS----*/
 
 @keyframes slideInTop {
@@ -12,7 +13,6 @@
   }
 }
 
-
 @keyframes slideOutTop {
   0% {
     transform: translateY(0vh);
@@ -22,10 +22,8 @@
   100% {
     transform: translateY(-100vh);
     opacity: 0;
-    display: none;
   }
 }
-
 
 @keyframes slideInLeft {
   0% {
@@ -39,6 +37,17 @@
   }
 }
 
+@keyframes slideOutLeft {
+  0% {
+    transform: translateX(0vh);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateX(-100vw);
+    opacity: 0;
+  }
+}
 
 @keyframes slideInRight {
   0% {
@@ -49,19 +58,6 @@
   100% {
     transform: translateX(0);
     opacity: 1;
-  }
-}
-
-
-@keyframes slideOutLeft {
-  0% {
-    transform: translateX(0vh);
-    opacity: 1;
-  }
-
-  100% {
-    transform: translateX(-100vw);
-    opacity: 0;
   }
 }
 
@@ -79,17 +75,17 @@
 }
 
 
+
 @keyframes scrollDown {
-  from {
+  0% {
     margin-top: 10px;
     opacity: 1;
   }
 
-  to {
+  100% {
     margin-top: 36px;
     opacity: 0;
   }
 }
-
 
 /*----/ANIMATIONS----*/

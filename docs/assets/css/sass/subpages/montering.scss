@@ -24,7 +24,7 @@
   align-items: flex-start;
   max-width: 70%;
   background: #00A651;
-  color: white;
+  color: $light-color;
   padding: 20px;
   margin: 20px;
   border-radius: 10px;
@@ -32,7 +32,7 @@
 }
 
 #assembly-btn-back {
-  color: white;
+  color: $light-color;
   background: #00A651;
   &:after {
     content: '';
@@ -43,7 +43,7 @@
   }
 }
 #assembly-btn-next {
-  color: white;
+  color: $light-color;
   background: #00A651;
   &:after {
     content: '';

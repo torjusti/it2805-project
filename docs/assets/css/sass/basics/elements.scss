@@ -1,6 +1,8 @@
 
 /*----MAIN ELEMENTS----*/
 
+::selection{background: $accent-color-1;color: $light-color}
+
 html {
   background-image: url('../img/bg.png');
   background-color: #EEE;
@@ -56,20 +58,8 @@ button {
     background-size: cover;
   }
   &:hover {
-    color: white;
+    color: $light-color;
     background: $accent-color-1;
   }
 }
-
-.shade {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-color: $accent-color-1;
-  opacity: .2;
-  z-index: 1;
-  top: 0;
-  left: 0;
-}
-
 /*----/OTHER ELEMENTS----*/
