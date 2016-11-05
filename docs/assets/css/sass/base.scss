@@ -11,8 +11,9 @@ $accent-color-4: #fefefe;
 $light-color: white;
 $dark-color: black;
 
-$base-font-size: 4.5vmin;
+$base-font-size: 1em;
 
+$border-1: 1px solid $accent-color-1;
 
 // IMPORT EVERYTHING
 @import "basics/animations";

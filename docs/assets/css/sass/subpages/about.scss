@@ -8,7 +8,7 @@
   }
   section{
     &:first-of-type{
-      padding: 0 10vmin
+      padding: 0 10vmin;
     }
   }
 }
@@ -18,9 +18,9 @@
   justify-content: center;
   img {
     border-radius: 50%;
-    height: 40vmin;
     padding: 5px 0;
-    width: 40vmin;
+    height: 128px;
+    width: 128px;
   }
 }
 .sjef{
@@ -29,36 +29,47 @@
   align-items: center;
   padding-bottom: 2.5vmin;
 }
+@media screen {
 
-@media screen and (min-width:640px) and (orientation:landscape) {
-  #about{
-    h2,p{
-      padding: 0
+  @media (min-width:580px) {
+    #about{
+      section{
+        &:first-of-type{
+          display: flex;
+          justify-content: center;
+          flex-direction: column;
+          align-items: center;
+        }
+      }
     }
-    section{
-      &:first-of-type{
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-        align-items: center;
-        min-height: 100vh;
+    #sjef{
+      justify-content: center;
+      align-items: center;
+      min-width: 100%;
+      margin-bottom: 5vmin;
+      flex-direction: row;
+    }
+    .sjef{
+      padding: 0;
+      &:first-child{
+        margin-right: 20%;
       }
     }
   }
-  #sjef{
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    min-height: 100vh;
-    min-width: 100%;
-    img{
-      height: 33.333vmin;
-      width: 33.333vmin;
+  @media (min-width:960px) {
+    #about{
+      section {
+        &:first-of-type{
+          padding: 0 2.5vmin;
+        }
+      }
+      #sjef{
+        justify-content: space-around;
+      }
+      .sjef{
+        margin: 0 !important;
+      }
     }
   }
-  .sjef{
-    padding: 0
-  }
 }
-
 /*----/ABOUT SUBPAGE----*/

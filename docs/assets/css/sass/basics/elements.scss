@@ -62,4 +62,30 @@ button {
     background: $accent-color-1;
   }
 }
+
+@media screen {
+
+  @media (min-width: 960px){
+    main{
+      max-width: 80vw
+    }
+  }
+  @media (min-width: 1280px){
+    main{
+      flex-grow: 0;
+      max-width: 60vw;
+      border-left: $border-1;
+      border-right: $border-1;
+    }
+  }
+  @media (min-width: 1440px){
+    main{
+      max-width: 50vw
+    }
+  }
+
+}
+
+
+
 /*----/OTHER ELEMENTS----*/
