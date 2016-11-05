@@ -45,6 +45,17 @@ document.addEventListener('DOMContentLoaded', function() {
             createElem({
               'className': 'item-extra',
               'innerHTML': product.extra
+            }),
+
+            createElem({
+              'className': 'item-img',
+              'children': [
+                createElem({
+                  'nodeType': 'img',
+                  'src': `assets/img/produkter/${product.size.join('x')}/1.JPG`,
+                  'alt': product.name
+                })
+              ]
             })
           ]
         });
