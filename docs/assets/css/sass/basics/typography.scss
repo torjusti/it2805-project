@@ -1,7 +1,8 @@
 
 /*----TYPOGRAPHY----*/
-h1,a {
-  color: $accent-color-1
+
+a {
+  color: $accent-color-1;
 }
 h4,li{
   color: $accent-color-2
@@ -16,6 +17,8 @@ p{
 }
 
 h1 {
+  padding-left: 5vmin;
+  color: $light-color;
   font-size: $base-font-size*1.8;
 }
 
@@ -26,12 +29,35 @@ h2 {
   text-transform: uppercase;
 }
 @media screen {
+  @media (min-width: 480px){
+    h1{
+      font-size: $base-font-size*1.6;
+      padding: 0;
+      text-align: center;
+    }
+  }
+
+  @media (min-width: 768px){
+    article{
+      padding: 5vmin 0;
+      display: flex;
+    }
+  }
+
   @media (min-width:960px){
     h2 {
       font-size: $base-font-size*1.6
     }
   }
-
+  @media (min-width: 1100px){
+    h1{
+      background: $accent-color-1;
+      padding: 10px 0;
+      min-width: 40vw;
+      margin-left: 85vw;
+      margin-top: 15%;
+    }
+  }
   @media (min-width: 1440px){
     a,p {
       font-size: $base-font-size*1.1;

@@ -14,6 +14,9 @@ $dark-color: black;
 $base-font-size: 1em;
 
 $border-1: 1px solid $accent-color-1;
+$border-2: 1px solid $light-color;
+
+$transition-1: .3s ease-in-out;
 
 // IMPORT EVERYTHING
 @import "basics/animations";
