@@ -5,8 +5,8 @@
   border: 0;
   flex-direction: row;
   align-items: stretch;
-  height: 65vh;
-  width: 100%;
+  max-height: 65vh;
+  max-width: 80%;
   overflow-y: scroll;
   position: relative;
 }
@@ -50,7 +50,11 @@
   display: none;
   padding: 30px;
 }
-
+.item-img{
+  img{
+    width: 270px
+  }
+}
 #shopping-cart {
   flex-direction: column;
   display: none;

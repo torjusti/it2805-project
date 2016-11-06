@@ -111,18 +111,7 @@
     }
   }
 
-  #picture {
-    img {
-      min-width: 100vw;
-      min-height: 100vh;
-    }
-    .shade {
-      opacity: .8;
-    }
-  }
-  #left-bg {
-    display: none;
-  }
+
   #item-tabs {
     display: none;
     height: calc(100vh - 62px);
@@ -206,27 +195,7 @@
       }
     }
   }
-  .parallax-bg:after {
-    opacity: 0;
-  }
-  .trivia li {
-    font-size: 0.9em;
-  }
-  #parallax-4 {
-    margin-top: -20vh;
-  }
-  #parallax-6 {
-    margin-bottom: 90vh;
-  }
-  .about {
-    max-width: 100vw;
-    margin: 0;
-    padding: 0 20px 0 20px;
-    h2 {
-      color: $accent-color-2;
-      margin: 24px;
-    }
-  }
+
 
   footer {
     position: relative;

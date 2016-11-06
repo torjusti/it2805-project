@@ -1,4 +1,3 @@
-@charset "UTF-8";
 /*----ANIMATIONS----*/
 @keyframes slideInTop {
   0% {
@@ -50,10 +49,10 @@
 
 @keyframes scrollDown {
   0% {
-    margin-top: 10px;
+    margin-top: 2em;
     opacity: 1; }
   100% {
-    margin-top: 36px;
+    margin-top: 3em;
     opacity: 0; } }
 
 /*----/ANIMATIONS----*/
@@ -449,8 +448,8 @@ nav ul li:hover a {
   border: 0;
   flex-direction: row;
   align-items: stretch;
-  height: 65vh;
-  width: 100%;
+  max-height: 65vh;
+  max-width: 80%;
   overflow-y: scroll;
   position: relative; }
 
@@ -486,6 +485,9 @@ nav ul li:hover a {
 .item-container {
   display: none;
   padding: 30px; }
+
+.item-img img {
+  width: 270px; }
 
 #shopping-cart {
   flex-direction: column;
@@ -582,115 +584,42 @@ nav ul li:hover a {
 
 /*----TRIVIA SUBPAGE----*/
 #trivia main {
-  position: absolute;
-  top: 0;
-  min-height: 100vh;
-  z-index: -1; }
+  width: 100vw;
+  overflow: hidden; }
+
+#trivia h2 {
+  display: flex;
+  align-items: center;
+  font-size: 2em;
+  padding: 0;
+  align-self: center;
+  color: white;
+  min-height: 100vh; }
+  #trivia h2:after, #trivia h2:before {
+    content: 'bla ned';
+    position: absolute;
+    margin-top: 1em;
+    left: 50%;
+    transform: translate(-50%) scale(0.6);
+    text-transform: lowercase; }
+  #trivia h2:before {
+    content: '';
+    background-image: url("../img/icons/down.svg");
+    width: 36px;
+    height: 36px;
+    background-position: center;
+    background-size: cover;
+    margin-top: 2em;
+    animation: scrollDown 1.4s infinite; }
 
 .parallax-content {
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  width: 100vw;
-  min-height: 50vh;
-  background: white;
-  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3); }
-
-.trivia {
-  padding: 30px;
-  max-width: 80%; }
-
-.parallax-bg {
-  width: 100vw;
-  height: 100vh;
-  background-size: cover;
-  z-index: -1;
-  position: absolute;
-  transition: height 999999s; }
-  .parallax-bg:first-of-type:after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: #00A651;
-    opacity: .5; }
-
-#trivia {
-  overflow-x: hidden; }
-  #trivia h2 {
-    font-size: 3em;
-    color: white; }
-    #trivia h2:before {
-      content: '';
-      background-image: url("../img/icons/info.svg");
-      background-size: cover;
-      position: absolute;
-      margin-top: 24px;
-      margin-left: -30px;
-      height: 24px;
-      width: 24px; }
-  #trivia main span {
-    color: white; }
-    #trivia main span:after, #trivia main span:before {
-      content: '';
-      background-image: url("../img/icons/down.svg");
-      background-size: cover;
-      position: absolute;
-      height: 36px;
-      width: 36px;
-      left: 50%;
-      transform: translateX(-50%);
-      animation: scrollDown 2s infinite; }
-    #trivia main span:before {
-      width: 16px;
-      height: 16px;
-      animation-delay: .1s;
-      margin-top: 10px; }
-
-.trivia li {
-  font-size: 1.2em;
-  text-indent: -.7em; }
-  .trivia li:before {
-    content: "■ ";
-    color: #00A651; }
+  background: white; }
 
 #parallax-1 {
   position: fixed;
   top: 0;
-  background-image: url("../img/gabion/1.jpg"); }
-
-#parallax-5 {
-  position: fixed;
-  top: 0;
-  display: none;
-  background-image: url("../img/gabion/3.jpg"); }
-
-#parallax-2 {
-  z-index: 2;
-  top: 200%; }
-
-#parallax-3 {
-  z-index: 1;
-  top: 100%;
-  background-image: url("../img/gabion/2.jpg"); }
-
-#parallax-4 {
-  z-index: 4;
-  top: 150%; }
-
-#parallax-6 {
-  top: 190%;
-  margin: 30vh 0; }
-  #parallax-6 a {
-    padding: 10px; }
-
-.trivia-footer {
-  position: fixed;
-  bottom: 0; }
+  left: 0;
+  z-index: -1; }
 
 /*----/TRIVIA SUBPAGE----*/
 /*----MONTERING SUBPAGE----*/
@@ -879,13 +808,6 @@ nav ul li:hover a {
     transform: scale(1.1); }
     #choose-product::after {
       background-image: url("../img/icons/products.svg"); }
-  #picture img {
-    min-width: 100vw;
-    min-height: 100vh; }
-  #picture .shade {
-    opacity: .8; }
-  #left-bg {
-    display: none; }
   #item-tabs {
     display: none;
     height: calc(100vh - 62px);
@@ -954,21 +876,6 @@ nav ul li:hover a {
         border-right: 1px solid black; }
       #cart-control div button:nth-child(2) {
         display: none; }
-  .parallax-bg:after {
-    opacity: 0; }
-  .trivia li {
-    font-size: 0.9em; }
-  #parallax-4 {
-    margin-top: -20vh; }
-  #parallax-6 {
-    margin-bottom: 90vh; }
-  .about {
-    max-width: 100vw;
-    margin: 0;
-    padding: 0 20px 0 20px; }
-    .about h2 {
-      color: #333;
-      margin: 24px; }
   footer {
     position: relative;
     z-index: 1000;

@@ -1,6 +1,7 @@
-document.addEventListener('DOMContentLoaded', function() {
+
+/*document.addEventListener('DOMContentLoaded', function() {
   document.addEventListener('scroll', function(){
-    
+
     const fromTop = document.getElementsByTagName("BODY")[0].scrollTop;
     const scrollFifth = document.getElementById("parallax-5");
 
@@ -12,3 +13,4 @@ document.addEventListener('DOMContentLoaded', function() {
 
   });
 });
+*/
