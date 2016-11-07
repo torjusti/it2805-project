@@ -9,5 +9,5 @@ document.addEventListener('DOMContentLoaded', function() {
       document.getElementById("parallax-5").style.top = 350 - fromTop/0.7 + "vh";
       document.getElementById("parallax-6").style.top = 530 - fromTop/0.5 + "vh";
     });
-  }
+  };
 });

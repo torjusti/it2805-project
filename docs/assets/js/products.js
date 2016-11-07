@@ -47,19 +47,19 @@ document.addEventListener('DOMContentLoaded', function() {
               'innerHTML': product.extra
             }),
 
-            createElem({
-              'className': 'item-img',
-              'children': [
-                createElem({
-                  'nodeType': 'img',
-                  'src': `assets/img/produkter/${product.size.join('x')}/1.JPG`,
-                  'alt': product.name
-                })
-              ]
-            })
           ]
         });
 
+        let itemImg = createElem({
+          'className': 'item-img',
+          'children': [
+            createElem({
+              'nodeType': 'img',
+              'src': `assets/img/produkter/${product.size.join('x')}/1.JPG`,
+              'alt': product.name
+            })
+          ]
+        });
         let cartControls = createElem({
           'className': 'cart-controls',
 
@@ -88,7 +88,7 @@ document.addEventListener('DOMContentLoaded', function() {
         itemContainers.appendChild(createElem({
           'className': 'item-container',
           'data-tab': i,
-          'children': [cartControls, itemData]
+          'children': [cartControls, itemData, itemImg]
         }));
       });
 
@@ -147,24 +147,6 @@ document.addEventListener('DOMContentLoaded', function() {
        * Shopping cart functionality
        * ---------------------------
        */
-
-       const toggleCart = document.getElementById('toggle-cart');
-
-       toggleCart.addEventListener('click', function(){
-         if (cartResults.style.display == 'block' || cartResults.style.display == '') {
-           cartResults.style.display = 'none';
-           document.getElementById('cart-control').style.display = 'none';
-           toggleCart.innerText = 'Vis handlekurven';
-           document.styleSheets[0].addRule('#toggle-cart:after','background-image: url("../img/icons/up.svg") !important');
-         } else {
-           cartResults.style.display = 'block';
-           document.getElementById('cart-control').style.display = 'flex';
-           toggleCart.innerText = 'Skjul handlekurven';
-           document.styleSheets[0].addRule('#toggle-cart:after','background-image: url("../img/icons/down.svg") !important');
-
-
-         }
-       });
 
 
       // Some extra logic for the mobile menu.
@@ -286,7 +268,11 @@ document.addEventListener('DOMContentLoaded', function() {
           cartResults.value = lines.join('\n');
           // Show the shopping cart.
           document.getElementById('shopping-cart').style.display = 'flex';
-
+          /*setInterval(function(){
+            if (document.getElementsByTagName("BODY")[0].scrollTop != window.innerHTML){
+            document.getElementsByTagName("BODY")[0].scrollTop = document.getElementsByTagName("BODY")[0].scrollTop + 10
+          }
+        }, 15);*/ // SMOOTH SCROLL TO THE BOTTOM.
         } else {
           // Hide shopping cart.
           document.getElementById('shopping-cart').style.display = 'none';
