@@ -2,70 +2,14 @@
 -------------------------------MEDIA QUERIES------------------------------
 ------------------------------------------------------------------------*/
 @media screen and (max-width: 1556px) {
-  h1 {
-    font-size: 1.9em;
-    padding: 10px 80px;
-  }
-  p {
-    line-height: 1.6;
-  }
+
   header nav ul li a {
     padding: 15px 30px;
-  }
-  #home h1 {
-    margin-top: -5%;
-  }
-  #left-bg {
-    min-width: 95%;
-    left: -30%;
-  }
-  .about {
-    max-width: 60%;
-  }
-}
-
-@media screen and (max-width: 1200px), (max-height: 900px) {
-  #home h1{
-    font-size: 1.3em;
-    margin-top: 0;
-    margin-left: 10%
-  }
-}
-
-@media screen and (max-width: 1100px) {
-  #home {
-    main {
-      flex-grow: 0;
-      margin-top: -10%
-    }
-    article {
-      flex-direction: column;
-      max-width: 40%;
-      p {
-        text-align: justify;
-        max-width: none;
-        border: none !important;
-        font-size: 0.9em;
-      }
-      a{
-        align-self: center;
-      }
-    }
   }
 }
 
 @media screen and (max-width: 960px) {
-  h1 {
-    font-size: 1.5em;
-    background: none;
-    padding: 0;
-    margin: 0;
-  }
-  h2 {
-    font-size: 1.3em;
-    padding: 6px 0 0;
-    color: white;
-  }
+
   #menu-mobile {
     display: flex;
   }
@@ -93,14 +37,14 @@
           border-left: 1px solid $accent-color-2;
         }
         &:hover {
-          box-shadow: inset 0 0 10px black;
+          box-shadow: inset 0 0 10px $dark-color;
           margin: 0;
         }
       }
     }
   }
   .active-menu {
-    box-shadow: inset 0 0 10px black;
+    box-shadow: inset 0 0 10px $dark-color;
     margin: 0;
   }
   header nav ul li {
@@ -160,77 +104,14 @@
     margin: 16px 20px;
     display: block;
     background: $accent-color-1;
-    color: white;
+    color: $light-color;
     transform: scale(1.1);
     &::after {
       background-image: url('../img/icons/products.svg');
     }
   }
 
-  #home {
-    overflow-y: scroll;
-    img{
-      height: 200vh;
-    }
-    #menu-mobile{
-      span{
-        background: white
-      }
-    }
-    img{
-      float: left;
-    }
-    h1 {
-      display: flex;
-      align-items: center;
-      max-width: 100vw;
-      margin: 0;
-      padding: 0 10%;
-      text-align: center;
-      font-size: 2em;
-      min-height: 100vh
-    }
-    main{
-      margin: 0;
-      background: transparentize($accent-color-1, .2);
-    }
-    article {
-      max-width: 100vw;
-      min-height: calc(100vh - 61px);
-      margin: 0;
-      padding: 0 10%;
-      p {
-        flex-direction: column;
-        max-width: none;
-        color: white;
-        padding: 0;
-        line-height: 1.4;
-        text-align: justify;
-        font-size: 2.5vh;
-      }
-      a {
-        color: white;
-        border-color: white;
-        &:hover {
-          color: $accent-color-1;
-          background-color: white;
-        }
-      }
-    }
-  }
 
-  #picture {
-    img {
-      min-width: 100vw;
-      min-height: 100vh;
-    }
-    .shade {
-      opacity: .8;
-    }
-  }
-  #left-bg {
-    display: none;
-  }
   #item-tabs {
     display: none;
     height: calc(100vh - 62px);
@@ -307,60 +188,19 @@
       margin: 0;
       &:first-child {
         box-sizing: border-box;
-        border-right: 1px solid black;
+        border-right: 1px solid $dark-color;
       }
       &:nth-child(2) {
         display: none;
       }
     }
   }
-  .parallax-bg:after {
-    opacity: 0;
-  }
-  .trivia li {
-    font-size: 0.9em;
-  }
-  #parallax-4 {
-    margin-top: -20vh;
-  }
-  #parallax-6 {
-    margin-bottom: 90vh;
-  }
-  .about {
-    max-width: 100vw;
-    margin: 0;
-    padding: 0 20px 0 20px;
-    h2 {
-      color: $accent-color-2;
-      margin: 24px;
-    }
-  }
-  .info {
-    border: none;
-    width: 100%;
-    padding: 0;
-    p {
-      line-height: 1.4;
-    }
-  }
-  .sjef {
-    margin: 0;
-    div {
-      h3 {
-        font-size: .8em;
-      }
-      h4 {
-        padding: 0;
-      }
-      a {
-        margin-bottom: 24px;
-      }
-    }
-  }
+
+
   footer {
     position: relative;
     z-index: 1000;
-    border-top: 1px solid black;
+    border-top: 1px solid $dark-color;
     max-height: 48px;
     padding: 0px;
   }
@@ -381,20 +221,6 @@
     ul li a {
        font-size: $base-font-size*3;
      }
-  }
-
-
-  #home article{
-    margin-bottom: -4%;
-    min-height: 100vh;
-    padding: 0 5%;
-    button{
-      margin-top: 10px
-    }
-    p{
-      font-size: $base-font-size*2.1;
-      display: inline;
-    }
   }
 
   #shopping-cart {
@@ -439,10 +265,10 @@
   top: 0;
   margin: auto;
   background: $accent-color-2;
-  color: white;
+  color: $light-color;
   padding: 5px 10px;
   border-radius: 0 0 5px 5px;
-  box-shadow: 0 0 5px black;
+  box-shadow: 0 0 5px $dark-color;
   animation: slideInTop .4s forwards;
   z-index: 1000;
 }

@@ -1,40 +1,23 @@
-/**
- * Products subpage
- */
+
+/*----PRODUCTS SUBPAGE----*/
 
 #products main {
-  flex-grow: 1;
   border: 0;
   flex-direction: row;
   align-items: stretch;
-  height: 65vh;
-  width: 100%;
+  max-height: 65vh;
+  max-width: 80%;
   overflow-y: scroll;
   position: relative;
 }
 
-@media screen and (min-width: 960px) {
-  #products main {
-    background: #F9F9F9;
-    position: static;
-  }
-}
-
-@media screen and (min-width: 1200px) {
-  #products main {
-    width: 80%;
-    flex-grow: 0;
-    height: 65vh;
-    border: 1px solid lightgrey;
-  }
-}
-
 #item-tabs {
+  background: $accent-color-4;
   display: flex;
   flex-direction: column;
   overflow-y: scroll;
   box-shadow: 5px 0 5px rgba(0, 0, 0, 0.3);
-  min-width: 30%;
+  min-width: 100%;
 }
 
 .item-tab {
@@ -67,7 +50,11 @@
   display: none;
   padding: 30px;
 }
-
+.item-img{
+  img{
+    width: 270px
+  }
+}
 #shopping-cart {
   flex-direction: column;
   display: none;
@@ -81,7 +68,7 @@
     background: $accent-color-3;
     cursor: pointer;
     font-size: .6em;
-    color: white;
+    color: $light-color;
     &:after {
       content: '';
       background-image: url("../img/icons/down.svg");
@@ -106,17 +93,17 @@
   justify-content: space-between;
   background: $accent-color-2;
   p {
-    color: white;
+    color: $light-color;
     line-height: 1;
     padding: 20px;
   }
   > div {
     padding-right: 20px;
-    white-space: nowrap;
+    $light-color-space: nowrap;
   }
   div button {
     background: $accent-color-1;
-    color: white;
+    color: $light-color;
     box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
     &:last-child {
       background: #a60002;
@@ -166,4 +153,24 @@
 .cart-val {
   width: 50px;
   text-align: center;
+}
+
+
+@media screen and (min-width: 960px) {
+  #products main {
+    background: #F9F9F9;
+    position: static;
+  }
+  #item-tabs{
+    min-width: 30%
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  #products main {
+    width: 80%;
+    flex-grow: 0;
+    height: 65vh;
+    border: 1px solid lightgrey;
+  }
 }

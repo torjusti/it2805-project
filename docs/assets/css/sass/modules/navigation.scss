@@ -29,18 +29,18 @@ nav {
 nav ul li {
   a {
     text-decoration: none;
-    color: white;
+    color: $light-color;
     display: flex;
     padding: 20px 30px;
   }
   &:hover a {
-    color: white;
+    color: $light-color;
     font-weight: bolder;
   }
 }
 
 .active-menu a {
-  color: white;
+  color: $light-color;
   font-weight: bolder;
 }
 
@@ -75,7 +75,7 @@ nav ul li {
 }
 
 .home-header #menu-mobile span {
-  background: white;
+  background: $light-color;
 }
 
 /*----/HAMBURGER MENU----*/

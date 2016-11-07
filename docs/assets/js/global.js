@@ -76,7 +76,7 @@ function createElem(obj) {
 
   // Handle the rest of the attributes using setAttribute.
   for (let key in obj) {
-    if (BLACKLIST.indexOf(key) < 0) { // Only set if not in blacklist.
+    if (BLACKLIST.indexOf(key) < 0) { // Only set if not in black.
       elem.setAttribute(key, obj[key]);
     }
   }
