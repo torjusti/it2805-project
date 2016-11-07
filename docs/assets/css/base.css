@@ -669,6 +669,14 @@ nav ul li:hover a {
   padding-bottom: 2.5vmin; }
 
 @media screen and (min-width: 960px) {
+  #trivia header {
+    position: relative;
+    z-index: 1; }
+  #trivia footer {
+    min-height: 30vh;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8); }
   #trivia main {
     min-width: 100%;
     min-height: 231vh; }
@@ -696,15 +704,7 @@ nav ul li:hover a {
     top: 100%;
     position: absolute;
     z-index: 1;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); }
-  header {
-    position: relative;
-    z-index: 1; }
-  footer {
-    min-height: 30vh;
-    position: relative;
-    z-index: 1;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8); } }
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); } }
 
 @media screen and (min-width: 1220px) {
   #trivia main ul li {
