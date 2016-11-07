@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*----ANIMATIONS----*/
 @keyframes slideInTop {
   0% {
@@ -54,6 +55,12 @@
   100% {
     margin-top: 3em;
     opacity: 0; } }
+
+@keyframes panImg {
+  0%, 10%, 100% {
+    margin-left: 0; }
+  50%, 60% {
+    margin-left: -50%; } }
 
 /*----/ANIMATIONS----*/
 /*----MAIN ELEMENTS----*/
@@ -148,44 +155,51 @@ p {
 a {
   color: #00A651; }
 
-h4, li {
+main h4, main li {
   color: #333; }
 
-a {
+main a {
   font-size: 1.1em; }
 
-p {
+main p, main li {
   font-size: 1em;
   padding: 2.5vmin 2.5vmin 7.5vmin 2.5vmin; }
 
-h1 {
+main li {
+  text-align: justify; }
+  main li:before {
+    content: "⬛";
+    color: #00A651;
+    padding: 0 0.5em; }
+
+main h1 {
   padding-left: 5vmin;
   color: white;
   font-size: 1.8em; }
 
-h2 {
+main h2 {
   align-self: flex-start;
   font-size: 1.3em;
   padding: 7.5vmin 0 0 2.5vmin;
   text-transform: uppercase; }
 
 @media screen and (min-width: 480px) {
-  h1 {
+  main h1 {
     font-size: 1.6em;
     padding: 0;
     text-align: center; } }
 
 @media screen and (min-width: 768px) {
-  article {
+  main article {
     padding: 5vmin 0;
     display: flex; } }
 
 @media screen and (min-width: 960px) {
-  h2 {
+  main h2 {
     font-size: 1.6em; } }
 
 @media screen and (min-width: 1100px) {
-  h1 {
+  main h1 {
     background: #00A651;
     padding: 10px 0;
     min-width: 40vw;
@@ -193,11 +207,11 @@ h2 {
     margin-top: 15%; } }
 
 @media screen and (min-width: 1440px) {
-  a, p {
+  main a, main p {
     font-size: 1.1em; }
-  p {
+  main p {
     padding: 2.5vmin; }
-  h2 {
+  main h2 {
     padding-top: 0; } }
 
 /*----/TYPOGRAPHY----*/
@@ -249,7 +263,10 @@ footer > ul > li:last-child::before {
   justify-content: space-around; }
   #footer-desktop li ul li {
     font-size: .9em;
-    color: white; }
+    color: white;
+    padding: 0 !important; }
+    #footer-desktop li ul li:before {
+      display: none; }
 
 #footer-desktop li > :first-child ul li:first-child:before {
   content: 'Addresse: '; }
@@ -268,12 +285,14 @@ footer > ul > li:last-child::before {
   justify-content: space-around;
   align-items: center;
   min-width: 100vw; }
-  #footer-mobile li a img {
+  #footer-mobile li {
     width: 24px;
     height: 24px;
     padding: 10px; }
-  #footer-mobile li:before {
-    display: none; }
+    #footer-mobile li img {
+      width: 24px; }
+    #footer-mobile li:before {
+      display: none; }
 
 /*----HEADER NAVIGATION----*/
 header {
@@ -583,6 +602,10 @@ nav ul li:hover a {
     border: 1px solid lightgrey; } }
 
 /*----TRIVIA SUBPAGE----*/
+#trivia span {
+  background: white;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.5); }
+
 #trivia main {
   width: 100vw;
   overflow: hidden; }
@@ -613,13 +636,83 @@ nav ul li:hover a {
     animation: scrollDown 1.4s infinite; }
 
 .parallax-content {
-  background: white; }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-image: url("../img/bg.png");
+  background-color: #EEE;
+  min-height: 100vh; }
+
+.parallax-bg {
+  position: relative; }
+  .parallax-bg img {
+    max-height: 100vmax; }
 
 #parallax-1 {
   position: fixed;
-  top: 0;
+  top: 50%;
+  transform: translateY(-50%);
   left: 0;
   z-index: -1; }
+  #parallax-1:after {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: #00A651;
+    opacity: .2; }
+
+#parallax-6 a, #parallax-6 li:last-of-type {
+  padding-bottom: 2.5vmin; }
+
+@media screen and (min-width: 960px) {
+  #trivia main {
+    min-width: 100%;
+    min-height: 231vh; }
+    #trivia main h2 {
+      position: absolute;
+      top: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%; }
+    #trivia main ul {
+      justify-content: center; }
+      #trivia main ul li {
+        padding: 1vmin 10vmin; }
+  .parallax-bg {
+    max-width: 100%;
+    max-height: 100vh;
+    overflow: hidden; }
+    .parallax-bg img {
+      min-width: 100vw; }
+  .parallax-content {
+    min-width: 100%;
+    min-height: 57vh; }
+  .parallax-bg, .parallax-content {
+    top: 100%;
+    position: absolute;
+    z-index: 1;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); }
+  header {
+    position: relative;
+    z-index: 1; }
+  footer {
+    min-height: 30vh;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8); } }
+
+@media screen and (min-width: 1220px) {
+  #trivia main ul li {
+    padding: 1vmin 25vmin; } }
+
+@media screen and (min-width: 1440px) {
+  #trivia main ul li {
+    padding: 1vmin 40vmin; } }
 
 /*----/TRIVIA SUBPAGE----*/
 /*----MONTERING SUBPAGE----*/
@@ -893,10 +986,6 @@ nav ul li:hover a {
     box-shadow: none; } }
 
 @media screen and (max-width: 960px) and (orientation: landscape) {
-  header nav {
-    height: calc(100vh - 36px); }
-    header nav ul li a {
-      font-size: 3em; }
   #shopping-cart {
     bottom: 45px;
     height: calc(100vh - 100px); }

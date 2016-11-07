@@ -57,6 +57,10 @@ footer {
     li {
       font-size: .9em;
       color: $light-color;
+      padding: 0 !important;
+      &:before{
+        display: none
+      }
     }
   }
   >:first-child ul li:first-child:before {
@@ -81,13 +85,14 @@ footer {
   align-items: center;
   min-width: 100vw;
   li {
-    a img {
       width: 24px;
       height: 24px;
       padding: 10px;
-    }
-    &:before {
-      display: none;
-    }
+      img{
+        width: 24px;
+      }
+      &:before {
+        display: none;
+      }
   }
 }

@@ -2,6 +2,10 @@
 /*----TRIVIA SUBPAGE----*/
 
 #trivia{
+  span{
+    background: $light-color;
+    box-shadow: 0 0 3px rgba(0,0,0,.5)
+  }
   main{
     width: 100vw;
     overflow: hidden;
@@ -35,13 +39,118 @@
   }
 }
 .parallax-content{
-  background: $light-color
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-image: url('../img/bg.png');
+  background-color: #EEE;
+  min-height: 100vh
 }
-
+.parallax-bg{
+  position: relative;
+  img{
+    max-height: 100vmax;
+    //animation: panImg 35s infinite;
+  }
+}
 #parallax-1{
   position: fixed;
-  top: 0;
+  top: 50%;
+  transform: translateY(-50%);
   left: 0;
   z-index: -1;
+  &:after{
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: $accent-color-1;
+    opacity: .2;
+  }
+}
+#parallax-6{
+  a,li:last-of-type{
+    padding-bottom: 2.5vmin
+  }
+}
+@media screen {
+
+  @media (min-width: 960px){
+    #trivia{
+      main{
+        min-width: 100%;
+        min-height: 231vh;
+        h2{
+          position: absolute;
+          top: 0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 100%;
+        }
+        ul{
+          justify-content: center;
+          li{
+            padding: 1vmin 10vmin
+          }
+        }
+      }
+    }
+    .parallax-bg{
+      max-width: 100%;
+      max-height: 100vh;
+      overflow: hidden;
+      img{
+        min-width: 100vw;
+      }
+    }
+    .parallax-content{
+      min-width: 100%;
+      min-height: 57vh;
+    }
+    .parallax-bg,.parallax-content{
+      top: 100%;
+      position: absolute;
+      z-index: 1;
+      box-shadow: 0 0 10px rgba(0,0,0,.5)
+    }
+    header{
+      position: relative;
+      z-index: 1
+    }
+    footer{
+      min-height: 30vh;
+      position: relative;
+      z-index: 1;
+      box-shadow: 0 0 10px rgba(0,0,0,.8)
+    }
+  }
+
+  @media (min-width: 1220px){
+    #trivia{
+      main{
+        ul{
+          li{
+            padding: 1vmin 25vmin
+          }
+        }
+      }
+    }
+  }
+  @media (min-width: 1440px){
+    #trivia{
+      main{
+        ul{
+          li{
+            padding: 1vmin 40vmin
+          }
+        }
+      }
+    }
+  }
+
 }
 /*----/TRIVIA SUBPAGE----*/

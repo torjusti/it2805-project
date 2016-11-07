@@ -74,8 +74,6 @@
   }
 }
 
-
-
 @keyframes scrollDown {
   0% {
     margin-top: 2em;
@@ -88,4 +86,14 @@
   }
 }
 
+
+@keyframes panImg {
+  0%,10%,100%{
+    margin-left: 0
+  }
+  50%,60%{
+    margin-left: -50%
+  }
+
+}
 /*----/ANIMATIONS----*/

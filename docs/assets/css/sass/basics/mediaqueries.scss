@@ -216,12 +216,6 @@
 }
 
 @media screen and (max-width: 960px) and (orientation: landscape) {
-  header nav{
-    height: calc(100vh - 36px);
-    ul li a {
-       font-size: $base-font-size*3;
-     }
-  }
 
   #shopping-cart {
     bottom: 45px;
