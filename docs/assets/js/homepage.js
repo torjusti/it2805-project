@@ -1,4 +1,4 @@
-const PathImg="assets/img/gabion/";
+const PathImg="assets/img/carousel/";
 var indexImg=1;
 var numImg=5;
 var image = document.getElementById("slideshow");
