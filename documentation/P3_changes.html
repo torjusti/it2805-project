@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="no">
+  <head>
+    <meta charset="utf-8">
+    <title>P3 Endringer</title>
+    <link rel="stylesheet" href="css/p2.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  </head>
+  <body>
+    <header>
+      <h1>P3 Endringer</h1>
+      <h2>Torjus Iveland, Andreas Skifjeld, Johannes Weiberg-Aurdal, Balázs Orban</h2>
+      <h2>7 november 2016</h2>
+    </header>
+
+    <main>
+      <section>
+        <h3>Administrative detaljer</h3>
+
+        <p>Vår klient og kontaktperson er Thorleif Fluer Vikre, eieren av Vikre Handel AS.</p>
+      </section>
+
+      <section>
+        <h3>Link til startside</h3>
+        <p><a href="http://folk.ntnu.no/torjusti/it2805/index.html">http://folk.ntnu.no/torjusti/it2805/index.html</a></p>
+      </section>
+
+      <section>
+        <h3>Utføring av minstekrav</h3>
+
+        <p>Torjus: Implementerte en grunnleggende klientside handlekurv. Brukeren kan klikke pluss og minus eller manuelt skrive inn antallet gabioner av en type de ønsker. Resultatene, altså for eksempel antall og pris, vises i en boks under informasjonen om produktene. Videre kan man trykke på forskjellige knapper for å åpne en forhåndsutfylt mail-klient, kopiere teksten eller nullstille handlekurven. Implementerte også globale hjelpefunksjoner og la til logikk for å finne ut hvilken side brukeren er på for øyeblikket i basic-filen.</p>
+
+        <p>Balazs: Implementerte tabs på siden for produkter. Dette vil si de forskjellige knappene man kan klikke på for å vise informasjon om gabioner. Implementerte også parallax-effekten på trivia-siden, og JSON-rendering og AJAX-loading på produkter-siden.</p>
+
+        <p>Andreas: Implementerte en interaktiv tutorial på montering-siden, hvor man kan trykke på neste og forrige for å vise forskjellige steg i en guide.</p>
+
+        <p>Johannes: Implementerte et slideshow på forsiden, hvor hvilket bilde som vises oppdateres automatisk med et gitt mellomrom .</p>
+      </section>
+
+      <section>
+        <h3>Endringer i design</h3>
+
+        <p>Generelt design: Logoen ble endret til en finpusset versjon, da Thorleif ønsket at vi skulle gjøre et forsøk på å lage en ny logo. Footeren har nå en svart bakgrunn som er lik på alle sider, dette for å øke kontrasten og skape en klarere separasjon mellom footeren og innholdet.</p>
+        <p>Hjem: Vi har nå tittelen og teksten på venstre side, da vi mente det ga en bedre visuell flyt i dokumentet. Det er ingen sitater som vises over bildene, som i design-sketchen.</p>
+        <p>Trivia: Denne siden har endret seg ganske mye. For det første gikk vi bort fra å ha bilder man må klikke på manuelt for å bla gjennom, siden vi mente dette ble for tungvint for brukeren. Vi gikk i stedet for en side hvor ett stort bilde vises, og så tilhørende beskrivende tekst, i grønne bullet-lister midt på skjermen. I tillegg implementerte vi parallax.</p>
+        <p>Spesifikasjoner: Siden heter ikke lengre spesifikasjoner, men produkter, da det høres mindre dumt ut. Det er ikke lengre noe trekantet bilde i bakgrunnen av denne siden - det ble litt for rotete. Bakgrunnen på både venstresiden og høyresiden ble endret til hvitt, fordi vi ikke ville bruke så mye grønt. Handlekurven er ikke tegnet inn i det opprinnelige designet, men det har altså blitt lagt til en handlekurv med tre knapper og tekst i en textarea. Pluss-knappen øverst til høyre i designet har blitt endret til tre elementer: 1 pluss-knapp, en input som viser antallet valgte gabioner, og 1 minus-knapp, fordi vi kom fram til at dette er informasjon og funksjonalitet brukeren virkelig bør ha tilgang til.</p>
+        <p>Montering: TODO: Noen med mer snøring på denne må skrive om denne.</p>
+        <p>Om oss: TODO: Kvitte oss med grønn kant?</p>
+      </section>
+
+      <section>
+        <h3>Oppdatert filstruktur og ansvarsdelegasjon</h3>
+
+<p>Ansvar tilhører den øverste fellesnevneren i treet hvis ikke annet er spesifisert.</p>
+
+<pre>
+root
+├── assets
+│   ├── css
+│   │   ├── base.css
+│   ├── data.json
+│   ├── img-orig
+│   │   ├── about
+│   │   │   ├── kjell.png
+│   │   │   └── thorleif.png
+│   │   ├── bg.png
+│   │   ├── carousel
+│   │   ├── icons
+│   │   ├── usage
+│   │   └── products
+│   ├── img
+│   ├── js
+│   │   ├── global.js
+│   │   ├── homepage.js
+│   │   ├── montering.js
+│   │   ├── products.js
+│   │   └── trivia.js
+│   └── schema.json
+├── gulpfile.js
+├── index.html
+├── montering.html
+├── om.html
+├── package.json
+├── produkter.html
+├── trivia.html
+└── yarn.lock
+</pre>
+
+      </section>
+
+      <section>
+        <h3>Modularitetskrav</h3>
+        <p>Vi bruker server side includes for å hente inn headeren og footeren vår på alle sider.  Disse komponentene skal brukes på alle sider, så vi sparer oss for mye duplisering av kode ved å gjøre dette. Vi valgte å ikke bruke JavaScript, da vi føler at å bruke JavaScript til å hente kode med AJAX ville være å overkomplisere det, og å legge til HTML direkte med JavaScript er veldig stygt, og miksing av funksjonalitet og layout, hvilket mange ser på som en uting.</p>
+      </section>
+    </main>
+  </body>
+</html>
