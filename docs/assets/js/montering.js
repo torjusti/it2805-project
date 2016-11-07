@@ -7,7 +7,7 @@ let assemblyContent = document.getElementsByClassName('assembly-content');
 
 for (let i = 0; i < assemblyContent.length; i++) {
   progBar.appendChild(createElem({
-    'type': 'li',
+    'nodeType': 'li',
     'className': 'prog-bar-element',
     'innerHTML': '■',
     'listeners': { 'click': goToIndex.bind(this, i) }
