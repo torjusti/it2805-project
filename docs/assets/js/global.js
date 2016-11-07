@@ -66,7 +66,7 @@ function createElem(obj) {
   const DOM_PROPERTIES = ['className', 'innerHTML'];
 
   // These should not be set using setAtribute but are not DOM properties.
-  const BLACKLIST = DOM_PROPERTIES.concat(['nodeType', 'children']);
+  const BLACKLIST = DOM_PROPERTIES.concat(['nodeType', 'children', 'listeners']);
 
   DOM_PROPERTIES.forEach(function(attribute) {
     if (obj[attribute]) {
@@ -85,6 +85,20 @@ function createElem(obj) {
     obj.children.forEach(function(child) {
       elem.appendChild(child);
     });
+  }
+
+  // Bind any provided event listeners. Accepts both single functions
+  // and arrays of functions.
+  if (obj.listeners) {
+    for (let key in obj.listeners) {
+      if (Array.isArray(obj.listeners[key])) {
+        obj.listeners[key].forEach(function(listener) {
+          elem.addEventListener(key, listener);
+        });
+      } else {
+        elem.addEventListener(key, obj[key]);
+      }
+    }
   }
 
   return elem;
