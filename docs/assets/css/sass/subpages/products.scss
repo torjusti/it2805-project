@@ -184,7 +184,7 @@
     #item-tabs{
       position: static;
       display: flex;
-      width: 50%;
+      width: 30%;
       min-width: 0;
       max-height: calc(100vh - 152px);
       overflow: scroll;
@@ -213,7 +213,7 @@
     .item-img{
       img{
         width: auto;
-        max-height: 20vh
+        max-height: 30vh
       }
     }
     #shopping-cart{
