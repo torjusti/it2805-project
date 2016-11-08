@@ -206,7 +206,12 @@ document.addEventListener('DOMContentLoaded', function() {
       function updateCartValueNode(cartValueNode, val, override) {
         // Make sure the value does not go below 0.
         // Also prevent NaN when all text has been removed from the input.
-        cartValueNode.value = override ? val : Math.max((parseInt(cartValueNode.value, 10) || 0) + val, 0);
+        if (override) {
+          cartValueNode.value = val;
+        } else {
+          let updatedValue = Math.max((parseInt(cartValueNode.value, 10) || 0) + val, 0);
+          cartValueNode.value = isFinite(updatedValue) ? updatedValue : 0;
+        }
 
         // Attempt storing the new value locally.
         setLocalData('cart-value' + getTabKey(cartValueNode), cartValueNode.value);
