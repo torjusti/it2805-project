@@ -400,6 +400,11 @@ footer > ul > li:last-child::before {
 }
 
 /*----HEADER NAVIGATION----*/
+header {
+  display: flex;
+  width: 100%;
+}
+
 nav {
   position: fixed;
   width: 100%;
@@ -568,7 +573,6 @@ nav ul li:hover a {
     display: none;
   }
   nav {
-    min-width: 100vw;
     max-height: 64px;
     position: static;
     display: flex;
@@ -585,8 +589,9 @@ nav ul li:hover a {
   nav ul li a {
     padding: 0 40px;
     text-transform: none;
+    box-shadow: nav ul li a;
   }
-  nav ul li a:before {
+  nav ul li a :before {
     display: none !important;
   }
   .active-menu {
@@ -1104,13 +1109,16 @@ nav ul li:hover a {
 }
 
 /*----TRIVIA SUBPAGE----*/
+#trivia {
+  align-items: flex-start;
+}
+
 #trivia span, #trivia span:before, #trivia span:after {
   background: white;
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
 }
 
 #trivia main {
-  width: 100vw;
   overflow: hidden;
 }
 

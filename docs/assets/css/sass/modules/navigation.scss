@@ -1,5 +1,9 @@
 
 /*----HEADER NAVIGATION----*/
+header{
+  display: flex;
+  width: 100%
+}
 nav {
   position: fixed;
   width: 100%;
@@ -139,7 +143,6 @@ nav {
       display: none;
     }
     nav{
-      min-width: 100vw;
       max-height: 64px;
       position: static;
       display: flex;
@@ -153,6 +156,7 @@ nav {
           a{
             padding: 0 40px;
             text-transform: none;
+            box-shadow:
             &:before{
               display: none !important;
             }
