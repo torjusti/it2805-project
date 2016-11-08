@@ -134,7 +134,7 @@ function createElem(obj) {
   /**
    * Legg til en klasse active-menu på den linken i headeren som vi for øyeblikket befinner oss på.
    */
-  const headerLinks = document.querySelectorAll('#navigation-bar a');
+  const headerLinks = document.querySelectorAll('nav a');
 
   for (let i = 0; i < headerLinks.length; i++) {
     if (headerLinks[i].pathname === location.pathname) {
