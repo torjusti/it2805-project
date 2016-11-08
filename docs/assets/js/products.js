@@ -201,29 +201,27 @@ document.addEventListener('DOMContentLoaded', function() {
        * Updates the value of an input box.
        * @param {Node} cartValueNode The input box that will be updated.
        * @param {number} val The value to add to the value.
+       * @param {boolean=} override If true, the cart value is set to val instead of having val added.
        */
-      function updateCartValueNode(cartValueNode, val) {
+      function updateCartValueNode(cartValueNode, val, override) {
         // Make sure the value does not go below 0.
         // Also prevent NaN when all text has been removed from the input.
-        cartValueNode.value = Math.max((parseInt(cartValueNode.value, 10) || 0) + val, 0);
+        cartValueNode.value = override ? val : Math.max((parseInt(cartValueNode.value, 10) || 0) + val, 0);
+
         // Attempt storing the new value locally.
         setLocalData('cart-value' + getTabKey(cartValueNode), cartValueNode.value);
+
+        // Cart value node updates should always update the cart.
+        updateCart();
       }
 
       /**
-       * Optionally updates the value of an input box and then updates the result field.
-       * @param {Node=} cartValueNode The input box that will be updated.
-       * @param {number=} val The value to update the input box with.
+       * Updates the result textarea.
        */
-      function updateCart(cartValueNode, val) {
-        // Update the input box if both an input box and a value is provided.
-        if (cartValueNode && val) {
-          updateCartValueNode(cartValueNode, val);
-        }
-
+      function updateCart() {
         // Store lines of text that will be shown in the textarea.
         //let lines = ['Hei. Jeg ønsker gjerne å kjøpe gabioner!\n'];
-        let lines = [''];
+        let lines = [];
 
         // Store some global sums.
         let totalPrice = 0;
@@ -244,7 +242,7 @@ document.addEventListener('DOMContentLoaded', function() {
             let weight = curGabionData.weight;
             let price = curGabionData.price;
             let priceSum = price * cartValue;
-            let sizeSum = curGabionData.size.reduce((a, b) => a * b / 100, 1) * cartValue;
+            let sizeSum = +(Math.round(curGabionData.size.reduce((a, b) => a * b / 100, 1) * cartValue + 'e+2')  + 'e-2');
             let weightSum = weight * cartValue;
 
             // Add sums to the total sum.
@@ -257,8 +255,10 @@ document.addEventListener('DOMContentLoaded', function() {
           }
         }
 
-        // Show the container if we have more than 1 line.
-        if (lines.length > 1) {
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/round
+
+        // Show the container if we have at least 1 line.
+        if (lines.length >= 1) {
           // Add the total price.
           lines.push(`Total pris: ${totalPrice} kroner`);
           // Add the total weight.
@@ -292,17 +292,19 @@ document.addEventListener('DOMContentLoaded', function() {
         cartValueNode.addEventListener('input', function() {
           // Remove all non-integer characters from the input.
           cartValueNode.value = cartValueNode.value.replace(/\D*/g, '');
+
+          updateCartValueNode(cartValueNode, cartValueNode.value, true);
         });
 
         // Positive increments.
         curTab.getElementsByClassName('cart-add')[0].addEventListener('click', function() {
-          updateCart(cartValueNode, 1);
+          updateCartValueNode(cartValueNode, 1);
           toast('Gabion lagt til i handlekurv.');
         });
 
         // Negative increemnts.
         curTab.getElementsByClassName('cart-remove')[0].addEventListener('click', function() {
-          updateCart(cartValueNode, -1);
+          updateCartValueNode(cartValueNode, -1);
           toast('Gabion fjernet fra handlekurv.');
         });
       }
