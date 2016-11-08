@@ -150,8 +150,8 @@ nav {
           min-width: 0 !important;
           border: none !important;
           order: 0 !important;
-          padding: 0 40px;
           a{
+            padding: 0 40px;
             text-transform: none;
             &:before{
               display: none !important;
@@ -159,6 +159,10 @@ nav {
           }
         }
       }
+    }
+    .active-menu{
+      margin-bottom: -3px;
+      box-shadow: 0 5px 5px rgba(0,0,0,.3)
     }
   }
 

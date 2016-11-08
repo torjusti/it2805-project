@@ -581,13 +581,17 @@ nav ul li:hover a {
     min-width: 0 !important;
     border: none !important;
     order: 0 !important;
-    padding: 0 40px;
   }
   nav ul li a {
+    padding: 0 40px;
     text-transform: none;
   }
   nav ul li a:before {
     display: none !important;
+  }
+  .active-menu {
+    margin-bottom: -3px;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3);
   }
 }
 
