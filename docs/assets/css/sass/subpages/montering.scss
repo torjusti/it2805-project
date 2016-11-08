@@ -1,19 +1,18 @@
 
 /*----MONTERING SUBPAGE----*/
-
-#assembly h2 {
-  padding: 0;
+#assembly{
+  overflow:none;
 }
-
 #assembly-controls, #assembly-controls>ul{
   display: flex;
   flex-direction: row;
 }
-
-#assembly-controls>ul li{
-  margin:0px 20px 0px 20px;
+#assembly-controls{
 }
 
+#assembly-controls>ul li{
+  margin:0px 20px;
+}
 #prog-bar, #assembly-btn-next, #assembly-btn-back {
   display: flex;
 }
@@ -22,12 +21,12 @@
   display: none;
   flex-direction: column;
   align-items: flex-start;
-  max-width: 70%;
-  background: #00A651;
-  color: $light-color;
+  max-width: 80%;
+  background: white;
+  color: black;
   padding: 20px;
   margin: 20px;
-  border-radius: 10px;
+  border:1px xolid #e9e9e9;
   animation: slideInRight 1s forwards;
 }
 
