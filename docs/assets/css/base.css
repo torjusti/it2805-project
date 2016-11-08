@@ -1256,7 +1256,11 @@ footer > ul > li a {
 /*----/TRIVIA SUBPAGE----*/
 /*----MONTERING SUBPAGE----*/
 #assembly {
-  overflow: none;
+  overflow: hidden;
+}
+
+#assembly-intro {
+  max-width: 80%;
 }
 
 #assembly-controls, #prog-bar {
@@ -1269,13 +1273,16 @@ footer > ul > li a {
 }
 
 #prog-bar li {
-  margin: 0px 10px;
-  height: 10px;
+  box-shadow: 0px 0px 2px black;
+  border-radius: 2px;
+  padding: 10px 2vw;
+  display: flex;
+  justify-content: center;
+  align-content: center;
 }
 
 #prog-bar, #assembly-btn-next, #assembly-btn-back {
   display: flex;
-  height: 30px;
 }
 
 .assembly-content {
@@ -1286,14 +1293,18 @@ footer > ul > li a {
   background: white;
   color: black;
   padding: 20px;
-  margin: 20px;
   border: 1px solid #e9e9e9;
   animation: slideInRight 1s forwards;
+  height: 45vh;
+  overflow-y: scroll;
 }
 
-#assembly-btn-back {
+#assembly-btn-next, #assembly-btn-back {
+  box-shadow: 0px 0px 3px black;
+  border-radius: 3px;
+  margin: 0px;
   color: white;
-  background: #00A651;
+  background: #444;
 }
 
 #assembly-btn-back:before {
@@ -1304,11 +1315,6 @@ footer > ul > li a {
   width: 16px;
 }
 
-#assembly-btn-next {
-  color: white;
-  background: #00A651;
-}
-
 #assembly-btn-next:after {
   content: '';
   background-image: url("../img/icons/next.svg");
@@ -1317,12 +1323,22 @@ footer > ul > li a {
   width: 16px;
 }
 
+.assembly-content p {
+  margin: 5px 0px 15px 0px;
+  padding: 0px;
+}
+
+.assembly-content ul li {
+  padding: 0px 0px 30px 0px;
+}
+
 .prog-bar-element {
-  background: #999;
+  background: #f7f7f7;
 }
 
 .prog-bar-element-active {
   background: #00A651;
+  color: white;
 }
 
 /*----MONTERING SUBPAGE----*/

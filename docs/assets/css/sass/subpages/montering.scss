@@ -1,7 +1,10 @@
 
 /*----MONTERING SUBPAGE----*/
 #assembly{
-  overflow:none;
+  overflow:hidden;
+}
+#assembly-intro{
+  max-width: 80%;
 }
 #assembly-controls, #prog-bar{
   display: flex;
@@ -12,16 +15,18 @@
 }
 
 #prog-bar li{
-  margin:0px 10px;
-  height:10px;
+  box-shadow: 0px 0px 2px black;
+  border-radius: 2px;
+  padding:10px 2vw;
+  display: flex;
+  justify-content: center;
+  align-content: center;
 }
+
 #prog-bar, #assembly-btn-next, #assembly-btn-back {
   display: flex;
-  height:30px;
 }
-#prog-bar{
 
-}
 .assembly-content {
   display: none;
   flex-direction: column;
@@ -30,14 +35,20 @@
   background: white;
   color: black;
   padding: 20px;
-  margin: 20px;
   border:1px solid #e9e9e9;
   animation: slideInRight 1s forwards;
+  height: 45vh;
+  overflow-y:scroll;
 }
 
-#assembly-btn-back {
+#assembly-btn-next,#assembly-btn-back{
+  box-shadow: 0px 0px 3px black;
+  border-radius: 3px;
+  margin:0px;
   color: $light-color;
-  background: #00A651;
+  background: $accent-color-3;
+}
+#assembly-btn-back {
   &:before {
     content: '';
     background-image: url("../img/icons/left.svg");
@@ -47,8 +58,6 @@
   }
 }
 #assembly-btn-next {
-  color: $light-color;
-  background: #00A651;
   &:after {
     content: '';
     background-image: url("../img/icons/next.svg");
@@ -58,12 +67,20 @@
   }
 }
 
+.assembly-content p{
+  margin:5px 0px 15px 0px;
+  padding:0px;
+}
+.assembly-content ul li{
+  padding:0px 0px 30px 0px;
+}
 .prog-bar-element {
-  background: #999;
+  background: #f7f7f7;
 }
 
 .prog-bar-element-active {
-  background:#00A651;
+  background:$accent-color-1;
+  color:$light-color;
 }
 
 /*----MONTERING SUBPAGE----*/
