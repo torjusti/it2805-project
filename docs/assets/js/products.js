@@ -29,17 +29,17 @@ document.addEventListener('DOMContentLoaded', function() {
 
             createElem({
               'className': 'item-size',
-              'innerHTML': 'Størrelse: ' + product.size.join(' x ') + 'cm'
+              'innerHTML': 'Størrelse: ' + product.size.join(' x ') + ' cm'
             }),
 
             createElem({
               'className': 'item-weight',
-              'innerHTML': 'Vekt: ' + product.weight + 'kg'
+              'innerHTML': 'Vekt: ' + product.weight + ' kg'
             }),
 
             createElem({
               'className': 'item-price',
-              'innerHTML': 'Pris: ' + product.price + 'kr'
+              'innerHTML': 'Pris: ' + product.price + ' kr'
             }),
 
             createElem({
@@ -244,7 +244,7 @@ document.addEventListener('DOMContentLoaded', function() {
             let weight = curGabionData.weight;
             let price = curGabionData.price;
             let priceSum = price * cartValue;
-            let sizeSum = (curGabionData.size.reduce((a, b) => a + b, 0) * cartValue)/300;
+            let sizeSum = curGabionData.size.reduce((a, b) => a * b / 100, 1) * cartValue;
             let weightSum = weight * cartValue;
 
             // Add sums to the total sum.

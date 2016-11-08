@@ -9,8 +9,13 @@ for (let i = 0; i < assemblyContent.length; i++) {
   progBar.appendChild(createElem({
     'nodeType': 'li',
     'className': 'prog-bar-element',
-    'innerHTML': '■',
-    'listeners': { 'click': goToIndex.bind(this, i) }
+    'innerHTML': i + 1,
+    'listeners': {
+      'click': function () {
+        montIndex = i;
+        goToIndex(i);
+      }
+    }
   }));
 }
 

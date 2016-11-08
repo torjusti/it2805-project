@@ -96,7 +96,7 @@ function createElem(obj) {
           elem.addEventListener(key, listener);
         });
       } else {
-        elem.addEventListener(key, obj[key]);
+        elem.addEventListener(key, obj.listeners[key]);
       }
     }
   }
