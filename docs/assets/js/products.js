@@ -222,7 +222,8 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         // Store lines of text that will be shown in the textarea.
-        let lines = ['Hei. Jeg ønsker gjerne å kjøpe gabioner!'];
+        //let lines = ['Hei. Jeg ønsker gjerne å kjøpe gabioner!\n'];
+        let lines = [''];
 
         // Store some global sums.
         let totalPrice = 0;
@@ -243,7 +244,7 @@ document.addEventListener('DOMContentLoaded', function() {
             let weight = curGabionData.weight;
             let price = curGabionData.price;
             let priceSum = price * cartValue;
-            let sizeSum = curGabionData.size.reduce((a, b) => a + b, 0) * cartValue;
+            let sizeSum = (curGabionData.size.reduce((a, b) => a + b, 0) * cartValue)/300;
             let weightSum = weight * cartValue;
 
             // Add sums to the total sum.
@@ -252,18 +253,18 @@ document.addEventListener('DOMContentLoaded', function() {
             totalWeight += weightSum;
 
             // Add this line.
-            lines.push(`${type} (${size}, ${weight} kg): ${cartValue} stykker til ${price} kr - totalt ${weightSum} kg over ${sizeSum} m^3 til ${priceSum} kroner.`);
+            lines.push(`${type} (${size}, ${weight} kg): ${cartValue} stykker til ${price} kr - totalt ${weightSum} kg over ${sizeSum} m^3 til ${priceSum} kroner.\n---------------------------------------------------------`);
           }
         }
 
         // Show the container if we have more than 1 line.
         if (lines.length > 1) {
           // Add the total price.
-          lines.push(`Total pris: ${totalPrice} kroner.`);
+          lines.push(`Total pris: ${totalPrice} kroner`);
           // Add the total weight.
-          lines.push(`Total vekt: ${totalWeight} kg.`);
+          lines.push(`Total vekt: ${totalWeight} kg`);
           // Add the total volume.
-          lines.push(`Totalt volum: ${totalSize} m^2`);
+          lines.push(`Totalt volum: ${totalSize} m^3`);
           // Add all lines to textarea with newlines between them.
           cartResults.value = lines.join('\n');
           // Show the shopping cart.
