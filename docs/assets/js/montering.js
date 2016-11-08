@@ -9,7 +9,7 @@ for (let i = 0; i < assemblyContent.length; i++) {
   progBar.appendChild(createElem({
     'nodeType': 'li',
     'className': 'prog-bar-element',
-    'innerHTML': '',
+    'innerHTML': i + 1,
     'listeners': {
       'click': function () {
         montIndex = i;
