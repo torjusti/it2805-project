@@ -10,13 +10,9 @@ html(lang='no')
       include modules/header.html
 
     main#assembly
-      h2 Montering
       #assembly-intro
+        h2 Montering
         p Dette er en manual, som ved hjelp av tekst, illustrasjoner og video, skal gi det et innblikk i hvordan man skal sette opp gabioner. Manualen tar særlig for seg firkantede gabioner, men prosessen lar seg også utvide til runde gabioner.
-      #assembly-controls
-        button#assembly-btn-back Tilbake
-        ul#prog-bar
-        button#assembly-btn-next Start
       .assembly-content
         h3 Steg 1:
         p Gabioner leveres til anlegget i sammenlagt stand (flatpakket) på palle. Alle vertikale fuger er ferdige fra fabrikken, som øker kvaliteten og effektiviserer monteringen. Avhengig av konfigureringen av gabionene, forbindes base- og lokkpanelene med én horisontal spiral. Tilbehøret (stagsurringer og fugepinner)
@@ -53,6 +49,10 @@ html(lang='no')
           img(src='assets/img/montering/obs1.jpg', alt='Montering OBS')
           img(src='assets/img/montering/obs2.jpg', alt='Montering OBS')
           img(src='assets/img/montering/obs3.jpg', alt='Montering OBS')
+      #assembly-controls
+        button#assembly-btn-back Tilbake
+        ul#prog-bar
+        button#assembly-btn-next Start
 
     footer
       include modules/footer.html
