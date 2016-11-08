@@ -855,12 +855,21 @@ nav ul li:hover a {
 #assembly {
   overflow: none; }
 
-#assembly-controls, #assembly-controls > ul {
+#assembly-controls, #prog-bar {
   display: flex;
-  flex-direction: row; }
+  flex-direction: row;
+  height: 30px; }
 
-#assembly-controls > ul li {
-  margin: 0px 20px; }
+#assembly-controls{
+  overflow:hidden;
+}
+
+#prog-bar li:hover {
+  cursor: pointer; }
+
+#prog-bar li {
+  margin: 0px 1px;
+  height: 10px; }
 
 #prog-bar, #assembly-btn-next, #assembly-btn-back {
   display: flex; }
@@ -874,13 +883,13 @@ nav ul li:hover a {
   color: black;
   padding: 20px;
   margin: 20px;
-  border: 1px xolid #e9e9e9;
+  border: 1px solid #e9e9e9;
   animation: slideInRight 1s forwards; }
 
 #assembly-btn-back {
   color: white;
   background: #00A651; }
-  #assembly-btn-back:after {
+  #assembly-btn-back:before {
     content: '';
     background-image: url("../img/icons/left.svg");
     background-size: cover;
@@ -898,10 +907,10 @@ nav ul li:hover a {
     width: 16px; }
 
 .prog-bar-element {
-  color: #999; }
+  background: #999; }
 
 .prog-bar-element-active {
-  color: #00A651; }
+  background: #00A651; }
 
 /*----MONTERING SUBPAGE----*/
 /*----ABOUT SUBPAGE----*/

@@ -3,20 +3,25 @@
 #assembly{
   overflow:none;
 }
-#assembly-controls, #assembly-controls>ul{
+#assembly-controls, #prog-bar{
   display: flex;
   flex-direction: row;
 }
-#assembly-controls{
+#prog-bar li:hover{
+  cursor: pointer;
 }
 
-#assembly-controls>ul li{
-  margin:0px 20px;
+#prog-bar li{
+  margin:0px 10px;
+  height:10px;
 }
 #prog-bar, #assembly-btn-next, #assembly-btn-back {
   display: flex;
+  height:30px;
 }
+#prog-bar{
 
+}
 .assembly-content {
   display: none;
   flex-direction: column;
@@ -26,14 +31,14 @@
   color: black;
   padding: 20px;
   margin: 20px;
-  border:1px xolid #e9e9e9;
+  border:1px solid #e9e9e9;
   animation: slideInRight 1s forwards;
 }
 
 #assembly-btn-back {
   color: $light-color;
   background: #00A651;
-  &:after {
+  &:before {
     content: '';
     background-image: url("../img/icons/left.svg");
     background-size: cover;
@@ -54,11 +59,11 @@
 }
 
 .prog-bar-element {
-  color: #999;
+  background: #999;
 }
 
 .prog-bar-element-active {
-  color: #00A651;
+  background:#00A651;
 }
 
 /*----MONTERING SUBPAGE----*/
