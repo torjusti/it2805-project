@@ -1,13 +1,11 @@
-//output:../montering.html
 doctype html
 html(lang='no')
   head
     title Montering - Gabionbutikken
-    include modules/head.html
+    include modules/head
   body#montering
 
-    header
-      include modules/header.html
+    include modules/header
 
     main#assembly
       h2 Montering
@@ -54,8 +52,7 @@ html(lang='no')
           img(src='assets/img/montering/obs2.jpg', alt='Montering OBS')
           img(src='assets/img/montering/obs3.jpg', alt='Montering OBS')
 
-    footer
-      include modules/footer.html
+    include modules/footer
 
     script(type="text/javascript" src="assets/js/global.js")
     script(type="text/javascript" src="assets/js/montering.js")

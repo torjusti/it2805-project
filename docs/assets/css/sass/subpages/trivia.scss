@@ -2,6 +2,7 @@
 /*----TRIVIA SUBPAGE----*/
 
 #trivia{
+  overflow-y: scroll;
   align-items:flex-start;
   span,span:before,span:after{
     background: $light-color;
@@ -86,9 +87,14 @@
       }
       footer{
         min-height: 30vh;
+        display: flex;
+        align-items: center;
         position: relative;
         z-index: 1;
-        box-shadow: 0 0 10px rgba(0,0,0,.8)
+        box-shadow: 0 0 10px black;
+        ul{
+          flex-grow: 1
+        }
       }
       main{
         min-width: 100%;

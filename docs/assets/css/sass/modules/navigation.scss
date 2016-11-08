@@ -156,7 +156,6 @@ nav {
           a{
             padding: 0 40px;
             text-transform: none;
-            box-shadow:
             &:before{
               display: none !important;
             }
@@ -169,5 +168,9 @@ nav {
       box-shadow: 0 5px 5px rgba(0,0,0,.3)
     }
   }
-
+  @media (min-width: 1100px){
+    header{
+      box-shadow: 0 0 10px black;
+    }
+  }
 }

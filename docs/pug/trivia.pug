@@ -1,13 +1,11 @@
-//output:../trivia.html
 doctype html
 html(lang='no')
   head
     title Trivia - Gabionbutikken
-    include modules/head.html
+    include modules/head
   body#trivia
 
-    header
-      include modules/header.html
+    include modules/header
 
     main
       h2 Trivia
@@ -36,8 +34,7 @@ html(lang='no')
           li Gabioner er enklere å transportere og sette på plass enn større steiner, som må skyves og løftes med gravemaskin. Gabion kassen kan fylles med stein, skifer, jord eller glass. Det er bare fantasien som setter grenser. Gabionene er formet av individuelle paneler og koblet sammen med spiraler av stålstråd. Enkelt, genialt og vedlikeholdsfritt til en rimelig pris.
         a(href="#trivia") Tilbake til toppen
 
-    footer.trivia-footer
-      include modules/footer.html
+    include modules/footer
 
     script(type="text/javascript" src="assets/js/global.js")
     script(type="text/javascript" src="assets/js/trivia.js")

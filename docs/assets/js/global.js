@@ -115,15 +115,12 @@ function createElem(obj) {
   // Når knappen klikkes, vil vi veksle mellom at navigasjonsbaren skal vises eller ikke.
   var navigationBar = document.getElementsByTagName('nav');
   var menuMobile = document.getElementById('menu-mobile');
-  var footer = document.getElementsByTagName('footer');
 
   menuMobile.addEventListener('click', function() {
     // Når knappen klikkes for første gang er style.display en tom streng, til tross for at
     // den finnes i CSS. En enkel løsning er dermed å bare sjekke om vi har en tom streng.
     if (navigationBar[0].style.display === 'none' || !navigationBar[0].style.display) {
       navigationBar[0].style.display = 'flex';
-      footer[0].style.position = 'fixed';
-      footer[0].style.bottom = '0';
       navigationBar[0].style.animation = 'slideInTop .3s forwards';
     } else {
       navigationBar[0].style.display = 'none';
@@ -139,7 +136,6 @@ function createElem(obj) {
   for (let i = 0; i < headerLinks.length; i++) {
     if (headerLinks[i].pathname === location.pathname) {
       headerLinks[i].parentNode.classList.add('active-menu');
-      footer[0].style.position = 'static';
       break;
     }
   }

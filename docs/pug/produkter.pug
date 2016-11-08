@@ -1,14 +1,12 @@
-//output:../produkter.html
 doctype html
 html(lang='no')
   head
     title Produkter - Gabionbutikken
-    include modules/head.html
+    include modules/head
   body#products
 
-    header
-      include modules/header.html
-      button#choose-product Velg fra produkter
+    include modules/header
+    button#choose-product Velg fra produkter
 
     main
         #item-tabs
@@ -23,8 +21,7 @@ html(lang='no')
                 button#send-cart-mail Send
                 button#copy-cart-contents Kopier tekst
                 button#clear-cart-contents Tøm handlekurv
-    footer
-      include modules/footer.html
+    include modules/footer
 
     script(type="text/javascript" src="assets/js/global.js")
     script(type="text/javascript" src="assets/js/products.js")
