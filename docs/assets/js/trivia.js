@@ -1,5 +1,5 @@
-document.addEventListener('DOMContentLoaded', function() {
-  if (window.matchMedia("(min-width: 960px)").matches) {
+document.addEventListener('DOMContentLoaded', function(){
+  if (window.matchMedia("(min-width: 960px)").matches){
     document.addEventListener('scroll', function(){
       const fromTop = document.getElementsByTagName("BODY")[0].scrollTop/window.innerHeight*100;
       document.getElementsByTagName('h2')[0].style.opacity = 1 - fromTop/30;

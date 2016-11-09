@@ -1,82 +1,96 @@
-
 /*----ABOUT SUBPAGE----*/
+
 #about{
-  p{
-    a{
-      padding-left: 5px
-    }
-  }
-  section{
-    &:first-of-type{
-      padding: 0 10vmin;
-    }
-  }
+  p{a{padding-left: 5px}}
+
+  section{&:first-of-type{padding: 0 10vmin}}
+
 }
+
 #sjef{
   display: flex;
   flex-direction: column;
   justify-content: center;
-  img {
+
+  img{
     border-radius: 50%;
     padding: 5px 0;
     height: 128px;
-    width: 128px;
+    width: 128px
   }
+
 }
+
 .sjef{
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-bottom: 2.5vmin;
+  padding-bottom: 2.5vmin
 }
-@media screen {
 
-  @media (min-width:580px) {
+/*----/ABOUT SUBPAGE----*/
+
+@media screen{
+  @media (min-width:580px){
+
     #about{
+
       section{
+
         &:first-of-type{
+
           justify-content: center;
-          align-items: center;
+          align-items: center
+
         }
+
       }
+
     }
+
     #sjef{
       justify-content: center;
       align-items: center;
       min-width: 100%;
       margin-bottom: 5vmin;
-      flex-direction: row;
+      flex-direction: row
     }
+
     .sjef{
       padding: 0;
-      &:first-child{
-        margin-right: 20%;
-      }
+
+      &:first-child{margin-right: 20%}
+
     }
+
   }
-  @media (min-width:960px) {
+
+  @media (min-width:960px){
+
     #about{
-      section {
-        &:first-of-type{
-          padding: 0 2.5vmin;
-        }
-      }
-      #sjef{
-        justify-content: space-around;
-      }
-      .sjef{
-        margin: 0 !important;
-      }
+
+      section{&:first-of-type{padding: 0 2.5vmin}}
+
+      #sjef{justify-content: space-around}
+
+      .sjef{margin: 0 !important}
+
     }
+
   }
-  
+
   @media (min-width:1280px){
+
     #about{
+
       main{
+
         border-left: $border-1;
-        border-right: $border-1;
+        border-right: $border-1
       }
+
     }
+
   }
+
 }
-/*----/ABOUT SUBPAGE----*/

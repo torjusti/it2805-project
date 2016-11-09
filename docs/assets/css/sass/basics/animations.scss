@@ -1,99 +1,85 @@
-
 /*----ANIMATIONS----*/
 
-@keyframes slideInTop {
-  0% {
+@keyframes slideInTop{
+  0%{
     transform: translateY(-100vh);
-    opacity: 0;
+    opacity: 0
   }
-
-  100% {
+  100%{
     transform: translateY(0);
-    opacity: 1;
+    opacity: 1
   }
 }
 
-@keyframes slideOutTop {
-  0% {
+@keyframes slideOutTop{
+  0%{
     transform: translateY(0vh);
-    opacity: 1;
+    opacity: 1
   }
-
-  100% {
+  100%{
     transform: translateY(-100vh);
-    opacity: 0;
+    opacity: 0
   }
 }
 
-@keyframes slideInLeft {
-  0% {
+@keyframes slideInLeft{
+  0%{
     transform: translateX(-100vw);
-    opacity: 0;
+    opacity: 0
   }
-
-  100% {
+  100%{
     transform: translateX(0);
-    opacity: 1;
+    opacity: 1
   }
 }
 
-@keyframes slideOutLeft {
-  0% {
+@keyframes slideOutLeft{
+  0%{
     transform: translateX(0vh);
-    opacity: 1;
+    opacity: 1
   }
-
-  100% {
+  100%{
     transform: translateX(-100vw);
-    opacity: 0;
+    opacity: 0
   }
 }
 
-@keyframes slideInRight {
-  0% {
+@keyframes slideInRight{
+  0%{
     transform: translateX(100vw);
-    opacity: 0;
+    opacity: 0
   }
-
-  100% {
+  100%{
     transform: translateX(0);
-    opacity: 1;
+    opacity: 1
   }
 }
 
-
-@keyframes slideUp {
-  0% {
+@keyframes slideUp{
+  0%{
     transform: translateY(20vh);
-    opacity: 0;
+    opacity: 0
   }
-
-  100% {
+  100%{
     transform: translateY(0vh);
-    opacity: 1;
+    opacity: 1
   }
 }
 
-@keyframes scrollDown {
-  0% {
+@keyframes scrollDown{
+  0%{
     margin-top: 2em;
-    opacity: 1;
+    opacity: 1
   }
-
-  100% {
+  100%{
     margin-top: 3em;
-    opacity: 0;
+    opacity: 0
   }
 }
 
-
-@keyframes panImg {
-  0%,10%,100%{
-    margin-left: 0
-  }
-  50%,60%{
-    margin-left: -50%
-  }
-
+@keyframes panImg{
+  0%,10%,100%{margin-left: 0}
+  50%,60%{margin-left: -50%}
 }
+
 /*----/ANIMATIONS----*/

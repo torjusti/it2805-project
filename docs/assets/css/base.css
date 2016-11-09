@@ -1,3 +1,114 @@
+/*----RESET----*/
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Open Sans',sans-serif;
+  border: none;
+}
+
+*:focus {
+  outline: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  vertical-align: middle;
+}
+
+li {
+  list-style-type: none;
+}
+
+p {
+  text-align: justify;
+}
+
+/*----/RESET----*/
+/*----TYPOGRAPHY----*/
+a {
+  color: #00A651;
+}
+
+main {
+  /*----/TYPOGRAPHY----*/
+}
+
+main h4, main li {
+  color: #333;
+}
+
+main a {
+  font-size: 1.1em;
+}
+
+main p, main li {
+  font-size: 1em;
+  padding: 2.5vmin 2.5vmin 7.5vmin 2.5vmin;
+}
+
+main li {
+  text-align: justify;
+}
+
+main h1 {
+  padding-left: 5vmin;
+  color: white;
+  font-size: 1.7em;
+}
+
+main h2 {
+  align-self: flex-start;
+  font-size: 1.3em;
+  padding: 2.5vmin 0 0 2.5vmin;
+  text-transform: uppercase;
+}
+
+@media screen and (min-width: 480px) {
+  main h1 {
+    font-size: 1.6em;
+    padding: 0;
+    text-align: center;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  main #text {
+    padding: 5vmin 0;
+    display: flex;
+  }
+}
+
+@media screen and (min-width: 960px) {
+  main h2 {
+    font-size: 1.6em;
+  }
+}
+
+@media screen and (min-width: 1100px) {
+  main h1 {
+    background: #00A651;
+    padding: 10px 0;
+    min-width: 40vw;
+    margin-left: 85vw;
+    margin-top: 15%;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  main a, main p {
+    font-size: 1.1em;
+  }
+  main p {
+    padding: 2.5vmin;
+  }
+  main h2 {
+    padding-top: 0;
+  }
+}
+
 /*----ANIMATIONS----*/
 @keyframes slideInTop {
   0% {
@@ -122,10 +233,6 @@ section {
 
 /*----/MAIN ELEMENTS----*/
 /*----OTHER ELEMENTS----*/
-img {
-  vertical-align: middle;
-}
-
 button {
   background: transparent;
   text-align: center;
@@ -172,6 +279,7 @@ button:hover {
   animation: slideOutTop 0.3s forwards !important;
 }
 
+/*----/OTHER ELEMENTS----*/
 @media screen and (min-width: 960px) {
   main {
     max-width: 80vw;
@@ -192,112 +300,7 @@ button:hover {
   }
 }
 
-/*----/OTHER ELEMENTS----*/
-/*----RESET----*/
-* {
-  margin: 0;
-  padding: 0;
-  font-family: 'Open Sans',sans-serif;
-  border: none;
-}
-
-*:focus {
-  outline: none;
-}
-
-a {
-  text-decoration: none;
-}
-
-li {
-  list-style-type: none;
-}
-
-p {
-  text-align: justify;
-}
-
-/*----/RESET----*/
-/*----TYPOGRAPHY----*/
-a {
-  color: #00A651;
-}
-
-main h4, main li {
-  color: #333;
-}
-
-main a {
-  font-size: 1.1em;
-}
-
-main p, main li {
-  font-size: 1em;
-  padding: 2.5vmin 2.5vmin 7.5vmin 2.5vmin;
-}
-
-main li {
-  text-align: justify;
-}
-
-main h1 {
-  padding-left: 5vmin;
-  color: white;
-  font-size: 1.7em;
-}
-
-main h2 {
-  align-self: flex-start;
-  font-size: 1.3em;
-  padding: 2.5vmin 0 0 2.5vmin;
-  text-transform: uppercase;
-}
-
-@media screen and (min-width: 480px) {
-  main h1 {
-    font-size: 1.6em;
-    padding: 0;
-    text-align: center;
-  }
-}
-
-@media screen and (min-width: 768px) {
-  main #text {
-    padding: 5vmin 0;
-    display: flex;
-  }
-}
-
-@media screen and (min-width: 960px) {
-  main h2 {
-    font-size: 1.6em;
-  }
-}
-
-@media screen and (min-width: 1100px) {
-  main h1 {
-    background: #00A651;
-    padding: 10px 0;
-    min-width: 40vw;
-    margin-left: 85vw;
-    margin-top: 15%;
-  }
-}
-
-@media screen and (min-width: 1440px) {
-  main a, main p {
-    font-size: 1.1em;
-  }
-  main p {
-    padding: 2.5vmin;
-  }
-  main h2 {
-    padding-top: 0;
-  }
-}
-
-/*----/TYPOGRAPHY----*/
-/*----HEADER NAVIGATION----*/
+/*----NAVIGATION----*/
 header {
   display: flex;
   width: 100%;
@@ -418,7 +421,7 @@ nav ul li:hover a {
   animation: slideOutLeft .3s forwards;
 }
 
-/*----/HEADER NAVIGATION----*/
+/*----/NAVIGATION----*/
 /*----HAMBURGER MENU----*/
 #menu-mobile {
   display: flex;
@@ -503,6 +506,7 @@ nav ul li:hover a {
   }
 }
 
+/*----FOOTER----*/
 footer {
   width: 100%;
   background: #333;
@@ -545,6 +549,7 @@ footer > ul > li a {
   height: 48px;
 }
 
+/*----/FOOTER----*/
 @media screen and (min-width: 640px) {
   footer {
     padding: 0;
@@ -657,6 +662,7 @@ footer > ul > li a {
   height: 100vh;
 }
 
+/*----/HOME SUBPAGE----*/
 @media screen and (min-width: 768px) {
   #home main p {
     padding: 2%;
@@ -727,7 +733,6 @@ footer > ul > li a {
   }
 }
 
-/*----/HOME SUBPAGE----*/
 /*----PRODUCTS SUBPAGE----*/
 #products main {
   justify-content: flex-start;
@@ -889,6 +894,7 @@ footer > ul > li a {
   text-align: center;
 }
 
+/*----/PRODUCTS SUBPAGE----*/
 @media screen and (min-width: 640px) {
   #noname {
     min-width: 100vw;
@@ -1187,6 +1193,7 @@ footer > ul > li a {
   padding-bottom: 2.5vmin;
 }
 
+/*----/TRIVIA SUBPAGE----*/
 @media screen and (min-width: 960px) {
   #trivia header {
     position: relative;
@@ -1253,7 +1260,6 @@ footer > ul > li a {
   }
 }
 
-/*----/TRIVIA SUBPAGE----*/
 /*----MONTERING SUBPAGE----*/
 #assembly {
   overflow: hidden;
@@ -1371,6 +1377,7 @@ footer > ul > li a {
   padding-bottom: 2.5vmin;
 }
 
+/*----/ABOUT SUBPAGE----*/
 @media screen and (min-width: 580px) {
   #about section:first-of-type {
     justify-content: center;
@@ -1409,5 +1416,3 @@ footer > ul > li a {
     border-right: 1px solid #00A651;
   }
 }
-
-/*----/ABOUT SUBPAGE----*/

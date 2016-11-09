@@ -5,13 +5,13 @@ let assemblyBtnNext = document.getElementById('assembly-btn-next');
 let assemblyBtnBack = document.getElementById('assembly-btn-back');
 let assemblyContent = document.getElementsByClassName('assembly-content');
 
-for (let i = 0; i < assemblyContent.length; i++) {
+for (let i = 0; i < assemblyContent.length; i++){
   progBar.appendChild(createElem({
     'nodeType': 'li',
     'className': 'prog-bar-element',
     'innerHTML': i + 1,
-    'listeners': {
-      'click': function () {
+    'listeners':{
+      'click': function (){
         montIndex = i;
         goToIndex(i);
       }
@@ -29,11 +29,11 @@ let montIndex = 0;
 goToIndex(0);
 
 // Går til et bestemt steg i tutorialen.
-function goToIndex(index) {
+function goToIndex(index){
   // Baser teksten i neste-knappen på om vi er på den siste framen eller ikke.
   assemblyBtnNext.innerHTML = index === assemblyContent.length - 1 ? 'Start på nytt' : 'Neste';
 
-  for (let i = 0; i < assemblyContent.length; i++) {
+  for (let i = 0; i < assemblyContent.length; i++){
     assemblyContent[i].style.display = 'none';
     progBarElements[i].classList.remove('prog-bar-element-active');
   }
@@ -42,12 +42,12 @@ function goToIndex(index) {
   progBarElements[index].classList.add('prog-bar-element-active');
 }
 
-assemblyBtnNext.addEventListener('click', function(e) {
+assemblyBtnNext.addEventListener('click', function(e){
   montIndex = (montIndex + 1) % assemblyContent.length;
   goToIndex(montIndex);
 });
 
-assemblyBtnBack.addEventListener('click', function(e) {
+assemblyBtnBack.addEventListener('click', function(e){
   montIndex = montIndex === 0 ? assemblyContent.length - 1 : montIndex - 1;
   goToIndex(montIndex);
 });

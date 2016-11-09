@@ -1,9 +1,9 @@
 /* Wait until the DOM has finished loading. */
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function(){
   ajax({
     path: 'assets/data.json',
 
-    success: function(responseText) {
+    success: function(responseText){
       // Parse JSON data.
       let gabionData = JSON.parse(responseText);
 
@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
       let itemContainers = document.getElementById('item-containers');
 
       // Render data.
-      gabionData.products.forEach(function(product, i) {
+      gabionData.products.forEach(function(product, i){
         itemTabs.appendChild(createElem({
           'nodeType': 'span',
           'data-tab': i,
@@ -112,8 +112,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
       // Loop through all tabs.
-      for (let i = 0; i < tabs.length; i++) {
-       tabs[i].addEventListener('click', function(e) {
+      for (let i = 0; i < tabs.length; i++){
+       tabs[i].addEventListener('click', function(e){
          // Class handling for mobile phones only.
          productsTab.className = "tabs-out"
          // Find out the tab code of the clicked tab.
@@ -121,21 +121,21 @@ document.addEventListener('DOMContentLoaded', function() {
 
          let activeTabs = document.getElementsByClassName('active-tab');
 
-         for (let j = 0; j < activeTabs.length; j++) {
+         for (let j = 0; j < activeTabs.length; j++){
            activeTabs[j].classList.remove('active-tab');
          }
 
          e.target.classList.add('active-tab');
 
          // Loop through all tabs.
-         for (let j = 0; j < tabContainers.length; j++) {
+         for (let j = 0; j < tabContainers.length; j++){
            let currentTabContainer = tabContainers[j];
 
            // If this tab has the same code as the new current tab show it, if not, hide it.
-           if (currentTabContainer.getAttribute('data-tab') === tabKey) {
+           if (currentTabContainer.getAttribute('data-tab') === tabKey){
              currentTabContainer.style.display = 'flex';
              currentTabContainer.classList.add('active-tab');
-           } else {
+           } else{
              currentTabContainer.style.display = 'none';
              currentTabContainer.classList.remove('active-tab');
            }
@@ -150,8 +150,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
       // Some extra logic for the mobile menu.
-      chooseProduct.addEventListener('click', function(e) {
-       if (productsTab.className != "tabs-in") {
+      chooseProduct.addEventListener('click', function(e){
+       if (productsTab.className != "tabs-in"){
          productsTab.className = "tabs-in"
        }
       });
@@ -165,50 +165,50 @@ document.addEventListener('DOMContentLoaded', function() {
        * exists because we often want to find the tab number from
        * a child element such as a button. This method travels
        * up the DOM tree searching for the tab number and returns it.
-       * @param {Node} elem The element to start searching from.
-       * @returns {number} The containing tab key.
+       * @param{Node} elem The element to start searching from.
+       * @returns{number} The containing tab key.
        */
-      function getTabKey(elem) {
+      function getTabKey(elem){
         while (!elem.getAttribute('data-tab')) elem = elem.parentNode;
         return parseInt(elem.getAttribute('data-tab'), 10);
       }
 
       /**
        * Attempt storing a key-value-pair using the localStorage API.
-       * @param {string} key The key the value will be stored under.
-       * @param {string|number} val The value to be stored.
+       * @param{string} key The key the value will be stored under.
+       * @param{string|number} val The value to be stored.
        */
-      function setLocalData(key, val) {
-        if (window.localStorage) {
+      function setLocalData(key, val){
+        if (window.localStorage){
           localStorage[key] = val;
         }
       }
 
       /**
        * Attempt fetching a key-value-pair using the localStorage API.
-       * @param {string} key The key to fetch the value from.
-       * @returns {string|boolean} val The value that was fetched.
+       * @param{string} key The key to fetch the value from.
+       * @returns{string|boolean} val The value that was fetched.
        */
-      function getLocalData(key) {
-        if (window.localStorage && localStorage[key]) {
+      function getLocalData(key){
+        if (window.localStorage && localStorage[key]){
           return localStorage[key];
-        } else {
+        } else{
           return false;
         }
       }
 
       /**
        * Updates the value of an input box.
-       * @param {Node} cartValueNode The input box that will be updated.
-       * @param {number} val The value to add to the value.
-       * @param {boolean=} override If true, the cart value is set to val instead of having val added.
+       * @param{Node} cartValueNode The input box that will be updated.
+       * @param{number} val The value to add to the value.
+       * @param{boolean=} override If true, the cart value is set to val instead of having val added.
        */
-      function updateCartValueNode(cartValueNode, val, override) {
+      function updateCartValueNode(cartValueNode, val, override){
         // Make sure the value does not go below 0.
         // Also prevent NaN when all text has been removed from the input.
-        if (override) {
+        if (override){
           cartValueNode.value = val;
-        } else {
+        } else{
           let updatedValue = Math.max((parseInt(cartValueNode.value, 10) || 0) + val, 0);
           cartValueNode.value = isFinite(updatedValue) ? updatedValue : 0;
         }
@@ -223,7 +223,7 @@ document.addEventListener('DOMContentLoaded', function() {
       /**
        * Updates the result textarea.
        */
-      function updateCart() {
+      function updateCart(){
         // Store lines of text that will be shown in the textarea.
         //let lines = ['Hei. Jeg ønsker gjerne å kjøpe gabioner!\n'];
         let lines = [];
@@ -234,12 +234,12 @@ document.addEventListener('DOMContentLoaded', function() {
         let totalWeight = 0;
 
         // Loop through all the input boxes in all the tabs.
-        for (let i = 0; i < cartValueNodes.length; i++) {
+        for (let i = 0; i < cartValueNodes.length; i++){
           // Find the value of this input.
           let cartValue = parseInt(cartValueNodes[i].value, 10);
 
           // Do not show the cart value if it is 0.
-          if (cartValue > 0) {
+          if (cartValue > 0){
             // Map the tab id to a couple data pieces.
             let curGabionData = gabionData.products[getTabKey(cartValueNodes[i])];
             let type = curGabionData.name;
@@ -263,7 +263,7 @@ document.addEventListener('DOMContentLoaded', function() {
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/round
 
         // Show the container if we have at least 1 line.
-        if (lines.length >= 1) {
+        if (lines.length >= 1){
           // Add the total price.
           lines.push(`Total pris: ${totalPrice} kroner`);
           // Add the total weight.
@@ -279,14 +279,14 @@ document.addEventListener('DOMContentLoaded', function() {
             document.getElementsByTagName("BODY")[0].scrollTop = document.getElementsByTagName("BODY")[0].scrollTop + 10
           }
         }, 15);*/ // SMOOTH SCROLL TO THE BOTTOM.
-        } else {
+        } else{
           // Hide shopping cart.
           document.getElementById('shopping-cart').style.display = 'none';
         }
       }
 
       // Loop through all containes.
-      for (let i = 0; i < tabContainers.length; i++) {
+      for (let i = 0; i < tabContainers.length; i++){
         // Current container.
         let curTab = tabContainers[i];
         // Current tab key.
@@ -294,7 +294,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Current cart value node.
         let cartValueNode = curTab.getElementsByClassName('cart-val')[0];
 
-        cartValueNode.addEventListener('input', function() {
+        cartValueNode.addEventListener('input', function(){
           // Remove all non-integer characters from the input.
           cartValueNode.value = cartValueNode.value.replace(/\D*/g, '');
 
@@ -302,40 +302,40 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 
         // Positive increments.
-        curTab.getElementsByClassName('cart-add')[0].addEventListener('click', function() {
+        curTab.getElementsByClassName('cart-add')[0].addEventListener('click', function(){
           updateCartValueNode(cartValueNode, 1);
           toast('Gabion lagt til i handlekurv.');
         });
 
         // Negative increemnts.
-        curTab.getElementsByClassName('cart-remove')[0].addEventListener('click', function() {
+        curTab.getElementsByClassName('cart-remove')[0].addEventListener('click', function(){
           updateCartValueNode(cartValueNode, -1);
           toast('Gabion fjernet fra handlekurv.');
         });
       }
 
       // Send mail button.
-      document.getElementById('send-cart-mail').addEventListener('click', function() {
+      document.getElementById('send-cart-mail').addEventListener('click', function(){
         // Attempt to open a mail window with a predefined header and body.
         window.open('mailto:kjell@vikre.no?subject=Gabioner&body=' + encodeURI(cartResults.value));
       });
 
       // Select contents button.
-      document.getElementById('copy-cart-contents').addEventListener('click', function() {
+      document.getElementById('copy-cart-contents').addEventListener('click', function(){
         // Select textarea contents for easier copying.
         cartResults.select();
 
         // Try copying using execCommand and inform the user about the result.
-        if (document.execCommand('copy')) {
+        if (document.execCommand('copy')){
           toast('Tekst kopiert');
-        } else {
+        } else{
           toast('Kopiering mislykket')
         }
       });
 
       // Clear button functionality.
-      document.getElementById('clear-cart-contents').addEventListener('click', function() {
-        for (let i = 0; i < cartValueNodes.length; i++) {
+      document.getElementById('clear-cart-contents').addEventListener('click', function(){
+        for (let i = 0; i < cartValueNodes.length; i++){
           // Remove the current value from itself as the API does not currently allow better.
           updateCartValueNode(cartValueNodes[i], -parseInt(cartValueNodes[i].value, 10));
         }
@@ -350,7 +350,7 @@ document.addEventListener('DOMContentLoaded', function() {
       updateCart();
     },
 
-    error: function(xhr) {
+    error: function(xhr){
       toast('Error loading data')
     }
   });
