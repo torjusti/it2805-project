@@ -262,7 +262,7 @@ main h2 {
 }
 
 @media screen and (min-width: 768px) {
-  main article {
+  main #text {
     padding: 5vmin 0;
     display: flex;
   }
@@ -670,7 +670,7 @@ footer > ul > li a {
     margin-top: -7%;
     align-self: flex-start;
   }
-  #home main article {
+  #home main #text {
     display: block;
     padding: 0;
   }
@@ -703,7 +703,7 @@ footer > ul > li a {
   #home main section {
     max-width: 120%;
   }
-  #home main article {
+  #home main #text {
     display: flex;
     padding: 1% 1% 4% 1%;
   }
