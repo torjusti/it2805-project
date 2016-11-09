@@ -896,6 +896,9 @@ footer > ul > li a {
 
 /*----/PRODUCTS SUBPAGE----*/
 @media screen and (min-width: 640px) {
+  #products main {
+    justify-content: center;
+  }
   #noname {
     min-width: 100vw;
   }
@@ -911,8 +914,7 @@ footer > ul > li a {
     padding: 0 0 55px 0;
   }
   .item-img img {
-    width: auto;
-    height: 50vh;
+    width: 40vmax;
   }
   .cart-controls {
     position: absolute;
@@ -937,6 +939,13 @@ footer > ul > li a {
 }
 
 @media screen and (min-width: 960px) {
+  #products {
+    max-height: 100vh;
+  }
+  #products footer, #products header {
+    position: relative;
+    z-index: 100;
+  }
   #choose-product {
     display: none;
   }
@@ -944,14 +953,16 @@ footer > ul > li a {
     min-width: 100%;
     flex-direction: row;
     background: #F9F9F9;
+    align-items: stretch;
   }
   #item-tabs {
     position: static;
-    min-width: 25%;
-    max-height: calc(100vh - 152px);
+    z-index: 1;
+    min-width: 30%;
     display: flex;
     box-shadow: 5px 0 5px rgba(0, 0, 0, 0.3);
     animation: none;
+    margin-top: 3px;
   }
   .item-tab {
     text-align: center;
@@ -959,19 +970,20 @@ footer > ul > li a {
     font-size: 0.9em;
   }
   #noname {
-    position: relative;
-    min-width: 75%;
-    min-height: calc(100vh - 152px);
-    overflow-x: hidden;
-    overflow-y: scroll;
+    min-width: 70%;
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
   }
   #item-containers {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     flex-grow: 1;
   }
   .item-container {
     flex-direction: column;
+    position: static;
   }
   .item-data {
     align-self: center;
@@ -986,13 +998,13 @@ footer > ul > li a {
     padding: 2.5%;
   }
   .item-img img {
-    height: 40vmin;
+    width: auto;
+    height: 30vmin;
   }
   #shopping-cart {
-    position: absolute;
-    top: 0;
-    min-height: 100%;
-    border: none;
+    flex-grow: 1;
+    border-top: 1px solid #444;
+    min-height: 0;
   }
   #cart-results {
     padding: 2.5vmin;
@@ -1033,16 +1045,18 @@ footer > ul > li a {
     border: 1px solid lightgrey;
   }
   #item-tabs {
-    height: 65vh;
+    margin: 0;
   }
   #noname {
     flex-direction: column;
     min-height: 65vh;
     flex-grow: 1;
+    overflow: hidden;
   }
   #item-containers {
     display: flex;
     min-width: 100%;
+    position: relative;
   }
   .item-container {
     flex-direction: row;
@@ -1057,8 +1071,9 @@ footer > ul > li a {
     height: 30vmin;
   }
   .cart-controls {
-    left: 0;
+    position: absolute;
     bottom: 0;
+    left: 0;
     flex-direction: row;
     margin: 25px;
     height: 32px;
