@@ -3,7 +3,7 @@ let assemblyIntro = document.getElementById('assembly-intro');
 let progBar = document.getElementById('prog-bar');
 let assemblyBtnNext = document.getElementById('assembly-btn-next');
 let assemblyBtnBack = document.getElementById('assembly-btn-back');
-let assemblyContent = document.getElementsByClassName('assembly-content');
+let assemblyContent = document.getElementsByClassName('assembly-content-container');
 
 for (let i = 0; i < assemblyContent.length; i++){
   progBar.appendChild(createElem({

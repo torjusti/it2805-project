@@ -1,4 +1,5 @@
 /*----MONTERING SUBPAGE----*/
+#assembly img{max-width: 12vw}
 
 #assembly{overflow:hidden}
 
@@ -20,26 +21,34 @@
   align-content: center
 }
 
-#prog-bar, #assembly-btn-next, #assembly-btn-back{
-  display: flex
+#prog-bar, #assembly-btn-next, #assembly-btn-back{display: flex}
+
+.assembly-content-pictures{
+  margin-top: 36px;
+  border-left: 2px solid #e9e9e9;
+  padding-left: 8px;
 }
 
-.assembly-content{
+.assembly-content-container{
   display: none;
-  flex-direction: column;
+  flex-direction: row;
   align-items: flex-start;
   max-width: 80%;
   background: white;
   color: black;
-  padding: 20px;
+  padding: 40px 20px;
   border:1px solid #e9e9e9;
   animation: slideInRight 1s forwards;
   height: 45vh;
-  overflow-y:scroll
+  overflow-y:scroll;
+}
+
+.assembly-content-text{
+  padding-right: 30px
 }
 
 #assembly-btn-next,#assembly-btn-back{
-  box-shadow: 0px 0px 3px black;
+  box-shadow: 0px 0px 4px black;
   border-radius: 3px;
   margin:0px;
   color: $light-color;
@@ -70,12 +79,12 @@
 
 }
 
-.assembly-content p{
+.assembly-content-container p{
   margin:5px 0px 15px 0px;
   padding:0px
 }
 
-.assembly-content ul li{padding:0px 0px 30px 0px}
+.assembly-content-container ul li{padding:0px 0px 30px 0px}
 
 .prog-bar-element{background: #f7f7f7}
 
