@@ -20,8 +20,6 @@
 #prog-bar li:hover{cursor: pointer}
 
 #prog-bar li{
-  box-shadow: 0px 0px 2px black;
-  border-radius: 2px 2px 0px 0px;
   display: flex;
   justify-content: center;
   align-content: center;
@@ -31,9 +29,7 @@
 
 #prog-bar, #assembly-btn-next, #assembly-btn-back{display: flex}
 
-.assembly-content-pictures{
-  margin-top: 36px;
-}
+.assembly-content-pictures{margin-top:36px}
 
 .assembly-content-container{
   display: none;
@@ -52,13 +48,12 @@
 }
 
 #assembly-btn-next,#assembly-btn-back{
-  box-shadow: 0px 0px 2px black;
-  border-radius: 2px 2px 0px 0px;
   margin:0px;
   color: $light-color;
   background: $accent-color-3;
   width:30%;
   justify-content: center;
+  border-radius: 0px
 }
 
 #assembly-btn-back{

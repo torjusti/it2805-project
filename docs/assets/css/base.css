@@ -1293,8 +1293,6 @@ footer > ul > li a {
 }
 
 #prog-bar li {
-  box-shadow: 0px 0px 2px black;
-  border-radius: 2px 2px 0px 0px;
   display: flex;
   justify-content: center;
   align-content: center;
@@ -1327,13 +1325,12 @@ footer > ul > li a {
 }
 
 #assembly-btn-next, #assembly-btn-back {
-  box-shadow: 0px 0px 2px black;
-  border-radius: 2px 2px 0px 0px;
   margin: 0px;
   color: white;
   background: #444;
   width: 30%;
   justify-content: center;
+  border-radius: 0px;
 }
 
 #assembly-btn-back:before {
