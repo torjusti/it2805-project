@@ -43,10 +43,6 @@ document.addEventListener('DOMContentLoaded', function(){
             }),
 
             createElem({
-              'className': 'item-extra',
-              'innerHTML': product.extra
-            }),
-            createElem({
               'className': 'thread-thickness',
               'innerHTML': "Tråd tykkelse: " + product.threadThickness + 'mm'
             }),
@@ -59,6 +55,10 @@ document.addEventListener('DOMContentLoaded', function(){
               'innerHTML': "Galvanisering tykkelse: " + product.galvanizedThickness + 'g pr. m²'
             }),
 
+            createElem({
+              'className': 'item-extra',
+              'innerHTML': product.extra
+            }),
 
           ]
         });
