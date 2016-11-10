@@ -57,9 +57,9 @@ footer{
   @media (min-width: 960px){
 
     footer{
-      padding: 12px 0;
       box-shadow: 0 0 10px black;
       align-self: stretch;
+      padding: 12px 0;
 
       >ul{
         justify-content: space-around;
@@ -70,6 +70,7 @@ footer{
           width: auto;
           height: auto;
           background:none !important;
+          font-size: $base-font-size*.8;
 
           &:before{
             content:'';
@@ -127,9 +128,6 @@ footer{
     }
     @media (min-width: 1100px){
       footer{
-        @media (min-height: 800px){
-          padding: 24px 0;
-        }
         >ul{
           justify-content: space-around;
           >li{

@@ -575,9 +575,9 @@ footer > ul > li a {
 
 @media screen and (min-width: 960px) {
   footer {
-    padding: 12px 0;
     box-shadow: 0 0 10px black;
     align-self: stretch;
+    padding: 12px 0;
   }
   footer > ul {
     justify-content: space-around;
@@ -588,6 +588,7 @@ footer > ul > li a {
     width: auto;
     height: auto;
     background: none !important;
+    font-size: 0.8em;
   }
   footer > ul > li:before {
     content: '';
@@ -628,12 +629,6 @@ footer > ul > li a {
   footer > ul > li ul li {
     height: auto;
     display: flex;
-  }
-}
-
-@media screen and (min-width: 960px) and (min-width: 1100px) and (min-height: 800px) {
-  footer {
-    padding: 24px 0;
   }
 }
 
