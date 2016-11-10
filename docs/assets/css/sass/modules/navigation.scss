@@ -3,7 +3,8 @@
 header{
   display: flex;
   width: 100%;
-
+  z-index: 1;
+  
   span,span:before,span:after{
     background: $light-color;
     box-shadow: 0 0 3px rgba(0,0,0,.5)

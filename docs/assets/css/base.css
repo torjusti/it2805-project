@@ -305,6 +305,7 @@ button:hover {
 header {
   display: flex;
   width: 100%;
+  z-index: 1;
 }
 
 header span, header span:before, header span:after {
