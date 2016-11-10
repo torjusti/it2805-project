@@ -1,15 +1,14 @@
 /*----MONTERING SUBPAGE----*/
 
 #assembly {
-  justify-content: flex-start;;
 
   main {
-    justify-content: flex-start;
     background: $light-color;
     display: flex;
     border: $border-4;
-    flex-grow: 1;
     margin-top: 1em;
+    min-height: 63vh;
+    justify-content: space-between;
     margin-bottom: 1em;
     overflow: hidden;
   }
@@ -34,6 +33,7 @@
 }
 
 #assembly-controls {
+  order: 1;
   width: 100%;
 }
 
@@ -94,6 +94,7 @@
   animation: slideInRight 1s forwards;
   -webkit-animation-fill-mode: none;
   animation-fill-mode: none;
+  padding: 0 7.5vmin;
 
   p {
     margin: 1em 0 0 0;
@@ -129,12 +130,15 @@
   }
 
   p {
-    text-align: center;
+    text-align: left;
+    font-size: $base-font-size*.8;
+    line-height: 1.1;
+    font-style: italic;
   }
 }
 
 #assembly-video video {
-  max-width: 100%;
+  max-height: 90%;
 }
 
 @media screen and (min-width: 800px) {

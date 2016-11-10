@@ -482,7 +482,7 @@ nav ul li:hover a {
     display: none;
   }
   nav {
-    max-height: 64px;
+    max-height: 48px;
     position: static;
     display: flex;
   }
@@ -511,6 +511,12 @@ nav ul li:hover a {
 @media screen and (min-width: 1100px) {
   header {
     box-shadow: 0 0 10px black;
+  }
+}
+
+@media screen and (min-width: 1100px) and (min-height: 800px) {
+  nav {
+    max-height: 64px;
   }
 }
 
@@ -569,7 +575,7 @@ footer > ul > li a {
 
 @media screen and (min-width: 960px) {
   footer {
-    padding: 24px 0;
+    padding: 12px 0;
     box-shadow: 0 0 10px black;
     align-self: stretch;
   }
@@ -622,6 +628,12 @@ footer > ul > li a {
   footer > ul > li ul li {
     height: auto;
     display: flex;
+  }
+}
+
+@media screen and (min-width: 960px) and (min-width: 1100px) and (min-height: 800px) {
+  footer {
+    padding: 24px 0;
   }
 }
 
@@ -1316,17 +1328,13 @@ footer > ul > li a {
 }
 
 /*----MONTERING SUBPAGE----*/
-#assembly {
-  justify-content: flex-start;
-}
-
 #assembly main {
-  justify-content: flex-start;
   background: white;
   display: flex;
   border: 1px solid lightgrey;
-  flex-grow: 1;
   margin-top: 1em;
+  min-height: 63vh;
+  justify-content: space-between;
   margin-bottom: 1em;
   overflow: hidden;
 }
@@ -1350,6 +1358,7 @@ footer > ul > li a {
 }
 
 #assembly-controls {
+  order: 1;
   width: 100%;
 }
 
@@ -1410,6 +1419,7 @@ footer > ul > li a {
   animation: slideInRight 1s forwards;
   -webkit-animation-fill-mode: none;
   animation-fill-mode: none;
+  padding: 0 7.5vmin;
 }
 
 .content-container p {
@@ -1444,11 +1454,14 @@ footer > ul > li a {
 }
 
 .content-pictures p {
-  text-align: center;
+  text-align: left;
+  font-size: 0.8em;
+  line-height: 1.1;
+  font-style: italic;
 }
 
 #assembly-video video {
-  max-width: 100%;
+  max-height: 90%;
 }
 
 @media screen and (min-width: 800px) {

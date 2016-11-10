@@ -4,7 +4,7 @@ header{
   display: flex;
   width: 100%;
   z-index: 1;
-  
+
   span,span:before,span:after{
     background: $light-color;
     box-shadow: 0 0 3px rgba(0,0,0,.5)
@@ -167,7 +167,7 @@ nav{
     #menu-mobile{display: none}
 
     nav{
-      max-height: 64px;
+      max-height: 48px;
       position: static;
       display: flex;
 
@@ -201,6 +201,17 @@ nav{
 
   }
 
-  @media (min-width: 1100px){header{box-shadow: 0 0 10px black}}
+  @media (min-width: 1100px){
+
+    header{
+      box-shadow: 0 0 10px black
+    }
+
+    @media (min-height: 800px){
+      nav{
+        max-height: 64px
+      }
+    }
+  }
 
 }
