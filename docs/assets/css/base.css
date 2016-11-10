@@ -1134,37 +1134,48 @@ footer > ul > li a {
 }
 
 #trivia main {
+  max-width: 100%;
   overflow: hidden;
 }
 
 #trivia h2 {
   display: flex;
-  align-items: center;
   font-size: 2em;
-  padding: 0;
-  align-self: center;
+  align-items: center;
+  justify-content: center;
   color: white;
-  min-height: 100vh;
+  line-height: 1;
+  transform: translateY(-50%);
+  margin: 50vh auto;
+  padding: 24px 0 48px 0;
+  min-width: 100%;
+  max-width: 100vw;
+  background: rgba(0, 0, 0, 0.5);
 }
 
 #trivia h2:after, #trivia h2:before {
   content: 'bla ned';
   position: absolute;
-  margin-top: 1em;
+  font-size: 0.6em;
+  margin-top: 1.6em;
   left: 50%;
-  transform: translate(-50%) scale(0.6);
+  text-align: center;
+  min-width: 100vw;
   text-transform: lowercase;
+  transform: translateX(-50%);
 }
 
 #trivia h2:before {
   content: '';
   background-image: url("../img/icons/down.svg");
+  min-width: 0;
+  left: 50%;
   width: 36px;
   height: 36px;
   background-position: center;
   background-size: cover;
-  margin-top: 2em;
   animation: scrollDown 1.4s infinite;
+  z-index: 1;
 }
 
 .parallax-content {
