@@ -1326,7 +1326,7 @@ footer > ul > li a {
 
 #assembly main img {
   height: 15vh;
-  border-left: 2px solid #e9e9e9;
+  border-left: 1px solid #e9e9e9;
   padding-left: 8px;
 }
 
@@ -1384,6 +1384,11 @@ footer > ul > li a {
   background-image: url("../img/icons/next.svg");
 }
 
+#assembly-video {
+  margin: 10%;
+  width: 80%;
+}
+
 #prog-bar li {
   text-align: center;
   flex-grow: 1;
@@ -1412,10 +1417,11 @@ footer > ul > li a {
   display: none;
   background: white;
   color: black;
-  padding: 60px 30px 30px 30px;
+  padding: 40px 30px;
   animation: slideInRight 1s forwards;
   height: 35vh;
-  overflow-y: scroll;
+  overflow: hidden;
+  border-top: 1px solid #e9e9e9;
 }
 
 .content-text {
