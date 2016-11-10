@@ -565,12 +565,14 @@ footer > ul > li a {
   }
 }
 
-@media screen and (min-width: 1100px) {
+@media screen and (min-width: 960px) {
   footer {
     padding: 24px 0;
     box-shadow: 0 0 10px black;
+    align-self: stretch;
   }
   footer > ul {
+    justify-content: space-around;
     align-items: center;
   }
   footer > ul > li {
@@ -587,6 +589,9 @@ footer > ul > li a {
     height: 16px;
     margin-left: -20px;
     margin-top: 4px;
+  }
+  footer > ul > li:first-child {
+    transform: none;
   }
   footer > ul > li:first-child:before {
     background-image: url("../img/icons/location.svg");
@@ -615,6 +620,15 @@ footer > ul > li a {
   footer > ul > li ul li {
     height: auto;
     display: flex;
+  }
+}
+
+@media screen and (min-width: 960px) and (min-width: 1100px) {
+  footer > ul {
+    justify-content: space-around;
+  }
+  footer > ul > li {
+    transform: translateX(-50%);
   }
 }
 
@@ -958,7 +972,7 @@ footer > ul > li a {
   #products main {
     min-width: 100%;
     flex-direction: row;
-    background: #F9F9F9;
+    background: white;
     align-items: stretch;
   }
   #item-tabs {
@@ -1010,9 +1024,11 @@ footer > ul > li a {
   #shopping-cart {
     flex-grow: 1;
     border-top: 1px solid #444;
+    box-shadow: none !important;
     min-height: 0;
   }
   #cart-results {
+    background: #E9E9E9;
     padding: 2.5vmin;
   }
   #cart-control {
@@ -1301,8 +1317,13 @@ footer > ul > li a {
 
 /*----MONTERING SUBPAGE----*/
 #assembly main {
+  background: white;
+  border: 1px solid lightgrey;
   align-items: stretch;
+  justify-content: space-between;
   overflow: hidden;
+  min-height: 65vh;
+  min-width: 60vw;
 }
 
 #assembly main img {
@@ -1311,8 +1332,12 @@ footer > ul > li a {
   padding-left: 8px;
 }
 
+#assembly-intro {
+  padding: 20px 20px 0 20px;
+}
+
 #assembly-intro p {
-  padding: 10px 20px;
+  padding: 10px 20px 0 10px;
   font-size: 0.9em;
 }
 
@@ -1322,6 +1347,12 @@ footer > ul > li a {
 
 #assembly-controls, #prog-bar, #assembly-btn-next, #assembly-btn-back {
   display: flex;
+}
+
+#assembly-controls {
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
 #assembly-btn-next, #assembly-btn-back {
@@ -1336,6 +1367,10 @@ footer > ul > li a {
 
 #assembly-btn-next:hover, #assembly-btn-back:hover {
   background: #00A651;
+}
+
+#assembly-btn-back:hover {
+  background: #a60002;
 }
 
 #assembly-btn-back:before, #assembly-btn-next:after {
@@ -1355,7 +1390,6 @@ footer > ul > li a {
   text-align: center;
   flex-grow: 1;
   padding: 10px 0px;
-  border-left: 1px solid lightgrey;
   transition: 0.3s ease-in-out;
 }
 
@@ -1364,10 +1398,6 @@ footer > ul > li a {
   cursor: pointer;
   font-weight: bolder;
   color: black;
-}
-
-#prog-bar li:first-child {
-  border: none;
 }
 
 .prog-bar-element {
@@ -1384,15 +1414,20 @@ footer > ul > li a {
   display: none;
   background: white;
   color: black;
-  padding: 40px;
-  border: 1px solid lightgrey;
+  padding: 50px 30px;
   animation: slideInRight 1s forwards;
-  height: 45vh;
+  height: 35vh;
   overflow: hidden;
 }
 
 .content-text {
   padding: 0px 10px;
+}
+
+.content-pictures div p {
+  font-size: 0.8em;
+  text-align: center;
+  font-style: italic;
 }
 
 .content-container p {
@@ -1428,6 +1463,12 @@ footer > ul > li a {
     min-width: 100%;
     max-width: 100%;
   }
+  #assembly-intro {
+    position: relative;
+    z-index: 1;
+    padding: 2.5vmin 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  }
   .content-container {
     align-items: stretch;
     flex-direction: column;
@@ -1450,6 +1491,12 @@ footer > ul > li a {
     border-left: 0px;
     padding-left: 0px;
     padding-bottom: 20px;
+  }
+  .content-pictures div img {
+    padding: 0 !important;
+  }
+  .content-pictures div p {
+    text-align: left;
   }
 }
 
@@ -1483,6 +1530,21 @@ footer > ul > li a {
   padding-bottom: 2.5vmin;
 }
 
+#sitemap, #sitemap div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+}
+
+#sitemap div {
+  margin-top: 5vh;
+}
+
+#sitemap div a {
+  padding: 5px 0;
+}
+
 /*----/ABOUT SUBPAGE----*/
 @media screen and (min-width: 580px) {
   #about section:first-of-type {
@@ -1505,20 +1567,52 @@ footer > ul > li a {
 }
 
 @media screen and (min-width: 960px) {
+  #about main {
+    flex-grow: 0;
+    border: 1px solid lightgrey !important;
+  }
+  #about section {
+    background: white;
+  }
   #about section:first-of-type {
-    padding: 0 2.5vmin;
+    padding: 5vmin 5vmin 0 5vmin;
+  }
+  #about section:first-of-type p {
+    padding: 2.5vmin;
   }
   #about #sjef {
     justify-content: space-around;
+    margin: 0;
+    padding-bottom: 5vmin;
   }
   #about .sjef {
     margin: 0 !important;
   }
-}
-
-@media screen and (min-width: 1280px) {
-  #about main {
-    border-left: 1px solid #00A651;
+  #about footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 10vh;
+  }
+  #about footer ul {
+    font-size: 1.1em;
+  }
+  #about #sitemap {
+    margin-top: 2vh;
+  }
+  #about #sitemap div {
+    margin-top: 0;
+    flex-direction: row;
+  }
+  #about #sitemap a {
+    padding: 0 5px;
     border-right: 1px solid #00A651;
+    font-size: 0.6em;
+  }
+  #about #sitemap a:last-child {
+    border: none;
+  }
+  #about #sitemap span {
+    font-size: 0.8em;
   }
 }

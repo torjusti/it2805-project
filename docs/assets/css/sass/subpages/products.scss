@@ -216,7 +216,7 @@
     #products main{
       min-width: 100%;
       flex-direction: row;
-      background: #F9F9F9;
+      background: $light-color;
       align-items: stretch;
     }
 
@@ -276,10 +276,12 @@
     #shopping-cart{
       flex-grow: 1;
       border-top: 1px solid #444;
+      box-shadow: none !important;
       min-height: 0
     }
 
     #cart-results{
+      background: #E9E9E9;
       padding: 2.5vmin;
     }
 

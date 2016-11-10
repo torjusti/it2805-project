@@ -11,10 +11,7 @@ html(lang='no')
       #assembly-intro
         h2 Montering
         p Dette er en manual, som ved hjelp av tekst, illustrasjoner og video, skal gi det et innblikk i hvordan man skal sette opp gabioner. Manualen tar særlig for seg firkantede gabioner, men prosessen lar seg også utvide til runde gabioner.
-      #assembly-controls
-        button#assembly-btn-back Tilbake
-        ul#prog-bar
-        button#assembly-btn-next Start
+
       .content-container
         .content-text
           h3 Steg 1:
@@ -62,8 +59,13 @@ html(lang='no')
           img(src='assets/img/montering/obs1.jpg', alt='Montering OBS')
           img(src='assets/img/montering/obs2.jpg', alt='Montering OBS')
           img(src='assets/img/montering/obs3.jpg', alt='Montering OBS')
+      #assembly-controls
+        button#assembly-btn-back Tilbake
+        ul#prog-bar
+        button#assembly-btn-next Start
 
-    include modules/footer
+    footer
+      include modules/footer
 
     script(type="text/javascript" src="assets/js/global.js")
     script(type="text/javascript" src="assets/js/montering.js")

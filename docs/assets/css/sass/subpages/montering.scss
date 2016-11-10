@@ -1,8 +1,13 @@
 /*----MONTERING SUBPAGE----*/
 #assembly{
   main{
+    background: $light-color;
+    border: $border-4;
     align-items: stretch;
+    justify-content: space-between;
     overflow: hidden;
+    min-height: 65vh;
+    min-width: 60vw;
 
     img{
       height: 15vh;
@@ -14,8 +19,9 @@
 }
 
 #assembly-intro{
+  padding: 20px 20px 0 20px;
   p{
-    padding: 10px 20px;
+    padding: 10px 20px 0 10px;
     font-size: $base-font-size*.9
   }
 }
@@ -23,6 +29,12 @@
 #prog-bar{width:50%}
 
 #assembly-controls,#prog-bar, #assembly-btn-next, #assembly-btn-back{display: flex}
+
+#assembly-controls{
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 0 10px rgba(0,0,0,.3)
+}
 
 #assembly-btn-next,#assembly-btn-back{
   margin:0px;
@@ -36,7 +48,9 @@
     background: $accent-color-1;
   }
 }
-
+#assembly-btn-back:hover{
+  background: $accent-color-5
+}
 #assembly-btn-back:before, #assembly-btn-next:after{
     content: '';
     background-image: url("../img/icons/left.svg");
@@ -53,16 +67,12 @@
   text-align: center;
   flex-grow: 1;
   padding:10px 0px;
-  border-left: $border-4;
   transition: $transition-1;
   &:hover{
     background: #E9E9E9;
     cursor: pointer;
     font-weight: bolder;
     color: $dark-color
-  }
-  &:first-child{
-    border: none
   }
 }
 
@@ -80,10 +90,9 @@
   display: none;
   background: white;
   color: $dark-color;
-  padding: 40px;
-  border: $border-4;
+  padding: 50px 30px;
   animation: slideInRight 1s forwards;
-  height: 45vh;
+  height: 35vh;
   overflow: hidden;
 }
 
@@ -91,6 +100,11 @@
   padding:0px 10px;
 }
 
+.content-pictures div p{
+  font-size: $base-font-size*.8;
+  text-align: center;
+  font-style: italic;
+}
 
 .content-container p{
   margin:5px 0px 15px 0px;
@@ -125,10 +139,14 @@
     }
   }
   #assembly-intro, #assembly-controls, .content-container{
-
     min-width: 100%;
     max-width: 100%
-
+  }
+  #assembly-intro{
+    position: relative;
+    z-index: 1;
+    padding: 2.5vmin 0;
+    box-shadow: 0 0 10px rgba(0,0,0,.3)
   }
 
   .content-container{
@@ -148,6 +166,7 @@
     margin-left: 10vmin;
   }
 
+
   #assembly main img{
     width: 80vmin;
     height: auto;
@@ -155,6 +174,15 @@
     padding-left: 0px;
     padding-bottom: 20px
 
+  }
+
+  .content-pictures div{
+    img{
+      padding: 0 !important;
+    }
+    p{
+      text-align: left;
+    }
   }
 
 }

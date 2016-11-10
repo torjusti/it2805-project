@@ -54,13 +54,15 @@ footer{
 
   }
 
-  @media (min-width: 1100px){
+  @media (min-width: 960px){
 
     footer{
       padding: 24px 0;
       box-shadow: 0 0 10px black;
+      align-self: stretch;
 
       >ul{
+        justify-content: space-around;
         align-items: center;
 
         >li{
@@ -79,9 +81,12 @@ footer{
             margin-top: 4px
           }
 
-          &:first-child:before{
-            background-image: url('../img/icons/location.svg');
-            background-size: cover
+          &:first-child{
+            transform: none;
+            &:before{
+              background-image: url('../img/icons/location.svg');
+              background-size: cover
+            }
           }
 
           &:nth-child(2):before{
@@ -119,6 +124,16 @@ footer{
 
       }
 
+    }
+    @media (min-width: 1100px){
+      footer{
+        >ul{
+          justify-content: space-around;
+          >li{
+            transform: translateX(-50%);
+          }
+        }
+      }
     }
 
   }
