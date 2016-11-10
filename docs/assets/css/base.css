@@ -217,6 +217,11 @@ body {
   overflow-x: hidden;
 }
 
+body span, body span:before, body span:after {
+  background: white;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+}
+
 main {
   display: flex;
   flex-direction: column;
@@ -309,7 +314,7 @@ header {
 nav {
   position: fixed;
   width: 100%;
-  height: calc(100vh - 61px);
+  height: calc(100vh - 64px);
   display: flex;
   display: none;
   z-index: 999;
@@ -1126,11 +1131,6 @@ footer > ul > li a {
 #trivia {
   overflow-y: scroll;
   align-items: flex-start;
-}
-
-#trivia span, #trivia span:before, #trivia span:after {
-  background: white;
-  box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
 }
 
 #trivia main {

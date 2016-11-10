@@ -8,7 +8,7 @@ header{
 nav{
   position: fixed;
   width: 100%;
-  height: calc(100vh - 61px);
+  height: calc(100vh - 64px);
   display: flex;
   display: none;
   z-index: 999;
@@ -192,7 +192,7 @@ nav{
     }
 
   }
-  
+
   @media (min-width: 1100px){header{box-shadow: 0 0 10px black}}
 
 }
