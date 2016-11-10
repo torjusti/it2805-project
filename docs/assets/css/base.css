@@ -768,7 +768,8 @@ footer > ul > li a {
 }
 
 #choose-product {
-  margin: 20px 24px;
+  margin: 3vmin;
+  align-self: flex-start;
   display: block;
   background: #00A651;
   color: white;
@@ -819,8 +820,12 @@ footer > ul > li a {
 }
 
 .item-data {
-  padding: 0 5%;
-  text-align: center;
+  padding: 2.5% 10%;
+}
+
+.info-title {
+  color: #333;
+  font-size: 0.8em;
 }
 
 .item-name {
@@ -902,7 +907,7 @@ footer > ul > li a {
 }
 
 .cart-controls {
-  order: 1;
+  margin-top: 2.5%;
   display: flex;
 }
 
@@ -927,35 +932,35 @@ footer > ul > li a {
 @media screen and (min-width: 640px) {
   #products main {
     justify-content: center;
+    min-height: 0;
   }
   #noname {
     min-width: 100vw;
   }
   .item-container {
-    position: relative;
     flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 5vmin;
   }
   .item-data {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     text-align: left;
-    padding: 0 10%;
+    padding: 5vmin;
   }
   .item-img {
-    padding: 0 0 55px 0;
+    padding: 0;
   }
   .item-img img {
     width: 40vmax;
-  }
-  .cart-controls {
-    position: absolute;
-    flex-direction: column;
-    width: 48px;
-    right: 0;
   }
   .cart-val {
     height: 48px;
   }
   #shopping-cart {
-    min-height: calc(100vh - 44px);
+    min-height: calc(100vh - 49px);
   }
   #cart-results {
     padding: 10vmin 20vmin;
@@ -1011,16 +1016,16 @@ footer > ul > li a {
     flex-grow: 1;
   }
   .item-container {
-    flex-direction: column;
-    position: static;
+    flex-grow: 1;
+    justify-content: space-around;
   }
   .item-data {
-    align-self: center;
-    text-align: center;
-    padding: 0;
+    background: #E9E9E9;
   }
   .item-name {
     display: block;
+    font-weight: bolder;
+    font-size: 1.1em;
   }
   .item-img {
     align-self: center;
@@ -1087,7 +1092,6 @@ footer > ul > li a {
   #item-containers {
     display: flex;
     min-width: 100%;
-    position: relative;
   }
   .item-container {
     flex-direction: row;
@@ -1095,19 +1099,10 @@ footer > ul > li a {
     justify-content: space-around;
   }
   .item-data {
-    text-align: left;
-    max-width: 50%;
+    padding: 25px;
   }
   .item-img img {
     height: 30vmin;
-  }
-  .cart-controls {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    flex-direction: row;
-    margin: 25px;
-    height: 32px;
   }
   .cart-controls button {
     font-size: 0.7em;
