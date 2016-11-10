@@ -1316,41 +1316,33 @@ footer > ul > li a {
 }
 
 /*----MONTERING SUBPAGE----*/
+#assembly {
+  justify-content: flex-start;
+}
+
 #assembly main {
+  justify-content: flex-start;
   background: white;
+  display: flex;
   border: 1px solid lightgrey;
-  align-items: stretch;
-  justify-content: space-between;
-  min-height: 65vh;
-  min-width: 60vw;
-}
-
-#assembly main img {
-  height: 15vh;
-  border-left: 1px solid #e9e9e9;
-  padding-left: 8px;
-}
-
-#assembly video::-webkit-media-controls-fullscreen-button {
-  display: none;
-}
-
-#assembly-video {
-  margin: 10%;
-  width: 100vw;
+  flex-grow: 1;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  overflow: hidden;
 }
 
 #assembly-intro {
-  padding: 20px 20px 0 20px;
+  padding: 1em;
+}
+
+#assembly-intro h2 {
+  margin: 0;
+  padding: 0;
 }
 
 #assembly-intro p {
-  padding: 10px 20px 0 10px;
-  font-size: 0.9em;
-}
-
-#prog-bar {
-  width: 50%;
+  padding: 0;
+  margin-top: 1em;
 }
 
 #assembly-controls, #prog-bar, #assembly-btn-next, #assembly-btn-back {
@@ -1358,22 +1350,28 @@ footer > ul > li a {
 }
 
 #assembly-controls {
-  position: relative;
-  z-index: 1;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  width: 100%;
 }
 
 #assembly-btn-next, #assembly-btn-back {
-  margin: 0px;
-  color: white;
   background: #444;
-  white-space: nowrap;
-  width: 30%;
+  color: #FFF;
+  width: 25%;
+  margin: 0;
+  border-radius: 0;
   justify-content: center;
-  border-radius: 0px;
 }
 
-#assembly-btn-back:before, #assembly-btn-next:after {
+#assembly-btn-next:after {
+  content: '';
+  background-image: url("../img/icons/next.svg");
+  background-size: cover;
+  height: 16px;
+  width: 16px;
+  margin-top: 2px;
+}
+
+#assembly-btn-back:before {
   content: '';
   background-image: url("../img/icons/left.svg");
   background-size: cover;
@@ -1382,124 +1380,83 @@ footer > ul > li a {
   margin-top: 2px;
 }
 
-#assembly-btn-next:after {
-  background-image: url("../img/icons/next.svg");
+#prog-bar {
+  width: 50%;
 }
 
 #prog-bar li {
-  text-align: center;
   flex-grow: 1;
-  padding: 10px 0px;
+  background: #f9f9f9;
+  padding: 10px 0;
   transition: 0.3s ease-in-out;
+  text-align: center;
+  cursor: pointer;
+}
+
+#prog-bar li.prog-bar-element-active {
+  background: #00A651;
+  color: #FFF;
 }
 
 #prog-bar li:hover {
   background: #E9E9E9;
-  cursor: pointer;
-  font-weight: bolder;
-  color: black;
-}
-
-.prog-bar-element {
-  background: #fefefe;
-}
-
-.prog-bar-element-active {
-  background: #00A651;
-  color: white;
+  font-weight: bold;
+  color: #000;
 }
 
 .content-container {
-  align-items: center;
-  display: none;
-  background: white;
-  color: black;
-  padding: 40px 30px;
+  padding: 1em;
+  flex-wrap: wrap;
   animation: slideInRight 1s forwards;
-  height: 35vh;
-  border-top: 1px solid #e9e9e9;
-}
-
-.content-text {
-  padding: 0px 10px;
-}
-
-.content-pictures div p {
-  font-size: 0.8em;
-  text-align: center;
-  font-style: italic;
 }
 
 .content-container p {
-  margin: 5px 0px 15px 0px;
-  padding: 0px;
+  margin: 1em 0 0 0;
+  padding: 0;
 }
 
-.content-container ul li {
-  padding: 0px 0px 20px 0px;
+.content-text, .content-pictures {
+  width: 100%;
 }
 
-@media (max-width: 1440px) {
-  #assembly main {
-    max-width: 80vw;
-  }
+.content-text p:not(:first-child) {
+  margin-top: 1em;
 }
 
-@media (max-width: 1280px) {
-  .content-text ul li {
-    padding: 5px 0;
-  }
+.content-pictures {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
 }
 
-@media (max-width: 960px) {
-  #assembly {
-    max-height: 100vh;
-  }
-  #assembly main {
-    max-width: 100vw;
-    align-items: flex-start;
-  }
-  #assembly-intro, #assembly-controls, .content-container {
-    min-width: 100%;
-    max-width: 100%;
-  }
-  #assembly-intro {
-    position: relative;
-    z-index: 1;
-    padding: 2.5vmin 0;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-  }
-  .content-container {
-    align-items: stretch;
-    flex-direction: column;
-    padding: 0;
-    flex-grow: 1;
+.content-pictures div, .content-pictures img {
+  margin-top: 1em;
+}
+
+.content-pictures div > img {
+  margin-top: 0;
+}
+
+.content-pictures p {
+  text-align: center;
+}
+
+@media screen and (min-width: 800px) {
+  .content-text {
+    width: 80%;
   }
   .content-text {
-    padding: 5vmin;
+    box-sizing: border-box;
+    padding-right: 1em;
   }
   .content-pictures {
-    border: 0px;
-    flex-grow: 1;
-    margin-top: 0;
-    margin-left: 10vmin;
+    width: 20%;
   }
-  #assembly main img {
-    width: 80vmin;
-    height: auto;
-    border-left: 0px;
-    padding-left: 0px;
-    padding-bottom: 20px;
-  }
-  .content-pictures div img {
-    padding: 0 !important;
-  }
-  .content-pictures div p {
-    text-align: left;
+  .content-pictures img {
+    max-width: 100%;
   }
 }
 
-/*----MONTERING SUBPAGE----*/
 /*----ABOUT SUBPAGE----*/
 #about p a {
   padding-left: 5px;

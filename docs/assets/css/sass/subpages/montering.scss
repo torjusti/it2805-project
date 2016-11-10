@@ -1,187 +1,147 @@
 /*----MONTERING SUBPAGE----*/
 
-#assembly{
-  main{
+#assembly {
+  justify-content: flex-start;;
+
+  main {
+    justify-content: flex-start;
     background: $light-color;
+    display: flex;
     border: $border-4;
-    align-items: stretch;
-    justify-content: space-between;
-    min-height: 65vh;
-    min-width: 60vw;
-    img{
-      height: 15vh;
-      border-left: 1px solid #e9e9e9;
-      padding-left: 8px;
-    }
-
-  }
-  video::-webkit-media-controls-fullscreen-button {display:none}
-}
-
-#assembly-video{
-  margin:10%;
-  width: 100vw;
-}
-
-#assembly-intro{
-  padding: 20px 20px 0 20px;
-  p{
-    padding: 10px 20px 0 10px;
-    font-size: $base-font-size*.9
-  }
-}
-
-#prog-bar{width:50%}
-
-#assembly-controls,#prog-bar, #assembly-btn-next, #assembly-btn-back{display: flex}
-
-#assembly-controls{
-  position: relative;
-  z-index: 1;
-  box-shadow: 0 0 10px rgba(0,0,0,.3)
-}
-
-#assembly-btn-next,#assembly-btn-back{
-  margin:0px;
-  color: $light-color;
-  background: $accent-color-3;
-  white-space: nowrap;
-  width: 30%;
-  justify-content: center;
-  border-radius: 0px;
-}
-#assembly-btn-back:before, #assembly-btn-next:after{
-    content: '';
-    background-image: url("../img/icons/left.svg");
-    background-size: cover;
-    height: 16px;
-    width: 16px;
-    margin-top: 2px
-}
-
-#assembly-btn-next:after{background-image: url("../img/icons/next.svg")}
-
-#prog-bar li{
-  text-align: center;
-  flex-grow: 1;
-  padding:10px 0px;
-  transition: $transition-1;
-  &:hover{
-    background: #E9E9E9;
-    cursor: pointer;
-    font-weight: bolder;
-    color: $dark-color
-  }
-}
-
-.prog-bar-element{
-  background: $accent-color-4;
-}
-
-.prog-bar-element-active{
-  background:$accent-color-1;
-  color:$light-color
-}
-
-.content-container{
-  align-items: center;
-  display: none;
-  background: white;
-  color: $dark-color;
-  padding: 40px 30px;
-  animation: slideInRight 1s forwards;
-  height: 35vh;
-  border-top:1px solid #e9e9e9
-}
-
-.content-text{
-  padding:0px 10px;
-}
-
-.content-pictures div p{
-  font-size: $base-font-size*.8;
-  text-align: center;
-  font-style: italic;
-}
-
-.content-container p{
-  margin:5px 0px 15px 0px;
-  padding:0px
-}
-
-.content-container ul li{
-  padding:0px 0px 20px 0px;
-}
-
-@media (max-width:1440px) {
-  #assembly{
-    main{
-      max-width: 80vw
-    }
-  }
-}
-
-  @media (max-width:1280px) {
-    .content-text ul li{
-        padding: 5px 0
-      }
-    }
-
-@media (max-width:960px){
-
-  #assembly{
-    max-height: 100vh;
-    main{
-      max-width: 100vw;
-      align-items: flex-start;
-    }
-  }
-  #assembly-intro, #assembly-controls, .content-container{
-    min-width: 100%;
-    max-width: 100%
-  }
-  #assembly-intro{
-    position: relative;
-    z-index: 1;
-    padding: 2.5vmin 0;
-    box-shadow: 0 0 10px rgba(0,0,0,.3)
-  }
-
-  .content-container{
-    align-items: stretch;
-    flex-direction: column;
-    padding: 0;
-    flex-grow: 1
-  }
-  .content-text{
-    padding: 5vmin
-  }
-  .content-pictures{
-    border:0px;
     flex-grow: 1;
-    margin-top: 0;
-    margin-left: 10vmin;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    overflow: hidden;
   }
-
-
-  #assembly main img{
-    width: 80vmin;
-    height: auto;
-    border-left: 0px;
-    padding-left: 0px;
-    padding-bottom: 20px
-
-  }
-
-  .content-pictures div{
-    img{
-      padding: 0 !important;
-    }
-    p{
-      text-align: left;
-    }
-  }
-
 }
 
-/*----MONTERING SUBPAGE----*/
+#assembly-intro {
+  padding: 1em;
+
+  h2 {
+    margin: 0;
+    padding: 0;
+  }
+
+  p {
+    padding: 0;
+    margin-top: 1em;
+  }
+}
+
+#assembly-controls, #prog-bar, #assembly-btn-next, #assembly-btn-back{
+  display: flex;
+}
+
+#assembly-controls {
+  width: 100%;
+}
+
+#assembly-btn-next, #assembly-btn-back {
+  background: $accent-color-3;
+  color: #FFF;
+  width: 25%;
+  margin: 0;
+  border-radius: 0;
+  justify-content: center;
+}
+
+#assembly-btn-next:after {
+  content: '';
+  background-image: url('../img/icons/next.svg');
+  background-size: cover;
+  height: 16px;
+  width: 16px;
+  margin-top: 2px;
+}
+
+#assembly-btn-back:before {
+  content: '';
+  background-image: url('../img/icons/left.svg');
+  background-size: cover;
+  height: 16px;
+  width: 16px;
+  margin-top: 2px;
+}
+
+#prog-bar {
+  width: 50%;
+
+  li {
+    flex-grow: 1;
+    background: #f9f9f9;
+    padding: 10px 0;
+    transition: 0.3s ease-in-out;
+    text-align: center;
+    cursor: pointer;
+
+    &.prog-bar-element-active {
+      background: $accent-color-1;
+      color: #FFF;
+    }
+
+    &:hover {
+      background: #E9E9E9;
+      font-weight: bold;
+      color: #000;
+    }
+  }
+}
+
+.content-container {
+  padding: 1em;
+  flex-wrap: wrap;
+  animation: slideInRight 1s forwards;
+
+  p {
+    margin: 1em 0 0 0;
+    padding: 0;
+  }
+}
+
+.content-text, .content-pictures {
+  width: 100%;
+}
+
+.content-text {
+  p:not(:first-child) {
+    margin-top: 1em;
+  }
+}
+
+.content-pictures {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+
+  div, img {
+    margin-top: 1em;
+  }
+
+  div > img {
+    margin-top: 0;
+  }
+
+  p {
+    text-align: center;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .content-text {
+    width: 80%;
+  }
+
+  .content-text {
+    box-sizing: border-box;
+    padding-right: 1em;
+  }
+
+  .content-pictures {
+    width: 20%;
+
+    img {
+      max-width: 100%;
+    }
+  }
+}
