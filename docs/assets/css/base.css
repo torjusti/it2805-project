@@ -1328,6 +1328,7 @@ footer > ul > li a {
   flex-grow: 1;
   margin-top: 1em;
   margin-bottom: 1em;
+  overflow: hidden;
 }
 
 #assembly-intro {
@@ -1406,6 +1407,9 @@ footer > ul > li a {
 .content-container {
   padding: 1em;
   flex-wrap: wrap;
+  animation: slideInRight 1s forwards;
+  -webkit-animation-fill-mode: none;
+  animation-fill-mode: none;
 }
 
 .content-container p {
@@ -1431,12 +1435,20 @@ footer > ul > li a {
   margin-top: 1em;
 }
 
+.content-pictures img {
+  max-width: 100%;
+}
+
 .content-pictures div > img {
   margin-top: 0;
 }
 
 .content-pictures p {
   text-align: center;
+}
+
+#assembly-video video {
+  max-width: 100%;
 }
 
 @media screen and (min-width: 800px) {
@@ -1449,9 +1461,6 @@ footer > ul > li a {
   }
   .content-pictures {
     width: 20%;
-  }
-  .content-pictures img {
-    max-width: 100%;
   }
 }
 

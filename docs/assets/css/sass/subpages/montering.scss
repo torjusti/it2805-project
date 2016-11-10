@@ -11,6 +11,7 @@
     flex-grow: 1;
     margin-top: 1em;
     margin-bottom: 1em;
+    overflow: hidden;
   }
 }
 
@@ -90,6 +91,9 @@
 .content-container {
   padding: 1em;
   flex-wrap: wrap;
+  animation: slideInRight 1s forwards;
+  -webkit-animation-fill-mode: none;
+  animation-fill-mode: none;
 
   p {
     margin: 1em 0 0 0;
@@ -116,6 +120,10 @@
     margin-top: 1em;
   }
 
+  img {
+    max-width: 100%;
+  }
+
   div > img {
     margin-top: 0;
   }
@@ -123,6 +131,10 @@
   p {
     text-align: center;
   }
+}
+
+#assembly-video video {
+  max-width: 100%;
 }
 
 @media screen and (min-width: 800px) {
@@ -137,9 +149,5 @@
 
   .content-pictures {
     width: 20%;
-
-    img {
-      max-width: 100%;
-    }
   }
 }
