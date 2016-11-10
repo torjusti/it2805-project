@@ -1474,6 +1474,7 @@ footer > ul > li a {
     flex-direction: column;
     padding: 0;
     flex-grow: 1;
+    overflow-y: scroll;
   }
   .content-text {
     padding: 5vmin;
