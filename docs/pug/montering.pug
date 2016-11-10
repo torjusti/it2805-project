@@ -52,13 +52,24 @@ html(lang='no')
             li Sett sammen de tomme gabionene på forhånd. Strekk eller trykk sammen gabionene for å oppnå ønsket lengde. De bevegelige spiralene gjør at de kan tilpasses perfekt. Kurver kan også lages ved bruk av de bevegelige delene.
             li For å maksimere produksjonen må montering, tilkobling, fylling, stagning og sluttbehandling anses som en produksjonslinje. Standardteamet består gjerne av tre montører og en kran med fører.
             li Hvis helningen er større enn 10°, må ekstra stagning brukes.
+        .content-pictures
+          img(src='assets/img/montering/obs1.jpg', alt='Montering OBS')
+          img(src='assets/img/montering/obs2.jpg', alt='Montering OBS')
+      .content-container
+        .content-text
+          h3 OBS!
+          ul
             li Hvis gabionhøyden er mer enn 1 m, bør en ekstra rekke med stagsurringer brukes.
             li For øvrig oppfordrer vi av sikkerhetshensyn til bruk av vernebriller, -hansker og -sko.
             li Produksjonen kan maksimeres ved at man bruker lange lengder på gabionene, da dette krever at det lages færre tilkoblinger og forenkler monteringen.
         .content-pictures
-          img(src='assets/img/montering/obs1.jpg', alt='Montering OBS')
-          img(src='assets/img/montering/obs2.jpg', alt='Montering OBS')
           img(src='assets/img/montering/obs3.jpg', alt='Montering OBS')
+      .content-container
+        #assembly-video
+          video(controls)
+            source(src="assets/video/montering.ogv",type="video/ogg")
+            source(src="assets/video/montering.mp4",type="video/mp4")
+
       #assembly-controls
         button#assembly-btn-back Tilbake
         ul#prog-bar
