@@ -29,30 +29,30 @@ document.addEventListener('DOMContentLoaded', function(){
 
             createElem({
               'className': 'item-size',
-              'innerHTML': 'Størrelse: ' + product.size.join(' x ') + ' cm'
+              'innerHTML': '<span class="info-title">Størrelse:</span> ' + product.size.join(' x ') + ' cm'
             }),
 
             createElem({
               'className': 'item-weight',
-              'innerHTML': 'Vekt: ' + product.weight + ' kg'
+              'innerHTML': '<span class="info-title">Vekt:</span> ' + product.weight + ' kg'
             }),
 
             createElem({
               'className': 'item-price',
-              'innerHTML': 'Pris: ' + product.price + ' kr'
+              'innerHTML': '<span class="info-title">Pris:</span> ' + product.price + ' kr'
             }),
 
             createElem({
               'className': 'thread-thickness',
-              'innerHTML': "Tråd tykkelse: " + product.threadThickness + 'mm'
+              'innerHTML': '<span class="info-title">Trådtykkelse:</span> ' + product.threadThickness + 'mm'
             }),
             createElem({
               'className': 'item-mask-size',
-              'innerHTML': "Maskestørrelse: " + product.maskSize.join(' x ') + 'mm'
+              'innerHTML': '<span class="info-title">Maskestørrelse:</span> ' + product.maskSize.join(' x ') + 'mm'
             }),
             createElem({
               'className': 'galvanized-thickness',
-              'innerHTML': "Galvanisering tykkelse: " + product.galvanizedThickness + 'g pr. m²'
+              'innerHTML': '<span class="info-title">Galvaniseringstykkelse:</span> ' + product.galvanizedThickness + 'g pr. m²'
             }),
 
             createElem({
@@ -60,6 +60,30 @@ document.addEventListener('DOMContentLoaded', function(){
               'innerHTML': product.extra
             }),
 
+            createElem({
+              'className': 'cart-controls',
+
+              children: [
+                createElem({
+                'nodeType': 'button',
+                'className': 'cart-add',
+                'innerHTML': '+'
+                }),
+
+                createElem({
+                  'nodeType': 'input',
+                  'className': 'cart-val',
+                  'type': 'text',
+                  'value': getLocalData('cart-value' + i) || 0 // Use stored value if it exists
+                }),
+
+                createElem({
+                  'nodeType': 'button',
+                  'className': 'cart-remove',
+                  'innerHTML': '-'
+                })
+              ]
+            })
           ]
         });
 
@@ -73,35 +97,11 @@ document.addEventListener('DOMContentLoaded', function(){
             })
           ]
         });
-        let cartControls = createElem({
-          'className': 'cart-controls',
-
-          children: [
-            createElem({
-            'nodeType': 'button',
-            'className': 'cart-add',
-            'innerHTML': '+'
-            }),
-
-            createElem({
-              'nodeType': 'input',
-              'className': 'cart-val',
-              'type': 'text',
-              'value': getLocalData('cart-value' + i) || 0 // Use stored value if it exists
-            }),
-
-            createElem({
-              'nodeType': 'button',
-              'className': 'cart-remove',
-              'innerHTML': '-'
-            })
-          ]
-        });
 
         itemContainers.appendChild(createElem({
           'className': 'item-container',
           'data-tab': i,
-          'children': [cartControls, itemData, itemImg]
+          'children': [itemData, itemImg]
         }));
       });
 
