@@ -46,6 +46,19 @@ document.addEventListener('DOMContentLoaded', function(){
               'className': 'item-extra',
               'innerHTML': product.extra
             }),
+            createElem({
+              'className': 'thread-thickness',
+              'innerHTML': "Tråd tykkelse: " + product.threadThickness + 'mm'
+            }),
+            createElem({
+              'className': 'item-mask-size',
+              'innerHTML': "Maskestørrelse: " + product.maskSize.join(' x ') + 'mm'
+            }),
+            createElem({
+              'className': 'galvanized-thickness',
+              'innerHTML': "Galvanisering tykkelse: " + product.galvanizedThickness + 'g pr. m²'
+            }),
+
 
           ]
         });
@@ -115,7 +128,7 @@ document.addEventListener('DOMContentLoaded', function(){
       for (let i = 0; i < tabs.length; i++){
        tabs[i].addEventListener('click', function(e){
          // Class handling for mobile phones only.
-         productsTab.className = "tabs-out"
+         productsTab.className = 'tabs-out'
          // Find out the tab code of the clicked tab.
          let tabKey = e.target.getAttribute('data-tab');
 
@@ -151,8 +164,8 @@ document.addEventListener('DOMContentLoaded', function(){
 
       // Some extra logic for the mobile menu.
       chooseProduct.addEventListener('click', function(e){
-       if (productsTab.className != "tabs-in"){
-         productsTab.className = "tabs-in"
+       if (productsTab.className != 'tabs-in'){
+         productsTab.className = 'tabs-in'
        }
       });
 
@@ -275,8 +288,8 @@ document.addEventListener('DOMContentLoaded', function(){
           // Show the shopping cart.
           document.getElementById('shopping-cart').style.display = 'flex';
           /*setInterval(function(){
-            if (document.getElementsByTagName("BODY")[0].scrollTop != window.innerHTML){
-            document.getElementsByTagName("BODY")[0].scrollTop = document.getElementsByTagName("BODY")[0].scrollTop + 10
+            if (document.getElementsByTagName('BODY')[0].scrollTop != window.innerHTML){
+            document.getElementsByTagName('BODY')[0].scrollTop = document.getElementsByTagName('BODY')[0].scrollTop + 10
           }
         }, 15);*/ // SMOOTH SCROLL TO THE BOTTOM.
         } else{
