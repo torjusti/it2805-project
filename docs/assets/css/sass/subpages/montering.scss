@@ -1,96 +1,73 @@
 /*----MONTERING SUBPAGE----*/
-#assembly img{width: 15vw;
-  border-left: 2px solid #e9e9e9;
-  padding-left: 8px;
+#assembly{
+  main{
+    align-items: stretch;
+    overflow: hidden;
+
+    img{
+      height: 15vh;
+      border-left: 2px solid #e9e9e9;
+      padding-left: 8px;
+    }
+
+  }
 }
 
-#assembly{overflow:hidden}
-
-#assembly-intro{width: 85%}
-
-#assembly-controls{width:85%}
+#assembly-intro{
+  p{
+    padding: 10px 20px;
+    font-size: $base-font-size*.9
+  }
+}
 
 #prog-bar{width:50%}
 
-#assembly-controls, #prog-bar{
-  display: flex;
-  flex-direction: row
-}
-
-#prog-bar li:hover{cursor: pointer}
-
-#prog-bar li{
-  display: flex;
-  justify-content: center;
-  align-content: center;
-  width:16.7%;
-  padding:10px 0px;
-}
-
-#prog-bar, #assembly-btn-next, #assembly-btn-back{display: flex}
-
-.assembly-content-pictures{margin-top:36px}
-
-.assembly-content-container{
-  display: none;
-  max-width: 85%;
-  background: white;
-  color: black;
-  padding: 40px 0px;
-  border:1px solid #e9e9e9;
-  animation: slideInRight 1s forwards;
-  height: 45vh;
-  overflow-y:scroll;
-}
-
-.assembly-content-text{
-  padding:0px 30px;
-}
+#assembly-controls,#prog-bar, #assembly-btn-next, #assembly-btn-back{display: flex}
 
 #assembly-btn-next,#assembly-btn-back{
   margin:0px;
   color: $light-color;
   background: $accent-color-3;
-  width:30%;
+  white-space: nowrap;
+  width: 30%;
   justify-content: center;
-  border-radius: 0px
+  border-radius: 0px;
+  &:hover{
+    background: $accent-color-1;
+  }
 }
 
-#assembly-btn-back{
-
-  &:before{
+#assembly-btn-back:before, #assembly-btn-next:after{
     content: '';
     background-image: url("../img/icons/left.svg");
     background-size: cover;
     height: 16px;
-    width: 16px
+    width: 16px;
+    margin-top: 2px
+}
+
+#assembly-btn-next:after{background-image: url("../img/icons/next.svg")}
+
+
+#prog-bar li{
+  text-align: center;
+  flex-grow: 1;
+  padding:10px 0px;
+  border-left: $border-4;
+  transition: $transition-1;
+  &:hover{
+    background: #E9E9E9;
+    cursor: pointer;
+    font-weight: bolder;
+    color: $dark-color
   }
-
-}
-
-#assembly-btn-next{
-
-  &:after{
-    content: '';
-    background-image: url("../img/icons/next.svg");
-    background-size: cover;
-    height: 16px;
-    width: 16px
+  &:first-child{
+    border: none
   }
-
-}
-
-.assembly-content-container p{
-  margin:5px 0px 15px 0px;
-  padding:0px
-}
-
-.assembly-content-container ul li{
-  padding:0px 0px 30px 0px;
 }
 
 .prog-bar-element{
-  background: #f7f7f7;
+  background: $accent-color-4;
 }
 
 .prog-bar-element-active{
@@ -98,21 +75,85 @@
   color:$light-color
 }
 
-@media (max-width:960px){
-  .assembly-content-container{flex-direction: column;}
+.content-container{
+  align-items: center;
+  display: none;
+  background: white;
+  color: $dark-color;
+  padding: 40px;
+  border: $border-4;
+  animation: slideInRight 1s forwards;
+  height: 45vh;
+  overflow: hidden;
+}
 
-  .assembly-content-pictures{
-    border:0px;
-    border-top:2px solid #e9e9e9;
-    padding-top:5%;
-    width:80%;
-    padding: 5% 10% 0px 10%;
+.content-text{
+  padding:0px 10px;
+}
+
+
+.content-container p{
+  margin:5px 0px 15px 0px;
+  padding:0px
+}
+
+.content-container ul li{
+  padding:0px 0px 20px 0px;
+}
+
+@media (max-width:1440px) {
+  #assembly{
+    main{
+      max-width: 65vw
+    }
+  }
+}
+
+  @media (max-width:1280px) {
+    .content-text ul li{
+        padding: 5px 0
+      }
+    }
+
+@media (max-width:960px){
+
+  #assembly{
+    max-height: 100vh;
+    main{
+      max-width: 100vw;
+      align-items: flex-start;
+    }
+  }
+  #assembly-intro, #assembly-controls, .content-container{
+
+    min-width: 100%;
+    max-width: 100%
+
   }
 
-  #assembly img{
-    width: 100%;
+  .content-container{
+    align-items: stretch;
+    flex-direction: column;
+    padding: 0;
+    overflow-y: scroll;
+    flex-grow: 1
+  }
+  .content-text{
+    padding: 5vmin
+  }
+  .content-pictures{
+    border:0px;
+    flex-grow: 1;
+    margin-top: 0;
+    margin-left: 10vmin;
+  }
+
+  #assembly main img{
+    width: 80vmin;
+    height: auto;
     border-left: 0px;
     padding-left: 0px;
+    padding-bottom: 20px
 
   }
 

@@ -3,7 +3,7 @@ let assemblyIntro = document.getElementById('assembly-intro');
 let progBar = document.getElementById('prog-bar');
 let assemblyBtnNext = document.getElementById('assembly-btn-next');
 let assemblyBtnBack = document.getElementById('assembly-btn-back');
-let assemblyContent = document.getElementsByClassName('assembly-content-container');
+let assemblyContent = document.getElementsByClassName('content-container');
 
 for (let i = 0; i < assemblyContent.length; i++){
   progBar.appendChild(createElem({
@@ -37,7 +37,6 @@ function goToIndex(index){
     assemblyContent[i].style.display = 'none';
     progBarElements[i].classList.remove('prog-bar-element-active');
   }
-
   assemblyContent[index].style.display = 'flex';
   progBarElements[index].classList.add('prog-bar-element-active');
 }
