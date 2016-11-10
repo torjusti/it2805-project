@@ -442,6 +442,7 @@ nav ul li:hover a {
   z-index: 999;
   border-radius: 5px;
   padding: 5px;
+  background: rgba(0, 0, 0, 0.3);
 }
 
 #menu-mobile span, #menu-mobile span:after, #menu-mobile span:before {
