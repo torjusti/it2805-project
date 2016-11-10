@@ -16,13 +16,7 @@ body{
   justify-content: space-between;
   min-height: 100vh;
   align-items: center;
-  overflow-x: hidden;
-
-  span,span:before,span:after{
-    background: $light-color;
-    box-shadow: 0 0 3px rgba(0,0,0,.5)
-  }
-
+  overflow-x: hidden
 }
 
 main{

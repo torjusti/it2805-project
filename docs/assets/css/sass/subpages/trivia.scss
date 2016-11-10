@@ -61,7 +61,18 @@
   flex-direction: column;
   background-image: url('../img/bg.png');
   background-color: #EEE;
-  min-height: 100vh
+  min-height: 80vh;
+  li{
+    padding: 2.5vmin 5vmin;
+    text-indent: $base-font-size*-1;
+    &:before{
+      padding: 5px;
+      font-size: $base-font-size*.6;
+      content: '⬛';
+      color: $accent-color-1;
+    }
+  }
+
 }
 
 .parallax-bg{

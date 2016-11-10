@@ -2,7 +2,13 @@
 
 header{
   display: flex;
-  width: 100%
+  width: 100%;
+
+  span,span:before,span:after{
+    background: $light-color;
+    box-shadow: 0 0 3px rgba(0,0,0,.5)
+  }
+
 }
 
 nav{
@@ -115,12 +121,12 @@ nav{
 
 #menu-mobile{
   display: flex;
-  margin: 8px 20px;
+  margin: 8px;
   right: 0;
   position: fixed;
   flex-direction: column;
   justify-content: space-around;
-  height: 40px;
+  height: 24px;
   width: 48px;
   cursor: pointer;
   z-index: 999;
