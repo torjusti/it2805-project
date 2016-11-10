@@ -1462,6 +1462,7 @@ footer > ul > li a {
 
 #assembly-video video {
   max-height: 90%;
+  max-width: 100%;
 }
 
 @media screen and (min-width: 800px) {
