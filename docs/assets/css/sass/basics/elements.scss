@@ -1,43 +1,43 @@
-
 /*----MAIN ELEMENTS----*/
 
-::selection{background: $accent-color-1;color: $light-color}
-
-html {
-  background-image: url('../img/bg.png');
-  background-color: #EEE;
+::selection{
+  background: $accent-color-1;
+  color: $light-color
 }
 
-body {
+html{
+  background-image: url('../img/bg.png');
+  background-color: #EEE
+}
+
+body{
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-items: center;
   min-height: 100vh;
+  align-items: center;
+  overflow-x: hidden
 }
 
-main {
+main{
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   flex-grow: 1;
+  min-height: calc(100vh - 64px)
 }
 
 section{
   display: flex;
-  flex-direction: column;
+  flex-direction: column
 }
 
 /*----/MAIN ELEMENTS----*/
 
 /*----OTHER ELEMENTS----*/
 
-img {
-  vertical-align: middle;
-}
-
-button {
+button{
   background: transparent;
   text-align: center;
   color: $accent-color-1;
@@ -49,21 +49,21 @@ button {
   font-size: .9em;
   padding: 5px 28px 5px 12px;
   margin: 0 5px;
-  &::after {
+  &::after{
     content: '';
     width: 16px;
     position: absolute;
     margin: 2px 0 0 4px;
     height: 16px;
-    background-size: cover;
+    background-size: cover
   }
-  &:hover {
+  &:hover{
     color: $light-color;
-    background: $accent-color-1;
+    background: $accent-color-1
   }
 }
 
-#toast {
+#toast{
   display: block;
   position: fixed;
   top: 0;
@@ -74,36 +74,34 @@ button {
   border-radius: 0 0 5px 5px;
   box-shadow: 0 0 5px $dark-color;
   animation: slideInTop .4s forwards;
-  z-index: 1000;
+  z-index: 1000
 }
 
-.toast-out {
-  animation: slideOutTop 0.3s forwards !important;
+.toast-out{
+  animation: slideOutTop 0.3s forwards !important
 }
-
-
-
-@media screen {
-
-  @media (min-width: 960px){
-    main{
-      max-width: 80vw
-    }
-  }
-  @media (min-width: 1280px){
-    main{
-      flex-grow: 0;
-      max-width: 60vw;
-    }
-  }
-  @media (min-width: 1440px){
-    main{
-      max-width: 50vw
-    }
-  }
-
-}
-
-
 
 /*----/OTHER ELEMENTS----*/
+
+@media screen{
+  @media (min-width: 960px){
+
+    main{
+      max-width: 80vw;
+      min-height: 0
+    }
+
+  }
+
+  @media (min-width: 1280px){
+
+    main{
+      flex-grow: 0;
+      max-width: 60vw
+    }
+
+  }
+
+  @media (min-width: 1440px){main{max-width: 50vw}}
+
+}

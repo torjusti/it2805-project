@@ -1,82 +1,134 @@
-
 /*----ABOUT SUBPAGE----*/
+
 #about{
-  p{
-    a{
-      padding-left: 5px
-    }
-  }
-  section{
-    &:first-of-type{
-      padding: 0 10vmin;
-    }
-  }
+  p{a{padding-left: 5px}}
+
+  section{&:first-of-type{padding: 0 5vmin}}
+
 }
+
 #sjef{
   display: flex;
   flex-direction: column;
   justify-content: center;
-  img {
+
+  img{
     border-radius: 50%;
     padding: 5px 0;
     height: 128px;
-    width: 128px;
+    width: 128px
   }
+
 }
+
 .sjef{
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-bottom: 2.5vmin;
+  padding-bottom: 2.5vmin
 }
-@media screen {
+#sitemap, #sitemap div{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white
+}
+#sitemap div{
+  margin-top: 5vh;
+  a{
+    padding: 5px 0
+  }
+}
+/*----/ABOUT SUBPAGE----*/
 
-  @media (min-width:580px) {
+@media screen{
+  @media (min-width:580px){
+
     #about{
+
       section{
+
         &:first-of-type{
+
           justify-content: center;
-          align-items: center;
+          align-items: center
+
         }
+
       }
+
     }
+
     #sjef{
       justify-content: center;
       align-items: center;
       min-width: 100%;
       margin-bottom: 5vmin;
-      flex-direction: row;
+      flex-direction: row
     }
+
     .sjef{
       padding: 0;
-      &:first-child{
-        margin-right: 20%;
-      }
+
+      &:first-child{margin-right: 20%}
+
     }
+
   }
-  @media (min-width:960px) {
-    #about{
-      section {
-        &:first-of-type{
-          padding: 0 2.5vmin;
-        }
-      }
-      #sjef{
-        justify-content: space-around;
-      }
-      .sjef{
-        margin: 0 !important;
-      }
-    }
-  }
-  
-  @media (min-width:1280px){
+
+  @media (min-width:960px){
+
     #about{
       main{
-        border-left: $border-1;
-        border-right: $border-1;
+        flex-grow: 0;
+        border: $border-4 !important;
+      }
+
+      section{
+        background: $light-color;
+        &:first-of-type{
+          padding: 5vmin 5vmin 0 5vmin;
+          p{
+            padding: 2.5vmin
+          }
+        }
+      }
+
+      #sjef{
+        justify-content: space-around;
+        margin: 0;
+        padding-bottom: 5vmin
+      }
+
+      .sjef{margin: 0 !important}
+      footer{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        min-height: 10vh;
+        ul{
+          font-size: $base-font-size*1.1
+        }
+      }
+      #sitemap{
+        margin-top: 2vh;
+        div{
+          margin-top: 0;
+          flex-direction: row;
+        }
+        a{
+          padding: 0 5px;
+          border-right: $border-1;
+          font-size: $base-font-size*.6;
+          &:last-child{
+            border: none
+          }
+        }
+        span{
+          font-size: $base-font-size*.8
+        }
       }
     }
+
   }
 }
-/*----/ABOUT SUBPAGE----*/

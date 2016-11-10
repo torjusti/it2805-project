@@ -1,38 +1,24 @@
-//compileNested: ../base.css
-
-// VARIABLES
-
 $accent-color-1: #00A651;
-
 $accent-color-2: #333;
 $accent-color-3: #444;
 $accent-color-4: #fefefe;
 $accent-color-5: #a60002;
-
 $light-color: white;
 $dark-color: black;
-
-  $base-font-size: 1em;
-
+$base-font-size: 1em;
 $border-1: 1px solid $accent-color-1;
 $border-2: 1px solid $light-color;
 $border-3: 1px solid $dark-color;
-
+$border-4: 1px solid lightgrey;
 $transition-1: .3s ease-in-out;
-
-// IMPORT EVERYTHING
-@import "basics/animations";
-@import "basics/elements";
 @import "basics/reset";
 @import "basics/typography";
-
-@import "modules/footer";
+@import "basics/animations";
+@import "basics/elements";
 @import "modules/navigation";
-
+@import "modules/footer";
 @import "subpages/index";
 @import "subpages/products";
 @import "subpages/trivia";
 @import "subpages/montering";
-@import "subpages/about";
-
-@import "basics/mediaqueries";
+@import "subpages/about"

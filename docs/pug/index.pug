@@ -1,13 +1,11 @@
-//output:../index.html
 doctype html
 html(lang='no')
   head
     title Velkommen til gabionbutikken.no
-    include modules/head.html
+    include modules/head
   body#home
 
-    header
-      include modules/header.html
+    include modules/header
 
     main
       h1 Velkommen til gabionbutikken.no!
@@ -16,13 +14,13 @@ html(lang='no')
       #left-bg
       section
         h2 Om gabioner
-        article
+        #text
           p Gabioner er <strong>nettingkasser som fylles opp med stein</strong> for bygging av gjerder, steinvegger, støtte murer, dammer og annet. Gabionene kan stables inntil og oppå hverandre og <strong>brukes både som dekorative vegger og fasader</strong>. Gabioner kan benyttes til alt fra støttemur, støyskjerming og fasader
           p til flomsikring. Gabioner er meget <strong>godt egnet som erosjonssikring</strong> og benyttes ofte ved veibygging og damsikring, men også som rimelig <strong>støttemur på privat eiendom</strong>. En mur bygget med gabioner kan håndstables, og fylles opp med spade eller en minigraver.
         a(href="trivia.html") Les mer
 
     footer
-      include modules/footer.html
+      include modules/footer
 
     script(type="text/javascript" src="assets/js/global.js")
     script(type="text/javascript" src="assets/js/homepage.js")

@@ -26,7 +26,7 @@ gulp.task('pug', () =>
     .pipe(livereload())
 );
 
-gulp.task('watch', function () {
+gulp.task('watch', function (){
   livereload.listen();
   livereload.reload();
   gulp.watch('assets/css/**/*.scss', ['sass']);
