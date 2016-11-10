@@ -64,7 +64,7 @@
       "galvanizedThickness":275
     },
    {
-      "name": "Gabion 200 x 30 x 225",
+      "name": "*Gabion 200 x 30 x 225",
       "size": [200, 30, 225],
       "weight": 75,
       "price": 1990,
@@ -74,7 +74,7 @@
       "galvanizedThickness":275
     },
    {
-      "name": "Gabion 200 x 30 x 200",
+      "name": "*Gabion 200 x 30 x 200",
       "size": [200, 30, 200],
       "weight": 72,
       "price": 1890,
