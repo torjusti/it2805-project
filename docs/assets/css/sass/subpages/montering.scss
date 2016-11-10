@@ -16,12 +16,12 @@
 
   }
   video::-webkit-media-controls-fullscreen-button {display:none}
+  video{
+    width:100%;
+    margin-top:30px;
+  }
 }
 
-#assembly-video{
-  margin:10%;
-  width: 100vw;
-}
 
 #assembly-intro{
   padding: 20px 20px 0 20px;

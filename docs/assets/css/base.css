@@ -1335,9 +1335,9 @@ footer > ul > li a {
   display: none;
 }
 
-#assembly-video {
-  margin: 10%;
-  width: 100vw;
+#assembly video {
+  width: 100%;
+  margin-top: 30px;
 }
 
 #assembly-intro {
