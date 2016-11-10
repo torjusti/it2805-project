@@ -1412,10 +1412,10 @@ footer > ul > li a {
   display: none;
   background: white;
   color: black;
-  padding: 50px 30px;
+  padding: 60px 30px 30px 30px;
   animation: slideInRight 1s forwards;
   height: 35vh;
-  overflow: hidden;
+  overflow-y: scroll;
 }
 
 .content-text {
@@ -1439,7 +1439,7 @@ footer > ul > li a {
 
 @media (max-width: 1440px) {
   #assembly main {
-    max-width: 65vw;
+    max-width: 80vw;
   }
 }
 
