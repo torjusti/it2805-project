@@ -1556,15 +1556,6 @@ footer > ul > li a {
   #about .sjef {
     margin: 0 !important;
   }
-  #about footer {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    min-height: 10vh;
-  }
-  #about footer ul {
-    font-size: 1.1em;
-  }
   #about #sitemap {
     margin-top: 2vh;
   }

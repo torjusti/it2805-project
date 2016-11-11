@@ -101,15 +101,7 @@
       }
 
       .sjef{margin: 0 !important}
-      footer{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        min-height: 10vh;
-        ul{
-          font-size: $base-font-size*1.1
-        }
-      }
+
       #sitemap{
         margin-top: 2vh;
         div{
