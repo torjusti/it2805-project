@@ -11,12 +11,12 @@ document.addEventListener('DOMContentLoaded', function(){
       let itemContainers = document.getElementById('item-containers');
 
       // Render data.
-      gabionData.products.forEach(function(product, i){
+      gabionData.products.forEach(function(product, i) {
         itemTabs.appendChild(createElem({
           'nodeType': 'span',
           'data-tab': i,
           'className': 'item-tab',
-          'innerHTML': product.name
+          'innerHTML': product.size.join(' x ') + ' cm' + (product.name ? ` (${product.name})` : '')
         }));
 
         let itemData = createElem({
@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function(){
           children: [
             createElem({
               'className': 'item-name',
-              'innerHTML': product.name
+              'innerHTML': product.size.join(' x ') + ' cm' + (product.name ? ` (${product.name})` : ' (vanlig gabion)')
             }),
 
             createElem({
@@ -44,15 +44,15 @@ document.addEventListener('DOMContentLoaded', function(){
 
             createElem({
               'className': 'thread-thickness',
-              'innerHTML': '<span class="info-title">Trådtykkelse:</span> ' + product.threadThickness + 'mm'
+              'innerHTML': '<span class="info-title">Trådtykkelse:</span> ' + product.threadThickness + ' mm'
             }),
             createElem({
               'className': 'item-mask-size',
-              'innerHTML': '<span class="info-title">Maskestørrelse:</span> ' + product.maskSize.join(' x ') + 'mm'
+              'innerHTML': '<span class="info-title">Maskestørrelse:</span> ' + product.maskSize.join(' x ') + ' mm'
             }),
             createElem({
               'className': 'galvanized-thickness',
-              'innerHTML': '<span class="info-title">Galvaniseringstykkelse:</span> ' + product.galvanizedThickness + 'g pr. m²'
+              'innerHTML': '<span class="info-title">Galvaniseringstykkelse:</span> ' + product.galvanizedThickness + ' g pr. m²'
             }),
 
             createElem({
@@ -92,7 +92,7 @@ document.addEventListener('DOMContentLoaded', function(){
           'children': [
             createElem({
               'nodeType': 'img',
-              'src': `assets/img/produkter/${product.size.join('x')}/1.JPG`,
+              'src': `assets/img/produkter/${i + 1}.jpg`,
               'alt': product.name
             })
           ]
@@ -255,11 +255,13 @@ document.addEventListener('DOMContentLoaded', function(){
           if (cartValue > 0){
             // Map the tab id to a couple data pieces.
             let curGabionData = gabionData.products[getTabKey(cartValueNodes[i])];
-            let type = curGabionData.name;
+            let type = curGabionData.size.join(' x ') + ' cm' + (curGabionData.name ? ` (${curGabionData.name})` : '');
             let size = curGabionData.size.join(' x ');
             let weight = curGabionData.weight;
             let price = curGabionData.price;
             let priceSum = price * cartValue;
+            // better rounding courtesy of MDN
+            // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/round
             let sizeSum = +(Math.round(curGabionData.size.reduce((a, b) => a * b / 100, 1) * cartValue + 'e+2')  + 'e-2');
             let weightSum = weight * cartValue;
 
@@ -269,12 +271,9 @@ document.addEventListener('DOMContentLoaded', function(){
             totalWeight += weightSum;
 
             // Add this line.
-            lines.push(`${type} (${size}, ${weight} kg): ${cartValue} stykker til ${price} kr - totalt ${weightSum} kg over ${sizeSum} m^3 til ${priceSum} kroner.\n---------------------------------------------------------`);
+            lines.push(`${type} [${weight} kg]: ${cartValue} stykker til ${price} kr - totalt ${weightSum} kg over ${sizeSum} m^3 til ${priceSum} kroner.\n---------------------------------------------------------`);
           }
         }
-
-// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/round
-
         // Show the container if we have at least 1 line.
         if (lines.length >= 1){
           // Add the total price.
@@ -282,7 +281,9 @@ document.addEventListener('DOMContentLoaded', function(){
           // Add the total weight.
           lines.push(`Total vekt: ${totalWeight} kg`);
           // Add the total volume.
-          lines.push(`Totalt volum: ${totalSize} m^3`);
+          // better rounding still courtesy of MDN
+          // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/round
+          lines.push(`Totalt volum: ${+(Math.round(totalSize + 'e+2')  + 'e-2')} m^3`);
           // Add all lines to textarea with newlines between them.
           cartResults.value = lines.join('\n');
           // Show the shopping cart.
