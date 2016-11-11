@@ -1,7 +1,6 @@
 {
   "products": [
    {
-      "name": "Gabion 100 x 30 x 50",
       "size": [100, 30, 50],
       "weight": 9.5,
       "price": 295,
@@ -10,7 +9,6 @@
       "galvanizedThickness":275
     },
    {
-      "name": "Gabion 100 x 30 x 80",
       "size": [100, 30, 80],
       "weight": 10.5,
       "price": 320,
@@ -19,7 +17,6 @@
       "galvanizedThickness":275
     },
    {
-      "name": "Gabion 100 x 50 x 50",
       "size": [100, 50, 50],
       "weight": 9.5,
       "price": 350,
@@ -28,7 +25,6 @@
       "galvanizedThickness":275
     },
    {
-      "name": "Gabion 100 x 50 x 50",
       "size": [100, 50, 50],
       "weight": 15,
       "price": 399,
@@ -37,7 +33,6 @@
       "galvanizedThickness":375
     },
    {
-      "name": "Gabion 100 x 30 x 100",
       "size": [100, 30, 100],
       "weight": 12.5,
       "price": 395,
@@ -46,7 +41,6 @@
       "galvanizedThickness":275
     },
    {
-      "name": "Gabion 100 x 50 x 100",
       "size": [100, 50, 100],
       "weight": 15.5,
       "price": 690,
@@ -55,7 +49,6 @@
       "galvanizedThickness":275
     },
    {
-      "name": "Gabion 100 x 100 x 100",
       "size": [100, 100, 100],
       "weight": 23,
       "price": 790,
@@ -64,7 +57,6 @@
       "galvanizedThickness":275
     },
    {
-      "name": "*Gabion 200 x 30 x 225",
       "size": [200, 30, 225],
       "weight": 75,
       "price": 1990,
@@ -74,7 +66,6 @@
       "galvanizedThickness":275
     },
    {
-      "name": "*Gabion 200 x 30 x 200",
       "size": [200, 30, 200],
       "weight": 72,
       "price": 1890,
@@ -84,7 +75,7 @@
       "galvanizedThickness":275
     },
    {
-      "name": "Rund gabion 70 x 100",
+      "name": "(rund gabion)",
       "size": [70, 100, 100],
       "weight": 75,
       "price": 395,
@@ -93,7 +84,7 @@
       "galvanizedThickness":275
     },
    {
-      "name": "Rund gabion 70 x 80",
+      "name": "(rund gabion)",
       "size": [70, 80, 100],
       "weight": 75,
       "price": 385,
