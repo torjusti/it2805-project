@@ -94,7 +94,7 @@ document.addEventListener('DOMContentLoaded', function(){
             createElem({
               'nodeType': 'img',
               'src': `assets/img/produkter/${i + 1}.jpg`,
-              'alt': product.name
+              'alt': product.size.join(' x ') + ' cm' + (product.name ? ` (${product.name})` : ' (gabion)')
             })
           ]
         });
