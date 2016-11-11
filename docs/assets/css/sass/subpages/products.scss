@@ -259,7 +259,9 @@
       justify-content: space-around;
     }
     .item-data{
-      background: #E9E9E9
+      background: #E9E9E9;
+      width:75%;
+      margin-right: 1em;
     }
     .item-name{
       display: block;
@@ -269,11 +271,9 @@
 
     .item-img{
       align-self: center;
-      padding: 2.5%;
-
+      width:25%;
       img{
-        width: auto;
-        height: 30vmin
+        width: 100%;
       }
 
     }
@@ -356,10 +356,10 @@
     }
 
     .item-data{
-      padding: 25px
+      width:75%;
+      margin-right: 1em;
     }
 
-    .item-img{img{height: 30vmin}}
 
     .cart-controls{
 

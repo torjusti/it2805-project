@@ -1022,6 +1022,8 @@ footer > ul > li a {
   }
   .item-data {
     background: #E9E9E9;
+    width: 75%;
+    margin-right: 1em;
   }
   .item-name {
     display: block;
@@ -1030,11 +1032,10 @@ footer > ul > li a {
   }
   .item-img {
     align-self: center;
-    padding: 2.5%;
+    width: 25%;
   }
   .item-img img {
-    width: auto;
-    height: 30vmin;
+    width: 100%;
   }
   #shopping-cart {
     flex-grow: 1;
@@ -1100,10 +1101,8 @@ footer > ul > li a {
     justify-content: space-around;
   }
   .item-data {
-    padding: 25px;
-  }
-  .item-img img {
-    height: 30vmin;
+    width: 75%;
+    margin-right: 1em;
   }
   .cart-controls button {
     font-size: 0.7em;
