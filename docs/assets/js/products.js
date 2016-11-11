@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function(){
   ajax({
     path: 'assets/data.json',
 
-    success: function(responseText){
+    success: function(responseText) {
       // Parse JSON data.
       let gabionData = JSON.parse(responseText);
 
@@ -236,7 +236,7 @@ document.addEventListener('DOMContentLoaded', function(){
       /**
        * Updates the result textarea.
        */
-      function updateCart(){
+      function updateCart() {
         // Store lines of text that will be shown in the textarea.
         //let lines = ['Hei. Jeg ønsker gjerne å kjøpe gabioner!\n'];
         let lines = [];
@@ -245,6 +245,9 @@ document.addEventListener('DOMContentLoaded', function(){
         let totalPrice = 0;
         let totalSize = 0;
         let totalWeight = 0;
+
+        // If the cart contain round gabions, which have no specified volume - needs to be warned about in cart
+        let containsRoundGabions = false;
 
         // Loop through all the input boxes in all the tabs.
         for (let i = 0; i < cartValueNodes.length; i++){
@@ -265,15 +268,31 @@ document.addEventListener('DOMContentLoaded', function(){
             let sizeSum = +(Math.round(curGabionData.size.reduce((a, b) => a * b / 100, 1) * cartValue + 'e+2')  + 'e-2');
             let weightSum = weight * cartValue;
 
+            let roundGabion = curGabionData.size.length !== 3;
+
+            if (roundGabion) {
+              sizeSum = 0;
+              containsRoundGabions = true;
+            }
+
             // Add sums to the total sum.
             totalPrice += priceSum;
             totalSize += sizeSum;
             totalWeight += weightSum;
 
             // Add this line.
-            lines.push(`${type} [${weight} kg]: ${cartValue} stykker til ${price} kr - totalt ${weightSum} kg over ${sizeSum} m^3 til ${priceSum} kroner.\n---------------------------------------------------------`);
+            let line = `${type} [${weight} kg]: ${cartValue} stykker til ${price} kr - totalt ${weightSum} kg`;
+
+            if (sizeSum) {
+              line += ` over ${sizeSum} m^3 til ${priceSum} kroner.`
+            }
+
+            line += '\n---------------------------------------------------------';
+
+            lines.push(line);
           }
         }
+
         // Show the container if we have at least 1 line.
         if (lines.length >= 1){
           // Add the total price.
@@ -284,16 +303,16 @@ document.addEventListener('DOMContentLoaded', function(){
           // better rounding still courtesy of MDN
           // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/round
           lines.push(`Totalt volum: ${+(Math.round(totalSize + 'e+2')  + 'e-2')} m^3`);
+
+          if (containsRoundGabions) {
+            lines.push('Advarsel! Du har runde gabioner i handlekurven din. Disse har ikke et fast volum, så vær obs.');
+          }
+
           // Add all lines to textarea with newlines between them.
           cartResults.value = lines.join('\n');
           // Show the shopping cart.
           document.getElementById('shopping-cart').style.display = 'flex';
-          /*setInterval(function(){
-            if (document.getElementsByTagName('BODY')[0].scrollTop != window.innerHTML){
-            document.getElementsByTagName('BODY')[0].scrollTop = document.getElementsByTagName('BODY')[0].scrollTop + 10
-          }
-        }, 15);*/ // SMOOTH SCROLL TO THE BOTTOM.
-        } else{
+        } else {
           // Hide shopping cart.
           document.getElementById('shopping-cart').style.display = 'none';
         }
@@ -364,7 +383,7 @@ document.addEventListener('DOMContentLoaded', function(){
       updateCart();
     },
 
-    error: function(xhr){
+    error: function(xhr) {
       toast('Error loading data')
     }
   });

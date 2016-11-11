@@ -75,8 +75,8 @@
       "galvanizedThickness":275
     },
    {
-      "name": "(rund gabion)",
-      "size": [70, 100, 100],
+      "name": "rund gabion",
+      "size": [70, 100],
       "weight": 75,
       "price": 395,
       "threadThickness":4,
@@ -84,8 +84,8 @@
       "galvanizedThickness":275
     },
    {
-      "name": "(rund gabion)",
-      "size": [70, 80, 100],
+      "name": "rund gabion",
+      "size": [70, 80],
       "weight": 75,
       "price": 385,
       "threadThickness":4,
