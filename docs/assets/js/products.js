@@ -337,6 +337,12 @@ document.addEventListener('DOMContentLoaded', function(){
           updateCartValueNode(cartValueNode, cartValueNode.value, true);
         });
 
+        cartValueNode.addEventListener('blur', function() {
+          if (!cartValueNode.value) {
+            updateCartValueNode(cartValueNode, 0, true);
+          };
+        });
+
         // Positive increments.
         curTab.getElementsByClassName('cart-add')[0].addEventListener('click', function(){
           updateCartValueNode(cartValueNode, 1);
