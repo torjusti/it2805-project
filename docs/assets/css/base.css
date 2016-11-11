@@ -491,13 +491,15 @@ nav ul li:hover a {
   }
   nav ul li {
     width: auto;
-    min-width: 0 !important;
+    min-width: auto !important;
     border: none !important;
     order: 0 !important;
   }
   nav ul li a {
     padding: 0 40px;
     text-transform: none;
+    display: flex;
+    height: 100%;
   }
   nav ul li a:before {
     display: none !important;

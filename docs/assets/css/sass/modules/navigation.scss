@@ -176,14 +176,15 @@ nav{
 
         li{
           width: auto;
-          min-width: 0 !important;
+          min-width: auto !important;
           border: none !important;
           order: 0 !important;
 
           a{
             padding: 0 40px;
             text-transform: none;
-
+            display: flex;
+            height: 100%;
             &:before{display: none !important}
 
           }
