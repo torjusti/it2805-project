@@ -328,6 +328,7 @@ nav ul {
   flex-grow: 1;
   display: flex;
   flex-wrap: wrap;
+  height: 100%;
 }
 
 nav ul li {
@@ -336,6 +337,7 @@ nav ul li {
   border-top: 1px solid #333;
   width: 50%;
   transition: .2s ease-in-out;
+  height: 100%;
 }
 
 nav ul li:nth-child(odd) {

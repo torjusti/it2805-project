@@ -26,6 +26,7 @@ nav{
     flex-grow: 1;
     display: flex;
     flex-wrap: wrap;
+    height: 100%;
 
     li{
       cursor: pointer;
@@ -33,7 +34,7 @@ nav{
       border-top: 1px solid $accent-color-2;
       width: 50%;
       transition: .2s ease-in-out;
-
+      height: 100%;
       &:nth-child(odd){border-left: 1px solid $accent-color-2}
 
       &:hover{
