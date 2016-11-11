@@ -7,10 +7,11 @@ document.addEventListener('DOMContentLoaded', function(){
       // Parse JSON data.
       let gabionData = JSON.parse(responseText);
 
+      // fetch rendering containers
       let itemTabs = document.getElementById('item-tabs');
       let itemContainers = document.getElementById('item-containers');
 
-      // Render data.
+      // Render data. All the this logic is just for rendering the data from JSON and into the dom.
       gabionData.products.forEach(function(product, i) {
         itemTabs.appendChild(createElem({
           'nodeType': 'span',
@@ -270,6 +271,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
             let roundGabion = curGabionData.size.length !== 3;
 
+            // if we have round gabions, don't print size sum
             if (roundGabion) {
               sizeSum = 0;
               containsRoundGabions = true;
@@ -283,6 +285,7 @@ document.addEventListener('DOMContentLoaded', function(){
             // Add this line.
             let line = `${type} [${weight} kg]: ${cartValue} stykker til ${price} kr - totalt ${weightSum} kg`;
 
+            // Round gabions have no size, don't write 0 m^2, that's weird
             if (sizeSum) {
               line += ` over ${sizeSum} m^3 til ${priceSum} kroner.`
             }
