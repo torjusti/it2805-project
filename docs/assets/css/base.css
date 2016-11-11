@@ -388,7 +388,6 @@ nav ul li a::before {
 
 nav ul li:hover a {
   color: white;
-  font-weight: bolder;
 }
 
 #nav-1:before {
