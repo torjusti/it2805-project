@@ -16,6 +16,7 @@ nav{
   position: fixed;
   width: 100%;
   height: calc(100vh - 64px);
+  display: flex;
   display: none;
   z-index: 999;
   left: 0;
@@ -25,7 +26,6 @@ nav{
     flex-grow: 1;
     display: flex;
     flex-wrap: wrap;
-    height: 100%;
 
     li{
       cursor: pointer;
@@ -33,7 +33,7 @@ nav{
       border-top: 1px solid $accent-color-2;
       width: 50%;
       transition: .2s ease-in-out;
-      height: 100%;
+
       &:nth-child(odd){border-left: 1px solid $accent-color-2}
 
       &:hover{
@@ -80,6 +80,7 @@ nav{
 
       &:hover a{
         color: $light-color;
+        font-weight: bolder
       }
 
     }
@@ -172,12 +173,13 @@ nav{
 
       ul{
         flex-direction: row;
-
+        height:100%;
         li{
           width: auto;
           min-width: auto !important;
           border: none !important;
           order: 0 !important;
+          height:100%;
 
           a{
             padding: 0 40px;
@@ -185,7 +187,6 @@ nav{
             display: flex;
             height: 100%;
             &:before{display: none !important}
-
           }
 
         }
