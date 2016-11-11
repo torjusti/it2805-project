@@ -353,7 +353,7 @@ document.addEventListener('DOMContentLoaded', function(){
       // Send mail button.
       document.getElementById('send-cart-mail').addEventListener('click', function(){
         // Attempt to open a mail window with a predefined header and body.
-        window.open('mailto:kjell@vikre.no?subject=Gabioner&body=' + encodeURI(cartResults.value));
+        window.open('mailto:post@vikre.no?subject=Gabioner&body=' + encodeURI(cartResults.value));
       });
 
       // Select contents button.
