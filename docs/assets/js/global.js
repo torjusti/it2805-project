@@ -26,7 +26,7 @@ function toast(message, timeout) {
 
   toastElement.setAttribute('id', 'toast');
 
-  document.body.insertBefore(toastElement, document.body.firstChild);
+  document.body.insertBefore(toastElement, document.querySelector('footer'));
 
   // Remove toast after specified time or 2500 ms.
   setTimeout(function() {

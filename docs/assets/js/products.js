@@ -308,7 +308,7 @@ document.addEventListener('DOMContentLoaded', function(){
           lines.push(`Totalt volum: ${+(Math.round(totalSize + 'e+2')  + 'e-2')} m^3`);
 
           if (containsRoundGabions) {
-            lines.push('Advarsel! Du har runde gabioner i handlekurven din. Disse har ikke et fast volum, så vær obs.');
+            lines.push('OBS! Du har runde gabioner i handlekurven din. Disse brukes primært til dekorasjon, volum er derfor ikke lagt til.');
           }
 
           // Add all lines to textarea with newlines between them.
@@ -335,6 +335,12 @@ document.addEventListener('DOMContentLoaded', function(){
           cartValueNode.value = cartValueNode.value.replace(/\D*/g, '');
 
           updateCartValueNode(cartValueNode, cartValueNode.value, true);
+        });
+
+        cartValueNode.addEventListener('blur', function() {
+          if (!cartValueNode.value) {
+            updateCartValueNode(cartValueNode, 0, true);
+          };
         });
 
         // Positive increments.
