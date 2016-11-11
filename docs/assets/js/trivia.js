@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+/*document.addEventListener('DOMContentLoaded', function() {
   if (window.matchMedia('(min-width: 960px)').matches) {
     document.addEventListener('scroll', function() {
       const fromTop = document.getElementsByTagName('body')[0].scrollTop / window.innerHeight * 100;
@@ -11,3 +11,4 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   };
 });
+*/

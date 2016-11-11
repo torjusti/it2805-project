@@ -1,175 +1,22 @@
-/*----TRIVIA SUBPAGE----*/
-
-#trivia{
-  overflow-y: scroll;
-  align-items:flex-start;
-
-  main{
-    max-width: 100%;
-    overflow: hidden
-  }
-
-  h2{
-    display: flex;
-    font-size: $base-font-size*2;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    line-height: 1;
-    transform: translateY(-50%);
-    margin: 50vh auto;
-    padding: 24px 0 48px 0;
-    min-width: 100%;
-    max-width: 100vw;
-    background: transparentize($dark-color, .5);
-
-    &:after,&:before{
-      content: 'bla ned';
-      position: absolute;
-      font-size: $base-font-size*.6;
-      margin-top: $base-font-size*1.6;
-      left: 50%;
-      text-align: center;
-      min-width: 100vw;
-      text-transform: lowercase;
-      transform: translateX(-50%);
-
-    }
-
-    &:before{
-      content:'';
-      background-image: url('../img/icons/down.svg');
-      min-width: 0;
-      left: 50%;
-      width: 36px;
-      height: 36px;
-      background-position: center;
-      background-size: cover;
-      animation: scrollDown 1.4s infinite;
-      z-index: 1
-
-    }
-
-  }
-
-}
-
-.parallax-content{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  background-image: url('../img/bg.png');
-  background-color: #EEE;
-  min-height: 80vh;
+.trivia{
+  width: 100%;
+  list-style-position: inside;
+  padding:1em;
+  box-sizing: border-box;
   li{
-    padding: 2.5vmin 5vmin;
-    text-indent: $base-font-size*-1;
-    &:before{
-      padding: 5px;
-      font-size: $base-font-size*.6;
-      content: '⬛';
-      color: $accent-color-1;
-    }
+    list-style-type: square;
+    padding:0px;
   }
+}
+#trivia main{
+  margin:1em 0;
+  background: $light-color;
+  border:1px solid #e9e9e9;
+
+  h2{padding: 1em 0 1em 1em}
+  a{padding-bottom: 1em}
 
 }
-
-.parallax-bg{
-  position: relative;
-
-  img{max-height: 100vmax}
-
-}
-#parallax-1{
-  position: fixed;
-  top: 50%;
-  transform: translateY(-50%);
-  left: 0;
-  z-index: -1;
-
-  &:after{
-    content: '';
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    top: 0;
-    left: 0;
-  }
-
-}
-
-#parallax-6{a,li:last-of-type{padding-bottom: 2.5vmin}}
-
-/*----/TRIVIA SUBPAGE----*/
-
-@media screen{
-  @media (min-width: 960px){
-
-    #trivia{
-
-      header{
-        position: relative;
-        z-index: 1
-      }
-
-      footer{
-        min-height: 30vh;
-        display: flex;
-        align-items: center;
-        position: relative;
-        z-index: 1;
-        box-shadow: 0 0 10px black;
-
-        ul{flex-grow: 1}
-      }
-
-      main{
-        min-width: 100%;
-        min-height: 231vh;
-
-        h2{
-          position: absolute;
-          top: 0;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          width: 100%
-        }
-
-        ul{
-          justify-content: center;
-          li{padding: 1vmin 10vmin}
-        }
-
-      }
-
-    }
-
-    .parallax-bg{
-      max-width: 100%;
-      max-height: 100vh;
-      overflow: hidden;
-
-      img{min-width: 100vw}
-    }
-
-    .parallax-content{
-      min-width: 100%;
-      min-height: 57vh
-    }
-
-    .parallax-bg,.parallax-content{
-      top: 100%;
-      position: absolute;
-      z-index: 1;
-      box-shadow: 0 0 10px rgba(0,0,0,.5)
-    }
-
-  }
-
-  @media (min-width: 1220px){#trivia{main{ul{li{padding: 1vmin 25vmin}}}}}
-
-  @media (min-width: 1440px){#trivia{main{ul{li{padding: 1vmin 40vmin}}}}}
-
+#trivia img{
+  width:100%;
 }
