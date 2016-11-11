@@ -286,12 +286,11 @@
 
     #cart-results{
       background: #E9E9E9;
-      padding: 2.5vmin;
+      padding: 3em;
     }
 
     #cart-control{
       flex-direction: row;
-
       p{
         padding: 15px;
         font-size: $base-font-size*.9;
@@ -407,9 +406,7 @@
       box-shadow: 0 0 5px rgba(0,0,0,.3)
     }
 
-    #cart-control{p{padding: 2.5% 5%}
 
-    }
 
   }
 
