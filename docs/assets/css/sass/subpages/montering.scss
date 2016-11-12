@@ -47,22 +47,18 @@
   justify-content: center;
 }
 
-#assembly-btn-next:after {
-  content: '';
+#assembly-btn-next{
   background-image: url('../img/icons/next.svg');
-  background-size: cover;
-  height: 16px;
-  width: 16px;
-  margin-top: 2px;
+  background-repeat: no-repeat;
+  background-position:13vw center;
+  background-size:20px 20px;
 }
 
-#assembly-btn-back:before {
-  content: '';
+#assembly-btn-back{
   background-image: url('../img/icons/left.svg');
-  background-size: cover;
-  height: 16px;
-  width: 16px;
-  margin-top: 2px;
+  background-repeat: no-repeat;
+  background-position:1vw center;
+  background-size:20px 20px;
 }
 
 #prog-bar {
