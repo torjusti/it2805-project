@@ -8,6 +8,7 @@ footer{
   >ul{
     display: flex;
     justify-content: space-around;
+    overflow: hidden;
 
     >li{
       background-size: 36px;
@@ -48,6 +49,7 @@ footer{
       >ul>li{
         background-size: 24px
       }
+
 
     }
 

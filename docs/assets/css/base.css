@@ -532,6 +532,7 @@ footer {
 footer > ul {
   display: flex;
   justify-content: space-around;
+  overflow: hidden;
 }
 
 footer > ul > li {
