@@ -1219,13 +1219,13 @@ footer > ul > li a {
   justify-content: center;
   background-size: 20% 80%;
   align-content: center;
+  justify-content: center;
 }
 
 #assembly-btn-next {
   background-image: url("../img/icons/next.svg");
   background-repeat: no-repeat;
   background-position: 95% center;
-  justify-content: flex-start;
   padding: 5px 28px 5px 12px;
 }
 
@@ -1233,7 +1233,6 @@ footer > ul > li a {
   background-image: url("../img/icons/left.svg");
   background-repeat: no-repeat;
   background-position: 5% center;
-  justify-content: flex-end;
   padding: 5px 12px 5px 28px;
 }
 
