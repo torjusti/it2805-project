@@ -62,6 +62,7 @@ main h1 {
 main h2 {
   align-self: flex-start;
   font-size: 1.3em;
+  padding: 2.5vmin 0 0 2.5vmin;
   text-transform: uppercase;
 }
 
@@ -1155,6 +1156,14 @@ footer > ul > li a {
   padding-bottom: 0.5em;
 }
 
+#intro-trivia {
+  position: relative;
+}
+
+#intro-trivia h2 {
+  position: absolute;
+}
+
 #trivia main {
   margin: 1em 0;
   background: white;
@@ -1162,9 +1171,13 @@ footer > ul > li a {
 }
 
 #trivia main h2 {
-  z-index: 1;
-  background: rgba(0, 0, 0, 0.5);
+  padding: 5vh 0;
+  background-color: rgba(0, 0, 0, 0.4);
   width: 100%;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  color: white;
 }
 
 #trivia main a {
@@ -1334,12 +1347,8 @@ footer > ul > li a {
   padding-left: 5px;
 }
 
-#about p{
-  padding:0.5em 0 0 0;
-}
-
 #about section:first-of-type {
-  padding: 1.5em;
+  padding: 0 5vmin;
 }
 
 #sjef {
@@ -1361,6 +1370,23 @@ footer > ul > li a {
   align-items: center;
   padding-bottom: 2.5vmin;
 }
+
+#sitemap, #sitemap div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+}
+
+#sitemap div {
+  margin-top: 5vh;
+}
+
+#sitemap div a {
+  padding: 5px 0;
+}
+
+/*----/ABOUT SUBPAGE----*/
 @media screen and (min-width: 580px) {
   #about section:first-of-type {
     justify-content: center;
@@ -1390,10 +1416,10 @@ footer > ul > li a {
     background: white;
   }
   #about section:first-of-type {
-    padding: 5em 5em 0 5em;
+    padding: 5vmin 5vmin 0 5vmin;
   }
   #about section:first-of-type p {
-    padding:1em 0;
+    padding: 2.5vmin;
   }
   #about #sjef {
     justify-content: space-around;
@@ -1403,5 +1429,22 @@ footer > ul > li a {
   #about .sjef {
     margin: 0 !important;
   }
+  #about #sitemap {
+    margin-top: 2vh;
+  }
+  #about #sitemap div {
+    margin-top: 0;
+    flex-direction: row;
+  }
+  #about #sitemap a {
+    padding: 0 5px;
+    border-right: 1px solid #00A651;
+    font-size: 0.6em;
+  }
+  #about #sitemap a:last-child {
+    border: none;
+  }
+  #about #sitemap span {
+    font-size: 0.8em;
+  }
 }
-/*----/ABOUT SUBPAGE----*/
