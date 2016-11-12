@@ -259,7 +259,8 @@
       justify-content: space-around;
     }
     .item-data{
-      background: #E9E9E9;
+      padding:0;
+      background: $light-color;
       width:75%;
       margin-right: 1em;
     }
@@ -345,6 +346,7 @@
     #item-containers{
       display: flex;
       min-width: 100%;
+      overflow: hidden;
     }
 
     .item-container{

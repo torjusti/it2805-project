@@ -1020,7 +1020,8 @@ footer > ul > li a {
     justify-content: space-around;
   }
   .item-data {
-    background: #E9E9E9;
+    padding: 0;
+    background: white;
     width: 75%;
     margin-right: 1em;
   }
@@ -1092,6 +1093,7 @@ footer > ul > li a {
   #item-containers {
     display: flex;
     min-width: 100%;
+    overflow: hidden;
   }
   .item-container {
     flex-direction: row;
