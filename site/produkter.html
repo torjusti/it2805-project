@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<!--
+  FILE NAME: produkter.html
+  WRITTEN BY: Balazs & Torjus
+  WHEN: November 2016
+  PURPOSE: Vise informasjon om de forskjellige gabion-typene som føres av Vikre Handel AS.
+-->
+<html lang="no">
+  <head>
+    <title>Produkter - Gabionbutikken</title>
+    <!--#include file="./includes/meta.html" -->
+  </head>
+  <body id="products">
+    <!--#include file="./includes/header.html" -->
+    <button id="choose-product">Velg fra produkter</button>
+    <main>
+      <div id="item-tabs"></div>
+      <div id="noname">
+        <div id="item-containers"></div>
+        <div id="shopping-cart">
+          <textarea id="cart-results" readonly></textarea>
+          <div id="cart-control">
+            <p>Dette er din handlekurv. Trykk send for å sende en mail til oss, så svarer vi så fort som mulig.</p>
+            <div>
+              <button id="send-cart-mail">Send</button>
+              <button id="copy-cart-contents">Kopier tekst</button>
+              <button id="clear-cart-contents">Tøm handlekurv</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!--#include file="./includes/footer.html" -->
+    <script type="text/javascript" src="assets/js/products.js"></script>
+  </body>
+</html>

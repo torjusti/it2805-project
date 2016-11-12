@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>P3 Endringer</title>
-    <link rel="stylesheet" href="css/p2.css">
+    <link rel="stylesheet" href="css/p3.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
   </head>
   <body>
@@ -51,19 +51,58 @@
       <section>
         <h3>Oppdatert filstruktur og ansvarsdelegasjon</h3>
 
-      <p>Ansvar tilhører den øverste fellesnevneren i treet hvis ikke annet er spesifisert.</p>
+        <p>Ansvar tilhører den øverste fellesnevneren i treet hvis ikke annet er spesifisert. Elementer som har ekstra tekst er nye, så de får en ekstra forklaring. Mappene innenfor image-mappen inneholder mange bilder, men å liste dem opp her tok unødvendig mye plass, og ansvaret tilhører den som eier mappa.</p>
 
-
+        <code>
+          <pre>
+├── assets
+│   ├── css
+│   │   └── base.css // Felles ansvar
+│   ├── data.json // Balazs // Inneholder data til produkter
+│   ├── img // Felles ansvar // Inneholder komprimerte bilder fra img-orig
+│   ├── img-orig
+│   │   ├── about
+│   │   │   ├── kjell.png // Andreas
+│   │   │   └── thorleif.png // Andreas
+│   │   ├── bg.png // Balazs // Bakgrunn til alle sider
+│   │   ├── carousel // Andreas
+│   │   ├── icons // Balazs // Bilder hovedsaklig brukt til knapper
+│   │   ├── montering // Andreas // Renamet fra usage
+│   │   └── produkter // Andreas // Renamet fra specs
+│   │   ├── exifautotran // Torjus // Script fra netttet som normaliserer EXIF-data
+│   ├── js
+│   │   ├── global.js // Delt ansvar // Inneholder scripts som kjører globalt
+│   │   ├── homepage.js // Johannes
+│   │   ├── montering.js // Andreas
+│   │   ├── products.js // Torjus og Balazs
+│   └── video // Andreas // Videoer som brukes på monteringssiden
+│       ├── montering.mp4
+│       └── montering.ogv
+├── gulpfile.js // Torjus // Script som minifiserer bilder automatisk
+├── includes // Felles ansvar // Moduler som brukes på alle sider
+│   ├── footer.html
+│   ├── header.html
+│   └── meta.html
+├── index.html // Johannes + Balazs
+├── montering.html // Andreas
+├── om.html // Balazs
+├── package.json // Torjus // Node-pakker som ble brukt (kun for bilde-minifisering)
+├── produkter.html // Torjus + Balazs
+├── trivia.html // Johannes
+└── yarn.lock // Torjus // Auto-generert fil for Yarn package manager (kun for bilde-minifisering)
+          </pre>
+        </code>
       </section>
 
       <section>
         <h3>Modularitetskrav</h3>
-        <p>Vi bruker server side includes for å hente inn headeren og footeren vår på alle sider.  Disse komponentene skal brukes på alle sider, så vi sparer oss for mye duplisering av kode ved å gjøre dette. Vi valgte å ikke bruke JavaScript, da vi føler at å bruke JavaScript til å hente kode med AJAX ville være å overkomplisere det, og å legge til HTML direkte med JavaScript er veldig stygt, og miksing av funksjonalitet og layout, hvilket mange ser på som en uting. Torjus var ansvarlig for implementeringen av SSI.</p>
+        <p>Vi bruker server side includes for å hente inn headeren og footeren vår på alle sider.  Disse komponentene skal brukes på alle sider, så vi sparer oss for mye duplisering av kode ved å gjøre dette. Vi valgte å ikke bruke JavaScript, da vi føler at å bruke JavaScript til å hente kode med AJAX ville være å overkomplisere det, og å legge til HTML direkte med JavaScript syntes vi virket veldig stygt, da det er miksing av funksjonalitet og layout. Torjus var ansvarlig for implementeringen av SSI. SSI funker fint og uten problemer, da det allerede er installert på NTNU sine områder.</p>
       </section>
 
       <section>
         <h3>Andre endringer</h3>
         <p>Siden liggrer ute på NTNU sine områder. Dette er fordi Thorleif fortsatt vurderer situasjonen med tanke på server-hosting, domenenavn og så videre.</p>
+        <p>Kommentaren i headeren av HTML-filene ligger under DOCTYPE fordi å ha den helt på toppen får IE til å gå i QuirksMode.</p>
       </section>
     </main>
   </body>

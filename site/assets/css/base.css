@@ -1,0 +1,137 @@
+├── assets
+│   ├── css
+│   │   └── base.css
+│   ├── data.json
+│   ├── img
+│   │   ├── about
+│   │   │   ├── kjell.png
+│   │   │   └── thorleif.png
+│   │   ├── bg.png
+│   │   ├── carousel
+│   │   │   ├── 1.jpg
+│   │   │   ├── 2.jpg
+│   │   │   ├── 3.jpg
+│   │   │   ├── 4.jpg
+│   │   │   └── 5.jpg
+│   │   ├── icons
+│   │   │   ├── add.svg
+│   │   │   ├── copy.svg
+│   │   │   ├── down.svg
+│   │   │   ├── favicon.ico
+│   │   │   ├── home.svg
+│   │   │   ├── info.svg
+│   │   │   ├── left.svg
+│   │   │   ├── location.svg
+│   │   │   ├── mail.svg
+│   │   │   ├── money.svg
+│   │   │   ├── next.svg
+│   │   │   ├── phone.svg
+│   │   │   ├── products.svg
+│   │   │   ├── remove.svg
+│   │   │   ├── replay.svg
+│   │   │   ├── send.svg
+│   │   │   ├── settings-2.svg
+│   │   │   ├── settings.svg
+│   │   │   ├── shop.svg
+│   │   │   ├── up.svg
+│   │   │   ├── us.svg
+│   │   │   └── warning.svg
+│   │   ├── montering
+│   │   │   ├── 1.jpg
+│   │   │   ├── 2.jpg
+│   │   │   ├── 3.jpg
+│   │   │   ├── 4.jpg
+│   │   │   ├── 5.jpg
+│   │   │   ├── fylling.png
+│   │   │   ├── obs1.jpg
+│   │   │   ├── obs2.jpg
+│   │   │   └── obs3.jpg
+│   │   └── produkter
+│   │       ├── 10.jpg
+│   │       ├── 11.jpg
+│   │       ├── 1.jpg
+│   │       ├── 2.jpg
+│   │       ├── 3.jpg
+│   │       ├── 4.jpg
+│   │       ├── 5.jpg
+│   │       ├── 6.jpg
+│   │       ├── 7.jpg
+│   │       ├── 8.jpg
+│   │       └── 9.jpg
+│   ├── img-orig
+│   │   ├── about
+│   │   │   ├── kjell.png
+│   │   │   └── thorleif.png
+│   │   ├── bg.png
+│   │   ├── carousel
+│   │   │   ├── 1.jpg
+│   │   │   ├── 2.jpg
+│   │   │   ├── 3.jpg
+│   │   │   ├── 4.jpg
+│   │   │   └── 5.jpg
+│   │   ├── exifautotran
+│   │   ├── icons
+│   │   │   ├── add.svg
+│   │   │   ├── copy.svg
+│   │   │   ├── down.svg
+│   │   │   ├── favicon.ico
+│   │   │   ├── home.svg
+│   │   │   ├── info.svg
+│   │   │   ├── location.svg
+│   │   │   ├── mail.svg
+│   │   │   ├── money.svg
+│   │   │   ├── next.svg
+│   │   │   ├── phone.svg
+│   │   │   ├── products.svg
+│   │   │   ├── remove.svg
+│   │   │   ├── replay.svg
+│   │   │   ├── send.svg
+│   │   │   ├── settings-2.svg
+│   │   │   ├── settings.svg
+│   │   │   ├── shop.svg
+│   │   │   ├── up.svg
+│   │   │   ├── us.svg
+│   │   │   └── warning.svg
+│   │   ├── montering
+│   │   │   ├── 1.jpg
+│   │   │   ├── 2.jpg
+│   │   │   ├── 3.jpg
+│   │   │   ├── 4.jpg
+│   │   │   ├── 5.jpg
+│   │   │   ├── fylling.png
+│   │   │   ├── obs1.jpg
+│   │   │   ├── obs2.jpg
+│   │   │   └── obs3.jpg
+│   │   └── produkter
+│   │       ├── 10.jpg
+│   │       ├── 11.jpg
+│   │       ├── 1.jpg
+│   │       ├── 2.jpg
+│   │       ├── 3.jpg
+│   │       ├── 4.jpg
+│   │       ├── 5.jpg
+│   │       ├── 6.jpg
+│   │       ├── 7.jpg
+│   │       ├── 8.jpg
+│   │       └── 9.jpg
+│   ├── js
+│   │   ├── global.js
+│   │   ├── homepage.js
+│   │   ├── montering.js
+│   │   ├── products.js
+│   │   └── trivia.js
+│   └── video
+│       ├── montering.mp4
+│       └── montering.ogv
+├── gulpfile.js
+├── includes
+│   ├── footer.html
+│   ├── header.html
+│   └── meta.html
+├── index.html
+├── montering.html
+├── om.html
+├── package.json
+├── produkter.html
+├── trivia.html
+└── yarn.lock
