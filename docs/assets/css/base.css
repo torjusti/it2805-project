@@ -62,7 +62,6 @@ main h1 {
 main h2 {
   align-self: flex-start;
   font-size: 1.3em;
-  padding: 2.5vmin 0 0 2.5vmin;
   text-transform: uppercase;
 }
 
@@ -1163,7 +1162,9 @@ footer > ul > li a {
 }
 
 #trivia main h2 {
-  padding: 1em 0 1em 1em;
+  z-index: 1;
+  background: rgba(0, 0, 0, 0.5);
+  width: 100%;
 }
 
 #trivia main a {
@@ -1333,8 +1334,12 @@ footer > ul > li a {
   padding-left: 5px;
 }
 
+#about p{
+  padding:0.5em 0 0 0;
+}
+
 #about section:first-of-type {
-  padding: 0 5vmin;
+  padding: 1.5em;
 }
 
 #sjef {
@@ -1356,23 +1361,6 @@ footer > ul > li a {
   align-items: center;
   padding-bottom: 2.5vmin;
 }
-
-#sitemap, #sitemap div {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  color: white;
-}
-
-#sitemap div {
-  margin-top: 5vh;
-}
-
-#sitemap div a {
-  padding: 5px 0;
-}
-
-/*----/ABOUT SUBPAGE----*/
 @media screen and (min-width: 580px) {
   #about section:first-of-type {
     justify-content: center;
@@ -1402,10 +1390,10 @@ footer > ul > li a {
     background: white;
   }
   #about section:first-of-type {
-    padding: 5vmin 5vmin 0 5vmin;
+    padding: 5em 5em 0 5em;
   }
   #about section:first-of-type p {
-    padding: 2.5vmin;
+    padding:1em 0;
   }
   #about #sjef {
     justify-content: space-around;
@@ -1415,22 +1403,5 @@ footer > ul > li a {
   #about .sjef {
     margin: 0 !important;
   }
-  #about #sitemap {
-    margin-top: 2vh;
-  }
-  #about #sitemap div {
-    margin-top: 0;
-    flex-direction: row;
-  }
-  #about #sitemap a {
-    padding: 0 5px;
-    border-right: 1px solid #00A651;
-    font-size: 0.6em;
-  }
-  #about #sitemap a:last-child {
-    border: none;
-  }
-  #about #sitemap span {
-    font-size: 0.8em;
-  }
 }
+/*----/ABOUT SUBPAGE----*/
