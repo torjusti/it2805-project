@@ -1217,20 +1217,24 @@ footer > ul > li a {
   margin: 0;
   border-radius: 0;
   justify-content: center;
+  background-size: 20% 80%;
+  align-content: center;
 }
 
 #assembly-btn-next {
   background-image: url("../img/icons/next.svg");
   background-repeat: no-repeat;
-  background-position: 13vw center;
-  background-size: 20px 20px;
+  background-position: 95% center;
+  justify-content: flex-start;
+  padding: 5px 28px 5px 12px;
 }
 
 #assembly-btn-back {
   background-image: url("../img/icons/left.svg");
   background-repeat: no-repeat;
-  background-position: 1vw center;
-  background-size: 20px 20px;
+  background-position: 5% center;
+  justify-content: flex-end;
+  padding: 5px 12px 5px 28px;
 }
 
 #prog-bar {
@@ -1319,6 +1323,9 @@ footer > ul > li a {
   }
   .content-pictures {
     width: 20%;
+  }
+  #assembly-btn-next, #assembly-btn-back {
+    background-size: 10% 80%;
   }
 }
 
