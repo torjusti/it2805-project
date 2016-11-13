@@ -13,20 +13,25 @@
   <body id="assembly">
     <!--#include file="./includes/header.html" -->
     <main>
+      <!--Introtekst som ligger over tutorial konstant--->
       <div id="assembly-intro">
         <h2>Montering</h2>
         <p>Dette er en manual, som ved hjelp av tekst, illustrasjoner og video, skal gi det et innblikk i hvordan man skal sette opp gabioner. Manualen tar særlig for seg firkantede gabioner, men prosessen lar seg også utvide til runde gabioner.</p>
       </div>
+      <!--Navigasjon til montering tutorial--->
       <div id="assembly-controls">
         <button id="assembly-btn-back">Tilbake</button>
         <ul id="prog-bar"></ul>
         <button id="assembly-btn-next">Start</button>
       </div>
+      <!--.content-containter elementene er hver enkel slide i montering tutorial. Disse vises og skjules alt ettersom hvilket steg i tutorial man er på--->
       <div class="content-container">
+        <!--Inneholder teksten til tutorialsliden--->
         <div class="content-text">
           <h3>Steg 1:</h3>
           <p>Gabioner leveres til anlegget i sammenlagt stand (flatpakket) på palle. Alle vertikale fuger er ferdige fra fabrikken, som øker kvaliteten og effektiviserer monteringen. Avhengig av konfigureringen av gabionene, forbindes base- og lokkpanelene med én horisontal spiral. Tilbehøret (stagsurringer og fugepinner)</p>
         </div>
+        <!--Inneholder bildet/ene til tutorialsliden--->
         <div class="content-pictures"><img src="assets/img/montering/1.jpg" alt="Montering steg 1"></div>
       </div>
       <div class="content-container">
@@ -80,6 +85,7 @@
         <div class="content-pictures"><img src="assets/img/montering/obs3.jpg" alt="Montering OBS"></div>
       </div>
       <div class="content-container">
+        <!--Video som vises på steg 8 i tutorial--->
         <div id="assembly-video">
           <video controls>
             <source src="assets/video/montering.ogv" type="video/ogg">
