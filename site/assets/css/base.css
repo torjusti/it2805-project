@@ -530,6 +530,13 @@ footer {
   left: 0;
 }
 
+#dogtag {
+  display: none;
+  color: #FFF;
+  text-align: center;
+  font-size: 0.8em;
+}
+
 footer > ul {
   display: flex;
   justify-content: space-around;
@@ -632,6 +639,9 @@ footer > ul > li a {
   footer > ul > li ul li {
     height: auto;
     display: flex;
+  }
+  #dogtag {
+    display: block;
   }
 }
 
